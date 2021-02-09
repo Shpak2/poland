@@ -5,31 +5,41 @@
   height: get-vw(96px)
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
   transition: .3s ease-in-out
-  position: relative
-  top: -10%
-  animation: .4s ease-in-out showHeader forwards
-  // background: red
+  position: fixed
+  top: 0%
+  animation: .6s ease-in-out showHeader forwards
+  color: $titleText
+  z-index: 100
+  &-button
+    display: flex
+    align-items: center
   &-logo
     display: flex
     align-items: center
+    // height: 90%
     & img
       transition: .4s ease-in-out
+      width: 60%
     & span
       font-weight: 800
       font-size: get-vw(28px)
       transition: .4s ease-in-out
+      color: $blackHeadline
   &-inner
     display: flex
     justify-content: space-between
     align-items: center
+    padding: 0 10px
   &-nav
     display: flex
     align-items: center
+    width: 65%
+    justify-content: space-between
   &.sticky
-    position: fixed
+    // position: fixed
     height: get-vw(76px)
-    top: -10%
-    animation: .4s ease-in-out showHeader forwards
+    // top: 0%
+    // animation: .6s ease-in-out showHeader forwards
     & .header-logo
       & span
         left: 0
@@ -44,9 +54,81 @@
   justify-content: space-between
   align-items: center
   // &-wrapper
+    // margin-right: get-vw(134px)
+  & .menu-item
+    & a
+      font-size: get-vw(17px)
+      position: relative
+      font-weight: 400
+      color: inherit
+      transition: .3s ease-in-out
+      letter-spacing: .75px
+      &::after
+        content: ''
+        height: get-vw(1.6px)
+        width: 105%
+        position: absolute
+        bottom: 0
+        left: 50%
+        opacity: 0
+        transition: .3s ease-in-out
+        transform: translate(-50%,15px)
+        background-color: $accentColor
+      &:hover
+        @media (hover: hover)
+          color: $accentColor
+          text-shadow: 0 0 1px $accentColor, 0 0 1px $accentColor
+          // font-weight: 600
+          // letter-spacing: 0.75px
+        &::after
+          @media (hover: hover)
+            opacity: 1
+            transform: translate(-50%,5px)
+    &:not(:last-child)
+      margin-right: get-vw(55px)
 
-@keyframes showHeader
-  0%
-    top: -10%
-  100%
-    top: 0
+.product
+  &-create
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: #0D1018
+    width: get-vw(191px)
+    height: get-vw(41px)
+    border-radius: 40px
+    cursor: pointer
+    margin-right: get-vw(37px)
+    & span
+      color: $lightTextTwo
+      font-size: get-vw(16px)
+  &-cart
+    width: get-vw(44px)
+    height: get-vw(44px)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    background-color: $lightTextTwo
+    cursor: pointer
+    & .cart
+      &-btn
+        outline: none
+        width: 50%
+        border: none
+        pointer-events: none
+      &-num
+        position: absolute
+        width: get-vw(22px)
+        height: get-vw(22px)
+        top: 0
+        right: 0
+        transform: translateX(50%)
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $cartItem
+        border-radius: 50%
+        font-size: get-vw(15px)
+        font-weight: 600
+        color: #fff
