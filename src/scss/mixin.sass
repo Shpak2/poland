@@ -11,15 +11,14 @@ $vw-viewport: 1920;
 $vw-viewport-tablet: 768;
 $vw-viewport-mobile: 375;
 
-@function get-vw($target) {
-    $vw-context: ($vw-viewport * .01) * 1px;
-    @return ($target/$vw-context) * 1vw;
-}
-@function get-vw-tablet($target) {
-    $vw-context: ($vw-viewport-tablet * .01) * 1px;
-    @return ($target/$vw-context) * 1vw;
-}
-@function get-vw-mobile($target) {
-    $vw-context: ($vw-viewport-mobile * .01) * 1px;
-    @return ($target/$vw-context) * 1vmin;
-}
+@function get-vw($target)
+    $vw-context: ($vw-viewport * .01) * 1px
+    @return ($target/$vw-context) * 1vw
+
+@function get-vw-tablet($target)
+    $vw-context: ($vw-viewport-tablet * .01) * 1px
+    @return ($target/$vw-context) * 1vw
+
+@function get-vw-mobile($target)
+    $vw-context: ($vw-viewport-mobile * .01) * 1px
+    @return ($target/$vw-context) * 1vmin
