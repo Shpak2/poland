@@ -1,7 +1,13 @@
 'use strict'
 
+$( document ).ready(function() {
+  let header = $('#header-js');
 
-// document.addEventListener("DOMContentLoaded", function() {
-
-  
-// });
+  $(window).scroll(function() {
+    if($(window).scrollTop()  > 300) {
+      header.addClass('sticky')
+    }else{
+      header.removeClass('sticky')
+    }
+});
+});
