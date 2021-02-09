@@ -6,3 +6,20 @@
     src: url('../fonts/'+$file_name+'?#iefix') format('embedded-opentype'), url("../fonts/"+$file_name+".woff") format("woff"),url('../fonts/'+$file_name+'.ttf') format('truetype')
     font-weight: $weight
     font-style: $style
+
+$vw-viewport: 1920;
+$vw-viewport-tablet: 768;
+$vw-viewport-mobile: 375;
+
+@function get-vw($target) {
+    $vw-context: ($vw-viewport * .01) * 1px;
+    @return ($target/$vw-context) * 1vw;
+}
+@function get-vw-tablet($target) {
+    $vw-context: ($vw-viewport-tablet * .01) * 1px;
+    @return ($target/$vw-context) * 1vw;
+}
+@function get-vw-mobile($target) {
+    $vw-context: ($vw-viewport-mobile * .01) * 1px;
+    @return ($target/$vw-context) * 1vmin;
+}
