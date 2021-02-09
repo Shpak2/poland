@@ -1,1 +1,1 @@
-"use strict";
+"use strict";$(document).ready(function(){let s=$("#header-js");$(window).scroll(function(){300<$(window).scrollTop()?s.addClass("sticky"):s.removeClass("sticky")})});
