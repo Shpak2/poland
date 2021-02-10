@@ -7,6 +7,7 @@
   transition: .3s ease-in-out
   position: fixed
   top: 0%
+  background-color: $white
   animation: .6s ease-in-out showHeader forwards
   color: $titleText
   z-index: 100
@@ -92,15 +93,39 @@
     display: flex
     align-items: center
     justify-content: center
-    background-color: #0D1018
+    background-color: $blackHeadline
     width: get-vw(191px)
     height: get-vw(41px)
-    border-radius: 40px
+    // border: get-vw(2px) solid $blackHeadline
+    border-radius: get-vw(40px)
     cursor: pointer
     margin-right: get-vw(37px)
+    position: relative
+    transition: .3s ease-in-out
+    // &::after
+    //   content: ''
+    //   position: absolute
+    //   top: 50%
+    //   left: 50%
+    //   transform: translate(-50%,-50%)
+    //   width: 100%
+    //   height: 100%
+    //   border-radius: get-vw(40px)
+    //   background: $blackHeadline
+    //   opacity: .3
     & span
+      z-index: 1
       color: $lightTextTwo
       font-size: get-vw(16px)
+      transition: .3s ease-in-out
+    &:hover
+      @media (hover: hover)
+        // border-color: $accentColor
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
+      & span
+        @media (hover: hover)
+          color: $accentColor
+          text-shadow: 0 0 1px $accentColor, 0 0 1px $accentColor
   &-cart
     width: get-vw(44px)
     height: get-vw(44px)
@@ -111,12 +136,16 @@
     position: relative
     background-color: $lightTextTwo
     cursor: pointer
+    transition: .3s ease-in-out
     & .cart
       &-btn
         outline: none
         width: 50%
         border: none
         pointer-events: none
+        & svg
+          transition: .3s ease-in-out
+          width: 100%
       &-num
         position: absolute
         width: get-vw(22px)
@@ -131,4 +160,10 @@
         border-radius: 50%
         font-size: get-vw(15px)
         font-weight: 600
-        color: #fff
+        color: $white
+    &:hover
+      @media (hover: hover)
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
+      & svg
+        @media (hover: hover)
+          fill: $accentColor
