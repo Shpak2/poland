@@ -1,8 +1,143 @@
 .popupWrapper
     position: fixed
+    // display: flex
     display: none
+    justify-content: center
+    align-items: center
     background: #e5e5e5
     top: 0
     left: 0
     right: 0
     bottom: 0
+    z-index: 200
+    & .modal
+        background: $lightTextOne
+        width: get-vw(1100px)
+        position: relative
+        margin: auto
+        // margin-top: get-vw(131px)
+        box-shadow: 0px get-vw(4px) get-vw(15px) rgba(0, 0, 0, 0.07)
+        &__title
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            height: get-vw(68px)
+            filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
+            z-index: 20
+            background: $lightTextOne
+            position: relative
+            &_text
+                font-size: get-vw(26px)
+                font-weight: 600
+                color: $titleText
+            &_button
+                position: absolute
+                width: get-vw(12px)
+                height: get-vw(12px)
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                right: get-vw(28px)
+                cursor: pointer
+                &::after, &::before
+                    content: ''
+                    display: inline-block
+                    width: get-vw(15px)
+                    height: get-vw(2px)
+                    background: $titleText
+                    position: absolute
+                    transform: rotate(45deg)
+                &::before
+                    transform: rotate(-45deg)
+        &__body
+            display: flex
+            flex-direction: row
+            &>div
+                width: 50%
+            &_left
+                box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2)
+                filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
+                z-index: 10
+                display: flex
+                justify-content: center
+                align-items: center
+                & .imageWrapper
+                    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
+                    background: radial-gradient(144.33% 131.39% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)
+                    backdrop-filter: blur(42px)
+                img
+                    max-height: get-vw(403px)
+                    max-width: get-vw(403px)
+                    height: auto
+                    width: auto
+            &_right
+                max-height: get-vw(624px)
+                overflow: hidden
+                background: #FBFBFB
+                & .designWrapper
+                    height: 100%
+                    overflow-y: scroll
+                    &__item
+                        height: get-vw(180px)
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                        border-top: 1px solid rgba(195, 203, 205, 0.4)
+                        &_left
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: get-vw(167px)
+                            border-right: 1px solid rgba(195, 203, 205, 0.4)
+                            img
+                                max-width: get-vw(115px)
+                                max-height: get-vw(129px)
+                                width: auto
+                                height: auto
+                        &_right
+                            flex-grow: 1
+                            padding-left: get-vw(40px)
+                            padding-right: get-vw(45px)
+                            display: flex
+                            align-items: center
+                            justify-content: space-between
+                            .nameText
+                                display: flex
+                                flex-direction: column
+                                &__title
+                                    font-size: get-vw(22px)
+                                    font-weight: 700
+                                    colo: $titleText
+                                &__description
+                                    font-size: get-vw(16px)
+                                    letter-spacing: get-vw(0.44px)
+                                    color: $descriptionText
+                            .buttonCircle
+                                    width: get-vw(31px)
+                                    height: get-vw(31px)
+                                    background: $lightTextTwo
+                                    border-radius: 50%
+                                    cursor: pointer
+                                    position: relative
+                                    display: flex
+                                    justify-content: center
+                                    align-items: center
+                                    &::after, &::before
+                                        content: ''
+                                        position: absolute
+                                        width: get-vw(9px)
+                                        height: get-vw(2px)
+                                        background: $titleText
+                                        transform: translateY(get-vw(-2.5px)) rotate(45deg)
+                                    &::before
+                                        transform: translateY(get-vw(2.5px)) rotate(-45deg)
+                        &.active
+                            background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+                            & .designWrapper__item_right
+                                .nameText
+                                    &__title
+                                        color: $lightTextTwo
+                                    &__description
+                                        color: rgba(245, 245, 244, 0.6)
