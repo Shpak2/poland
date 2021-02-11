@@ -23,7 +23,7 @@ $( document ).ready(function() {
 // end scroll
 
 // img svg convert inline
-$('img.img-svg').each(function(){
+$('.img-svg').each(function(){
   var $img = $(this);
   var imgClass = $img.attr('class');
   var imgURL = $img.attr('src');
