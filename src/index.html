@@ -159,7 +159,7 @@
     </style>
   </head>
 
-  <body>
+  <body style="height: 4000px;">
 
     <!-- HEADER START -->
 
@@ -167,7 +167,7 @@
       <div class="header-inner container">
         <!-- <div class="header-logo"> -->
           <a href="/" class="header-logo">
-            <img src="./img/logo.png" alt="home">
+            <img src="./img/sys/logo.png" alt="home">
             <span>SzkiełkoMusic</span>
           </a>
         <!-- </div> -->
@@ -194,7 +194,7 @@
             </div>
             <div class="product-cart">
               <button class="cart-btn">
-                <img class="img-svg" src="./img/cart.svg" alt="cart">
+                <img class="img-svg" src="./img/sys/cart.svg" alt="cart">
               </button>
               <span class="cart-num">2</span>
             </div>
@@ -206,9 +206,41 @@
     <!-- HEADER END -->
 
     <!-- MAIN START -->
-    <main style="height: 4000px;" class="main">
-      <div class="container">
-
+    <main class="main">
+      <div class="banner-wrapper container">
+        <div class="banner-aside">
+          <div class="banner-content">
+            <div class="banner-header">
+              <h1 class="textheader">
+                Unikalny plakat muzyczny z Twoją piosenką
+              </h1>
+            </div>
+            <div class="banner-body">
+              <p class="banner-info">
+                Szkiełko to Twoja ulubiona piosenka drukowana na szkle 
+                z designem Spotify, Apple Music lub SoundCloud!
+              </p>
+              <div class="banner-action">
+                <a href="#" class="banner-action__btn">
+                  Utwórz Szkiełko
+                </a>
+                <a href="#" class="banner-action__link">
+                  Poznaj szczegóły
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="banner-figure">
+            <div class="banner-image" id="img-add">
+              <img src="./img/custom/banner.png" alt="Plakat muzyczny">
+            </div>
+          </div>
+          <div class="banner-pulse">
+            <div class="banner-pulse__bg"></div>
+              <span>zamów</span>
+              <p>spersonalizowany prezent muzyczny</p>
+          </div>
+        </div>
       </div>
     </main>
     <!-- MAIN END -->
@@ -220,7 +252,7 @@
     <div class="openPopup">Open popup</div>
     <!-- POPUP WRAPPER START -->
 
-    <div class="popupWrapper">
+    <div class="popupWrapper" style="display: none;">
       <div class="modal">
         <div class="modal__title">
           <p class="modal__title_text">Krok 1. Wybierz preferowany design</p>
@@ -376,7 +408,7 @@
     <!-- POPUP WRAPPER END -->
     <div id="scroll" class="scroll-top">
       <span class="scroll-top__btn">
-        <img class="img-svg" src="./img/arrow.svg" alt="arrow">
+        <img class="img-svg" src="./img/sys/arrow.svg" alt="arrow">
       </span>
     </div>
   </body>

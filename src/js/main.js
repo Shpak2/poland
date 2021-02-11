@@ -41,4 +41,16 @@ $('img.img-svg').each(function(){
 });
 // end img svg
 
+// animation
+  function addNewImg(){
+    let imgAdd = $('#img-add'),
+        copyImg = $(imgAdd).find('img');
+    for(let i=0;i<3;i++){
+      imgAdd.append(copyImg.clone());
+    }
+  }
+  addNewImg();
+    setTimeout(() => $('.banner-wrapper').addClass('animated'), 1000);
+// end animation
+
 });
