@@ -1,6 +1,7 @@
 'use strict'
 
 $( document ).ready(function() {
+
   let btnToTop = $('#scroll'),
       header = $('#header-js');
 

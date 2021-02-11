@@ -1,7 +1,6 @@
 .popupWrapper
     position: fixed
-    // display: flex
-    display: none
+    display: flex
     justify-content: center
     align-items: center
     background: #e5e5e5
@@ -124,6 +123,10 @@
                                     display: flex
                                     justify-content: center
                                     align-items: center
+                                    transition: .3s ease-in-out
+                                    &:hover
+                                        @media (hover: hover)
+                                            box-shadow: $btnShadow
                                     &::after, &::before
                                         content: ''
                                         position: absolute
@@ -141,3 +144,6 @@
                                         color: $lightTextTwo
                                     &__description
                                         color: rgba(245, 245, 244, 0.6)
+.openPopup
+    background: red
+    font-size: 30px
