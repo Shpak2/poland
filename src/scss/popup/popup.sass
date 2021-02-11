@@ -74,78 +74,85 @@
                 max-height: get-vw(624px)
                 overflow: hidden
                 background: #FBFBFB
-                & .designWrapper
-                    height: 100%
-                    overflow-y: scroll
-                    &__item
-                        height: get-vw(180px)
-                        display: flex
-                        flex-direction: row
-                        justify-content: space-between
-                        border-top: 1px solid rgba(195, 203, 205, 0.4)
-                        &_left
-                            display: flex
-                            justify-content: center
-                            align-items: center
-                            width: get-vw(167px)
-                            border-right: 1px solid rgba(195, 203, 205, 0.4)
-                            img
-                                max-width: get-vw(115px)
-                                max-height: get-vw(129px)
-                                width: auto
-                                height: auto
-                        &_right
-                            flex-grow: 1
-                            padding-left: get-vw(40px)
-                            padding-right: get-vw(45px)
-                            display: flex
-                            align-items: center
-                            justify-content: space-between
-                            transition: .3s ease-in-out
-                            .nameText
-                                display: flex
-                                flex-direction: column
-                                &__title
-                                    font-size: get-vw(22px)
-                                    font-weight: 700
-                                    colo: $titleText
-                                &__description
-                                    font-size: get-vw(16px)
-                                    letter-spacing: get-vw(0.44px)
-                                    color: $descriptionText
-                            .buttonCircle
-                                    width: get-vw(31px)
-                                    height: get-vw(31px)
-                                    background: $lightTextTwo
-                                    border-radius: 50%
-                                    cursor: pointer
-                                    position: relative
-                                    display: flex
-                                    justify-content: center
-                                    align-items: center
-                                    transition: .3s ease-in-out
-                                    &:hover
-                                        @media (hover: hover)
-                                            box-shadow: $btnShadow
-                                    &::after, &::before
-                                        content: ''
-                                        position: absolute
-                                        width: get-vw(9px)
-                                        height: get-vw(2px)
-                                        background: $titleText
-                                        transform: translateY(get-vw(-2.5px)) rotate(45deg)
-                                    &::before
-                                        transform: translateY(get-vw(2.5px)) rotate(-45deg)
-                        &.active
-                            background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
-                            & .designWrapper__item_right
-                                .nameText
-                                    &__title
-                                        color: $lightTextTwo
-                                    &__description
-                                        color: rgba(245, 245, 244, 0.6)
-                        &:hover:not(.active)
-                            background: linear-gradient(130.16deg, rgba(130, 187, 88, 0.3) 2.89%, rgba(83, 165, 128, 0.3) 97.29%)
+                // & .designWrapper
+                //     height: 100%
+                //     overflow-y: scroll
+                //     &__item
+                //         height: get-vw(180px)
+                //         display: flex
+                //         flex-direction: row
+                //         justify-content: space-between
+                //         border-top: 1px solid rgba(195, 203, 205, 0.4)
+                //         &_left
+                //             display: flex
+                //             justify-content: center
+                //             align-items: center
+                //             width: get-vw(167px)
+                //             border-right: 1px solid rgba(195, 203, 205, 0.4)
+                //             img
+                //                 max-width: get-vw(115px)
+                //                 max-height: get-vw(129px)
+                //                 width: auto
+                //                 height: auto
+                //         &_right
+                //             flex-grow: 1
+                //             padding-left: get-vw(40px)
+                //             padding-right: get-vw(45px)
+                //             display: flex
+                //             align-items: center
+                //             justify-content: space-between
+                //             transition: .3s ease-in-out
+                //             .nameText
+                //                 display: flex
+                //                 flex-direction: column
+                //                 &__title
+                //                     font-size: get-vw(22px)
+                //                     font-weight: 700
+                //                     colo: $titleText
+                //                 &__description
+                //                     font-size: get-vw(16px)
+                //                     letter-spacing: get-vw(0.44px)
+                //                     color: $descriptionText
+                //             .buttonCircle
+                //                     width: get-vw(31px)
+                //                     height: get-vw(31px)
+                //                     background: $lightTextTwo
+                //                     border-radius: 50%
+                //                     cursor: pointer
+                //                     position: relative
+                //                     display: flex
+                //                     justify-content: center
+                //                     align-items: center
+                //                     transition: .3s ease-in-out
+                //                     &:hover
+                //                         @media (hover: hover)
+                //                             box-shadow: $btnShadow
+                //                     &::after, &::before
+                //                         content: ''
+                //                         position: absolute
+                //                         width: get-vw(9px)
+                //                         height: get-vw(2px)
+                //                         background: $titleText
+                //                         transform: translateY(get-vw(-2.5px)) rotate(45deg)
+                //                     &::before
+                //                         transform: translateY(get-vw(2.5px)) rotate(-45deg)
+                //         &.active
+                //             background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+                //             & .designWrapper__item_right
+                //                 .nameText
+                //                     &__title
+                //                         color: $lightTextTwo
+                //                     &__description
+                //                         color: rgba(245, 245, 244, 0.6)
+                //         &:hover:not(.active)
+                //             background: linear-gradient(130.16deg, rgba(130, 187, 88, 0.3) 2.89%, rgba(83, 165, 128, 0.3) 97.29%)
+                & .customizeProduct
+                    display: flex
+                    flex-direction: column
+                    padding: get-vw(30px)
+                    input[type="text"]
+                        height: get-vw(43px)
+                        
 .openPopup
     background: red
     font-size: 30px
