@@ -1,0 +1,113 @@
+.product
+  margin: get-vw(90px) auto 0
+  // background-color: red
+  // height: 200px
+  &-heading
+    margin-bottom: get-vw(30px)
+    & h2
+      color: $titleText
+      font-weight: 600
+      font-size: get-vw(34px)
+      line-height: 1.3
+      letter-spacing: get-vw(0.25px)
+
+.product-cat
+  &__list
+    display: flex
+    position: relative
+    width: fit-content
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: get-vw(2.5px)
+      background-color: rgba(196, 196, 196, 0.6)
+  &__btn
+    transition: .3s ease-in-out
+    cursor: pointer
+    color: $lightTextThree
+    font-weight: 700
+    font-size: get-vw(16px)
+    line-height: 1.3
+    padding-bottom: get-vw(7px)
+    position: relative
+    &:after
+      content: ''
+      width: 0%
+      height: get-vw(2.5px)
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      transition: .2s ease-in-out
+      background-color: $accentColor
+    &:hover
+      @media (hover: hover)
+        color: $titleText
+        text-shadow: 0 0 1px $titleText, 0 0 1px $titleText
+      &:after
+        @media (hover: hover)
+          width: 100%
+    &:not(:last-child)
+      margin-right: get-vw(50px)
+    &.active
+      color: $titleText
+      text-shadow: 0 0 1px $titleText, 0 0 1px $titleText
+      &:after
+        width: 100%
+
+.product-slider
+  margin-top: get-vw(60px)
+  &__card
+    &-body
+      position: relative
+      padding: get-vw(25px) get-vw(30px)
+      z-index: 1
+      color: $lightTextTwo
+    &-title
+      h3
+        font-weight: 700
+        font-size: get-vw(16px)
+        line-height: get-vw(22px)
+        letter-spacing: get-vw(0.1px)
+    &-info
+      margin-top: get-vw(5px)
+      margin-bottom: get-vw(10px)
+      height: get-vw(78px)
+      & span,& .slide-list li
+        font-weight: 400
+        font-size: get-vw(15px)
+        line-height: 1.3
+        letter-spacing: get-vw(0.25px)
+        width: 87%
+    &-preview
+      margin-left: auto
+      width: 50%
+      box-shadow: 0px get-vw(4px) get-vw(15px) 0px rgba(0, 0, 0, .4)
+  &__item
+    position: relative
+    &::before
+      content: ''
+      width: 100%
+      height: get-vw(186px)
+      position: absolute
+      top: 0
+      left: 0
+    &:nth-of-type(3n-1)::before
+      background: linear-gradient(209.49deg, #82BB58 17.5%, #53A580 147%)
+    &:nth-of-type(3n-2)::before
+      background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+    &:nth-of-type(3n-3)::before
+      background: linear-gradient(298.33deg, #82BB58 -44.13%, #53A580 108.24%)
+
+.list-dashed
+  &::before
+    content: '-'
+    margin-right: get-vw(5px)
+
+.product-slider__wrapper
+  display: none
+  &.active
+    display: block

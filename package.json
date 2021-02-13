@@ -26,7 +26,8 @@
     "gulp-w3c-html-validator": "^2.0.1",
     "gulp-watch": "^5.0.1",
     "jquery": "^3.5.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "swiper": "^6.4.11"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
