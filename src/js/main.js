@@ -53,4 +53,21 @@ $('.img-svg').each(function(){
     setTimeout(() => $('.banner-wrapper').addClass('animated'), 1000);
 // end animation
 
+// slider & product container
+let btnSlide = $('.product-cat__btn'),
+    sliderParam = {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                  };
+
+btnSlide.click(function(e){
+  btnSlide.removeClass('active');
+  $(this).addClass('active');
+  $('.product-slider__wrapper.active').slideUp(150);
+  $('#slider-'+$(this).attr('data-cat')).addClass('active').slideDown(150);
+  const swiper2 = new Swiper('#slider-'+$(this).attr('data-cat'), sliderParam)
+})
+
+const swiper1 = new Swiper('#slider-music',sliderParam)
+// end slider
 });
