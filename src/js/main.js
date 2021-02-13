@@ -52,5 +52,4 @@ $('.img-svg').each(function(){
   addNewImg();
     setTimeout(() => $('.banner-wrapper').addClass('animated'), 1000);
 // end animation
-
 });
