@@ -28,6 +28,15 @@
       font-size: get-vw(28px)
       transition: .4s ease-in-out
       color: $blackHeadline
+    & p
+      color: $accentColor
+      font-weight: 700
+      font-size: get-vw(20px)
+      transform: translate(100%,10%)
+      transition: .4s ease-in-out
+      transition-delay: .6s
+      opacity: 0
+      animation: logoShow .8s ease-in-out forwards .4s
   &-inner
     display: flex
     justify-content: space-between
@@ -52,6 +61,9 @@
       & img
         transform: translateX(25%)
         width: get-vw(76px)
+      & p
+        opacity: 1
+        animation: logoHide .4s ease-in-out forwards
 
 .primary-menu
   display: flex
@@ -170,3 +182,19 @@
       & svg
         @media (hover: hover)
           fill: $accentColor
+
+@keyframes logoShow
+  0%
+    transform: translate(100%,10%)
+    opacity: 0
+  100%
+    transform: translate(0%,10%)
+    opacity: 1
+
+@keyframes logoHide
+  0%
+    transform: translate(0%,10%)
+    opacity: 1
+  100%
+    transform: translate(-100%,10%)
+    opacity: 0

@@ -1,0 +1,58 @@
+.gallery
+  width: 100%
+  height: get-vw(576px)
+  margin-top: get-vw(180px)
+  overflow-x: hidden
+  // overflow-y: scroll
+  perspective: 1px
+  transform-style: preserve-3d
+  &-bg
+    width: 100%
+    height: 100%
+    background: url(../img/sys/gallery.jpg) 50% 50%/100% 100% no-repeat
+    background-attachment: fixed
+    position: relative
+    z-index: -1
+    transform: translateZ(-1px) scale(2)
+    &::after
+      content: ''
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background: rgba(0, 0, 0, .5)
+  &-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    padding: get-vw(44px) get-vw(36px)
+    background-color: $white
+    text-align: center
+    border-radius: get-vw(3px)
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.07)
+    &__icon
+      width: get-vw(76px)
+      height: get-vw(76px)
+      border-radius: 50%
+      background-color: rgba(195, 203, 205,.1)
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0 auto
+      & svg
+        width: get-vw(29px)
+        height: get-vw(29px)
+    &__text
+      margin-top: get-vw(8px)
+      margin-bottom: get-vw(18px)
+      width: get-vw(262px)
+      & p
+        color: $descriptionText
+        font-weight: 400
+        font-size: get-vw(17px)
+        line-height: 1.4
+        letter-spacing: get-vw(0.3px)
+    &__btn a
+      margin: 0 auto

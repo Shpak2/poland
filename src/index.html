@@ -160,7 +160,7 @@
     </style>
   </head>
 
-  <body style="height: 4000px;">
+  <body style="height: 10000px;">
 
     <!-- HEADER START -->
 
@@ -168,8 +168,9 @@
       <div class="header-inner container">
         <!-- <div class="header-logo"> -->
           <a href="/" class="header-logo">
-            <img src="./img/sys/logo.png" alt="home">
+            <img src="./img/sys/logo.svg" alt="home">
             <span>SzkiełkoMusic</span>
+            <p>.pl</p>
           </a>
         <!-- </div> -->
         <div class="header-nav">
@@ -179,10 +180,10 @@
                 <a href="#">Strona główna</a>
               </li> -->
               <li class="menu-item">
-                <a href="#">O nas</a>
+                <a href="#" data-anchor="onas">O nas</a>
               </li>
               <li class="menu-item">
-                <a href="#">FAQ</a>
+                <a href="#" data-anchor="help">FAQ</a>
               </li>
               <li class="menu-item">
                 <a href="#">Kontakt</a>
@@ -602,7 +603,7 @@
           </div>
         </div>
       </div>
-      <div class="intro container">
+      <div class="intro container" data-anchor="onas">
         <div class="intro-wrapper">
           <div class="intro-preview">
             <div class="intro-preview__img">
@@ -695,7 +696,7 @@
           </li>
         </ul>
       </div>
-      <div class="bg-green">
+      <div class="bg-green" id="shares">
         <div class="shares container">
           <div class="shares-item">
             <div class="shares-info">
@@ -713,19 +714,112 @@
           </div>
           <div class="shares-item">
             <div class="shares-preview">
-              <div class="shares-preview img-maxi">
-                <img src="./img/custom/maxi.png" alt="maxi">
+              <div class="shares-preview img-mini">
+                <img src="./img/custom/mini.png" alt="mini">
               </div>
               <div class="shares-preview img-classic">
                 <img src="./img/custom/classic.png" alt="classic">
               </div>
-              <div class="shares-preview img-mini">
-                <img src="./img/custom/mini.png" alt="mini">
+              <div class="shares-preview img-maxi">
+                <img src="./img/custom/maxi.png" alt="maxi">
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="intro container intro-second">
+        <div class="intro-wrapper">
+          <div class="intro-preview">
+            <div class="intro-preview__img">
+              <img src="./img/sys/images.png" alt="intro name">
+            </div>
+          </div>
+          <div class="intro-info">
+            <div class="intro-info__body">
+              <div class="intro-info__title">
+                <h2>Utwórz własne Szkiełko - to bardzo proste!</h2>
+              </div>
+              <div class="intro-info__text">
+                <p>Wystarczy tylko wybrać design, a my stworzymy Twój unikalny nowoczesny plakat muzyczny i pomożemy Ci zrobić tak, aby</p>
+                <p>Twoja piosenka trwała wiecznie.</p>
+              </div>
+              <ul class="intro-info__list">
+                <li class="intro-info__list-item">
+                  <img src="./img/sys/checkmark.svg" alt="present">
+                  <span>Wybierz ulubioną piosenkę</span>
+                </li>
+                <li class="intro-info__list-item">
+                  <img src="./img/sys/checkmark.svg" alt="relax">
+                  <span>Piosenkę, która łączy Was razem</span>
+                </li>
+                <li class="intro-info__list-item">
+                  <img src="./img/sys/checkmark.svg" alt="puzzle">
+                  <span>Piosenkę, z którą masz tak dużo wspomnień</span>
+                </li>
+              </ul>
+              <div class="intro-info__button">
+                <div class="product-create">
+                  <span>Utwórz Szkiełko</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery parallax">
+        <div class="gallery-bg"></div>
+        <div class="gallery-container">
+          <div class="gallery-container__icon icon-inst">
+            <img class="img-svg" src="./img/sys/icon-inst.svg" alt="instagram">
+          </div>
+          <div class="gallery-container__text">
+            <p>Wejdź na nasz profil Instagram, aby zainspirować się przykładem własnego Szkiełka</p>
+          </div>
+          <div class="gallery-container__btn">
+            <a href="#" class="product-create"><span>Podążaj za nami</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="cont-spot container" id="spot">
+        <div class="cont-spot__item">
+          <div class="cont-spot__review">
+            <div class="cont-spot__review-img">
+              <span class="cont-spot__review-decor"><span></span><span></span></span>
+              <img src="./img/custom/spot.png" alt="spotify">
+            </div>
+          </div>
+        </div>
+        <div class="cont-spot__item">
+          <div class="cont-spot__body">
+            <div class="cont-spot__body-header">
+              <h2>Jak nasze "płyty" mogą odtworzyć dźwięk</h2>
+              <p>Wyróżnikiem naszego Szkiełka jest to, że każdy może je 
+                usłyszeć! Jedyne, czego potrzebujesz to Twój telefon i jego camera:
+              </p>
+            </div>
+            <ul class="cont-spot__body-list">
+              <li class="cont-spot__body-item">
+                <span>1</span><p>Wejdź na Spotify</p>
+              </li>
+              <li class="cont-spot__body-item">
+                <span>2</span><p>Kliknij szukać i wciśnij na ikonę kamerki</p>
+              </li>
+              <li class="cont-spot__body-item">
+                <span>3</span><p>Skieruj kamerę telefonu na kod umieszczony na plakacie</p>
+              </li>
+              <li class="cont-spot__body-item">
+                <span>4</span><p>Super! Teraz usłyszysz Swoją piosenkę</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bg-grey">
+        <div class="help-cont" data-anchor="help">
+          
+        </div>
+      </div>
+
     </main>
     <!-- MAIN END -->
 
@@ -734,7 +828,7 @@
     <script src="./js/main.js" type="module"></script>
     <!-- <script src="./src/js/script.js" type="module"></script>
     <script src="./sw-register.js"></script> -->
-    <div class="openPopup">Open popup</div>
+    <div class="openPopup" style="display: none;">Open popup</div>
     <!-- POPUP WRAPPER START -->
 
     <div class="popupWrapper" style="display: none;">

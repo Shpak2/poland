@@ -5,11 +5,30 @@ $( document ).ready(function() {
   let btnToTop = $('#scroll'),
       header = $('#header-js');
 
+// anchor
+  let btnAnchor = $('.primary-menu li a'),
+      fixedHeader = $('#header-js').innerHeight();
+
+  btnAnchor.on('click', function(e){
+    e.preventDefault();
+    let anchorBlock = $('div[data-anchor='+$(this).attr('data-anchor')+']');
+    $('html, body').animate({
+      scrollTop: anchorBlock.offset().top - fixedHeader
+    }, 1000);
+  })
+// end anchor
+
 //scroll to bottom & function scroll to top
   $(window).scroll(function() {
     if($(window).scrollTop()  > 300) {
       header.addClass('sticky');
       btnToTop.fadeIn(100);
+      if($(window).scrollTop() > $('#shares').offset().top - $(window).innerHeight()){
+        $('#shares').addClass('active')
+        if($(window).scrollTop() > $('#spot').offset().top - $(window).innerHeight()){
+          $('#spot').addClass('active')
+        }
+      }
     }else{
       header.removeClass('sticky');
       btnToTop.fadeOut(100);

@@ -72,3 +72,52 @@
           font-weight: 700
           letter-spacing: get-vw(0.44px)
           line-height: 1.4
+
+.intro.intro-second
+  margin: get-vw(240px) auto 0
+  & .product-create
+    background-color: $accentColor
+    &:hover
+      @media(hover:hover)
+        background-color: $blackHeadline
+  & .intro-info__title h2
+    width: 80%
+  & .intro-info__text
+    & p:not(:last-child)
+      margin-bottom: unset
+  & .intro-info__list
+    width: 100%
+  & .intro-info__list-item
+    & img
+      width: get-vw(22px)
+      height: get-vw(20px)
+      margin-right: get-vw(20px)
+  & .intro-preview
+    width: 43%
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: get-vw(111px)
+      height: get-vw(100px)
+      background: url(../img/sys/decor_intro3.png) 50% 50%/100% 100% no-repeat
+      transform: translate(-35%,-45%)
+  & .intro-preview__img
+    width: get-vw(303px)
+    height: get-vw(434px)
+    margin-left: auto
+    &::after
+      width: get-vw(322px)
+      height: get-vw(273px)
+      background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+      bottom: 50%
+      transform: translate(-50%,50%)
+    &::before
+      width: get-vw(171px)
+      height: get-vw(155px)
+      left: unset
+      right: 0
+      background: url(../img/sys/decor_intro2.png) 50% 50%/100% 100% no-repeat
+      transform: translate(30%,-45%)
