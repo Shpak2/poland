@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
     // ОТКРЫТЬ И ЗАКРЫТЬ ПОПАП
-    let openPopup = $('.openPopup');
+    let openPopup = $('.product-create');
     let closePopup = $('.popupWrapper .modal__title_button');
     let popUp = $('.popupWrapper');
     $(openPopup).on('click', ()=>{

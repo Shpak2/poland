@@ -231,7 +231,7 @@
                         border: none
                         outline: none
                         background: $lightTextTwo
-                        resize: none
+                        //resize: none
                         height: get-vw(95px)
                         padding-left: get-vw(15px)
                         padding-top: get-vw(11px)
@@ -257,6 +257,51 @@
                             align-items: center
                             font-size: get-vw(15px)
                             color: $titleText
+                    .price
+                        font-size: get-vw(16px)
+                        font-weight: 600
+                        color: $titleText
+                        margin-left: auto
+                        margin-top: get-vw(20px)
+                        span
+                            font-size: get-vw(26px)
+                            font-weight: 700
+                    .form-stepWrap
+                        display: flex
+                        flex-direction: row
+                        margin-left: auto
+                        margin-top: get-vw(20px)
+                        &__btn
+                            margin-left: get-vw(20px)
+                            width: get-vw(132px)
+                            height: get-vw(44px)
+                            font-size: get-vw(16px)
+                            border: 1px solid #0D1018
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            border-radius: get-vw(40px)
+                            cursor: pointer
+                            transition: 0.3s ease-in-out
+                            &_arrow
+                                width: get-vw(17px)
+                                height: 1px
+                                background: #0D1018
+                                position: relative
+                                &::after, &::before
+                                    content: ''
+                                    width: get-vw(4px)
+                                    height: 1px
+                                    background: #0D1018
+                                    position: absolute
+                                    left: 0
+                                    transform: rotate(45deg)
+                                &::before
+                                    transform: rotate(-45deg)
+                            &:hover
+                                background: #0D1018
+                                color: $lightTextTwo
+                            &_arrow
 
                         
 .openPopup
