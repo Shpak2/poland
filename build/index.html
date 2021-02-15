@@ -150,6 +150,7 @@
     <!-- Google Fonts -->
 
     <!-- <link rel="preload" href="./src/css/preload.css" as="style" /> -->
+    <link rel="stylesheet" href="./css/swiper.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <!-- <link href="./fonts/fontello.css"/> -->
     <!-- <link rel="preload" href="./js/preload.js" as="script" /> -->
@@ -159,7 +160,7 @@
     </style>
   </head>
 
-  <body style="height: 4000px;">
+  <body style="height: 10000px;">
 
     <!-- HEADER START -->
 
@@ -167,8 +168,9 @@
       <div class="header-inner container">
         <!-- <div class="header-logo"> -->
           <a href="/" class="header-logo">
-            <img src="./img/sys/logo.png" alt="home">
+            <img src="./img/sys/logo.svg" alt="home">
             <span>SzkiełkoMusic</span>
+            <p>.pl</p>
           </a>
         <!-- </div> -->
         <div class="header-nav">
@@ -178,10 +180,10 @@
                 <a href="#">Strona główna</a>
               </li> -->
               <li class="menu-item">
-                <a href="#">O nas</a>
+                <a href="#" data-anchor="onas">O nas</a>
               </li>
               <li class="menu-item">
-                <a href="#">FAQ</a>
+                <a href="#" data-anchor="help">FAQ</a>
               </li>
               <li class="menu-item">
                 <a href="#">Kontakt</a>
@@ -207,49 +209,626 @@
 
     <!-- MAIN START -->
     <main class="main">
-      <div class="banner-wrapper container">
-        <div class="banner-aside">
-          <div class="banner-content">
-            <div class="banner-header">
-              <h1 class="textheader">
-                Unikalny plakat muzyczny z Twoją piosenką
-              </h1>
-            </div>
-            <div class="banner-body">
-              <p class="banner-info">
-                Szkiełko to Twoja ulubiona piosenka drukowana na szkle 
-                z designem Spotify, Apple Music lub SoundCloud!
-              </p>
-              <div class="banner-action">
-                <a href="#" class="banner-action__btn">
-                  Utwórz Szkiełko
-                </a>
-                <a href="#" class="banner-action__link">
-                  Poznaj szczegóły
-                </a>
+      <div class="bg-grey">
+        <div class="banner-wrapper container">
+          <div class="banner-aside">
+            <div class="banner-content">
+              <div class="banner-header">
+                <h1 class="textheader">
+                  Unikalny plakat muzyczny z Twoją piosenką
+                </h1>
+              </div>
+              <div class="banner-body">
+                <p class="banner-info">
+                  Szkiełko to Twoja ulubiona piosenka drukowana na szkle 
+                  z designem Spotify, Apple Music lub SoundCloud!
+                </p>
+                <div class="banner-action">
+                  <a href="#" class="banner-action__btn">
+                    Utwórz Szkiełko
+                  </a>
+                  <a href="#" class="banner-action__link">
+                    Poznaj szczegóły
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="banner-figure">
-            <div class="banner-image" id="img-add">
-              <img src="./img/custom/banner.png" alt="Plakat muzyczny">
+            <div class="banner-figure">
+              <div class="banner-image" id="img-add">
+                <img src="./img/custom/banner.png" alt="Plakat muzyczny">
+              </div>
             </div>
-          </div>
-          <div class="banner-pulse">
-            <div class="banner-pulse__bg"></div>
-              <span>zamów</span>
-              <p>spersonalizowany prezent muzyczny</p>
+            <div class="banner-pulse">
+              <div class="banner-pulse__bg"></div>
+                <span>zamów</span>
+                <p>spersonalizowany prezent muzyczny</p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="small-container">
+        <ul class="small-container__list">
+          <li class="small-container__item">
+            <img src="./img/custom/item__1.svg" alt="urzeczywistniona piosenka" class="small-container__img">
+            <p class="small-container__text">
+              Twoja urzeczywistniona piosenka
+            </p>
+          </li>
+          <li class="small-container__item">
+            <img src="./img/custom/item__2.svg" alt="oryginalny prezent" class="small-container__img">
+            <p class="small-container__text">
+              Najbardziej oryginalny prezent 2021
+            </p>
+          </li>
+          <li class="small-container__item">
+            <img src="./img/custom/item__3.svg" alt="unikalna dekoracja" class="small-container__img">
+            <p class="small-container__text">
+              Twoja unikalna dekoracja wnętrza
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="product container">
+        <div class="product-heading">
+          <h2>Nasze producty</h2>
+        </div>
+        <div class="product-cat">
+          <ul class="product-cat__list">
+            <li class="product-cat__btn active" data-cat="music">
+              <span>Muzyka</span>
+            </li>
+            <li class="product-cat__btn" data-cat="paint">
+              <span>Obrazy</span>
+            </li>
+            <li class="product-cat__btn" data-cat="film">
+              <span>Filmy</span>
+            </li>
+            <li class="product-cat__btn" data-cat="app">
+              <span>Dodatki</span>
+            </li>
+          </ul>
+        </div>
+        <div class="product-slider">
+          <div id='slider-music' class="product-slider__wrapper swiper-container active" data-cat="music">
+            <div class="swiper-wrapper">
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Maxi A3</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Specjalny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">polecamy do designów z tekstem/albumem</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/slide1.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/slide2.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/slide3.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/slide4.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-prev"></div>
+            <div class="swiper-next"></div>
+          </div>
+          <div id='slider-paint' class="product-slider__wrapper swiper-container" data-cat="music">
+            <div class="swiper-wrapper">
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Maxi A3</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Specjalny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">polecamy do designów z tekstem/albumem</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/obraz.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/obraz.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/obraz.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/obraz.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-prev"></div>
+            <div class="swiper-next"></div>
+          </div>
+          <div id='slider-film' class="product-slider__wrapper swiper-container" data-cat="music">
+            <div class="swiper-wrapper">
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Maxi A3</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Specjalny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">polecamy do designów z tekstem/albumem</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/film.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/film.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/film.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/film.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-prev"></div>
+            <div class="swiper-next"></div>
+          </div>
+          <div id='slider-app' class="product-slider__wrapper swiper-container" data-cat="music">
+            <div class="swiper-wrapper">
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Maxi A3</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Specjalny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">polecamy do designów z tekstem/albumem</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/dodatki.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/dodatki.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/dodatki.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider__item swiper-slide">
+                <div class="product-slider__card">
+                  <div class="product-slider__card-body">
+                    <div class="product-slider__card-title">
+                      <h3>Classic A4</h3>
+                    </div>
+                    <div class="product-slider__card-info">
+                      <span>Klasyczny format</span>
+                      <ul class="slide-list">
+                        <li class="list-dashed">Must-Have dla każdego</li>
+                      </ul>
+                    </div>
+                    <div class="product-slider__card-preview">
+                      <img src="./img/temp/dodatki.jpg" alt="title product">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-prev"></div>
+            <div class="swiper-next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="intro container" data-anchor="onas">
+        <div class="intro-wrapper">
+          <div class="intro-preview">
+            <div class="intro-preview__img">
+              <img src="./img/custom/intro.png" alt="intro name">
+            </div>
+          </div>
+          <div class="intro-info">
+            <div class="intro-info__body">
+              <div class="intro-info__title">
+                <h2>Szkiełko - to Twój MUST-HAVE!</h2>
+              </div>
+              <div class="intro-info__text">
+                <p>Szkiełko jest dedykowane miłośnikom muzyki. Utrwala ono wartościowe 
+                  wspomnienia powiązane z piosenkami.</p>
+                <p>Szkiełko to nie tylko przyjemność estetyczna, ale rownież element praktyczny:</p>
+              </div>
+              <ul class="intro-info__list">
+                <li class="intro-info__list-item">
+                  <img src="./img/custom/present.svg" alt="present">
+                  <span>Symboliczny oryginalny upominek, 
+                    którym zadziwisz bliską osobę</span>
+                </li>
+                <li class="intro-info__list-item">
+                  <img src="./img/custom/relax.svg" alt="relax">
+                  <span>Spersonalizowany element dekoracyjny wnętrza </span>
+                </li>
+                <li class="intro-info__list-item">
+                  <img src="./img/custom/puzzle.svg" alt="puzzle">
+                  <span>Odtwarzacz ulubionego utworu (przy pomocy kodu Spotify)</span>
+                </li>
+              </ul>
+              <div class="intro-info__button">
+                <div class="product-create">
+                  <span>Utwórz Szkiełko</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cont-price">
+        <ul class="cont-price__list">
+          <li class="cont-price__item">
+            <div class="cont-price__preview size-a3">
+              <img src="./img/temp/slide1.jpg" alt="slide name">
+            </div>
+            <div class="cont-price__body">
+              <div class="cont-price__title">
+                <h3>Maxi A3</h3>
+                <p>To specjalny format 
+                  - polecamy do designów 
+                  z tekstem/albumem</p>
+              </div>
+              <div class="cont-price__cena">
+                <span>69zl</span>
+              </div>
+            </div>
+          </li>
+          <li class="cont-price__item">
+            <div class="cont-price__preview size-a4">
+              <img src="./img/temp/slide1.jpg" alt="slide name">
+            </div>
+            <div class="cont-price__body">
+              <div class="cont-price__title">
+                <h3>Classic A4</h3>
+                <p>To klasyczny format 
+                  - Must-Have 
+                  dla każdego </p>
+              </div>
+              <div class="cont-price__cena">
+                <span>79zl</span>
+              </div>
+            </div>
+          </li>
+          <li class="cont-price__item">
+            <div class="cont-price__preview size-a5">
+              <img src="./img/temp/slide1.jpg" alt="slide name">
+            </div>
+            <div class="cont-price__body">
+              <div class="cont-price__title">
+                <h3>Mini A5</h3>
+                <p>To Najmniejszy format 
+                  - łatwo dopasujesz 
+                  go do wnętrza </p>
+              </div>
+              <div class="cont-price__cena">
+                <span>69zl</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-green" id="shares">
+        <div class="shares container">
+          <div class="shares-item">
+            <div class="shares-info">
+              <h2>Zyskuj więcej!</h2>
+              <p>Pamiętaj, że działają u nas promocje, dzięki którym zyskujesz więcej korzyści:</p>
+              <ul class="shares-info__list">
+                <div class="shares-info__list-item">
+                  <p><span>Zamawiając 2 Szkiełka</span> zapłacisz o 10% mniej</p>
+                </div>
+                <div class="shares-info__list-item">
+                  <p><span>Zamawiając 3 Szkiełka i więcej</span> zapłacisz o 15% mniej</p>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="shares-item">
+            <div class="shares-preview">
+              <div class="shares-preview img-mini">
+                <img src="./img/custom/mini.png" alt="mini">
+              </div>
+              <div class="shares-preview img-classic">
+                <img src="./img/custom/classic.png" alt="classic">
+              </div>
+              <div class="shares-preview img-maxi">
+                <img src="./img/custom/maxi.png" alt="maxi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="intro container intro-second">
+        <div class="intro-wrapper">
+          <div class="intro-preview">
+            <div class="intro-preview__img">
+              <img src="./img/sys/images.png" alt="intro name">
+            </div>
+          </div>
+          <div class="intro-info">
+            <div class="intro-info__body">
+              <div class="intro-info__title">
+                <h2>Utwórz własne Szkiełko - to bardzo proste!</h2>
+              </div>
+              <div class="intro-info__text">
+                <p>Wystarczy tylko wybrać design, a my stworzymy Twój unikalny nowoczesny plakat muzyczny i pomożemy Ci zrobić tak, aby</p>
+                <p>Twoja piosenka trwała wiecznie.</p>
+              </div>
+              <ul class="intro-info__list">
+                <li class="intro-info__list-item">
+                  <img src="./img/sys/checkmark.svg" alt="present">
+                  <span>Wybierz ulubioną piosenkę</span>
+                </li>
+                <li class="intro-info__list-item">
+                  <img src="./img/sys/checkmark.svg" alt="relax">
+                  <span>Piosenkę, która łączy Was razem</span>
+                </li>
+                <li class="intro-info__list-item">
+                  <img src="./img/sys/checkmark.svg" alt="puzzle">
+                  <span>Piosenkę, z którą masz tak dużo wspomnień</span>
+                </li>
+              </ul>
+              <div class="intro-info__button">
+                <div class="product-create">
+                  <span>Utwórz Szkiełko</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery parallax">
+        <div class="gallery-bg"></div>
+        <div class="gallery-container">
+          <div class="gallery-container__icon icon-inst">
+            <img class="img-svg" src="./img/sys/icon-inst.svg" alt="instagram">
+          </div>
+          <div class="gallery-container__text">
+            <p>Wejdź na nasz profil Instagram, aby zainspirować się przykładem własnego Szkiełka</p>
+          </div>
+          <div class="gallery-container__btn">
+            <a href="#" class="product-create"><span>Podążaj za nami</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="cont-spot container" id="spot">
+        <div class="cont-spot__item">
+          <div class="cont-spot__review">
+            <div class="cont-spot__review-img">
+              <span class="cont-spot__review-decor"><span></span><span></span></span>
+              <img src="./img/custom/spot.png" alt="spotify">
+            </div>
+          </div>
+        </div>
+        <div class="cont-spot__item">
+          <div class="cont-spot__body">
+            <div class="cont-spot__body-header">
+              <h2>Jak nasze "płyty" mogą odtworzyć dźwięk</h2>
+              <p>Wyróżnikiem naszego Szkiełka jest to, że każdy może je 
+                usłyszeć! Jedyne, czego potrzebujesz to Twój telefon i jego camera:
+              </p>
+            </div>
+            <ul class="cont-spot__body-list">
+              <li class="cont-spot__body-item">
+                <span>1</span><p>Wejdź na Spotify</p>
+              </li>
+              <li class="cont-spot__body-item">
+                <span>2</span><p>Kliknij szukać i wciśnij na ikonę kamerki</p>
+              </li>
+              <li class="cont-spot__body-item">
+                <span>3</span><p>Skieruj kamerę telefonu na kod umieszczony na plakacie</p>
+              </li>
+              <li class="cont-spot__body-item">
+                <span>4</span><p>Super! Teraz usłyszysz Swoją piosenkę</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bg-grey">
+        <div class="help-cont" data-anchor="help">
+          
+        </div>
+      </div>
+
     </main>
     <!-- MAIN END -->
 
     <script src="./js/libs.min.js" type="module"></script>
+    <script src="./js/swiper.min.js" type="module"></script>
     <script src="./js/main.js" type="module"></script>
     <!-- <script src="./src/js/script.js" type="module"></script>
     <script src="./sw-register.js"></script> -->
-    <div class="openPopup">Open popup</div>
+    <div class="openPopup" style="display: none;">Open popup</div>
     <!-- POPUP WRAPPER START -->
 
     <div class="popupWrapper" style="display: none;">
@@ -261,8 +840,10 @@
         <div class="modal__body">
           <div class="modal__body_left">
             <div class="imageWrapper">
-              <img src="img/image2.png" alt="song">
+              <img src="img/image5.png" alt="song">
             </div>
+            <p class="song__text_title">Sound Cloud Song</p>
+            <p class="song__text_description"><span><!----></span>przykładowy wzór makietu</p>
           </div>
           <div class="modal__body_right">
             <!-- <div class="designWrapper">
@@ -354,24 +935,28 @@
             <div class="customizeProduct">
               <input type="text" name="" id="" placeholder="Wykonawca">
               <input type="text" name="" id="" placeholder="Utwór">
-              <select name="" id="">
-                <option value="">Okładka</option>
-                <option value="">Okładka2</option>
-                <option value="">Okładka3</option>
+              <select name="okładka" id="okładka" class="custom-select okładka" placeholder="Okładka1">
+                <option value="okładka1">Okładka1</option>
+                <option value="okładka2">Okładka2</option>
+                <option value="okładka3">Okładka3</option>
               </select>
-              <select name="" id="">
-                <option value="">Rozmiar</option>
-                <option value="">Rozmiar2</option>
-                <option value="">Rozmiar3</option>
+              <select name="rozmiar" id="rozmiar" class="custom-select rozmiar" placeholder="Rozmiar1">
+                <option value="rozmiar1">Rozmiar1</option>
+                <option value="rozmiar2">Rozmiar2</option>
+                <option value="rozmiar3">Rozmiar3</option>
               </select>
               <p class="titleChoice">Uzupełnij:</p>
               <div class="mode checkboxWrapp">
                 <p class="checkboxWrapp__text">Tryb</p>
-                <div class="checkboxWrapp___choice">
-                  <input type="radio" name="mode" id="jasny" value="jasny">
-                  <label for="jasny">Jasny</label>
-                  <input type="radio" name="mode" id="ciemny">
-                  <label for="ciemny">Ciemny</label>
+                <div class="checkboxWrapp__choice">
+                  <label for="jasny">
+                    <input type="radio" name="mode" id="jasny" value="jasny">
+                    <span class="likeRadio"><!----></span> Jasny
+                  </label>
+                  <label for="ciemny">
+                    <input type="radio" name="mode" id="ciemny" value="ciemny" checked="checked">
+                    <span class="likeRadio"><!----></span>Ciemny
+                  </label>
                 </div>
               </div>
               <div class="timeWrapper">
@@ -381,20 +966,28 @@
               <p class="titleChoice">Dodatki</p>
               <div class="giftWrapping checkboxWrapp">
                 <p class="checkboxWrapp__text">Opakowanie prezentowe</p>
-                <div class="checkboxWrapp___choice">
-                  <input type="radio" name="gift" id="takGift" value="tak">
-                  <label for="takGift">Tak</label>
-                  <input type="radio" name="gift" id="nieGift" value="nie">
-                  <label for="nieGift">Nie</label>
+                <div class="checkboxWrapp__choice">
+                  <label for="takGift">
+                    <input type="radio" name="gift" id="takGift" value="tak">
+                    <span class="likeRadio"><!----></span> Tak
+                  </label>
+                  <label for="nieGift">
+                    <input type="radio" name="gift" id="nieGift" value="nie" checked="checked">
+                    <span class="likeRadio"><!----></span> Nie
+                  </label>
                 </div>
               </div>
               <div class="standChoice checkboxWrapp">
                 <p class="checkboxWrapp__text">Podstawka</p>
-                <div class="checkboxWrapp___choice">
-                  <input type="radio" name="stand" id="takStand" value="tak">
-                  <label for="takStand">Tak</label>
-                  <input type="radio" name="stand" id="nieStand" value="nie">
-                  <label for="nieStand">Nie</label>
+                <div class="checkboxWrapp__choice">
+                  <label for="takStand">
+                    <input type="radio" name="stand" id="takStand" value="tak">
+                    <span class="likeRadio"><!----></span> Tak
+                  </label>
+                  <label for="nieStand">
+                    <input type="radio" name="stand" id="nieStand" value="nie" checked="checked">
+                    <span class="likeRadio"><!----></span> Nie
+                  </label>
                 </div>
               </div>
               <p class="titleChoice"><label for="comment">Dodaj komentarz</label></p>

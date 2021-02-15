@@ -913,8 +913,10 @@
         <div class="modal__body">
           <div class="modal__body_left">
             <div class="imageWrapper">
-              <img src="img/image2.png" alt="song">
+              <img src="img/image5.png" alt="song">
             </div>
+            <p class="song__text_title">Sound Cloud Song</p>
+            <p class="song__text_description"><span><!----></span>przykładowy wzór makietu</p>
           </div>
           <div class="modal__body_right"> -->
             <!-- <div class="designWrapper">
@@ -1006,24 +1008,28 @@
             <!-- <div class="customizeProduct">
               <input type="text" name="" id="" placeholder="Wykonawca">
               <input type="text" name="" id="" placeholder="Utwór">
-              <select name="" id="">
-                <option value="">Okładka</option>
-                <option value="">Okładka2</option>
-                <option value="">Okładka3</option>
+              <select name="okładka" id="okładka" class="custom-select okładka" placeholder="Okładka1">
+                <option value="okładka1">Okładka1</option>
+                <option value="okładka2">Okładka2</option>
+                <option value="okładka3">Okładka3</option>
               </select>
-              <select name="" id="">
-                <option value="">Rozmiar</option>
-                <option value="">Rozmiar2</option>
-                <option value="">Rozmiar3</option>
+              <select name="rozmiar" id="rozmiar" class="custom-select rozmiar" placeholder="Rozmiar1">
+                <option value="rozmiar1">Rozmiar1</option>
+                <option value="rozmiar2">Rozmiar2</option>
+                <option value="rozmiar3">Rozmiar3</option>
               </select>
               <p class="titleChoice">Uzupełnij:</p>
               <div class="mode checkboxWrapp">
                 <p class="checkboxWrapp__text">Tryb</p>
-                <div class="checkboxWrapp___choice">
-                  <input type="radio" name="mode" id="jasny" value="jasny">
-                  <label for="jasny">Jasny</label>
-                  <input type="radio" name="mode" id="ciemny">
-                  <label for="ciemny">Ciemny</label>
+                <div class="checkboxWrapp__choice">
+                  <label for="jasny">
+                    <input type="radio" name="mode" id="jasny" value="jasny">
+                    <span class="likeRadio"><!----></span> Jasny
+                  </label>
+                  <label for="ciemny">
+                    <input type="radio" name="mode" id="ciemny" value="ciemny" checked="checked">
+                    <span class="likeRadio"><!----></span>Ciemny
+                  </label>
                 </div>
               </div>
               <div class="timeWrapper">
@@ -1033,20 +1039,28 @@
               <p class="titleChoice">Dodatki</p>
               <div class="giftWrapping checkboxWrapp">
                 <p class="checkboxWrapp__text">Opakowanie prezentowe</p>
-                <div class="checkboxWrapp___choice">
-                  <input type="radio" name="gift" id="takGift" value="tak">
-                  <label for="takGift">Tak</label>
-                  <input type="radio" name="gift" id="nieGift" value="nie">
-                  <label for="nieGift">Nie</label>
+                <div class="checkboxWrapp__choice">
+                  <label for="takGift">
+                    <input type="radio" name="gift" id="takGift" value="tak">
+                    <span class="likeRadio"><!----></span> Tak
+                  </label>
+                  <label for="nieGift">
+                    <input type="radio" name="gift" id="nieGift" value="nie" checked="checked">
+                    <span class="likeRadio"><!----></span> Nie
+                  </label>
                 </div>
               </div>
               <div class="standChoice checkboxWrapp">
                 <p class="checkboxWrapp__text">Podstawka</p>
-                <div class="checkboxWrapp___choice">
-                  <input type="radio" name="stand" id="takStand" value="tak">
-                  <label for="takStand">Tak</label>
-                  <input type="radio" name="stand" id="nieStand" value="nie">
-                  <label for="nieStand">Nie</label>
+                <div class="checkboxWrapp__choice">
+                  <label for="takStand">
+                    <input type="radio" name="stand" id="takStand" value="tak">
+                    <span class="likeRadio"><!----></span> Tak
+                  </label>
+                  <label for="nieStand">
+                    <input type="radio" name="stand" id="nieStand" value="nie" checked="checked">
+                    <span class="likeRadio"><!----></span> Nie
+                  </label>
                 </div>
               </div>
               <p class="titleChoice"><label for="comment">Dodaj komentarz</label></p>

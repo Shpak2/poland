@@ -9,7 +9,7 @@
     right: 0
     bottom: 0
     z-index: 200
-    & .modal
+    .modal
         background: $lightTextOne
         width: get-vw(1100px)
         position: relative
@@ -61,19 +61,31 @@
                 display: flex
                 justify-content: center
                 align-items: center
-                & .imageWrapper
+                color: $titleText
+                display: flex
+                flex-direction: column
+                .imageWrapper
                     filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
                     background: radial-gradient(144.33% 131.39% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)
                     backdrop-filter: blur(42px)
-                img
-                    max-height: get-vw(403px)
-                    max-width: get-vw(403px)
-                    height: auto
-                    width: auto
+                    img
+                        max-height: get-vw(403px)
+                        max-width: get-vw(403px)
+                        height: auto
+                        width: auto
+                .song__text_title
+                    font-size: get-vw(26px)
+                    font-weight: 700
+                    margin-bottom: get-vw(8px)
+                    margin-top: get-vw(21px)
+                .song__text_description
+                    font-size: get-vw(18px)
+                    font-weight: 400
             &_right
                 max-height: get-vw(624px)
                 overflow: hidden
                 background: #FBFBFB
+                overflow-y: scroll
                 // & .designWrapper
                 //     height: 100%
                 //     overflow-y: scroll
@@ -146,12 +158,106 @@
                 //                         color: rgba(245, 245, 244, 0.6)
                 //         &:hover:not(.active)
                 //             background: linear-gradient(130.16deg, rgba(130, 187, 88, 0.3) 2.89%, rgba(83, 165, 128, 0.3) 97.29%)
-                & .customizeProduct
+                .customizeProduct
                     display: flex
                     flex-direction: column
                     padding: get-vw(30px)
                     input[type="text"]
                         height: get-vw(43px)
+                        font-size: get-vw(16px)
+                        padding-left: get-vw(15px)
+                        margin-bottom: get-vw(20px)
+                        outline: none
+                        border: none
+                        background: $lightTextTwo
+                        color: $titleText
+                        &::placeholder
+                            color: #C3CBCD
+                            font-size: get-vw(16px)
+                    .titleChoice
+                        font-size: get-vw(18px)
+                        font-weight: 600
+                        color: $titleText
+                    .checkboxWrapp
+                        margin-top: get-vw(14px)
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                        align-items: center
+                        &.standChoice
+                            margin-bottom: get-vw(20px)
+                        &__text
+                            color: $descriptionText
+                            font-size: get-vw(16px)
+                        &__choice
+                            display: flex
+                            flex-direction: row
+                            label
+                                color: #C3CBCD
+                                font-size: get-vw(15px)
+                                display: flex
+                                align-items: center
+                                flex-direction: row
+                                margin-left: get-vw(17px)
+                                input
+                                    display: none
+                                .likeRadio
+                                    width: get-vw(16px)
+                                    height: get-vw(16px)
+                                    border: 1px solid #C3CBCD
+                                    display: inline-block
+                                    border-radius: 50%
+                                    margin-right: get-vw(5px)
+                                    position: relative
+                                    &::after
+                                        content: ''
+                                        display: inline-block
+                                        background: $titleText
+                                        opacity: 0
+                                        left: 50%
+                                        top: 50%
+                                        transform: translate(-50%, -50%)
+                                        transition: 0.3s ease-in-out
+                                        width: get-vw(8px)
+                                        height: get-vw(8px)
+                                        position: absolute
+                                        border-radius: 50%
+                                &.active
+                                    & .likeRadio
+                                        border: 1px solid $titleText
+                                        &::after
+                                            opacity: 1
+                    textarea
+                        border: none
+                        outline: none
+                        background: $lightTextTwo
+                        resize: none
+                        height: get-vw(95px)
+                        padding-left: get-vw(15px)
+                        padding-top: get-vw(11px)
+                        box-sizing: border-box
+                        margin-top: get-vw(20px)
+                        font-size: get-vw(16px)
+                    .timeWrapper
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        justify-content: space-between
+                        margin-top: get-vw(14px)
+                        margin-bottom: get-vw(20px)
+                        &__text
+                            color: $descriptionText
+                            font-size: get-vw(16px)
+                        &__time
+                            width: get-vw(82px)
+                            height: get-vw(27px)
+                            background: $lightTextTwo
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            font-size: get-vw(15px)
+                            color: $titleText
+
                         
 .openPopup
     background: red
