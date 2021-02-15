@@ -1,3 +1,4 @@
+@include font(Mulish, Mulish/Mulish-ExtraLight, 200, normal)
 @include font(Mulish, Mulish/Mulish-Regular, 400, normal)
 @include font(Mulish, Mulish/Mulish-SemiBold, 600, normal)
 @include font(Mulish, Mulish/Mulish-Bold, 700, normal)
@@ -19,6 +20,8 @@ header
 
 .container
   width: 80%
+  @include mobile
+    width: 88%
 
 .scroll-top
   display: none
@@ -28,7 +31,7 @@ header
   background-color: $white
   position: fixed
   right: 10%
-  bottom: 10%
+  bottom: 14%
   z-index: 100
   cursor: pointer
   transition: .3s ease-in-out

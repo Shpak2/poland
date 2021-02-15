@@ -1,0 +1,102 @@
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  z-index: 0
+  padding-top: get-vw(403px)
+  background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+  &-social
+    &__item
+      & a
+        display: block
+        width: get-vw(40px)
+        height: get-vw(40px)
+        background-color: rgba(244, 245, 244,.1)
+        border-radius: 50%
+        position: relative
+        transition: .4s ease-in-out
+        &:hover
+          @media(hover:hover)
+            transform: scale(1.2)
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35)
+            & svg
+              &.icon-face path
+                fill: url(#grad-face)
+              &.icon-inst path
+                fill: url(#grad-inst)
+              &.icon-mail path
+                fill: url(#grad-mail)
+        & svg
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+          width: 60%
+          height: auto
+          & path
+            transition: .2s ease-in-out
+            fill: $lightTextTwo
+          &.icon-mail
+            width: 70%
+            transform: translate(-55%,-45%)
+          &.icon-inst
+            width: 55%
+          &.icon-face
+            width: 75%
+            transform: translate(-58%,-43%)
+      &:not(:last-child)
+        margin-right: get-vw(10px)
+    &__wrapper
+      display: flex
+      justify-content: center
+  &-nav
+    &__item
+      & a
+        position: relative
+        width: fit-content
+        & span
+          font-weight: 400
+          font-size: get-vw(17px)
+          line-height: get-vw(21px)
+          letter-spacing: get-vw(.75px)
+          color: $lightTextTwo
+          transition: .4s ease-in-out
+        &::after
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 50%
+          width: 105%
+          height: get-vw(2px)
+          background-color: $blackHeadline
+          transform: translate(-50%,400%)
+          transition: .4s ease-in-out
+          opacity: 0
+        &:hover
+          @media(hover:hover)
+            & span
+              color: $blackHeadline
+              text-shadow: 0 0 1px $blackHeadline, 0 0 1px $blackHeadline
+            &::after
+              opacity: 1
+              transform: translate(-50%,100%)
+      &:not(:last-child)
+        margin-right: get-vw(56px)
+    &__wrapper
+      display: flex
+      justify-content: center
+  &-logo
+    & a
+      position: relative
+      & img
+        width: get-vw(110px)
+        height: get-vw(80px)
+  &-container
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: get-vw(7px) 0
+  &-wrapper
+    border-top: 2px solid rgba(244, 245, 244,.3)

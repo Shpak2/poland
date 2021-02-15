@@ -12,16 +12,32 @@ $vw-viewport-tablet: 768
 $vw-viewport-mobile: 360
 
 @function get-vw($target)
-    $vw-context: ($vw-viewport * .01) * 1px
-    @return ($target/$vw-context) * 1vw
+  $vw-context: ($vw-viewport * .01) * 1px
+  @return ($target/$vw-context) * 1vw
 
 @function get-vw-tablet($target)
-    $vw-context: ($vw-viewport-tablet * .01) * 1px
-    @return ($target/$vw-context) * 1vw
+  $vw-context: ($vw-viewport-tablet * .01) * 1px
+  @return ($target/$vw-context) * 1vw
 
 @function get-vw-mobile($target)
-    $vw-context: ($vw-viewport-mobile * .01) * 1px
-    @return ($target/$vw-context) * 1vmin
+  $vw-context: ($vw-viewport-mobile * .01) * 1px
+  @return ($target/$vw-context) * 1vmin
+
+@mixin tabAndLess
+  @media (max-width: 1024px) and (orientation: portrait), (max-width: 1023px)
+    @content
+
+@mixin mobile
+  @media (max-width: (500px)), (max-height: 500px) and (orientation: landscape)
+    @content
+
+@mixin mobileLandscape
+  @media  (max-height: 500px) and (orientation: landscape)
+    @content
+
+@mixin tabLandscape
+  @media (max-height: 500px) and (orientation: landscape)
+    @content
 
 $blackHeadline: #0D1018
 $titleText: #373F41
@@ -30,6 +46,7 @@ $accentColor: #82BB58
 $lightTextOne: #ffffff
 $lightTextTwo: #F4F5F4
 $lightTextThree: #C3CBCD
+$lightTextFour: #FAFAFA
 $cartItem: #F57C1F
 $white: #ffffff
 

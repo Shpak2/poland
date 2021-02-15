@@ -1,0 +1,186 @@
+.feedback
+  width: 64%
+  transform: translateY(get-vw(160px));
+  margin: 0 auto
+  &-social
+    margin-left: get-vw(89px)
+    position: relative
+    &::before
+      content: ''
+      width: get-vw(170px)
+      height: get-vw(155px)
+      position: absolute
+      top: 0
+      right: 0
+      background: url(../img/sys/decor_social.png) 50% 50%/100% 100% no-repeat
+      z-index: -1
+      transform: translate(38%,-45%)
+    &__list li:not(:last-child) .social-link
+      margin-bottom: get-vw(25px)
+  & .social
+    &-adress
+      font-weight: 600
+      font-size: get-vw(20px)
+      line-height: get-vw(28px)
+      text-transform: uppercase
+      color: $titleText
+    &-header
+      font-weight: 200
+      font-size: get-vw(14px)
+      line-height: get-vw(22px)
+      letter-spacing: get-vw(.2px)
+      color: $descriptionText
+      margin-bottom: get-vw(5px)
+    &-link
+      width: get-vw(360px)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      background-color: $lightTextFour
+      padding: get-vw(20px) get-vw(30px)
+      // width: 100%
+      transition: .4s ease-in-out
+      border-radius: get-vw(2px)
+      &:hover
+        @media (hover:hover)
+          background-color: $white
+          box-shadow: 0px get-vw(4px) get-vw(15px) rgba(0, 0, 0, 0.07)
+          & svg
+            &.icon-face path
+              fill: url(#grad-face)
+            &.icon-inst path
+              fill: url(#grad-inst)
+            &.icon-mail path
+              fill: url(#grad-mail)
+          & .social-img
+            transform: scale(1.2)
+    &-name
+      display: flex
+      flex-direction: column
+    &-img
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      width: get-vw(48px)
+      height: get-vw(48px)
+      background-color: rgba(195, 203, 205,.3)
+      transition: .4s ease-in-out
+      & svg
+        width: 50%
+        height: auto
+        transition: .2s ease-in-out
+        &.icon-face
+          width: 75%
+          transform: translate(-8%,5%)
+        &.icon-mail
+          width: 70%
+          transform: translate(-8%,7%)
+  &-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+  // &-item
+  //   width: 45%
+  &-form
+    width: get-vw(318px)
+    background: $white
+    box-shadow: 0px get-vw(4px) get-vw(15px) rgba(0, 0, 0, 0.07)
+    border-radius: get-vw(2px)
+    padding: get-vw(50px) get-vw(63px)
+    position: relative
+    &::before
+      content: ''
+      width: get-vw(119px)
+      height: get-vw(108px)
+      position: absolute
+      bottom: 0
+      left: 0
+      background-color: red
+      background: url(../img/sys/decor_form.png) 50% 50%/100% 100% no-repeat
+      z-index: -1
+      transition: .8s ease-in-out
+      opacity: 0
+      transform: translate(38%,-45%)
+    & form
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+      & label
+        width: 100%
+        margin-bottom: get-vw(5px)
+        font-weight: 400
+        font-size: get-vw(14px)
+        line-height: get-vw(20px)
+        letter-spacing: get-vw(.25px)
+        color: $descriptionText
+      & input
+        outline-color: $accentColor
+        border: none
+        width: 100%
+        background-color: $lightTextTwo
+        font-weight: 400
+        font-size: get-vw(16px)
+        line-height: 1.3
+        color: $titleText
+        margin-bottom: get-vw(5px)
+        padding: get-vw(10px) get-vw(15px)
+        &:focus
+          &::-webkit-input-placeholder
+            opacity: 0
+        &::-webkit-input-placeholder
+          opacity: .6
+        &[type=submit]
+          margin-top: get-vw(19px)
+          background-color: $accentColor
+          border-radius: get-vw(40px)
+          font-size: get-vw(16px)
+          line-height: get-vw(18px)
+          letter-spacing: get-vw(0.3px)
+          color: $lightTextTwo
+          cursor: pointer
+          outline: none
+          padding: get-vw(13.5px) 0
+          transition: .4s ease-in-out
+          &:hover
+            @media (hover:hover)
+              color: $accentColor
+              background-color: $blackHeadline
+              text-shadow: 0 0 1px $accentColor, 0 0 1px $accentColor
+      & textarea
+        outline-color: $accentColor
+        border: none
+        width: 100%
+        background-color: $lightTextTwo
+        font-weight: 400
+        font-size: get-vw(16px)
+        line-height: 1.3
+        color: $titleText
+        padding: get-vw(10px) get-vw(15px)
+        height: get-vw(106px)
+        &:focus
+          &::-webkit-input-placeholder
+            opacity: 0
+        &::-webkit-input-placeholder
+          opacity: .6
+      & h3
+        font-weight: 400
+        font-size: get-vw(30px)
+        line-height: 1.3
+        letter-spacing: get-vw(.25px)
+        color: $titleText
+        margin-bottom: get-vw(33px)
+  &-header
+    text-align: center
+    margin-bottom: get-vw(70px)
+    & h2
+      font-weight: 600
+      font-size: get-vw(34px)
+      line-height: 1.3
+      letter-spacing: get-vw(.25px)
+      color: $titleText
+
+.feedback.active
+  & .feedback-form::before
+    opacity: 1
+    transform: translate(-38%,45%)

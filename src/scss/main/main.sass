@@ -1,5 +1,11 @@
 .main
   width: 100%
+  position: relative
+  z-index: 10
+  background-color: $white
+  margin-bottom: get-vw(500px)
+  @include mobile
+    overflow-x: hidden
 
 .bg-grey
   margin-top: get-vw(96px)
