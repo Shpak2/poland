@@ -3,13 +3,64 @@
 $( document ).ready(function() {
 
   let btnToTop = $('#scroll'),
-      header = $('#header-js');
+      header = $('#header-js'),
+      feedbackBlock = $('#feedback-js'),
+      btnMobMenu = $('.mobile-btn'),
+      btnQuestion = $('.help-cont__question-item');
+
+  const colorGradien = {
+    face: '<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">'+
+              '<linearGradient id="grad-face" x2="1" y2="1">'+
+                '<stop offset="0%" stop-color="#447799" />'+
+                '<stop offset="50%" stop-color="#224488" />'+
+                '<stop offset="100%" stop-color="#112266" />'+
+              '</linearGradient>'+
+            '</svg>',
+    inst: '<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">'+
+              '<linearGradient id="grad-inst" x2="1" y2="1">'+
+                '<stop offset="0%" stop-color="#5756CB" />'+
+                '<stop offset="60%" stop-color="#FE3DA0" />'+
+                '<stop offset="100%" stop-color="#FDEC57" />'+
+              '</linearGradient>'+
+            '</svg>',
+    mail: '<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">'+
+              '<linearGradient id="grad-mail" x2="1" y2="1">'+
+                '<stop offset="0%" stop-color="#068AF9" />'+
+                '<stop offset="80%" stop-color="#D03F09" />'+
+                '<stop offset="100%" stop-color="#00A94B" />'+
+              '</linearGradient>'+
+            '</svg>',
+    }
+
+// mobile menu
+  btnMobMenu.on('click', function(e) {
+    e.preventDefault();
+    if(header.hasClass('mob-active')){
+      header.removeClass('mob-active')
+      $('.mob-menu').remove()
+    }else{
+      header.addClass('mob-active')
+      $('body').append('<div class="mob-menu"></div>');
+      $('.mob-menu').append($('.header-nav').clone());
+    }
+  });
+// end mobile
+
+// if Mozila
+  if(/firefox/.test(navigator.userAgent.toLowerCase())){
+    header.css('background','radial-gradient(108.54% 107.43% at 0 0,rgba(255,255,255,.8) 0,rgba(255,255,255,1) 100%)')
+  }
+// add gradient
+    $.each(colorGradien,function(key,val){
+      $('body').append(val)
+    })
+// end gradient
 
 // anchor
   let btnAnchor = $('.primary-menu li a'),
       fixedHeader = $('#header-js').innerHeight();
 
-  btnAnchor.on('click', function(e){
+  $('.primary-menu li a,.footer-nav li a').on('click', function(e){
     e.preventDefault();
     let anchorBlock = $('div[data-anchor='+$(this).attr('data-anchor')+']');
     $('html, body').animate({
@@ -27,6 +78,11 @@ $( document ).ready(function() {
         $('#shares').addClass('active')
         if($(window).scrollTop() > $('#spot').offset().top - $(window).innerHeight()){
           $('#spot').addClass('active')
+          if($(window).scrollTop() + +$(window).height() >= $(document).height()){
+            feedbackBlock.addClass('active');
+          }else{
+            feedbackBlock.removeClass('active');
+          }
         }
       }
     }else{
@@ -38,6 +94,11 @@ $( document ).ready(function() {
   btnToTop.on('click', function(e) {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, 700);
+  });
+  btnQuestion.on('click', function(e) {
+    e.preventDefault();
+    $(btnQuestion).removeClass('active')
+    $(this).addClass('active')
   });
 // end scroll
 
