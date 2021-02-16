@@ -13,16 +13,28 @@
   display: flex
   justify-content: center
   background-color: $lightTextTwo
-
+  @include mobile
+    margin-top: get-vw-mobile(110px)
+    background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+    box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.15)
+    z-index: 1
+    position: relative
 .banner
   &-wrapper
     background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
     margin: get-vw(229px) 0
     position: relative
+    @include mobile
+      margin: 0
   &-aside
     padding: get-vw(60px) get-vw(65px) get-vw(60px) get-vw(95px)
     display: flex
     justify-content: space-between
+    @include mobile
+      padding: 0
+      flex-direction: column
+      align-items: center
+      justify-content: center
     &::before
       content: ''
       position: absolute
@@ -32,11 +44,16 @@
       width: get-vw(206px)
       height: get-vw(187px)
       background: url(../img/sys/decor_banner.png) 50% 50%/100% 100% no-repeat
+      @include mobile
+        content: none
       // background-color: red
       // z-index: -1
   &-content
     width: 62%
     position: relative
+    @include mobile
+      width: 100%
+      position: unset
     &::before
       content: ''
       position: absolute
@@ -46,13 +63,25 @@
       width: get-vw(136px)
       height: get-vw(43px)
       background: url(../img/custom/headphones.png) 50% 50%/100% 100% no-repeat
+      @include mobile
+        width: get-vw-mobile(92px)
+        height: get-vw-mobile(29px)
+        transform: unset
+        right: unset
+        left: 0
+        bottom: 7%
   &-header
     color: $lightTextTwo
     margin-bottom: get-vw(17px)
+    @include mobile
+      margin-bottom: get-vw-mobile(10px)
     & .textheader
       font-size: get-vw(48px)
       line-height: 1.25
       font-weight: 700
+      @include mobile
+        line-height: 1.1
+        font-size: get-vw-mobile(38px)
   &-info
     color: $lightTextTwo
     font-size: get-vw(17px)
@@ -61,11 +90,20 @@
     letter-spacing: get-vw(0.3px)
     margin-bottom: get-vw(28px)
     width: 77%
+    @include mobile
+      width: 100%
+      font-size: get-vw-mobile(17px)
+      letter-spacing: get-vw-mobile(0.3px)
+      margin-bottom: get-vw-mobile(20px)
   &-action
     width: 66%
     display: flex
     align-items: center
     justify-content: space-between
+    @include mobile
+      width: 100%
+      flex-wrap: wrap
+      justify-content: unset
     &__btn, &__link
       padding: get-vw(12px) get-vw(32px)
       font-size: get-vw(16px)
@@ -74,6 +112,13 @@
       border-radius: get-vw(40px)
       letter-spacing: get-vw(0.3px)
       transition: .3s ease-in-out
+      @include mobile
+        width: 100%
+        font-size: get-vw-mobile(16px)
+        padding: get-vw-mobile(16px) 0
+        border-radius: get-vw-mobile(40px)
+        text-align: center
+        margin-bottom: get-vw-mobile(10px)
     &__btn
       color: $titleText
       background-color: $white
@@ -96,6 +141,25 @@
     right: 7%
     top: 50%
     transform: translateY(-50%)
+    @include mobile
+      margin: get-vw-mobile(70px) 0 get-vw-mobile(20px)
+      position: relative
+      width: get-vw-mobile(255px)
+      height: get-vw-mobile(356px)
+      transform: unset
+      right: unset
+      top: unset
+    &::before
+      content: none
+      position: absolute
+      top: 0
+      left: 0
+      transform: translate(-41%,-33%)
+      width: get-vw-mobile(94px)
+      height: get-vw-mobile(85px)
+      background: url(../img/sys/decor_mob.png) 50% 50%/100% 100% no-repeat
+      @include mobile
+        content: ''
     & img
       height: 100%
       position: absolute
@@ -132,6 +196,14 @@
     font-family: Futura, sans-serif
     text-align: center
     pointer-events: none
+    @include mobile
+      z-index: 10
+      position: relative
+      left: unset
+      bottom: unset
+      width: get-vw-mobile(129px)
+      height: get-vw-mobile(129px)
+      transform: translateY(25%)
     &__bg
       background-color: #FCC02A
       z-index: 1
@@ -159,6 +231,8 @@
       font-size: get-vw(36px)
       line-height: 1
       z-index: 1
+      @include mobile
+        font-size: get-vw-mobile(36px)
     & p
       font-weight: 400
       color: $titleText
@@ -167,6 +241,9 @@
       width: 90%
       letter-spacing: get-vw(1.5px)
       z-index: 1
+      @include mobile
+        font-size: get-vw-mobile(16px)
+        letter-spacing: get-vw-mobile(1.5px)
 
 .banner-wrapper.animated
   & .banner-figure .banner-image img

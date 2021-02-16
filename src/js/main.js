@@ -38,12 +38,26 @@ $( document ).ready(function() {
     if(header.hasClass('mob-active')){
       header.removeClass('mob-active')
       $('.mob-menu').remove()
+      $('body').css('overflow','')
     }else{
       header.addClass('mob-active')
-      $('body').append('<div class="mob-menu"></div>');
+      $('body').append('<div class="mob-menu"></div>').css('overflow','hidden');
       $('.mob-menu').append($('.header-nav').clone());
+      $('html, body').animate({scrollTop:0}, 300);
+
+      $('.mob-menu .primary-menu a').on('click', function(e) {
+        e.preventDefault();
+        header.removeClass('mob-active')
+        $('.mob-menu').remove()
+        $('body').css('overflow','')
+        let anchorBlock = $('div[data-anchor='+$(this).attr('data-anchor')+']');
+        $('html, body').animate({
+          scrollTop: anchorBlock.offset().top - fixedHeader
+        }, 1000);
+      });
     }
   });
+  
 // end mobile
 
 // if Mozila
@@ -149,5 +163,36 @@ btnSlide.click(function(e){
 })
 
 const swiper1 = new Swiper('#slider-music',sliderParam)
+const swiper2 = new Swiper('.cont-price',{
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  initialSlide: 1,
+  // effect: 'flip',
+  // grabCursor: true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    480: {
+      centeredSlides: false,
+      loop: false,
+      autoplay: false,
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+  }
+})
+let gallerySlider = new Swiper('.gallery-slider', {
+  effect: 'flip',
+  loop: true,
+  grabCursor: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+});
 // end slider
 });

@@ -11,6 +11,8 @@
     right: 0
     background: url(../img/sys/decor_shares.png) 50% 50%/100% 100% no-repeat
     // transform: translateY(15%)
+    @include mobile
+      content: none
 
 .shares
   margin: get-vw(172px) auto 0
@@ -19,10 +21,20 @@
   justify-content: space-between
   padding: get-vw(70px) 0
   height: fit-content
+  @include mobile
+    padding: unset
+    flex-wrap: wrap
   &-item
     width: 50%
     position: relative
     height: 100%
+    @include mobile
+      width: 100%
+      text-align: center
+      margin-bottom: get-vw-mobile(40px)
+    &:last-child
+      @include mobile
+        margin-bottom: get-vw-mobile(110px)
   &-info
     & h2
       font-weight: 700
@@ -31,6 +43,11 @@
       letter-spacing: get-vw(0.25px)
       color: $lightTextTwo
       margin-bottom: get-vw(15px)
+      @include mobile
+        font-size: get-vw-mobile(34px)
+        letter-spacing: get-vw-mobile(0.25px)
+        margin-top: get-vw-mobile(20px)
+        margin-bottom: get-vw-mobile(10px)
     & p
       font-weight: 400
       font-size: get-vw(17px)
@@ -39,8 +56,14 @@
       color: $white
       opacity: .8
       width: 80%
+      @include mobile
+        width: 100%
+        font-size: get-vw-mobile(17px)
+        letter-spacing: get-vw-mobile(0.3px)
     &__list
       margin-top: get-vw(30px)
+      @include mobile
+        margin-top: get-vw-mobile(15px)
       &-item
         & p
           width: 100%
@@ -50,10 +73,18 @@
           letter-spacing: get-vw(.2px)
           color: $titleText
           opacity: 1
+          @include mobile
+            font-size: get-vw-mobile(19px)
+            letter-spacing: get-vw-mobile(0.2px)
           & span
             color: $white
+            @include mobile
+              width: 100%
+              display: inline-block
         &:not(:last-child)
           margin-bottom: get-vw(20px)
+          @include mobile
+            margin-bottom: get-vw-mobile(47px)
   &-preview
     display: flex
     align-items: baseline
@@ -64,6 +95,8 @@
     // right: 0
     // top: 50%
     // transform: translateY(-50%)
+    @include mobile
+      height: get-vw-mobile(205px)
     &::before,&::after
       content: ''
       width: get-vw(163px)
@@ -73,6 +106,9 @@
       right: 0
       transform: translateY(15%)
       transition: 1.6s ease-in-out
+      @include mobile
+        width: get-vw-mobile(172px)
+        height: get-vw-mobile(172px)
     &::before
       border: 10px solid transparent
     &::after
@@ -82,18 +118,30 @@
         width: get-vw(374px)
         height: get-vw(434px)
         z-index: 1
+        @include mobile
+          transform: translate(5%,-7%)
+          width: get-vw-mobile(262px)
+          height: get-vw-mobile(286px)
     &.img-classic
       & img
         width: get-vw(323px)
         height: get-vw(376px)
         transform: translate(0,0)
         z-index: 2
+        @include mobile
+          transform: translate(5%,-8%)
+          width: get-vw-mobile(230px)
+          height: get-vw-mobile(264px)
     &.img-mini
       & img
         width: get-vw(269px)
         height: get-vw(293px)
         transform: translate(0,0)
         z-index: 3
+        @include mobile
+          transform: translate(0,-8%)
+          width: get-vw-mobile(182px)
+          height: get-vw-mobile(198px)
     & img
       position: absolute
       bottom: -50%
@@ -113,11 +161,15 @@
           transform: translate(-50%,6%)
           opacity: 1
           transition-delay: 1.6
+          @include mobile
+            transform: translate(-35%,-1%)
       &.img-mini
         & img
           transform: translate(-110%,12%)
           opacity: 1
           transition-delay: 2.4
+          @include mobile
+            transform: translate(-95%,5%)
       &::before
         border-color: $accentColor
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .1)

@@ -6,6 +6,11 @@
   // overflow-y: scroll
   perspective: 1px
   transform-style: preserve-3d
+  @include mobile
+    transform-style: unset
+    overflow-x: unset
+    height: unset
+    margin-top: unset
   &-bg
     width: 100%
     height: 100%
@@ -14,6 +19,8 @@
     position: relative
     z-index: -1
     transform: translateZ(-1px) scale(2)
+    @include mobile
+      display: none
     &::after
       content: ''
       width: 100%
@@ -32,6 +39,12 @@
     text-align: center
     border-radius: get-vw(3px)
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.07)
+    @include mobile
+      position: unset
+      transform: unset
+      box-shadow: unset
+      top: unset
+      left: unset
     &__icon
       width: get-vw(76px)
       height: get-vw(76px)
@@ -41,18 +54,45 @@
       align-items: center
       justify-content: center
       margin: 0 auto
+      @include mobile
+        width: get-vw-mobile(77px)
+        height: get-vw-mobile(77px)
       & svg
         width: get-vw(29px)
         height: get-vw(29px)
+        @include mobile
+          width: get-vw-mobile(29px)
+          height: get-vw-mobile(29px)
     &__text
       margin-top: get-vw(8px)
       margin-bottom: get-vw(18px)
       width: get-vw(262px)
+      @include mobile
+        width: get-vw-mobile(262px)
+        margin: get-vw-mobile(20px) auto get-vw-mobile(45px)
       & p
         color: $descriptionText
         font-weight: 400
         font-size: get-vw(17px)
         line-height: 1.4
         letter-spacing: get-vw(0.3px)
+        @include mobile
+          font-size: get-vw-mobile(17px)
+          letter-spacing: get-vw-mobile(0.3px)
     &__btn a
       margin: 0 auto
+      &.product-create
+        @include mobile
+          width: 88%
+          height: get-vw-mobile(50px)
+          border-radius: get-vw-mobile(40px)
+        & span
+          @include mobile
+            font-size: get-vw-mobile(16px)
+  &-slider
+    margin: get-vw-mobile(70px) auto
+    display: none
+    width: 88%
+    // height: get-vw-mobile(290px)
+    @include mobile
+      display: block

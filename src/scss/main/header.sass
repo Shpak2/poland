@@ -315,24 +315,61 @@
 
 .mob-menu
   display: flex
+  justify-content: center
   position: absolute
-  width: 100%
-  height: 300px
-  background: #000
+  width: 88%
+  // height: 300px
   z-index: 200
   top: get-vw-mobile(130px)
   left: 50%
   opacity: 0
   transform: translate(-150%,0)
-  animation: showMenu .8s ease-in-out forwards
+  animation: showMenu 1.3s ease-in-out forwards
   & .header-nav
     display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    & .header-button
+      flex-direction: column
+      & .product-cart
+        @include mobile
+          width: get-vw-mobile(44px)
+          height: get-vw-mobile(44px)
+        & .cart-num
+          @include mobile
+            font-size: get-vw-mobile(15px)
+            width: get-vw-mobile(23px)
+            height: get-vw-mobile(23px)
+      & .product-create
+        @include mobile
+          margin: get-vw-mobile(50px) 0 get-vw-mobile(40px)
+          width: get-vw-mobile(160px)
+          height: get-vw-mobile(40px)
+          border-radius: get-vw-mobile(30px)
+        & span
+          @include mobile
+            font-size: get-vw-mobile(14px)
+    & .primary-menu
+      flex-direction: column
+      justify-content: center
+      & .menu-item
+        &:not(:last-child)
+          @include mobile
+            margin: 0 0 get-vw-mobile(29px) 0
+        & a
+          @include mobile
+            color: $lightTextTwo
+            font-size: get-vw-mobile(17px)
+
 
 @keyframes showMenu
   0%
-    transform: translate(-50%,-200vh)
+    transform: translate(-50%,-100vh)
     opacity: 0
     z-index: 50
+  80%
+    opacity: 0
   100%
     transform: translate(-50%,0)
     opacity: 1

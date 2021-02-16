@@ -4,12 +4,21 @@
     display: flex
     align-items: center
     justify-content: space-between
+    @include mobile
+      align-items: unset
+      justify-content: unset
+      flex-wrap: wrap
   &-preview
     width: 45%
+    @include mobile
+      width: 100%
     &__img
       padding: 0 get-vw(20px) get-vw(26px) 0
       width: 95%
       position: relative
+      @include mobile
+        width: 100%
+        padding: unset
       & img
         background: radial-gradient(108.81% 110.31% at -4.7% -3.05%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)
         backdrop-filter: blur(7px)
@@ -25,6 +34,10 @@
         height: get-vw(218px)
         background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        @include mobile
+          width: get-vw-mobile(146px)
+          height: get-vw-mobile(149px)
+          transform: translate(15%,10%)
       &::before
         content: ''
         position: absolute
@@ -34,47 +47,87 @@
         height: get-vw(187px)
         background: url(../img/sys/decor_intro.png) 50% 50%/100% 100% no-repeat
         transform: translate(-45%,-40%)
+        @include mobile
+          width: get-vw-mobile(141px)
+          height: get-vw-mobile(128px)
+          transform: translate(-45%,-35%)
   &-info
     width: 48%
+    @include mobile
+      margin-top: get-vw-mobile(45px)
+      width: 100%
+    &__button .product-create
+      @include mobile
+        width: 100%
+        height: get-vw-mobile(50px)
+        border-radius: get-vw-mobile(40px)
+      & span
+        @include mobile
+          font-size: get-vw-mobile(16px)
     &__title
       margin-bottom: get-vw(15px)
+      @include mobile
+        margin-bottom: get-vw-mobile(10px)
       & h2
         font-size: get-vw(34px)
         font-weight: 600
         color: $titleText
         letter-spacing: get-vw(0.25px)
         line-height: 1.3
+        @include mobile
+          font-size: get-vw-mobile(34px)
+          letter-spacing: get-vw-mobile(0.25px)
     &__text
       margin-bottom: get-vw(32px)
+      @include mobile
+        margin-bottom: get-vw-mobile(40px)
       & p
         font-size: get-vw(17px)
         font-weight: 400
         color: $descriptionText
         line-height: 1.4
         letter-spacing: get-vw(0.3px)
+        @include mobile
+          font-size: get-vw-mobile(17px)
+          letter-spacing: get-vw-mobile(0.25px)
         &:not(:last-child)
           margin-bottom: get-vw(10px)
     &__list
       width: 77%
       margin-bottom: get-vw(54px)
+      @include mobile
+        width: 100%
+        margin-bottom: get-vw-mobile(40px)
       &-item
         display: flex
         align-items: center
         &:not(:last-child)
           margin-bottom: get-vw(40px)
+          @include mobile
+            margin-bottom: get-vw-mobile(30px)
         & img
           width: get-vw(48px)
           height: get-vw(48px)
           margin-right: get-vw(30px)
+          @include mobile
+            width: get-vw-mobile(48px)
+            height: get-vw-mobile(48px)
+            margin-right: get-vw-mobile(30px)
         & span
           color: $blackHeadline
           font-size: get-vw(17px)
           font-weight: 700
           letter-spacing: get-vw(0.44px)
           line-height: 1.4
+          @include mobile
+            width: 70%
+            font-size: get-vw-mobile(17px)
+            letter-spacing: get-vw-mobile(0.44px)
 
 .intro.intro-second
   margin: get-vw(240px) auto 0
+  @include mobile
+    margin: 0 auto
   & .product-create
     background-color: $accentColor
     &:hover
@@ -92,9 +145,16 @@
       width: get-vw(22px)
       height: get-vw(20px)
       margin-right: get-vw(20px)
+      @include mobile
+        width: get-vw-mobile(22px)
+        height: get-vw-mobile(20px)
+        margin-right: get-vw-mobile(20px)
   & .intro-preview
     width: 43%
     position: relative
+    @include mobile
+      order: 1
+      width: 100%
     &::before
       content: ''
       position: absolute
@@ -104,16 +164,30 @@
       height: get-vw(100px)
       background: url(../img/sys/decor_intro3.png) 50% 50%/100% 100% no-repeat
       transform: translate(-35%,-45%)
+      @include mobile
+        width: get-vw-mobile(83px)
+        height: get-vw-mobile(76px)
+        z-index: 1
+        transform: translate(0%,-130%)
   & .intro-preview__img
     width: get-vw(303px)
     height: get-vw(434px)
     margin-left: auto
+    @include mobile
+      width: get-vw-mobile(228px)
+      height: get-vw-mobile(327px)
+      margin: get-vw-mobile(78px) auto
     &::after
       width: get-vw(322px)
       height: get-vw(273px)
       background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
       bottom: 50%
       transform: translate(-50%,50%)
+      @include mobile
+        left: 0
+        transform: translate(-36%,50%)
+        width: get-vw-mobile(188px)
+        height: get-vw-mobile(206px)
     &::before
       width: get-vw(171px)
       height: get-vw(155px)
@@ -121,3 +195,7 @@
       right: 0
       background: url(../img/sys/decor_intro2.png) 50% 50%/100% 100% no-repeat
       transform: translate(30%,-45%)
+      @include mobile
+        width: get-vw-mobile(129px)
+        height: get-vw-mobile(117px)
+        transform: translate(35%,-45%)

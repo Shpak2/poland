@@ -71,7 +71,7 @@ gulp.task('swiperScripts', function() {
 });
 
 gulp.task('swiperStyle', function() {
-  return gulp.src('node_modules/swiper/swiper.min.css')
+  return gulp.src('node_modules/swiper/swiper-bundle.min.css')
   .pipe(concat('swiper.min.css'))
   .pipe(gulp.dest('build/css'))
   .pipe(browserSync.reload({
