@@ -151,6 +151,9 @@ $('.img-svg').each(function(){
 let btnSlide = $('.product-cat__btn'),
     sliderParam = {
                     slidesPerView: 4,
+                    slidesPerColumn: 1,
+                    loop: true,
+                    lazy: true,
                     spaceBetween: 30,
                   };
 
