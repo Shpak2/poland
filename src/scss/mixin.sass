@@ -82,11 +82,11 @@ $btnShadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
     position: absolute
     display: block
     content: ''
-    width: 10px
-    height: 10px
+    width: get-vw(10px)
+    height: get-vw(10px)
     top: 50%
-    right: 25px
-    margin-top: -3px
+    right: get-vw(25px)
+    margin-top: get-vw(-3px)
     border-bottom: 1px solid $titleText
     border-right: 1px solid $titleText
     transform: rotate(45deg) translateY(-50%)
@@ -104,7 +104,6 @@ $btnShadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
   left: 0
   right: 0
   min-width: 100%
-  border: 1px solid #b5b5b5
   border-radius: 4px
   box-sizing: border-box
   background: #fff
@@ -124,18 +123,17 @@ $btnShadow: 0px 2px 5px 0px rgba(0,0,0,0.75)
 .custom-option
   position: relative
   padding-left: get-vw(15px)
-  border-bottom: 1px solid #b5b5b5
   font-size: get-vw(16px)
   height: get-vw(43px)
   cursor: pointer
-  transition: all .4s ease-in-out
   display: flex
   align-items: center
+  background: $lightTextTwo
 
-  &:first-of-type
-    border-radius: 4px 4px 0 0
+  &:hover
+    background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+    color: $lightTextTwo
 
   &:last-of-type
     border-bottom: 0
-    border-radius: 0 0 4px 4px
 /*СТИЛИ ДЛЯ КАСТОМНОГО СЕЛЕКТА КОНЕЦ*/

@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
     // ОТКРЫТЬ И ЗАКРЫТЬ ПОПАП
-    let openPopup = $('.openPopup');
+    let openPopup = $('.product-create');
     let closePopup = $('.popupWrapper .modal__title_button');
     let popUp = $('.popupWrapper');
     $(openPopup).on('click', ()=>{
@@ -76,4 +76,33 @@ $( document ).ready(function() {
     })
     //ЛЕЙБЛ ДОБАВЛЕНИЕ КЛАССА active НАЧАЛО
 
+    //ТЕКСТ ПОДРОБНЕЕ НА ВОПРОСИКЕ НАЧАЛО
+    let questEls = $('.checkboxWrapp__text span');
+    $(questEls).hover(
+        function() {
+            $(this).closest('.checkboxWrapp__text').find('.checkboxWrapp__text_detail').addClass('hover');
+        }, function() {
+            $(this).closest('.checkboxWrapp__text').find('.checkboxWrapp__text_detail').removeClass('hover');
+        }
+    );
+    //ТЕКСТ ПОДРОБНЕЕ НА ВОПРОСИКЕ КОНЕЦ
+
+    //ПОПАП МИНИМАЛЬНАЯ ЛОГИКА ПЕРЕХОДОВ НАЧАЛО
+    let popUpPrev = $('.popUpBtnPrev');
+    let popUpNext = $('.popUpBtnNext');
+    let stepData = $('[data-step]');
+
+    $(popUpNext).on('click', ()=>{
+        let stepNumber = +$(stepData).attr('data-step');
+        if (stepNumber < 2){
+            $(stepData).attr('data-step', stepNumber+1)
+        }
+    })
+    $(popUpPrev).on('click', ()=>{
+        let stepNumber = +$(stepData).attr('data-step');
+        if (stepNumber != 1){
+            $(stepData).attr('data-step', stepNumber-1)
+        }
+    })
+    //ПОПАП МИНИМАЛЬНАЯ ЛОГИКА ПЕРЕХОДОВ КОНЕЦ
 })

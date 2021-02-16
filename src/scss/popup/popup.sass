@@ -1,6 +1,6 @@
 .popupWrapper
     position: fixed
-    display: flex
+    display: none
     justify-content: center
     align-items: center
     background: #e5e5e5
@@ -9,6 +9,14 @@
     right: 0
     bottom: 0
     z-index: 200
+    .chooseSong,.congratulations
+        display: none
+    &[data-step="1"]
+        .chooseSong
+            display: block
+    &[data-step="2"]
+        .congratulations
+            display: block
     .modal
         background: $lightTextOne
         width: get-vw(1100px)
@@ -81,6 +89,10 @@
                 .song__text_description
                     font-size: get-vw(18px)
                     font-weight: 400
+                    span
+                        font-size: get-vw(18px)
+                        color: #D62D30
+
             &_right
                 max-height: get-vw(624px)
                 overflow: hidden
@@ -184,14 +196,50 @@
                         flex-direction: row
                         justify-content: space-between
                         align-items: center
-                        &.standChoice
+                        &.standColor
                             margin-bottom: get-vw(20px)
                         &__text
                             color: $descriptionText
                             font-size: get-vw(16px)
+                            display: flex
+                            flex-direction: row
+                            width: get-vw(213px)
+                            justify-content: space-between
+                            position: relative
+                            span
+                                font-size: get-vw(14px)
+                                color: $titleText
+                                background: $lightTextThree
+                                width: get-vw(18px)
+                                height: get-vw(18px)
+                                border-radius: 50%
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                cursor: pointer
+                            &_detail
+                                position: absolute
+                                right: 0
+                                bottom: 0
+                                color: $titleText
+                                font-size: get-vw(13px)
+                                line-height: get-vw(20px)
+                                transform: translate(100%, 95%)
+                                background: $white
+                                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+                                z-index: 10
+                                padding: get-vw(10px) get-vw(12px) get-vw(10px) get-vw(15px)
+                                opacity: 0
+                                pointer-events: none
+                                transition: 0.5s ease-in-out
+                                width: get-vw(241px)
+                                &.hover
+                                    opacity: 1
+                                    transform: translate(calc(100% + 16px), calc(100% + 3px))
                         &__choice
                             display: flex
                             flex-direction: row
+                            width: get-vw(170px)
                             label
                                 color: #C3CBCD
                                 font-size: get-vw(15px)
@@ -227,11 +275,16 @@
                                         border: 1px solid $titleText
                                         &::after
                                             opacity: 1
+                    .confirmTemplate
+                        .checkboxWrapp__choice
+                            label
+                                margin-left: 0
+                                margin-right: get-vw(17px)
                     textarea
                         border: none
                         outline: none
                         background: $lightTextTwo
-                        resize: none
+                        //resize: none
                         height: get-vw(95px)
                         padding-left: get-vw(15px)
                         padding-top: get-vw(11px)
@@ -257,11 +310,92 @@
                             align-items: center
                             font-size: get-vw(15px)
                             color: $titleText
-
-                        
-.openPopup
-    background: red
-    font-size: 30px
-    position: fixed
-    bottom: 0
-    width: 100%
+                    .price
+                        font-size: get-vw(16px)
+                        font-weight: 600
+                        color: $titleText
+                        margin-left: auto
+                        margin-top: get-vw(20px)
+                        span
+                            font-size: get-vw(26px)
+                            font-weight: 700
+        .form-stepWrap
+            display: flex
+            flex-direction: row
+            margin-left: auto
+            margin-top: get-vw(20px)
+            &__btn
+                margin-left: get-vw(20px)
+                padding-left: get-vw(32px)
+                padding-right: get-vw(32px)
+                height: get-vw(44px)
+                font-size: get-vw(16px)
+                border: 1px solid #0D1018
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: get-vw(40px)
+                cursor: pointer
+                &.popUpBtnPrev
+                    padding-left: get-vw(22px)
+                &.popUpBtnNext
+                    padding-right: get-vw(22px)
+                    svg
+                        path
+                            fill: #0D1018
+                &:last-child
+                    svg
+                        transform: rotate(180deg)
+                svg
+                    width: get-vw(17px)
+                    margin: 0 get-vw(10px)
+                &:hover
+                    background: #0D1018
+                    color: $lightTextTwo
+                    svg
+                        path
+                            fill: $lightTextTwo
+        .confirmTemplate
+            margin-bottom: get-vw(16px)
+        .congratulations
+            .modal__body
+                padding-top: get-vw(66px)
+                padding-bottom: get-vw(64px)
+                display: flex
+                flex-direction: column
+                align-items: center
+                &>div
+                    width: initial
+                .congratulations__infoWrapp
+                    margin: 0 auto
+                    &_line
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        margin-bottom: get-vw(10px)
+                        p:first-of-type
+                            color: $lightTextThree
+                            width: get-vw(98px)
+                            line-height: get-vw(20px)
+                            font-size: get-vw(16px)
+                            font-weight: 400
+                            margin-right: get-vw(30px)
+                        p:last-of-type
+                            color: $titleText
+                            font-size: get-vw(20px)
+                            font-weight: 600
+                .discountBtn
+                    padding: get-vw(10px) get-vw(34px)
+                    background: $accentColor
+                    color: $lightTextTwo
+                    font-size: get-vw(24px)
+                    border-radius: get-vw(40px)
+                    cursor: pointer
+                    margin-top: get-vw(50px)
+                .form-stepWrap
+                    margin-right: auto
+                    margin-top: get-vw(53px)
+                    .popUpBtnNext
+                        svg
+                            transform: none
+                            width: get-vw(14px)
