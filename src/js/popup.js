@@ -10,7 +10,7 @@ $( document ).ready(function() {
     })
     $(closePopup).on('click', ()=>{
         $(popUp).hide();
-        $('body').css('overflow', 'initial');
+        $('body').css('overflow', '');
     })
     // ОТКРЫТЬ И ЗАКРЫТЬ ПОПАП КОНЕЦ
 
