@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html
-  lang="ru"
-  dir="ltr"
-  itemscope
-  itemtype="https://schema.org/WebPage"
-  prefix="og:http://ogp.me/ns#"
->
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,150 +11,15 @@
     <link rel="icon" type="image/png" href="./img/icons/64x64.png" />
     <!-- <link rel="manifest" href="./manifest.json" /> -->
 
-    <!-- General -->
-    <meta name="application-name" content="HTML Template" />
-    <meta name="author" content="Igor Agapov" />
-    <meta name="description" content="Modern HTML Starter Template" />
-    <meta
-      name="keywords"
-      content="modern, useful, html, html5, css, css3, javascript, js, template, boilerplate"
-    />
-    <meta name="referrer" content="strict-origin" />
-
-    <meta itemprop="name" content="HTML Template" />
-    <meta itemprop="description" content="Modern HTML Starter Template" />
-    <meta itemprop="image" content="./img/icons/128x128.png" />
-
-    <!-- Microsoft -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="msapplication-starturl" content="/" />
-    <meta name="msapplication-tooltip" content="Modern HTML Starter Template" />
-    <meta name="msapplication-TileColor" content="#333" />
-    <meta name="msapplication-config" content="browserconfig.xml" />
-
-    <!-- Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://moderntemplate.site/" />
-    <meta property="og:title" content="HTML Template" />
-    <meta property="og:description" content="Modern HTML Starter Template" />
-    <meta property="og:image" content="./img/icons/600x600.png" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="app" />
-    <meta name="twitter:title" content="HTML Template" />
-    <meta name="twitter:description" content="Modern HTML Starter Template" />
-    <meta name="twitter:url" content="https://moderntemplate.site/" />
-    <meta name="twitter:image" content="./img/icons/512x512.png" />
-
-    <!-- IOS -->
-    <meta name="apple-mobile-web-app-title" content="HTML Template" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#333" />
-    <link rel="apple-touch-icon" href="./img/icons/512x512.png" />
-
-    <!-- Android -->
-    <meta name="theme-color" content="#f0f0f0" />
-    <meta name="color-scheme" content="light" />
-    <meta name="mobile-web-app-capable" content="yes" />
-
-    <!-- Global site tag (gtag.js) - Google Analytics 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-R2QPPP7JDN"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-
-      gtag('config', 'G-R2QPPP7JDN')
-    </script>
-
-    Yandex Verification Tag 
-    <meta name="yandex-verification" content="b13109f17dd8ecd6" />
-    Yandex.Metrika counter 
-    <script>
-      ;(function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            ;(m[i].a = m[i].a || []).push(arguments)
-          }
-        m[i].l = 1 * new Date()
-        ;(k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a)
-      })(
-        window,
-        document,
-        'script',
-        'https://mc.yandex.ru/metrika/tag.js',
-        'ym'
-      )
-
-      ym(69418261, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true
-      })
-    </script>-->
-    <!-- <noscript>
-      <div>
-        <img
-          src="https://mc.yandex.ru/watch/69418261"
-          style="position: absolute; left: -9999px"
-          alt=""
-        />
-      </div>
-    </noscript> -->
-
-    <!-- JSON-LD -->
-    <!-- <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Webpage",
-        "url": "https://moderntemplate.site",
-        "name": "HTML Template",
-        "headline": "HTML Template",
-        "description": "Modern HTML Starter Template",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://moderntemplate.site"
-        },
-        "publisher": {
-          "@type": "Person",
-          "name": "Igor Agapov"
-        },
-        "image": {
-          "@type": "ImageObject",
-          "url": "./img/logo.png",
-          "width": 1200,
-          "height": 680
-        },
-        "datePublished": "2020-12-12",
-        "keywords": "modern, useful, html, html5, css, css3, javascript, js, template, boilerplate"
-      }
-    </script> -->
-
-    <!-- Google Fonts -->
-
     <!-- <link rel="preload" href="./src/css/preload.css" as="style" /> -->
     <link rel="stylesheet" href="./css/swiper.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <!-- <link href="./fonts/fontello.css"/> -->
     <!-- <link rel="preload" href="./js/preload.js" as="script" /> -->
 
-    <style>
-      /* Critical CSS */
-    </style>
   </head>
 
-  <body style="height: 10000px;">
+  <body>
 
     <!-- HEADER START -->
 
@@ -186,7 +45,7 @@
                 <a href="#" data-anchor="help">FAQ</a>
               </li>
               <li class="menu-item">
-                <a href="#">Kontakt</a>
+                <a href="#" data-anchor="feedback">Kontakt</a>
               </li>
             </ul>
           </nav>
@@ -200,6 +59,11 @@
               </button>
               <span class="cart-num">2</span>
             </div>
+          </div>
+        </div>
+        <div class="mobile-btn">
+          <div class="mobile-btn__wrapper">
+            <span></span>
           </div>
         </div>
       </div>
@@ -703,12 +567,12 @@
               <h2>Zyskuj więcej!</h2>
               <p>Pamiętaj, że działają u nas promocje, dzięki którym zyskujesz więcej korzyści:</p>
               <ul class="shares-info__list">
-                <div class="shares-info__list-item">
+                <li class="shares-info__list-item">
                   <p><span>Zamawiając 2 Szkiełka</span> zapłacisz o 10% mniej</p>
-                </div>
-                <div class="shares-info__list-item">
+                </li>
+                <li class="shares-info__list-item">
                   <p><span>Zamawiając 3 Szkiełka i więcej</span> zapłacisz o 15% mniej</p>
-                </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -814,194 +678,505 @@
           </div>
         </div>
       </div>
-      <div class="bg-grey">
-        <div class="help-cont" data-anchor="help">
-          
+      <div class="bg-grey helper">
+        <div class="help-cont container" data-anchor="help">
+          <div class="help-cont__header">
+            <h2>Pozostały Ci pytania?</h2>
+          </div>
+          <div class="help-cont__wrapper">
+            <div class="help-cont__item">
+              <ul class="help-cont__question-list">
+                <li class="help-cont__question-item active">
+                  <h3>Jak zastosujesz Szkiełko?</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>Ten produkt pokochać dzięki jego stylowości i jakościowemu wykonaniu. 
+                      Jest to świetny spersonalizowany prezent oraz oryginalny element dekoracyjny, 
+                      który łatwo dopasujesz do wystroju wnętrza. A dodatkowo zawiera ono wybrany przez 
+                      Ciebie kod Spotify, który w sekundę przekieruje Cię do wybranego utworu.</p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="help-cont__question-item">
+                  <h3>Z czego zrobione jest Szkiełko?</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>Plakaty produkujemy z organicznego szkła (plexiglas), które jest 2 razy lżejsze 
+                        i 5 razy mocniejsze od zwykłego szkła.</p>
+                        <p>Drukujemy przy pomocy profesjonalnej drukarki UV, aby uzyskać obraz wykonany w technologii 
+                          ultrafioletowej. W ten sposób osiągamy intensywności kolorów i trwałości obrazu.</p>
+                        <p>Plexi z zastosowaniem druku najwyższej jakości robią Szkiełko doskonałym.</p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="help-cont__question-item">
+                  <h3>Czy możesz użyć własnego zdjęcia na plakacie?</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>Oczywiście! Możesz dokonać kastomizacji - zamiast okładki albumu lub piosenki umieść własne 
+                        zdjęcie i wpisz piosenkę, którą wiążesz z tym wspomnieniem, aby jeszcze bardziej spersonalizować 
+                        Twoje Szkiełko!
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="help-cont__question-item">
+                  <h3>Czy umieszczenie własnego zdjęcia jest dodatkowo płatne?</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>W żadnym razie! Umieszczenie własnego zdjęcia jest wliczone w cenę, zarówno jak i pełna 
+                        personalizacja Szkiełka - dodatkowo możesz wkleić własny tekst zamiast tekstu do piosenki, 
+                        wybrać czas odtwarzania. Przejdź do kreatora aby zobaczyć wszystkie możliwości wyboru. 
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="help-cont__question-item">
+                  <h3>Termin realizacji zamówienia i dostawy:</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>Jesteśmy do Twojej dyspozycji 24/7. Zrobimy wszystko ze Swojej strony, abyś mógł się cieszyć 
+                        swoim Szkiełkiem jak najszybciej. Napisz do nas, jeżeli potrzebujesz pomocy w wyborze lub 
+                        zastanawiasz się nad zamówieniem!</p>
+                        <p>Szkiełko otrzymasz w ciągu 4-5 dni roboczych od złożenia zamówienia.</p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="help-cont__question-item">
+                  <h3>Pakowanie:</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>Szkiełko otrzymasz w stylowej kraftowej kopercie bąbelkowej zabezpieczającej, 
+                        więc możesz się nie martwić o bezpieczeństwo przesyłki.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="help-cont__question-item">
+                  <h3>Możliwość zwrotu:</h3>
+                  <ul class="help-cont__answer">
+                    <li>
+                      <p>Niestety ten produkt nie będziesz mógł zwrócić, dlatego że jest on ręcznie robiony według 
+                        Twoich spersonalizowanych kryterium. W razie wystąpienia wyjątkowych okoliczności możesz z 
+                        nami się skontaktować przez tego maila: </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="help-cont__footer">
+            <div class="help-cont__footer-text">
+              <span>Masz więcej pytań?</span>
+              <p>Chętnie udzielimy odpowiedzi na każde Twoje pytanie!</p>
+            </div>
+            <div class="help-cont__footer-btn">
+              <div class="product-create">
+                <span>Zadaj pytanie</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="feedback" data-anchor="feedback" id="feedback-js">
+        <div class="feedback-header">
+          <h2>Kontakt</h2>
+        </div>
+        <div class="feedback-wrapper">
+          <div class="feedback-item">
+            <div class="feedback-form">
+              <form method="get" action="g.php">
+                <h3>Napisz do nas</h3>
+                <label for="fname">Imię i Nazwisko</label>
+                <input type="text" id="fname" name="firstname" placeholder="Wprowadź imię i nazwisko">
 
+                <label for="ftel">Telefon kontaktowy</label>
+                <input type="text" id="ftel" name="telephone" placeholder="Wpisz swój numer telefonu">
+
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="emailname" placeholder="Wpisz swój adres e-mail">
+            
+                <label for="subject">Wpisz wiadomość</label>
+                <textarea id="subject" name="subject" placeholder="Wpisz tutaj swoją wiadomość.."></textarea>
+            
+                <input type="submit" value="Wyślij wiadomość">
+            
+              </form>
+            </div>
+          </div>
+          <div class="feedback-item">
+            <div class="feedback-social">
+              <ul class="feedback-social__list">
+                <li>
+                  <a href="#" class="social-link">
+                    <span class="social-name">
+                      <span class="social-header">INSTAGRAM</span>
+                      <span class="social-adress">@SzkielkoMusic</span>
+                    </span>
+                    <span class="social-img">
+                      <img class="img-svg icon-inst" src="./img/sys/icon-inst.svg" alt="name social">
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-link">
+                    <span class="social-name">
+                      <span class="social-header">FACEBOOK</span>
+                      <span class="social-adress">/SzkielkoMusic</span>
+                    </span>
+                    <span class="social-img">
+                      <img class="img-svg icon-face" src="./img/sys/icon-face.svg" alt="name social">
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:pomoc@szkielkomusic.pl" class="social-link">
+                    <span class="social-name">
+                      <span class="social-header">Email</span>
+                      <span class="social-adress">pomoc@szkielkomusic.pl</span>
+                    </span>
+                    <span class="social-img">
+                      <img class="img-svg icon-mail" src="./img/sys/icon-mail.svg" alt="name social">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- MAIN END -->
-
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-container container">
+          <div class="footer-logo">
+            <a href="/">
+              <img src="./img/sys/logo-footer.svg" alt="home">
+            </a>
+          </div>
+          <div class="footer-nav">
+            <ul class="footer-nav__wrapper">
+              <li class="footer-nav__item">
+                <a href="#" data-anchor="onas">
+                  <span>O nas</span>
+                </a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="#" data-anchor="help">
+                  <span>FAQ</span>
+                </a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="#" data-anchor="feedback">
+                  <span>Kontakt</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <ul class="footer-social__wrapper">
+              <li class="footer-social__item">
+                <a href="#">
+                  <img class="img-svg icon-mail" src="./img/sys/icon-mail.svg" alt="title link">
+                </a>
+              </li>
+              <li class="footer-social__item">
+                <a href="#">
+                  <img class="img-svg icon-inst" src="./img/sys/icon-inst.svg" alt="title link">
+                </a>
+              </li>
+              <li class="footer-social__item">
+                <a href="#">
+                  <img class="img-svg icon-face" src="./img/sys/icon-face.svg" alt="title link">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./js/libs.min.js" type="module"></script>
     <script src="./js/swiper.min.js" type="module"></script>
     <script src="./js/main.js" type="module"></script>
     <!-- <script src="./src/js/script.js" type="module"></script>
     <script src="./sw-register.js"></script> -->
-    <div class="openPopup" style="display: none;">Open popup</div>
+    <!-- <div class="openPopup" style="display: none;">Open popup</div> -->
     <!-- POPUP WRAPPER START -->
 
-    <div class="popupWrapper" style="display: none;">
+    <div class="popupWrapper" data-step="1">
       <div class="modal">
-        <div class="modal__title">
-          <p class="modal__title_text">Krok 1. Wybierz preferowany design</p>
-          <div class="modal__title_button"><!----></div>
-        </div>
-        <div class="modal__body">
-          <div class="modal__body_left">
-            <div class="imageWrapper">
-              <img src="img/image5.png" alt="song">
-            </div>
-            <p class="song__text_title">Sound Cloud Song</p>
-            <p class="song__text_description"><span><!----></span>przykładowy wzór makietu</p>
+        <div class="chooseSong">
+          <div class="modal__title">
+            <p class="modal__title_text">Krok 1. Wybierz piosenkę i kształt</p>
+            <div class="modal__title_button"></div>
           </div>
-          <div class="modal__body_right">
-            <!-- <div class="designWrapper">
-              <div class="designWrapper__item active">
-                <div class="designWrapper__item_left">
-                  <img src="img/image1.png" alt="">
+          <div class="modal__body">
+            <div class="modal__body_left">
+              <div class="imageWrapper">
+                <img src="img/image5.png" alt="song">
+              </div>
+              <p class="song__text_title">Sound Cloud Song</p>
+              <p class="song__text_description"><span>*</span>przykładowy wzór makietu</p>
+            </div>
+            <div class="modal__body_right">
+              <!-- <div class="designWrapper">
+                <div class="designWrapper__item active">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image1.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Song</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
                 </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Song</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
+                <div class="designWrapper__item">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image2.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Album</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
+                </div>
+                <div class="designWrapper__item">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image3.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Text</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
+                </div>
+                <div class="designWrapper__item">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image4.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Text</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
+                </div>
+                <div class="designWrapper__item">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image5.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Text</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
+                </div>
+                <div class="designWrapper__item">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image6.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Text</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
+                </div>
+                <div class="designWrapper__item">
+                  <div class="designWrapper__item_left">
+                    <img src="img/image7.png" alt="">
+                  </div>
+                  <div class="designWrapper__item_right">
+                    <p class="nameText">
+                      <span class="nameText__title">Spotify Text</span>
+                      <span class="nameText__description">Układ pionowy</span>
+                    </p>
+                    <div class="buttonCircle"></div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="customizeProduct">
+                <input type="text" name="" id="" placeholder="Wykonawca">
+                <input type="text" name="" id="" placeholder="Utwór">
+                <select name="okładka" id="okładka" class="custom-select okładka" placeholder="Okładka1">
+                  <option value="okładka1">Okładka1</option>
+                  <option value="okładka2">Okładka2</option>
+                  <option value="okładka3">Okładka3</option>
+                </select>
+                <select name="rozmiar" id="rozmiar" class="custom-select rozmiar" placeholder="Rozmiar1">
+                  <option value="rozmiar1">Rozmiar1</option>
+                  <option value="rozmiar2">Rozmiar2</option>
+                  <option value="rozmiar3">Rozmiar3</option>
+                </select>
+                <p class="titleChoice">Uzupełnij:</p>
+                <div class="mode checkboxWrapp">
+                  <p class="checkboxWrapp__text">Tryb</p>
+                  <div class="checkboxWrapp__choice">
+                    <label for="jasny">
+                      <input type="radio" name="mode" id="jasny" value="jasny">
+                      <span class="likeRadio"><!----></span> Jasny
+                    </label>
+                    <label class="active" for="ciemny">
+                      <input type="radio" name="mode" id="ciemny" value="ciemny" checked="checked">
+                      <span class="likeRadio"><!----></span>Ciemny
+                    </label>
+                  </div>
+                </div>
+                <div class="timeWrapper">
+                  <p class="timeWrapper__text">Czas</p>
+                  <p class="timeWrapper__time">1.35 sek</p>
+                </div>
+                <p class="titleChoice">Dodatki</p>
+                <div class="giftWrapping checkboxWrapp">
+                  <div class="checkboxWrapp__text">Opakowanie prezentowe <span>?</span>
+                    <p class="checkboxWrapp__text_detail">Jeżeli Szkiełko przeznaczone jest na prezent, zalecamy opakowanie prezentowe. Owijamy Szkiełko eleganckim złotym papierem prezentowym i dekorujemy białą wstążką.</p>
+                  </div>
+                  <div class="checkboxWrapp__choice">
+                    <label for="takGift">
+                      <input type="radio" name="gift" id="takGift" value="tak">
+                      <span class="likeRadio"><!----></span> Tak
+                    </label>
+                    <label class="active" for="nieGift">
+                      <input type="radio" name="gift" id="nieGift" value="nie" checked="checked">
+                      <span class="likeRadio"><!----></span> Nie
+                    </label>
+                  </div>
+                </div>
+                <div class="standChoice checkboxWrapp">
+                  <div class="checkboxWrapp__text">Podstawka <span>?</span>
+                    <p class="checkboxWrapp__text_detail">Nasze dębowe podstawki są ręcznie robione i dopasowane idealnie do każdego rozmiaru Szkiełka. Z taką podstawką łatwo umieścić Szkiełko na biurku
+                      lub półce.</p>
+                  </div>
+                  <div class="checkboxWrapp__choice">
+                    <label for="takStand">
+                      <input type="radio" name="stand" id="takStand" value="tak">
+                      <span class="likeRadio"><!----></span> Tak
+                    </label>
+                    <label class="active" for="nieStand">
+                      <input type="radio" name="stand" id="nieStand" value="nie" checked="checked">
+                      <span class="likeRadio"><!----></span> Nie
+                    </label>
+                  </div>
+                </div>
+                <div class="standColor checkboxWrapp">
+                  <div class="checkboxWrapp__text">Color podstawki <span>?</span>
+                    <p class="checkboxWrapp__text_detail">Jeżeli Szkiełko przeznaczone jest na prezent, zalecamy opakowanie prezentowe. Owijamy Szkiełko eleganckim złotym papierem prezentowym i dekorujemy białą wstążką.</p>
+                  </div>
+                  <div class="checkboxWrapp__choice">
+                    <label for="takStandColor">
+                      <input type="radio" name="color" id="takStandColor" value="tak">
+                      <span class="likeRadio"><!----></span> Jasny
+                    </label>
+                    <label class="active" for="nieStandColor">
+                      <input type="radio" name="color" id="nieStandColor" value="nie" checked="checked">
+                      <span class="likeRadio"><!----></span> Ciemny
+                    </label>
+                  </div>
+                </div>
+                <p class="titleChoice"><label>Uzgodnić makiet przed drukiem</label></p>
+                <div class="confirmTemplate checkboxWrapp">
+                  <div class="checkboxWrapp__choice">
+                    <label for="takConfirm">
+                      <input type="radio" name="stand" id="takConfirm" value="tak">
+                      <span class="likeRadio"><!----></span> Tak
+                    </label>
+                    <label class="active" for="nieConfirm">
+                      <input type="radio" name="stand" id="nieConfirm" value="nie" checked="checked">
+                      <span class="likeRadio"><!----></span> Nie
+                    </label>
+                  </div>
+                </div>
+                <select name="conntactChoice" id="conntactChoice" class="custom-select conntactChoice" placeholder="Wybierz jak się skontaktować">
+                  <option value="First">First</option>
+                  <option value="Second">Second</option>
+                  <option value="Third">Third</option>
+                </select>
+                <input type="text" name="" id="" placeholder="Wpisz swoje imie na Facebook’u">
+                <p class="titleChoice"><label for="comment">Dodaj komentarz</label></p>
+                <textarea id="comment" name="comment"></textarea>
+                <p class="price">Cena <span>29.90zl</span></p>
+                <div class="form-stepWrap">
+                  <div class="form-stepWrap__btn popUpBtnPrev">
+                    <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.194777 4.45668C0.194977 4.45687 0.195143 4.4571 0.195376 4.45729L3.66523 7.81213C3.92518 8.06345 4.34563 8.06252 4.60438 7.80994C4.8631 7.55739 4.8621 7.1489 4.60216 6.89755L2.27249 4.64516L16.3359 4.64516C16.7027 4.64516 17 4.35632 17 4C17 3.64368 16.7027 3.35484 16.3359 3.35484L2.27253 3.35484L4.60213 1.10245C4.86207 0.851095 4.86307 0.442611 4.60435 0.190062C4.3456 -0.0625507 3.92511 -0.0634214 3.6652 0.187869L0.195341 3.54271C0.195143 3.5429 0.194977 3.54313 0.194744 3.54332C-0.0653359 3.79551 -0.0645062 4.20532 0.194777 4.45668Z" fill="#0D1018"/>
+                    </svg>
+                    <p>Wróć</p>
+                  </div>
+                  <div class="form-stepWrap__btn popUpBtnNext">
+                    <p>Dalej</p>
+                    <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.194777 4.45668C0.194977 4.45687 0.195143 4.4571 0.195376 4.45729L3.66523 7.81213C3.92518 8.06345 4.34563 8.06252 4.60438 7.80994C4.8631 7.55739 4.8621 7.1489 4.60216 6.89755L2.27249 4.64516L16.3359 4.64516C16.7027 4.64516 17 4.35632 17 4C17 3.64368 16.7027 3.35484 16.3359 3.35484L2.27253 3.35484L4.60213 1.10245C4.86207 0.851095 4.86307 0.442611 4.60435 0.190062C4.3456 -0.0625507 3.92511 -0.0634214 3.6652 0.187869L0.195341 3.54271C0.195143 3.5429 0.194977 3.54313 0.194744 3.54332C-0.0653359 3.79551 -0.0645062 4.20532 0.194777 4.45668Z" fill="#0D1018"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-              <div class="designWrapper__item">
-                <div class="designWrapper__item_left">
-                  <img src="img/image2.png" alt="">
-                </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Album</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <div class="congratulations">
+          <div class="modal__title">
+            <p class="modal__title_text">Gratulacje! Właśnie utworzyłeś/łaś Swoje Szkiełko</p>
+            <div class="modal__title_button"></div>
+          </div>
+          <div class="modal__body">
+            <div class="congratulations__infoWrapp">
+              <div class="congratulations__infoWrapp_line">
+                <p>Wykonawca</p>
+                <p>The Weeknd</p>
               </div>
-              <div class="designWrapper__item">
-                <div class="designWrapper__item_left">
-                  <img src="img/image3.png" alt="">
-                </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Text</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
-                </div>
+              <div class="congratulations__infoWrapp_line">
+                <p>Utwór</p>
+                <p>Save Your Tears</p>
               </div>
-              <div class="designWrapper__item">
-                <div class="designWrapper__item_left">
-                  <img src="img/image4.png" alt="">
-                </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Text</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
-                </div>
+              <div class="congratulations__infoWrapp_line">
+                <p>Okładka</p>
+                <p>Oryginalna</p>
               </div>
-              <div class="designWrapper__item">
-                <div class="designWrapper__item_left">
-                  <img src="img/image5.png" alt="">
-                </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Text</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
-                </div>
+              <div class="congratulations__infoWrapp_line">
+                <p>Rozmiar</p>
+                <p>Maxi A3</p>
               </div>
-              <div class="designWrapper__item">
-                <div class="designWrapper__item_left">
-                  <img src="img/image6.png" alt="">
-                </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Text</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
-                </div>
+              <div class="congratulations__infoWrapp_line">
+                <p>Tryb</p>
+                <p>Ciemny</p>
               </div>
-              <div class="designWrapper__item">
-                <div class="designWrapper__item_left">
-                  <img src="img/image7.png" alt="">
-                </div>
-                <div class="designWrapper__item_right">
-                  <p class="nameText">
-                    <span class="nameText__title">Spotify Text</span>
-                    <span class="nameText__description">Układ pionowy</span>
-                  </p>
-                  <div class="buttonCircle"></div>
-                </div>
+              <div class="congratulations__infoWrapp_line">
+                <p>Czas</p>
+                <p>1.35</p>
               </div>
-            </div> -->
-            <div class="customizeProduct">
-              <input type="text" name="" id="" placeholder="Wykonawca">
-              <input type="text" name="" id="" placeholder="Utwór">
-              <select name="okładka" id="okładka" class="custom-select okładka" placeholder="Okładka1">
-                <option value="okładka1">Okładka1</option>
-                <option value="okładka2">Okładka2</option>
-                <option value="okładka3">Okładka3</option>
-              </select>
-              <select name="rozmiar" id="rozmiar" class="custom-select rozmiar" placeholder="Rozmiar1">
-                <option value="rozmiar1">Rozmiar1</option>
-                <option value="rozmiar2">Rozmiar2</option>
-                <option value="rozmiar3">Rozmiar3</option>
-              </select>
-              <p class="titleChoice">Uzupełnij:</p>
-              <div class="mode checkboxWrapp">
-                <p class="checkboxWrapp__text">Tryb</p>
-                <div class="checkboxWrapp__choice">
-                  <label for="jasny">
-                    <input type="radio" name="mode" id="jasny" value="jasny">
-                    <span class="likeRadio"><!----></span> Jasny
-                  </label>
-                  <label for="ciemny">
-                    <input type="radio" name="mode" id="ciemny" value="ciemny" checked="checked">
-                    <span class="likeRadio"><!----></span>Ciemny
-                  </label>
-                </div>
+              <div class="congratulations__infoWrapp_line">
+                <p>Opakowanie prezentowe </p>
+                <p>Tak</p>
               </div>
-              <div class="timeWrapper">
-                <p class="timeWrapper__text">Czas</p>
-                <p class="timeWrapper__time">1.35 sek</p>
+              <div class="congratulations__infoWrapp_line">
+                <p>Podstawka</p>
+                <p>Tak</p>
               </div>
-              <p class="titleChoice">Dodatki</p>
-              <div class="giftWrapping checkboxWrapp">
-                <p class="checkboxWrapp__text">Opakowanie prezentowe</p>
-                <div class="checkboxWrapp__choice">
-                  <label for="takGift">
-                    <input type="radio" name="gift" id="takGift" value="tak">
-                    <span class="likeRadio"><!----></span> Tak
-                  </label>
-                  <label for="nieGift">
-                    <input type="radio" name="gift" id="nieGift" value="nie" checked="checked">
-                    <span class="likeRadio"><!----></span> Nie
-                  </label>
-                </div>
+            </div>
+            <p class="discountBtn">Utwórz kolejne i otrzymaj -10% rabatu</p>
+            <div class="form-stepWrap">
+              <div class="form-stepWrap__btn popUpBtnPrev">
+                <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.194777 4.45668C0.194977 4.45687 0.195143 4.4571 0.195376 4.45729L3.66523 7.81213C3.92518 8.06345 4.34563 8.06252 4.60438 7.80994C4.8631 7.55739 4.8621 7.1489 4.60216 6.89755L2.27249 4.64516L16.3359 4.64516C16.7027 4.64516 17 4.35632 17 4C17 3.64368 16.7027 3.35484 16.3359 3.35484L2.27253 3.35484L4.60213 1.10245C4.86207 0.851095 4.86307 0.442611 4.60435 0.190062C4.3456 -0.0625507 3.92511 -0.0634214 3.6652 0.187869L0.195341 3.54271C0.195143 3.5429 0.194977 3.54313 0.194744 3.54332C-0.0653359 3.79551 -0.0645062 4.20532 0.194777 4.45668Z" fill="#0D1018"/>
+                </svg>
+                <p>Zmień</p>
               </div>
-              <div class="standChoice checkboxWrapp">
-                <p class="checkboxWrapp__text">Podstawka</p>
-                <div class="checkboxWrapp__choice">
-                  <label for="takStand">
-                    <input type="radio" name="stand" id="takStand" value="tak">
-                    <span class="likeRadio"><!----></span> Tak
-                  </label>
-                  <label for="nieStand">
-                    <input type="radio" name="stand" id="nieStand" value="nie" checked="checked">
-                    <span class="likeRadio"><!----></span> Nie
-                  </label>
-                </div>
-              </div>
-              <p class="titleChoice"><label for="comment">Dodaj komentarz</label></p>
-              <textarea id="comment" name="comment"></textarea>
-              <p class="price">Cena <span>29.90zl</span></p>
-              <div class="form-stepWrap">
-                <div class="form-stepWrap__btn">
-                  <span class="form-stepWrap__btn_arrow"></span>
-                  <p>Wróć</p>
-                </div>
-                <div class="form-stepWrap__btn">
-                  <p>Dalej</p>
-                  <span class="form-stepWrap__btn_arrow"></span>
-                </div>
+              <div class="form-stepWrap__btn popUpBtnNext">
+                <p>Sfinalizuj zakup</p>
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.9918 15.3318L12.9625 4.4891C12.9345 4.193 12.6721 3.96619 12.3578 3.96619H10.2353V3.06065C10.2353 1.37301 8.78382 0 6.99976 0C5.21578 0 3.7645 1.37301 3.7645 3.06065V3.96619H1.64045C1.32621 3.96619 1.06385 4.193 1.03576 4.4891L0.0024276 15.3744C-0.012791 15.5351 0.0440359 15.6942 0.159066 15.8132C0.274096 15.9322 0.436725 16 0.607125 16H13.3913C13.3917 16 13.3924 16 13.3929 16C13.7283 16 14 15.7429 14 15.4257C13.9999 15.3938 13.9972 15.3623 13.9918 15.3318ZM4.97876 3.06065C4.97876 2.00634 5.8854 1.14858 6.99984 1.14858C8.11436 1.14858 9.02108 2.00634 9.02108 3.06065V3.96619H4.97876V3.06065ZM1.27124 14.8515L2.19553 5.11477H3.7645V6.14175C3.7645 6.45891 4.03625 6.71604 4.37163 6.71604C4.70701 6.71604 4.97876 6.45891 4.97876 6.14175V5.11477H9.02108V6.14175C9.02108 6.45891 9.29283 6.71604 9.62821 6.71604C9.96358 6.71604 10.2353 6.45891 10.2353 6.14175V5.11477H11.8029L12.7271 14.8515H1.27124Z" fill="#F4F5F4"/>
+                </svg>
               </div>
             </div>
           </div>
