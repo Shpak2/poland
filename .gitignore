@@ -1,4 +1,6 @@
 /node_modules
+/build/index.html
+/build/js/main.js
 /build
 .DS_store
 .idea
