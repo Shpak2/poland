@@ -32,6 +32,30 @@ $( document ).ready(function() {
             '</svg>',
     }
 
+    // detect mobile
+    
+    // checkMobileWidth()
+
+    new Promise(function(mobileWidth){
+          console.log('worked2')
+            var mobileWidth;
+            let widthWindow = document.body.clientWidth;
+            let heightWindow = window.innerHeight;
+            let orientationLandscape;
+            widthWindow > heightWindow ? orientationLandscape = true : orientationLandscape = false;
+            if (widthWindow <= 1023) {
+                mobileWidth = true;
+            } else if ((widthWindow == 1024) && !orientationLandscape) {
+                mobileWidth = true;
+            } else if (heightWindow >= 501 && orientationLandscape) {
+                mobileWidth = false;
+            } else if (heightWindow < 500 && orientationLandscape) {
+                mobileWidth = true;
+            } else {
+                mobileWidth = false;
+            }
+        })
+    // end detect
 // mobile menu
   btnMobMenu.on('click', function(e) {
     e.preventDefault();
@@ -148,6 +172,7 @@ $('.img-svg').each(function(){
 // end animation
 
 // slider & product container
+
 let btnSlide = $('.product-cat__btn'),
     sliderParam = {
                     slidesPerView: 4,
@@ -170,36 +195,43 @@ btnSlide.click(function(e){
 })
 
 const swiper1 = new Swiper('#slider-music',sliderParam)
-const swiper2 = new Swiper('.cont-price',{
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  initialSlide: 1,
-  // effect: 'flip',
-  // grabCursor: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    480: {
-      centeredSlides: false,
-      loop: false,
-      autoplay: false,
-      slidesPerView: 3,
-      spaceBetween: 30
+
+return new Promise(function(mobileWidth) {
+  if(mobileWidth){
+    console.log('worked')
+  const swiper2 = new Swiper('.cont-price',{
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    initialSlide: 1,
+    // effect: 'flip',
+    // grabCursor: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
     },
-  }
-})
-let gallerySlider = new Swiper('.gallery-slider', {
-  effect: 'flip',
-  loop: true,
-  grabCursor: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+    breakpoints: {
+      480: {
+        centeredSlides: false,
+        loop: false,
+        autoplay: false,
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    }
+  })
+  let gallerySlider = new Swiper('.gallery-slider', {
+    effect: 'flip',
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
+
+}
 });
 // end slider
 });
