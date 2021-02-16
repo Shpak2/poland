@@ -155,6 +155,10 @@ let btnSlide = $('.product-cat__btn'),
                     loop: true,
                     lazy: true,
                     spaceBetween: 30,
+                    navigation: {
+                      nextEl: '.swiper-next',
+                      prevEl: '.swiper-prev',
+                    },
                   };
 
 btnSlide.click(function(e){
