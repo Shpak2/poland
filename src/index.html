@@ -508,9 +508,9 @@
           </div>
         </div>
       </div>
-      <div class="cont-price">
-        <ul class="cont-price__list">
-          <li class="cont-price__item">
+      <div class="cont-price swiper-container">
+        <div class="cont-price__list swiper-wrapper">
+          <div class="cont-price__item swiper-slide">
             <div class="cont-price__preview size-a3">
               <img src="./img/temp/slide1.jpg" alt="slide name">
             </div>
@@ -525,8 +525,8 @@
                 <span>69zl</span>
               </div>
             </div>
-          </li>
-          <li class="cont-price__item">
+          </div>
+          <div class="cont-price__item swiper-slide">
             <div class="cont-price__preview size-a4">
               <img src="./img/temp/slide1.jpg" alt="slide name">
             </div>
@@ -541,8 +541,8 @@
                 <span>79zl</span>
               </div>
             </div>
-          </li>
-          <li class="cont-price__item">
+          </div>
+          <div class="cont-price__item swiper-slide">
             <div class="cont-price__preview size-a5">
               <img src="./img/temp/slide1.jpg" alt="slide name">
             </div>
@@ -557,8 +557,8 @@
                 <span>69zl</span>
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <div class="bg-green" id="shares">
         <div class="shares container">
@@ -641,6 +641,31 @@
           </div>
           <div class="gallery-container__btn">
             <a href="#" class="product-create"><span>Podążaj za nami</span></a>
+          </div>
+        </div>
+        <div class="gallery-slider swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/temp/gl1.jpg" alt="gallery image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/temp/gl2.jpg" alt="gallery image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/temp/gl3.jpg" alt="gallery image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/temp/gl4.jpg" alt="gallery image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/temp/gl5.jpg" alt="gallery image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/temp/gl6.jpg" alt="gallery image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/temp/gl7.jpg" alt="gallery image">
+            </div>
           </div>
         </div>
       </div>
@@ -899,10 +924,11 @@
     <script src="./js/libs.min.js" type="module"></script>
     <script src="./js/swiper.min.js" type="module"></script>
     <script src="./js/main.js" type="module"></script>
-    <!-- <script src="./src/js/script.js" type="module"></script>
-    <script src="./sw-register.js"></script> -->
-    <!-- <div class="openPopup" style="display: none;">Open popup</div> -->
-    <!-- POPUP WRAPPER START -->
+    <div id="scroll" class="scroll-top">
+      <span class="scroll-top__btn">
+        <img class="img-svg" src="./img/sys/arrow.svg" alt="arrow">
+      </span>
+    </div>
 
     <div class="popupWrapper" data-step="1">
       <div class="modal">
@@ -1183,10 +1209,5 @@
     </div>
 
     <!-- POPUP WRAPPER END -->
-    <div id="scroll" class="scroll-top">
-      <span class="scroll-top__btn">
-        <img class="img-svg" src="./img/sys/arrow.svg" alt="arrow">
-      </span>
-    </div>
   </body>
 </html>
