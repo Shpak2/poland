@@ -85,6 +85,9 @@
       margin-bottom: get-vw(20px)
     & h2
       max-width: 60%
+  & .swiper-wrapper
+    flex-wrap: wrap
+    justify-content: space-between
   &__card-info
     & .card-info__text
       width: 85%
@@ -101,12 +104,14 @@
       letter-spacing: get-vw(0.3px)
       color: $titleText
       width: 85%
-      padding: get-vw(10px) 0
+      padding: get-vw(12px) 0
       transition: .3s ease-in-out
+      background-color: $white
       &:hover
         @media (hover: hover)
-          color: $accentColor
-          text-shadow: 0 0 1px $accentColor, 0 0 1px $accentColor
+          background-color: $blackHeadline
+          color: $white
+          text-shadow: 0 0 1px $white, 0 0 1px $white
           box-shadow: $btnShadowLight
 
 
@@ -115,12 +120,15 @@
   padding-bottom: get-vw(80px)
   &.active
     display: block
+  &.swiper-container
+    overflow: unset
 
 .product-slider__item
   background-color: transparent
   width: get-vw(255px)
   height: get-vw(324px)
   perspective: 1000px
+  margin-bottom: get-vw(36px)
 
 .flip-card-inner
   position: relative
@@ -130,7 +138,6 @@
   transition: transform 0.5s
   transform-style: preserve-3d
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
-  margin: 40px 0
 
 .product-slider__item:focus
     outline: 0
@@ -161,6 +168,30 @@
   justify-content: center
   align-items: center
 
+.load-more
+  width: get-vw(160px)
+  height: get-vw(42px)
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: get-vw(20px) auto 0
+  border: get-vw(2px) solid #000000
+  border-radius: get-vw(40px)
+  cursor: pointer
+  transition: .3s ease-in-out
+  & span
+    font-weight: 600
+    font-size: get-vw(16px)
+    letter-spacing: get-vw(0.3px)
+    color: $blackHeadline
+    background-color: $white
+  &:hover
+    @media (hover:hover)
+      border-color: $accentColor
+      color: $accentColor
+      // text-shadow: 0 0 1px $accentColor, 0 0 1px $accentColor
+      box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1)
+
 .swiper
   &-next,&-prev
     position: absolute
@@ -169,6 +200,7 @@
     height: 50px
     background: red
     z-index: 20
+    display: none
   &-next
     right: 0
     transform: translate(-100%,-50%)

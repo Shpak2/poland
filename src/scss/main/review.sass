@@ -1,0 +1,173 @@
+.reviews
+  position: relative
+  &-container
+    width: get-vw(920px)
+    height: get-vw(330px)
+    & .review
+      background-color: $white
+      // padding: get-vw(50px) 0
+      margin: 0 get-vw(10px)
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07)
+      position: relative
+      &::before,&::after
+        content: ''
+        height: 100%
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07)
+        position: absolute
+        bottom: 0
+        left: 50%
+        transition: .6s ease-in-out
+        background-color: $white
+        opacity: 0
+      &::before
+        transform: translate(-50%,0%)
+        width: 95%
+        transition-delay: .4s
+      &::after
+        transition-delay: .2s
+        width: 97.5%
+        transform: translate(-50%,0%)
+  &-item
+    // height: get-vw(228px)
+    // margin: get-vw(20px) auto
+    // background-color: red
+    display: flex
+    align-items: center
+    justify-content: center
+    &__wrapper
+      background-color: $white
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07)
+      position: relative
+      
+      z-index: 1
+      
+    &__photo
+      width: 30%
+      position: relative
+      z-index: 1
+      background-color: $white
+      & img
+        height: 100%
+    &__body
+      width: 58%
+      display: flex
+      padding: 2% get-vw(55px) 2% 0
+      align-items: center
+      flex-wrap: wrap
+      overflow: hidden
+      position: relative
+      z-index: 1
+      background-color: $white
+    &__header
+      line-height: 1.4
+      letter-spacing: get-vw(0.3px)
+      transition: .6s ease-in-out
+      transition-delay: .2s
+      transform: translateY(-100%)
+      opacity: 0
+      & span
+        font-weight: 800
+        font-size: get-vw(17px)
+        color: $titleText
+      & p
+        font-weight: 600
+        font-size: get-vw(14px)
+        color: $lightTextThree
+    &__text
+      margin: get-vw(7px) 0 auto
+      font-weight: 400
+      font-size: get-vw(17px)
+      line-height: 1.4
+      letter-spacing: get-vw(0.5px)
+      color: rgba(115, 123, 125,.8)
+      transition: .6s ease-in-out
+      transition-delay: .2s
+      transform: translateY(100%)
+      opacity: 0
+  &-wrapper
+    // max-height: get-vw(280px)
+    
+    margin: 0 auto
+    transform: translateY(50%)
+    position: relative
+    z-index: 10
+    // background-color: $white
+
+.reviews
+  &-next,&-prev
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: get-vw(32px)
+    height: get-vw(32px)
+    background-color: $white
+    outline: none
+    cursor: pointer
+    transition: .3s ease-in-out
+    border-radius: 50%
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+    // &[aria-disabled=true]
+    //   pointer-events: none
+    & svg
+      width: get-vw(15px)
+      height: auto
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-40%,-60%)
+      & path
+        transition: .3s ease-in-out
+    &:hover
+      @media(hover:hover)
+        background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+        & svg path
+          stroke: url(#paint1)
+  &-next
+    right: 3%
+    & svg
+      transform: translate(-60%,-40%) scale(-1,-1)
+  &-prev
+    left: 3%
+  &-img
+    padding: get-vw(25px) 0
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      width: get-vw(212px)
+      height: 100%
+      transform: translateY(-50%)
+      background: url(../img/sys/decor_user.svg) 50% 50%/105% 105% no-repeat
+
+.photo
+  width: get-vw(208px)
+  height: get-vw(208px)
+  border: get-vw(3px) solid #FFFFFF
+  box-sizing: border-box
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+  border-radius: get-vw(2px)
+  margin-left: auto
+  position: relative
+  z-index: 1
+  transition: .6s ease-in-out
+  transition-delay: .2s
+  transform: translateX(-25%)
+  opacity: 0
+  background-color: $white
+
+.reviews-item.active
+  & .reviews-item__text, & .reviews-item__header, & .photo
+    transform: unset
+    opacity: 1
+  & .review
+    &::before
+      transform: translate(-50%,11%)
+      opacity: 1
+    &::after
+      transform: translate(-50%,5.5%)
+      opacity: 1

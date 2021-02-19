@@ -11,7 +11,7 @@ $( document ).ready(function() {
   const colorGradien = {
     face: '<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">'+
               '<linearGradient id="grad-face" x2="1" y2="1">'+
-                '<stop offset="0%" stop-color="#447799" />'+
+                '<stop offset="0%" stop-color="#F5F5F5" />'+
                 '<stop offset="50%" stop-color="#224488" />'+
                 '<stop offset="100%" stop-color="#112266" />'+
               '</linearGradient>'+
@@ -25,34 +25,32 @@ $( document ).ready(function() {
             '</svg>',
     mail: '<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">'+
               '<linearGradient id="grad-mail" x2="1" y2="1">'+
-                '<stop offset="0%" stop-color="#068AF9" />'+
-                '<stop offset="80%" stop-color="#D03F09" />'+
-                '<stop offset="100%" stop-color="#00A94B" />'+
+              '<stop offset="0%" stop-color="#F5F5F5" />'+
+              '<stop offset="50%" stop-color="#D30300" />'+
+                '<stop offset="100%" stop-color="#D20201" />'+
               '</linearGradient>'+
             '</svg>',
     }
 
     // detect mobile
-    
+    var mobileWidth;
     // checkMobileWidth()
 
-    new Promise(function(mobileWidth){
-          console.log('worked2')
-            var mobileWidth;
+    const CheckMobile = new Promise(function(){
             let widthWindow = document.body.clientWidth;
             let heightWindow = window.innerHeight;
             let orientationLandscape;
             widthWindow > heightWindow ? orientationLandscape = true : orientationLandscape = false;
             if (widthWindow <= 1023) {
-                mobileWidth = true;
+                return mobileWidth = true;
             } else if ((widthWindow == 1024) && !orientationLandscape) {
-                mobileWidth = true;
+                return mobileWidth = true;
             } else if (heightWindow >= 501 && orientationLandscape) {
-                mobileWidth = false;
+                return mobileWidth = false;
             } else if (heightWindow < 500 && orientationLandscape) {
-                mobileWidth = true;
+                return mobileWidth = true;
             } else {
-                mobileWidth = false;
+                return mobileWidth = false;
             }
         })
     // end detect
@@ -173,65 +171,102 @@ $('.img-svg').each(function(){
 
 // slider & product container
 
-let btnSlide = $('.product-cat__btn'),
-    sliderParam = {
-                    slidesPerView: 4,
-                    slidesPerColumn: 1,
-                    loop: true,
-                    lazy: true,
-                    spaceBetween: 30,
-                    navigation: {
-                      nextEl: '.swiper-next',
-                      prevEl: '.swiper-prev',
-                    },
-                  };
+let sliderReview = new Swiper('.reviews-container', {
+  direction: 'vertical',
+  spaceBetween: 30,
+  mousewheelControl: true,
+  slidesPerView: 1,
+  effect: 'coverflow',
+  loop: true,
+  navigation: {
+    nextEl: '.reviews-next',
+    prevEl: '.reviews-prev',
+  },
+  coverflowEffect: {
+    rotate: 0,
+    slideShadows: false,
+  }
+});
 
-btnSlide.click(function(e){
-  btnSlide.removeClass('active');
-  $(this).addClass('active');
-  $('.product-slider__wrapper.active').slideUp(150);
-  $('#slider-'+$(this).attr('data-cat')).addClass('active').slideDown(150);
-  const swiper2 = new Swiper('#slider-'+$(this).attr('data-cat'), sliderParam)
-})
+sliderReview.on('slideChange', function () {
+  var index = this.activeIndex;
 
-const swiper1 = new Swiper('#slider-music',sliderParam)
+  // $('.halfbox').css({background: 'var('+colors[index % colors.length]+')'});
 
-return new Promise(function(mobileWidth) {
-  if(mobileWidth){
-    console.log('worked')
-  const swiper2 = new Swiper('.cont-price',{
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    initialSlide: 1,
-    // effect: 'flip',
-    // grabCursor: true,
-    centeredSlides: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      480: {
-        centeredSlides: false,
-        loop: false,
-        autoplay: false,
-        slidesPerView: 3,
-        spaceBetween: 30
-      },
-    }
-  })
-  let gallerySlider = new Swiper('.gallery-slider', {
-    effect: 'flip',
-    loop: true,
-    grabCursor: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+  $('.reviews-item').removeClass('active').eq(this.activeIndex).addClass('active')
   });
 
-}
-});
+
+CheckMobile.then(new Promise(function() {
+  if (mobileWidth) {
+    const swiper2 = new Swiper(".cont-price", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      initialSlide: 1,
+      // effect: 'flip',
+      // grabCursor: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        480: {
+          centeredSlides: false,
+          loop: false,
+          autoplay: false,
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+    let gallerySlider = new Swiper(".gallery-slider", {
+      effect: "flip",
+      loop: true,
+      grabCursor: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+
+    let btnSlide = $(".product-cat__btn"),
+      sliderParam = {
+        slidesPerView: 4,
+        slidesPerColumn: 1,
+        loop: true,
+        lazy: true,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-next",
+          prevEl: ".swiper-prev",
+        },
+      };
+      const swiper1 = new Swiper('#slider-music',sliderParam)
+    btnSlide.click(function (e) {
+      btnSlide.removeClass("active");
+      $(this).addClass("active");
+      $(".product-slider__wrapper.active").slideUp(150);
+      $("#slider-" + $(this).attr("data-cat"))
+        .addClass("active")
+        .slideDown(150);
+      const swiper2 = new Swiper(
+        "#slider-" + $(this).attr("data-cat"),
+        sliderParam
+      );
+    });
+  }else{
+    let btnSlide = $(".product-cat__btn");
+    btnSlide.click(function (e) {
+      btnSlide.removeClass("active");
+      $(this).addClass("active");
+      $(".product-slider__wrapper.active").slideUp(150);
+      $("#slider-" + $(this).attr("data-cat"))
+        .addClass("active")
+        .slideDown(150);
+    });
+  }
+}))
 // end slider
 });
