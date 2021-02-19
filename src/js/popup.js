@@ -63,7 +63,7 @@ $( document ).ready(function() {
     //КАСТОМНЫЙ СЕЛЕКТ КОНЕЦ
 
     //ЛЕЙБЛ ДОБАВЛЕНИЕ КЛАССА active НАЧАЛО
-    $('label').off('click').on('click', function (e){
+    $('.popupWrapper label').off('click').on('click', function (e){
         $(this).closest('.checkboxWrapp__choice').find('label').removeClass('active');
         $(this).addClass('active');
         $(this).closest('.checkboxWrapp__choice').find('input').prop( "checked", false );
@@ -91,11 +91,16 @@ $( document ).ready(function() {
     let popUpPrev = $('.popUpBtnPrev');
     let popUpNext = $('.popUpBtnNext');
     let stepData = $('[data-step]');
+    let popUpWrapper = $('.popupWrapper');
+
 
     $(popUpNext).on('click', ()=>{
         let stepNumber = +$(stepData).attr('data-step');
         if (stepNumber < 2){
             $(stepData).attr('data-step', stepNumber+1)
+        }else if(stepNumber == 2){
+            $('body').addClass('openCart')
+            $(popUpWrapper).hide()
         }
     })
     $(popUpPrev).on('click', ()=>{
@@ -104,5 +109,47 @@ $( document ).ready(function() {
             $(stepData).attr('data-step', stepNumber-1)
         }
     })
+
+
+    let cartButtonPrev = $('.cartBtnPrev');
+    let cartButtonNext = $('.cartBtnNext');
+    let cartStepData = $('[data-cartstate]');
+
+    $(cartButtonNext).on('click', ()=>{
+        let cartStepNumber = +$(cartStepData).attr('data-cartstate');
+        if(cartStepNumber == 1){
+            $('.shoppingCartWrapper__steps_step1').addClass('complite');
+            $('.shoppingCartWrapper__steps_step2').addClass('active');
+            $(cartStepData).attr('data-cartstate', cartStepNumber+1)
+        }else if(cartStepNumber == 2){
+            $('.shoppingCartWrapper__steps_step2').addClass('complite');
+            $('.shoppingCartWrapper__steps_step3').addClass('active');
+            $(cartStepData).attr('data-cartstate', cartStepNumber+1)
+        }else if(cartStepNumber == 3){
+            $('.shoppingCartWrapper__steps_step3').addClass('complite');
+            $(cartStepData).attr('data-cartstate', cartStepNumber+1)
+        }else if(cartStepNumber == 4){
+            $(cartStepData).attr('data-cartstate', cartStepNumber+1)
+        }
+    })
+    $(cartButtonPrev).on('click', ()=>{
+        let cartStepNumber = +$(cartStepData).attr('data-cartstate');
+        if(cartStepNumber == 3){
+            $('.shoppingCartWrapper__steps_step3').removeClass('complite');
+            $('.shoppingCartWrapper__steps_step3').removeClass('active');
+            $(cartStepData).attr('data-cartstate', cartStepNumber-1)
+        }else if(cartStepNumber == 2){
+            $('.shoppingCartWrapper__steps_step3').removeClass('complite');
+            $('.shoppingCartWrapper__steps_step3').removeClass('active');
+            $(cartStepData).attr('data-cartstate', cartStepNumber-1)
+        }else if(cartStepNumber == 1){
+            $('.shoppingCartWrapper__steps_step3').removeClass('complite');
+        }else if(cartStepNumber == 4){
+            $(cartStepData).attr('data-cartstate', cartStepNumber-1)
+        }
+    })
+
+
     //ПОПАП МИНИМАЛЬНАЯ ЛОГИКА ПЕРЕХОДОВ КОНЕЦ
+
 })
