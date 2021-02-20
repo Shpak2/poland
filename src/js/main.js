@@ -8,6 +8,8 @@ $( document ).ready(function() {
       btnMobMenu = $('.mobile-btn'),
       btnQuestion = $('.help-cont__question-item');
 
+  let iconForwrard = '<svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="256" x2="256" y1="481.01" y2="30.99"><stop offset="0" stop-color="#82BB58"/><stop offset="1" stop-color="#53A580"/></linearGradient><g><g><g><path d="m505.73 183.801-212-150c-4.6-3.296-10.606-3.721-15.586-1.128-5.01 2.563-8.145 7.705-8.145 13.33v75.396c-150.204 7.822-269.999 132.495-269.999 284.604v60c0 7.485 5.508 13.813 12.92 14.854 7.233 1.055 14.424-3.428 16.494-10.723l2.314-8.101c30.762-107.636 127.471-184.218 238.272-190.605v74.575c0 5.625 3.135 10.767 8.145 13.33 4.98 2.593 10.986 2.139 15.586-1.128l212-150c3.926-2.813 6.27-7.354 6.27-12.202s-2.345-9.39-6.271-12.202z" fill="url(#SVGID_1_)"/></g></g></g></svg>';
+
   const colorGradien = {
     face: '<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">'+
               '<linearGradient id="grad-face" x2="1" y2="1">'+
@@ -199,6 +201,14 @@ sliderReview.on('slideChange', function () {
 
 CheckMobile.then(new Promise(function() {
   if (mobileWidth) {
+    $('.flip-card-front').click(function(){
+      $('.back-card').remove()
+      $(this).parent().find('.flip-card-back').append('<span class="back-card">'+ iconForwrard +'</span>');
+      $('.back-card').click(function(){
+        $(this).parent().parent().find('.flip-card-front').click()
+        $(this).remove()
+      })
+    })
     const swiper2 = new Swiper(".cont-price", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -233,18 +243,23 @@ CheckMobile.then(new Promise(function() {
 
     let btnSlide = $(".product-cat__btn"),
       sliderParam = {
-        slidesPerView: 4,
-        slidesPerColumn: 1,
-        loop: true,
-        lazy: true,
-        spaceBetween: 30,
-        navigation: {
-          nextEl: ".swiper-next",
-          prevEl: ".swiper-prev",
-        },
+        slidesPerView: 1.3,
+        spaceBetween: 40,
       };
+      
       const swiper1 = new Swiper('#slider-music',sliderParam)
     btnSlide.click(function (e) {
+      if($(this).parent().innerWidth()/2 < $(this).parent().innerWidth()-$(this).position().left){
+        $('.product-cat').stop().animate({
+          scrollLeft: '+='
+          +(($(this).position().left - $(this).parent().innerWidth())/2)
+        },800)
+      }else{
+        $('.product-cat').stop().animate({
+          scrollLeft: '+='
+          +($(this).position().left - $(this).parent().position().left)
+        },800)
+      }
       btnSlide.removeClass("active");
       $(this).addClass("active");
       $(".product-slider__wrapper.active").slideUp(150);

@@ -12,7 +12,7 @@ body
   color: #000
   position: relative
   background-color: $white
-  overflow-x: hidden
+  // overflow-x: hidden
   // overflow: hidden
 
 header
@@ -35,6 +35,9 @@ header
   z-index: 100
   cursor: pointer
   transition: .3s ease-in-out
+  @include mobile
+    width: get-vw-mobile(47px)
+    height: get-vw-mobile(47px)
   &__btn
     position: absolute
     width: 50%

@@ -3,6 +3,9 @@
   &-container
     width: get-vw(920px)
     height: get-vw(330px)
+    @include mobile
+      width: 85%
+      height: get-vw-mobile(330px)
     & .review
       background-color: $white
       // padding: get-vw(50px) 0
@@ -41,7 +44,6 @@
       justify-content: space-between
       box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07)
       position: relative
-      
       z-index: 1
       
     &__photo
@@ -49,6 +51,8 @@
       position: relative
       z-index: 1
       background-color: $white
+      @include mobile
+        width: 100%
       & img
         height: 100%
     &__body
@@ -61,6 +65,9 @@
       position: relative
       z-index: 1
       background-color: $white
+      @include mobile
+        width: 100%
+        padding: 0 5%
     &__header
       line-height: 1.4
       letter-spacing: get-vw(0.3px)
@@ -88,14 +95,12 @@
       transform: translateY(100%)
       opacity: 0
   &-wrapper
-    // max-height: get-vw(280px)
-    
     margin: 0 auto
     transform: translateY(50%)
     position: relative
     z-index: 10
-    // background-color: $white
-
+    @include mobile
+      transform: unset
 .reviews
   &-next,&-prev
     position: absolute

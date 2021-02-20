@@ -175,7 +175,7 @@
     @include mobile
       width: get-vw-mobile(228px)
       height: get-vw-mobile(327px)
-      margin: get-vw-mobile(78px) auto
+      margin: get-vw-mobile(108px) auto get-vw-mobile(58px)
     &::after
       width: get-vw(322px)
       height: get-vw(273px)
@@ -198,3 +198,9 @@
         width: get-vw-mobile(129px)
         height: get-vw-mobile(117px)
         transform: translate(35%,-45%)
+
+.bg-grey.intro-wrap
+  @include mobile
+    box-shadow: unset
+    margin-top: get-vw-mobile(20px)
+    background: transparent

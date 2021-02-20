@@ -29,8 +29,8 @@
     margin-bottom: get-vw(24px)
     width: fit-content
     @include mobile
-      margin-left: 0
-      margin-right: 0
+      // margin-left: 0
+      // margin-right: 0
       margin-bottom: get-vw-mobile(24px)
     &.size-a3
       & img
@@ -107,6 +107,8 @@
     width: 100%
     height: 100%
     pointer-events: none
+    @include mobile
+      transform: translate(-82%,-70%) rotate(-90deg)
     & p
       transform: translateY(25%)
       font-weight: 700
@@ -114,6 +116,10 @@
       line-height: get-vw(22px)
       letter-spacing: get-vw(0.1px)
       color: $titleText
+      @include mobile
+        font-size: get-vw-mobile(14px)
+        line-height: get-vw-mobile(22px)
+        letter-spacing: get-vw-mobile(0.1px)
   &-hor
     pointer-events: none
     position: absolute
@@ -126,3 +132,7 @@
       line-height: get-vw(22px)
       letter-spacing: get-vw(0.1px)
       color: $titleText
+      @include mobile
+        font-size: get-vw-mobile(14px)
+        line-height: get-vw-mobile(22px)
+        letter-spacing: get-vw-mobile(0.1px)

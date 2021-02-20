@@ -15,10 +15,20 @@
         letter-spacing: get-vw-mobile(0.25px)
 
 .product-cat
+  @include mobile
+    margin: get-vw-mobile(15px) 0 get-vw-mobile(25px)
+    overflow-x: auto
+    transition: .6s
+  &::-webkit-scrollbar
+    display: none
   &__list
     display: flex
     position: relative
     width: fit-content
+    // @include mobile
+    //   // display: -webkit-box
+    //   overflow-x: scroll
+    //   width: 500px
     &::before
       content: ''
       position: absolute
@@ -42,6 +52,7 @@
       font-size: get-vw-mobile(16px)
       width: get-vw-mobile(102px)
       height: get-vw-mobile(36px)
+      border: 1px solid #53A580
       display: flex
       align-items: center
       justify-content: center
@@ -56,6 +67,8 @@
       transform: translateX(-50%)
       transition: .2s ease-in-out
       background-color: $accentColor
+      @include mobile
+        content: none
     &:hover
       @media (hover: hover)
         color: $titleText
@@ -68,6 +81,11 @@
     &.active
       color: $titleText
       text-shadow: 0 0 1px $titleText, 0 0 1px $titleText
+      @include mobile
+        background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+        color: $white
+        text-shadow: unset
+        border-color: transparent
       &:after
         width: 100%
 
@@ -83,11 +101,25 @@
       height: auto
       box-shadow: 7px 4px 15px 0px rgba(0, 0, 0, .2)
       margin-bottom: get-vw(20px)
+      @include mobile
+        max-width: 50%
+        margin-bottom: get-vw-mobile(20px)
     & h2
       max-width: 60%
+      font-weight: 700
+      font-size: get-vw(20px)
+      line-height: 1.3
+      letter-spacing: get-vw(0.1px)
+      color: $titleText
+      @include mobile
+        font-size: get-vw-mobile(20px)
+        max-width: 70%
   & .swiper-wrapper
     flex-wrap: wrap
     justify-content: space-between
+    @include mobile
+      flex-wrap: unset
+      justify-content: unset
   &__card-info
     & .card-info__text
       width: 85%
@@ -95,6 +127,10 @@
       font-size: get-vw(16px)
       line-height: 1.5
       letter-spacing: get-vw(0.25px)
+      @include mobile
+        font-size: get-vw-mobile(15px)
+        letter-spacing: get-vw-mobile(0.25px)
+        margin-top: auto
     & .btn-product__add
       margin-top: get-vw(20px)
       cursor: pointer
@@ -107,6 +143,13 @@
       padding: get-vw(12px) 0
       transition: .3s ease-in-out
       background-color: $white
+      @include mobile
+        padding: get-vw-mobile(12px) 0
+        border-radius: get-vw-mobile(40px)
+        font-size: get-vw-mobile(16px)
+        letter-spacing: get-vw-mobile(0.3px)
+        margin-top: auto
+        margin-bottom: get-vw-mobile(20px)
       &:hover
         @media (hover: hover)
           background-color: $blackHeadline
@@ -129,6 +172,9 @@
   height: get-vw(324px)
   perspective: 1000px
   margin-bottom: get-vw(36px)
+  @include mobile
+    width: 80%
+    height: get-vw-mobile(304px)
 
 .flip-card-inner
   position: relative
@@ -179,12 +225,21 @@
   border-radius: get-vw(40px)
   cursor: pointer
   transition: .3s ease-in-out
+  @include mobile
+    width: get-vw-mobile(160px)
+    height: get-vw-mobile(42px)
+    margin: get-vw-mobile(30px) auto 0
+    border-radius: get-vw-mobile(40px)
+    border: get-vw-mobile(1px) solid #000000
   & span
     font-weight: 600
     font-size: get-vw(16px)
     letter-spacing: get-vw(0.3px)
     color: $blackHeadline
     background-color: $white
+    @include mobile
+      font-size: get-vw-mobile(16px)
+      letter-spacing: get-vw-mobile(0.3px)
   &:hover
     @media (hover:hover)
       border-color: $accentColor
@@ -207,3 +262,26 @@
   &-prev
     left: 0
     transform: translate(-100%,-50%)
+
+.back-card
+  position: absolute
+  top: 3%
+  left: 4%
+  width: get-vw-mobile(30px)
+  height: get-vw-mobile(28px)
+  background-color: $white
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  transform: scale(0)
+  animation: showForward .4s ease-in-out forwards .4s
+  & svg
+    width: 60%
+    height: auto
+
+@keyframes showForward
+  0%
+    transform: scale(0)
+  100%
+    transform: scale(1)
