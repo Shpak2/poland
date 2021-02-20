@@ -9,6 +9,9 @@
     right: 0
     bottom: 0
     z-index: 200
+    box-sizing: border-box
+    >*
+        box-sizing: border-box
     .chooseSong,.congratulations
         display: none
     &[data-step="1"]
@@ -183,6 +186,8 @@
                         border: none
                         background: $lightTextTwo
                         color: $titleText
+                        &:focus
+                            background: $white
                         &::placeholder
                             color: #C3CBCD
                             font-size: get-vw(16px)
@@ -284,13 +289,14 @@
                         border: none
                         outline: none
                         background: $lightTextTwo
-                        //resize: none
                         height: get-vw(95px)
                         padding-left: get-vw(15px)
                         padding-top: get-vw(11px)
                         box-sizing: border-box
                         margin-top: get-vw(20px)
                         font-size: get-vw(16px)
+                        &:focus
+                            background: $white
                     .timeWrapper
                         display: flex
                         flex-direction: row
@@ -399,3 +405,518 @@
                         svg
                             transform: none
                             width: get-vw(14px)
+body.openCart
+    overflow: hidden
+    .cartButtons
+        display: flex
+        flex-direction: row
+        &__btn
+            margin-left: get-vw(20px)
+            padding-left: get-vw(32px)
+            padding-right: get-vw(32px)
+            height: get-vw(44px)
+            font-size: get-vw(16px)
+            border: 1px solid #0D1018
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: get-vw(40px)
+            cursor: pointer
+            svg
+                width: get-vw(17px)
+                margin: 0 get-vw(10px)
+            &.cartBtnPrev
+                padding-left: get-vw(22px)
+                svg
+                    width: get-vw(16px)
+            &.cartBtnNext
+                padding-right: get-vw(22px)
+                svg
+                    path
+                        fill: #0D1018
+            &:last-child
+                svg
+                    transform: rotate(180deg)
+            &:hover
+                background: #0D1018
+                color: $lightTextTwo
+                svg
+                    path
+                        fill: $lightTextTwo
+    .footer
+        z-index: 110
+        padding-top: 0
+    header
+        background: $white
+        z-index: 110
+    .shoppingCartWrapper
+        position: fixed
+        z-index: 100
+        top: 0
+        padding-top: get-vw(116px)
+        display: flex
+        flex-direction: column
+        width: 100%
+        align-items: center
+        background: $white
+        height: 100%
+        overflow-y: scroll
+        box-sizing: border-box
+        >*
+            box-sizing: border-box
+        &__steps
+            width: get-vw(770px)
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            .stepIcon
+                width: get-vw(44px)
+                height: get-vw(44px)
+                border: 1px solid #DBE0E1
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: 50%
+                position: relative
+                background: $white
+                svg
+                    height: auto
+            &_step
+                display: flex
+                align-items: center
+                flex-direction: column
+                p
+                    font-size: get-vw(16px)
+                    font-weight: 600
+                    color: $titleText
+                &.active
+                    .stepIcon
+                        border: 1px solid $accentColor
+                        svg
+                            path
+                                fill: $accentColor
+                    &.complite
+                        .stepIcon
+                            background: $accentColor
+                            &::after
+                                background: $accentColor
+                            svg
+                                path
+                                    fill: $white
+                &:not(:last-of-type)
+                    .stepIcon
+                        &::after
+                            content: ''
+                            height: 1px
+                            width: get-vw(340px)
+                            background: #DBE0E1
+                            position: absolute
+                            right: 0
+                            transform: translateX(100%)
+            &_step1
+                .stepIcon
+                    svg
+                        width: get-vw(16px)
+            &_step2
+                .stepIcon
+                    svg
+                        width: get-vw(22px)
+            &_step3
+                .stepIcon
+                    svg
+                        width: get-vw(18px)
+        &__cart
+            width: get-vw(1110px)
+            margin-top: get-vw(22px)
+            margin-bottom: get-vw(138px)
+            &_table
+                width: 100%
+                border: 1px solid rgba(219, 224, 225, 0.5)
+                border-radius: get-vw(2px)
+                .cartTable__title
+                    height: get-vw(52px)
+                    font-size: get-vw(16px)
+                    font-weight: 700
+                    color: $descriptionText
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    &_product
+                        margin-left: get-vw(165px)
+                        width: get-vw(460px)
+                    &_amount
+                        width: get-vw(65px)
+                        margin-right: get-vw(125px)
+                    &_price
+                        width: get-vw(163px)
+                        margin-right: get-vw(29px)
+                .cartTable__item
+                    border-top: 1px solid rgba(219, 224, 225, 0.5)
+                    padding: get-vw(24px) 0
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    >*
+                        box-sizing: border-box
+                    &_remove
+                        padding-left: get-vw(44px)
+                        cursor: pointer
+                        width: get-vw(165px)
+                        svg
+                            width: get-vw(12px)
+                            height: auto
+                    &_picture
+                        display: flex
+                        flex-direction: row
+                        width: get-vw(460px)
+                        img
+                            max-height: get-vw(129px)
+                            height: auto
+                            max-width: get-vw(118px)
+                            width: auto
+                            margin-right: get-vw(35px)
+                        .cartText
+                            display: flex
+                            flex-direction: column
+                            &__artistName
+                                font-size: get-vw(18px)
+                                font-weight: 800
+                                color: $titleText
+                                margin-bottom: get-vw(2px)
+                            &__position
+                                font-size: get-vw(16px)
+                                font-weight: 400
+                                color: $descriptionText
+                                margin-bottom: get-vw(49px)
+                            &__change
+                                color: #8AC44B
+                                font-weight: 600
+                                font-size: get-vw(17px)
+                                text-decoration: underline
+                                cursor: pointer
+                    &_count
+                        input
+                            width: get-vw(65px)
+                            height: get-vw(42px)
+                            border: 1px solid rgba(219, 224, 225, 0.5)
+                            padding: get-vw(10px) get-vw(8px) get-vw(10px) get-vw(27px)
+                            box-sizing: border-box
+                            border-radius: get-vw(3px)
+                            font-size: get-vw(16px)
+                            font-weight: 400
+                            color: $titleText
+                            margin-right: get-vw(125px)
+                            outline: none
+                    &_price, &_totalPrice
+                        font-size: get-vw(17px)
+                        font-weight: 400
+                        color: $titleText
+                    &_price
+                        width: get-vw(163px)
+                        margin-right: get-vw(29px)
+                    &_totalPrice
+                        margin-right: get-vw(29px)
+        &__cart_sum
+            width: get-vw(1110px)
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            .cartSum__left
+                display: flex
+                flex-direction: column
+                padding-top: get-vw(21px)
+                align-items: flex-start
+                label
+                    font-weight: 400
+                    font-size: get-vw(15px)
+                    color: $titleText
+                    margin-bottom: get-vw(10px)
+                    margin-top: get-vw(7px)
+                textarea
+                    border: 1px solid rgba(219, 224, 225, 0.5)
+                    width: get-vw(350px)
+                    height: get-vw(84px)
+                    outline: none
+                    padding-left: get-vw(15px)
+                    padding-top: get-vw(11px)
+                input
+                    width: get-vw(212px)
+                    height: get-vw(42px)
+                    padding-right: get-vw(43px)
+                    outline: none
+                    box-sizing: border-box
+                    border: 1px solid #EEEEEE
+                    border-right: none
+                    padding-left: get-vw(15px)
+                .promoCodeWrap
+                    display: flex
+                    flex-direction: row
+                    height: get-vw(42px)
+                    span
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        width: get-vw(43px)
+                        height: 100%
+                        background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+                        svg
+                            width: get-vw(7px)
+                            height: get-vw(12px)
+            .cartSum__right
+                padding-top: get-vw(10px)
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                &_discount
+                    color: #D62D30
+                    font-style: italic
+                    border-bottom: 1px solid rgba(219, 224, 225, 0.5)
+                    padding-bottom: get-vw(10px)
+                    width: get-vw(253px)
+                    span:first-of-type
+                        font-size: get-vw(17px)
+                    span:last-of-type
+                        font-size: get-vw(18px)
+                &_together
+                    width: get-vw(253px)
+                    padding-top: get-vw(10px)
+                    margin-bottom: get-vw(118px)
+                    span:first-of-type
+                        font-size: get-vw(18px)
+                        font-weight: 800
+                    span:last-of-type
+                        font-size: get-vw(17px)
+                        font-weight: 700
+        &__delivery
+            margin-top: get-vw(93px)
+            margin-bottom: get-vw(138px)
+            .cartButtons
+                max-width: get-vw(304px)
+                margin-left: auto
+            &_inputs
+                width: get-vw(730px)
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                .deliverElement
+                    width: get-vw(350px)
+                    display: flex
+                    flex-direction: column
+                    margin-bottom: get-vw(22px)
+                    font-size: get-vw(16px)
+                    label
+                        margin-bottom: get-vw(5px)
+                        font-size: get-vw(14px)
+                        color: $descriptionText
+                        font-weight: 400
+                    input
+                        outline: none
+                        border: none
+                        background: $lightTextTwo
+                        height: get-vw(42px)
+                        box-sizing: border-box
+                        padding: get-vw(10px) 0 get-vw(11px) get-vw(15px)
+                        &:focus
+                            border: 1px solid $lightTextThree
+        &__confirm
+            flex-direction: row
+            justify-content: space-between
+            width: get-vw(1110px)
+            padding-top: get-vw(70px)
+            margin-bottom: get-vw(138px)
+            &_itemTitle
+                font-weight: 700
+                font-size: get-vw(16px)
+                border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                padding-bottom: get-vw(10px)
+                color: $descriptionText
+            .confirmBlock__left
+                .shoppingCartWrapper__confirm_itemTitle
+                    width: get-vw(245px)
+                .deliveryMethod__wrap
+                    font-size: get-vw(16px)
+                    font-weight: 400
+                    margin-right: get-vw(15px)
+                    margin-top: get-vw(10px)
+                span
+                    font-weight: 800
+                    font-size: get-vw(16px)
+                .adress
+                    font-weight: 400
+                    font-size: get-vw(16px)
+                    max-width: get-vw(230px)
+                    line-height: get-vw(20px)
+                    margin-top: get-vw(10px)
+                    margin-bottom: get-vw(134px)
+                .payMethod
+                    display: flex
+                    flex-direction: column
+                    &__title
+                        font-size: get-vw(16px)
+                        font-weight: 700
+                        color: $descriptionText
+                    &__item
+                        height: get-vw(52px)
+                        width: get-vw(350px)
+                        display: flex
+                        flex-direction: row
+                        padding-left: get-vw(20px)
+                        border: 1px solid $descriptionText
+                        align-items: center
+                        margin-top: get-vw(10px)
+                        svg
+                            width: get-vw(47px)
+                            height: auto
+                            margin-right: get-vw(10px)
+                        p
+                            font-size: get-vw(16px)
+                            font-weight: 400
+                            color: $descriptionText
+            .confirmBlock__right
+                .shoppingCartWrapper__confirm_itemTitle
+                    width: get-vw(539px)
+                .confirmItems__wrap
+                    display: flex
+                    flex-direction: column
+                    &_item
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        padding: get-vw(20px) 0
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                        img
+                            max-height: get-vw(129px)
+                            height: auto
+                            max-width: get-vw(118px)
+                            width: auto
+                            margin-right: get-vw(35px)
+                        .songText
+                            &_title
+                                font-size: get-vw(18px)
+                                font-weight: 800
+                                color: $titleText
+                                margin-top: get-vw(2px)
+                            &_description
+                                font-size: get-vw(16px)
+                                font-weight: 400
+                                color: $descriptionText
+                                margin-bottom: get-vw(49px)
+                            &_button
+                                color: #8AC44B
+                                text-decoration: underline
+                                font-size: get-vw(17px)
+                                font-weight: 600
+                                cursor: pointer
+                        .songPrice
+                            margin-left: auto
+                            font-size: get-vw(17px)
+                            font-weight: 400
+                            color: $titleText
+                .confirmSum__wrap
+                    margin-top: get-vw(10px)
+                    width: get-vw(254px)
+                    margin-left: auto
+                    &_summary, &_delivery
+                        font-size: get-vw(17px)
+                        color: $descriptionText
+                        font-weight: 400
+                        font-style: italic
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                    &_summary
+                        padding-bottom: get-vw(10px)
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                        padding-right: get-vw(2px)
+                    &_delivery
+                        padding-top: get-vw(10px)
+                        padding-bottom: get-vw(14px)
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                        padding-right: get-vw(6px)
+                    &_all
+                        font-size: get-vw(18px)
+                        font-weight: 800
+                        padding-top: get-vw(10px)
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                        padding-right: get-vw(9px)
+                        span
+                            font-size: get-vw(17px)
+                .rulesCheckbox
+                    display: flex
+                    flex-direction: row
+                    justify-content: flex-end
+                    align-items: center
+                    margin-top: get-vw(21px)
+                    color: #999999
+                    font-size: get-vw(14px)
+                    font-weight: 400
+                    margin-bottom: get-vw(22px)
+                    label
+                        margin-right: get-vw(10px)
+                    input
+                        display: none
+                    input ~ span
+                        width: get-vw(14px)
+                        height: get-vw(14px)
+                        border: 1px solid $lightTextThree
+                        display: inline-block
+                        border-radius: 50%
+                        position: relative
+                        &::after
+                            content: ''
+                            display: inline-block
+                            background: $titleText
+                            opacity: 0
+                            left: 50%
+                            top: 50%
+                            transform: translate(-50%,-50%)
+                            transition: .3s ease-in-out
+                            width: get-vw(7px)
+                            height: get-vw(7px)
+                            position: absolute
+                            border-radius: 50%
+                    input:checked ~ span
+                        border: 1px solid $titleText
+                        &::after
+                            opacity: 1
+            .cartButtons
+                justify-content: flex-end
+                &__btn:last-child svg
+                    transform: none
+                    width: get-vw(18px)
+                    height: get-vw(12px)
+        &__success
+            display: none
+            padding-top: get-vw(75px)
+            margin-bottom: get-vw(138px)
+            flex-direction: column
+            align-items: center
+            p
+                font-size: get-vw(28px)
+                line-height: get-vw(39px)
+                text-align: center
+            svg
+                margin-top: get-vw(40px)
+                width: get-vw(72px)
+
+.shoppingCartWrapper
+    display: none
+.shoppingCartWrapper-step
+    display: none
+.openCart
+    .shoppingCartWrapper
+        &[data-cartstate="1"]
+            .shoppingCartWrapper__cart
+                display: block
+        &[data-cartstate="2"]
+            .shoppingCartWrapper__steps
+            .shoppingCartWrapper__delivery
+                display: block
+        &[data-cartstate="3"]
+            .shoppingCartWrapper__confirm
+                display: flex
+        &[data-cartstate="4"]
+            .shoppingCartWrapper__success
+                display: flex
