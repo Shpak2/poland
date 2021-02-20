@@ -10,6 +10,9 @@
     bottom: 0
     z-index: 200
     box-sizing: border-box
+    @include mobile
+        align-items: flex-start
+        background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
     >*
         box-sizing: border-box
     .chooseSong,.congratulations
@@ -26,6 +29,10 @@
         position: relative
         margin: auto
         box-shadow: 0px get-vw(4px) get-vw(15px) rgba(0, 0, 0, 0.07)
+        @include mobile
+            width: 100%
+            margin: 0
+            background: none
         &__title
             display: flex
             flex-direction: row
@@ -36,10 +43,20 @@
             z-index: 20
             background: $lightTextOne
             position: relative
+            @include mobile
+                background: transparent
+                height: initial
             &_text
                 font-size: get-vw(26px)
                 font-weight: 600
                 color: $titleText
+                @include mobile
+                    background: none
+                    font-size: get-vw-mobile(26px)
+                    line-height: get-vw-mobile(33px)
+                    text-align: center
+                    color: $white
+                    margin-bottom: get-vw-mobile(25px)
             &_button
                 position: absolute
                 width: get-vw(12px)
@@ -50,6 +67,8 @@
                 align-items: center
                 right: get-vw(28px)
                 cursor: pointer
+                @include mobile
+                    display: none
                 &::after, &::before
                     content: ''
                     display: inline-block
@@ -65,6 +84,8 @@
             flex-direction: row
             &>div
                 width: 50%
+                @include mobile
+                    width: 100%
             &_left
                 box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2)
                 filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
@@ -75,6 +96,8 @@
                 color: $titleText
                 display: flex
                 flex-direction: column
+                @include mobile
+                    display: none
                 .imageWrapper
                     filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
                     background: radial-gradient(144.33% 131.39% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)
@@ -101,6 +124,9 @@
                 overflow: hidden
                 background: #FBFBFB
                 overflow-y: scroll
+                @include mobile
+                    background: transparent
+                    max-height: initial
                 // & .designWrapper
                 //     height: 100%
                 //     overflow-y: scroll
@@ -177,6 +203,8 @@
                     display: flex
                     flex-direction: column
                     padding: get-vw(30px)
+                    @include mobile
+                        padding: 0 get-vw-mobile(20px)
                     input[type="text"]
                         height: get-vw(43px)
                         font-size: get-vw(16px)
@@ -186,15 +214,24 @@
                         border: none
                         background: $lightTextTwo
                         color: $titleText
+                        @include mobile
+                            height: get-vw-mobile(43px)
+                            font-size: get-vw-mobile(16px)
+                            padding-left: get-vw-mobile(15px)
+                            margin-bottom: get-vw-mobile(20px)
                         &:focus
                             background: $white
                         &::placeholder
-                            color: #C3CBCD
+                            color: $lightTextThree
                             font-size: get-vw(16px)
+                            @include mobile
+                                font-size: get-vw-mobile(16px)
                     .titleChoice
                         font-size: get-vw(18px)
                         font-weight: 600
                         color: $titleText
+                        @include mobile
+                            font-size: get-vw-mobile(18px)
                     .checkboxWrapp
                         margin-top: get-vw(14px)
                         display: flex
@@ -290,11 +327,14 @@
                         outline: none
                         background: $lightTextTwo
                         height: get-vw(95px)
-                        padding-left: get-vw(15px)
-                        padding-top: get-vw(11px)
+                        padding: get-vw(11px) get-vw(15px)
                         box-sizing: border-box
                         margin-top: get-vw(20px)
                         font-size: get-vw(16px)
+                        @include mobile
+                            height: get-vw-mobile(95px)
+                            margin-top: get-vw-mobile(20px)
+                            padding: get-vw-mobile(11px) get-vw-mobile(15px)
                         &:focus
                             background: $white
                     .timeWrapper

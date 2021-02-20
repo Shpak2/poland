@@ -71,6 +71,9 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   display: block
   font-size: get-vw(16px)
   padding-left: get-vw(15px)
+  @include mobile
+    padding-left: get-vw-mobile(15px)
+    font-size: get-vw-mobile(16px)
 
 .custom-select-trigger
   position: relative
@@ -80,6 +83,8 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   height: get-vw(43px)
   width: 100%
   cursor: pointer
+  @include mobile
+    height: get-vw-mobile(43px)
 
   &:after
     position: absolute
@@ -95,6 +100,10 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
     transform: rotate(45deg) translateY(-50%)
     transition: all .4s ease-in-out
     transform-origin: 50% 0
+    @include mobile
+      width: get-vw-mobile(10px)
+      height: get-vw-mobile(10px)
+      right: get-vw-mobile(25px)
 
 .custom-select.opened .custom-select-trigger:after
   margin-top: 3px
@@ -122,7 +131,6 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   pointer-events: all
   z-index: 10
   transform: translateY(0)
-  // box-shadow: $btnShadowLight
 
 .custom-option
   position: relative
@@ -133,6 +141,10 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   display: flex
   align-items: center
   background: $lightTextTwo
+  @include mobile
+    padding-left: get-vw-mobile(15px)
+    font-size: get-vw-mobile(16px)
+    height: get-vw-mobile(43px)
 
   &:hover
     background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
