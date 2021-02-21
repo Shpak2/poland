@@ -30,7 +30,7 @@ $( document ).ready(function() {
             id      = $(this).attr("id"),
             name    = $(this).attr("name");
         var template =  '<div class="' + classes + '">';
-        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+        template += '<span class="custom-select-trigger">' + $(this).attr("data-customPlaceholder") + '</span>';
         template += '<div class="custom-options">';
         $(this).find("option").each(function() {
             template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
