@@ -6,6 +6,9 @@
   z-index: 0
   padding-top: get-vw(403px)
   background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+  @include mobile
+    padding-top: unset
+    position: relative
   &-social
     &__item
       & a
@@ -98,5 +101,21 @@
     justify-content: space-between
     align-items: center
     padding: get-vw(7px) 0
+    @include mobile
+      display: none
   &-wrapper
     border-top: 2px solid rgba(244, 245, 244,.3)
+
+.footer-mobile
+  display: none
+  width: 100%
+  padding: get-vw-mobile(7px) 0
+  @include mobile
+    display: block
+  & p
+    font-weight: normal
+    font-size: get-vw-mobile(14px)
+    line-height: get-vw-mobile(17px)
+    text-align: center
+    color: $lightTextTwo
+    opacity: 0.6

@@ -174,9 +174,8 @@ $('.img-svg').each(function(){
 // slider & product container
 
 let sliderReview = new Swiper('.reviews-container', {
-  direction: 'vertical',
+  direction: 'horizontal',
   spaceBetween: 30,
-  mousewheelControl: true,
   slidesPerView: 1,
   effect: 'coverflow',
   loop: true,
@@ -187,7 +186,17 @@ let sliderReview = new Swiper('.reviews-container', {
   coverflowEffect: {
     rotate: 0,
     slideShadows: false,
-  }
+  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
+  breakpoints: {
+    480: {
+      direction: 'vertical',
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+  },
 });
 
 sliderReview.on('slideChange', function () {
@@ -245,6 +254,11 @@ CheckMobile.then(new Promise(function() {
       sliderParam = {
         slidesPerView: 1.3,
         spaceBetween: 40,
+        breakpoints: {
+          480: {
+            slidesPerView: 2.5,
+          },
+        },
       };
       
       const swiper1 = new Swiper('#slider-music',sliderParam)

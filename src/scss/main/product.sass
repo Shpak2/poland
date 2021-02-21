@@ -91,6 +91,8 @@
 
 .product-slider
   margin-top: get-vw(30px)
+  @include mobile
+    overflow: hidden
   &__card-info,&__card-preview
     display: flex
     flex-direction: column
