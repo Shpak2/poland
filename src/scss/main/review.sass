@@ -4,14 +4,16 @@
     width: get-vw(920px)
     height: get-vw(330px)
     @include mobile
-      width: 85%
-      height: get-vw-mobile(330px)
+      width: 100%
+      min-height: get-vw-mobile(476px)
     & .review
       background-color: $white
       // padding: get-vw(50px) 0
       margin: 0 get-vw(10px)
       box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07)
       position: relative
+      @include mobile
+        box-shadow: unset
       &::before,&::after
         content: ''
         height: 100%
@@ -22,6 +24,8 @@
         transition: .6s ease-in-out
         background-color: $white
         opacity: 0
+        @include mobile
+          content: none
       &::before
         transform: translate(-50%,0%)
         width: 95%
@@ -45,7 +49,8 @@
       box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07)
       position: relative
       z-index: 1
-      
+      @include mobile
+        box-shadow: unset
     &__photo
       width: 30%
       position: relative
@@ -68,6 +73,8 @@
       @include mobile
         width: 100%
         padding: 0 5%
+        flex-wrap: wrap-reverse
+        text-align: center
     &__header
       line-height: 1.4
       letter-spacing: get-vw(0.3px)
@@ -75,14 +82,22 @@
       transition-delay: .2s
       transform: translateY(-100%)
       opacity: 0
+      @include mobile
+        width: 100%
+        text-align: center
+        margin-top: get-vw-mobile(15px)
       & span
         font-weight: 800
         font-size: get-vw(17px)
         color: $titleText
+        @include mobile
+          font-size: get-vw-mobile(17px)
       & p
         font-weight: 600
         font-size: get-vw(14px)
         color: $lightTextThree
+        @include mobile
+          font-size: get-vw-mobile(14px)
     &__text
       margin: get-vw(7px) 0 auto
       font-weight: 400
@@ -94,6 +109,8 @@
       transition-delay: .2s
       transform: translateY(100%)
       opacity: 0
+      @include mobile
+        font-size: get-vw-mobile(17px)
   &-wrapper
     margin: 0 auto
     transform: translateY(50%)
@@ -114,6 +131,8 @@
     transition: .3s ease-in-out
     border-radius: 50%
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+    @include mobile
+      display: none
     // &[aria-disabled=true]
     //   pointer-events: none
     & svg
@@ -148,6 +167,8 @@
       height: 100%
       transform: translateY(-50%)
       background: url(../img/sys/decor_user.svg) 50% 50%/105% 105% no-repeat
+      @include mobile
+        display: none
 
 .photo
   width: get-vw(208px)
@@ -164,6 +185,14 @@
   transform: translateX(-25%)
   opacity: 0
   background-color: $white
+  @include mobile
+    margin-right: auto
+    width: get-vw-mobile(128px)
+    height: get-vw-mobile(128px)
+    border: get-vw-mobile(2px) solid $accentColor
+    background-color: $accentColor
+    transform: translateY(-25%)
+    box-shadow: unset
 
 .reviews-item.active
   & .reviews-item__text, & .reviews-item__header, & .photo

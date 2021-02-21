@@ -2,9 +2,19 @@
   width: 64%
   transform: translateY(get-vw(160px));
   margin: 0 auto
+  @include mobile
+    width: 100%
+    transform: unset
+  &-item
+    @include mobile
+      width: 100%
   &-social
     margin-left: get-vw(89px)
     position: relative
+    @include mobile
+      background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+      margin: get-vw-mobile(30px) auto 0
+      padding: get-vw-mobile(20px) 0
     &::before
       content: ''
       width: get-vw(170px)
@@ -15,8 +25,12 @@
       background: url(../img/sys/decor_social.png) 50% 50%/100% 100% no-repeat
       z-index: -1
       transform: translate(38%,-45%)
+      @include mobile
+        content: none
     &__list li:not(:last-child) .social-link
       margin-bottom: get-vw(25px)
+      @include mobile
+        margin-bottom: get-vw-mobile(25px)
   & .social
     &-adress
       font-weight: 600
@@ -24,6 +38,11 @@
       line-height: get-vw(28px)
       text-transform: uppercase
       color: $titleText
+      @include mobile
+        font-size: get-vw-mobile(20px)
+        line-height: get-vw-mobile(28px)
+        margin-bottom: get-vw-mobile(5px)
+        color: $white
     &-header
       font-weight: 200
       font-size: get-vw(14px)
@@ -31,6 +50,13 @@
       letter-spacing: get-vw(.2px)
       color: $descriptionText
       margin-bottom: get-vw(5px)
+      @include mobile
+        font-size: get-vw-mobile(14px)
+        line-height: get-vw-mobile(22px)
+        letter-spacing: get-vw-mobile(.2px)
+        margin-bottom: get-vw-mobile(5px)
+        text-transform: capitalize
+        color: $white
     &-link
       width: get-vw(360px)
       display: flex
@@ -41,6 +67,14 @@
       // width: 100%
       transition: .4s ease-in-out
       border-radius: get-vw(2px)
+      @include mobile
+        width: 100%
+        padding: unset
+        flex-wrap: wrap
+        background: transparent
+      & svg path
+        @include mobile
+          fill: $white
       &:hover
         @media (hover:hover)
           background-color: $white
@@ -57,6 +91,9 @@
     &-name
       display: flex
       flex-direction: column
+      @include mobile
+        width: 100%
+        text-align: center
     &-img
       display: flex
       align-items: center
@@ -66,6 +103,10 @@
       height: get-vw(48px)
       background-color: rgba(195, 203, 205,.3)
       transition: .4s ease-in-out
+      @include mobile
+        margin: 0 auto
+        width: get-vw-mobile(48px)
+        height: get-vw-mobile(48px)
       & svg
         width: 50%
         height: auto
@@ -80,6 +121,8 @@
     display: flex
     align-items: center
     justify-content: space-between
+    @include mobile
+      flex-wrap: wrap
   // &-item
   //   width: 45%
   &-form
@@ -89,6 +132,11 @@
     border-radius: get-vw(2px)
     padding: get-vw(50px) get-vw(63px)
     position: relative
+    @include mobile
+      width: 88%
+      padding: unset
+      box-shadow: unset
+      margin: 0 auto
     &::before
       content: ''
       width: get-vw(119px)
@@ -102,6 +150,8 @@
       transition: .8s ease-in-out
       opacity: 0
       transform: translate(38%,-45%)
+      @include mobile
+        content: none
     & form
       width: 100%
       display: flex
@@ -114,6 +164,11 @@
         line-height: get-vw(20px)
         letter-spacing: get-vw(.25px)
         color: $descriptionText
+        @include mobile
+          font-size: get-vw-mobile(14px)
+          line-height: get-vw-mobile(20px)
+          letter-spacing: get-vw-mobile(.25px)
+          margin-bottom: get-vw-mobile(5px)
       & input
         outline-color: $accentColor
         border: none
@@ -125,6 +180,10 @@
         color: $titleText
         margin-bottom: get-vw(5px)
         padding: get-vw(10px) get-vw(15px)
+        @include mobile
+          font-size: get-vw-mobile(16px)
+          margin-bottom: get-vw-mobile(5px)
+          padding: get-vw-mobile(10px) get-vw-mobile(15px)
         &:focus
           &::-webkit-input-placeholder
             opacity: 0
@@ -142,6 +201,14 @@
           outline: none
           padding: get-vw(13.5px) 0
           transition: .4s ease-in-out
+          @include mobile
+            font-size: get-vw-mobile(16px)
+            border-radius: get-vw-mobile(40px)
+            margin-top: get-vw-mobile(15px)
+            padding: get-vw-mobile(13.5px) 0
+            line-height: get-vw-mobile(18px)
+            letter-spacing: get-vw-mobile(0.3px)
+            background-color: $blackHeadline
           &:hover
             @media (hover:hover)
               color: $accentColor
@@ -158,6 +225,11 @@
         color: $titleText
         padding: get-vw(10px) get-vw(15px)
         height: get-vw(106px)
+        @include mobile
+          font-size: get-vw-mobile(16px)
+          margin-bottom: get-vw-mobile(5px)
+          padding: get-vw-mobile(10px) get-vw-mobile(15px)
+          height: get-vw-mobile(106px)
         &:focus
           &::-webkit-input-placeholder
             opacity: 0
@@ -170,9 +242,15 @@
         letter-spacing: get-vw(.25px)
         color: $titleText
         margin-bottom: get-vw(33px)
+        @include mobile
+          font-weight: 600
+          font-size: get-vw-mobile(34px)
+          letter-spacing: get-vw-mobile(.25px)
   &-header
     text-align: center
     margin-bottom: get-vw(70px)
+    @include mobile
+      display: none
     & h2
       font-weight: 600
       font-size: get-vw(34px)
