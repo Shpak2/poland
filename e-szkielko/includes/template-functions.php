@@ -39,4 +39,5 @@ add_action( 'wp_head', 'e_szkielko_pingback_header' );
 function remove_admin_login_header() {
     remove_action('wp_head', '_admin_bar_bump_cb');
 }
+add_filter( 'wpcf7_load_css', '__return_false' );
 add_action('get_header', 'remove_admin_login_header');

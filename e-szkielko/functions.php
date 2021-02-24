@@ -1,5 +1,8 @@
 <?php
 
+require get_template_directory() . '/includes/custom-field-options/theme-options.php';
+require get_template_directory() . '/includes/custom-field-options/metabox.php';
+
 require get_template_directory() . '/includes/theme-settings.php';
 require get_template_directory() . '/includes/widget-areas.php';
 require get_template_directory() . '/includes/enqueue-script-style.php';
@@ -39,3 +42,5 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/woocomerce/includes/wc-functions-remove.php';
     require get_template_directory() . '/woocomerce/includes/wc-functions.php';
 }
+
+
