@@ -120,10 +120,12 @@ $( document ).ready(function() {
         if(cartStepNumber == 1){
             $('.shoppingCartWrapper__steps_step1').addClass('complite');
             $('.shoppingCartWrapper__steps_step2').addClass('active');
+            $('.shoppingCartWrapper__steps_step1').removeClass('active');
             $(cartStepData).attr('data-cartstate', cartStepNumber+1)
         }else if(cartStepNumber == 2){
             $('.shoppingCartWrapper__steps_step2').addClass('complite');
             $('.shoppingCartWrapper__steps_step3').addClass('active');
+            $('.shoppingCartWrapper__steps_step2').removeClass('active');
             $(cartStepData).attr('data-cartstate', cartStepNumber+1)
         }else if(cartStepNumber == 3){
             $('.shoppingCartWrapper__steps_step3').addClass('complite');
@@ -137,18 +139,26 @@ $( document ).ready(function() {
         if(cartStepNumber == 3){
             $('.shoppingCartWrapper__steps_step3').removeClass('complite');
             $('.shoppingCartWrapper__steps_step3').removeClass('active');
+            $('.shoppingCartWrapper__steps_step2').addClass('active');
             $(cartStepData).attr('data-cartstate', cartStepNumber-1)
         }else if(cartStepNumber == 2){
-            $('.shoppingCartWrapper__steps_step3').removeClass('complite');
-            $('.shoppingCartWrapper__steps_step3').removeClass('active');
+            $('.shoppingCartWrapper__steps_step2').removeClass('complite');
+            $('.shoppingCartWrapper__steps_step2').removeClass('active');
+            $('.shoppingCartWrapper__steps_step1').addClass('active');
             $(cartStepData).attr('data-cartstate', cartStepNumber-1)
-        }else if(cartStepNumber == 1){
-            $('.shoppingCartWrapper__steps_step3').removeClass('complite');
         }else if(cartStepNumber == 4){
             $(cartStepData).attr('data-cartstate', cartStepNumber-1)
         }
     })
 
+    let cartBtns = $('.cartButtons .cartButtons__btn');
+    let placeCartTitle = $('.shoppingCartWrapper__titleMobile p')
+    $(cartBtns).on('click', function (){
+        setTimeout(function (){
+            let currentText = $('.shoppingCartWrapper__steps_step.active > p').text();
+            $(placeCartTitle).text(currentText)
+        },500)
+    })
 
     //ПОПАП МИНИМАЛЬНАЯ ЛОГИКА ПЕРЕХОДОВ КОНЕЦ
 

@@ -44,8 +44,8 @@ $titleText: #373F41
 $descriptionText: #737B7D
 $accentColor: #82BB58
 $lightTextOne: #ffffff
-$lightTextTwo: #F4F5F4
-$lightTextThree: #C3CBCD
+$lightTextTwo: #f4f5f4
+$lightTextThree: #c3cbcd
 $lightTextFour: #FAFAFA
 $cartItem: #F57C1F
 $white: #ffffff
@@ -63,6 +63,8 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   user-select: none
   background: $lightTextTwo
   margin-bottom: get-vw(20px)
+  @include mobile
+    margin-bottom: get-vw-mobile(20px)
   select
     display: none
 
@@ -103,7 +105,7 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
     @include mobile
       width: get-vw-mobile(10px)
       height: get-vw-mobile(10px)
-      right: get-vw-mobile(25px)
+      right: get-vw-mobile(12px)
 
 .custom-select.opened .custom-select-trigger:after
   margin-top: 3px
@@ -124,6 +126,7 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   visibility: hidden
   pointer-events: none
   transform: translateY(-15px)
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.07)
 
 .custom-select.opened .custom-options
   opacity: 1
@@ -141,14 +144,42 @@ $btnShadowLight: 0px 2px 5px 0px rgba(0,0,0,0.3)
   display: flex
   align-items: center
   background: $lightTextTwo
+  &::after
+    content: ''
+    display: inline-block
+    position: absolute
+    border: 1px solid $titleText
+    border-radius: 50%
+    right: 0
+    opacity: 0
+  &::before
+    content: ''
+    display: inline-block
+    position: absolute
+    background: $titleText
+    border-radius: 50%
+    right: 0
+    opacity: 0
   @include mobile
     padding-left: get-vw-mobile(15px)
     font-size: get-vw-mobile(16px)
     height: get-vw-mobile(43px)
-
+  &.selection
+    @include mobile
+      &::after, &::before
+        opacity: 1
+      &::after
+        width: get-vw-mobile(16px)
+        height: get-vw-mobile(16px)
+        right: get-vw-mobile(12px)
+      &::before
+        width: get-vw-mobile(8px)
+        height: get-vw-mobile(8px)
+        right: get-vw-mobile(17px)
   &:hover
-    background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
-    color: $lightTextTwo
+    @media (hover:hover)
+      background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+      color: $lightTextTwo
 
   &:last-of-type
     border-bottom: 0

@@ -1,3 +1,9 @@
+textarea
+    &::placeholder
+        color: transparent
+        @include mobile
+            color: $lightTextThree
+            font-size: get-vw-mobile(16px)
 .popupWrapper
     position: fixed
     display: none
@@ -13,6 +19,10 @@
     @include mobile
         align-items: flex-start
         background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+        overflow-x: hidden
+        overflow-y: scroll
+        height: 100%
+        min-height: 100vh
     >*
         box-sizing: border-box
     .chooseSong,.congratulations
@@ -33,6 +43,7 @@
             width: 100%
             margin: 0
             background: none
+            box-shadow: none
         &__title
             display: flex
             flex-direction: row
@@ -56,7 +67,7 @@
                     line-height: get-vw-mobile(33px)
                     text-align: center
                     color: $white
-                    margin-bottom: get-vw-mobile(25px)
+                    margin-bottom: get-vw-mobile(20px)
             &_button
                 position: absolute
                 width: get-vw(12px)
@@ -231,15 +242,27 @@
                         font-weight: 600
                         color: $titleText
                         @include mobile
-                            font-size: get-vw-mobile(18px)
+                            font-size: get-vw-mobile(16px)
+                            font-weight: 700
+                        &.additionally, &.comment
+                            @include mobile
+                                color: $lightTextTwo
+                                font-weight: 800
+                                font-size: get-vw-mobile(18px)
                     .checkboxWrapp
                         margin-top: get-vw(14px)
                         display: flex
                         flex-direction: row
                         justify-content: space-between
                         align-items: center
+                        @include mobile
+                            flex-direction: column
+                            align-items: flex-start
+                            margin-top: get-vw-mobile(10px)
                         &.standColor
                             margin-bottom: get-vw(20px)
+                            @include mobile
+                                margin-bottom: get-vw-mobile(20px)
                         &__text
                             color: $descriptionText
                             font-size: get-vw(16px)
@@ -248,6 +271,12 @@
                             width: get-vw(213px)
                             justify-content: space-between
                             position: relative
+                            @include mobile
+                                font-size: get-vw-mobile(16px)
+                                font-weight: 700
+                                color: #0D1018
+                                width: initial
+                                margin-bottom: get-vw-mobile(12px)
                             span
                                 font-size: get-vw(14px)
                                 color: $titleText
@@ -259,6 +288,10 @@
                                 justify-content: center
                                 align-items: center
                                 cursor: pointer
+                                @include mobile
+                                    width: get-vw-mobile(10px)
+                                    height: get-vw-mobile(10px)
+                                    display: none
                             &_detail
                                 position: absolute
                                 right: 0
@@ -289,6 +322,13 @@
                                 align-items: center
                                 flex-direction: row
                                 margin-left: get-vw(17px)
+                                @include mobile
+                                    font-size: get-vw-mobile(15px)
+                                    font-weight: 400
+                                    color: $lightTextTwo
+                                    margin-left: 0
+                                    &:nth-child(2)
+                                        margin-left: get-vw-mobile(33px)
                                 input
                                     display: none
                                 .likeRadio
@@ -299,6 +339,9 @@
                                     border-radius: 50%
                                     margin-right: get-vw(5px)
                                     position: relative
+                                    @include mobile
+                                        width: get-vw-mobile(16px)
+                                        height: get-vw-mobile(16px)
                                     &::after
                                         content: ''
                                         display: inline-block
@@ -312,7 +355,11 @@
                                         height: get-vw(8px)
                                         position: absolute
                                         border-radius: 50%
+                                        @include mobile
+                                            width: get-vw-mobile(8px)
+                                            height: get-vw-mobile(8px)
                                 &.active
+                                    color: $titleText
                                     & .likeRadio
                                         border: 1px solid $titleText
                                         &::after
@@ -322,6 +369,8 @@
                             label
                                 margin-left: 0
                                 margin-right: get-vw(17px)
+                                &:nth-child(2)
+                                    margin-left: get-vw-mobile(33px)
                     textarea
                         border: none
                         outline: none
@@ -334,7 +383,8 @@
                         @include mobile
                             height: get-vw-mobile(95px)
                             margin-top: get-vw-mobile(20px)
-                            padding: get-vw-mobile(11px) get-vw-mobile(15px)
+                            padding: get-vw-mobile(11px) get-vw-mobile(14px)
+                            font-size: get-vw-mobile(16px)
                         &:focus
                             background: $white
                     .timeWrapper
@@ -344,9 +394,17 @@
                         justify-content: space-between
                         margin-top: get-vw(14px)
                         margin-bottom: get-vw(20px)
+                        @include mobile
+                            flex-direction: column
+                            align-items: flex-start
+                            margin: get-vw-mobile(20px) 0
                         &__text
                             color: $descriptionText
                             font-size: get-vw(16px)
+                            @include mobile
+                                font-size: get-vw-mobile(15px)
+                                color: #0D1018
+                                margin-bottom: get-vw-mobile(10px)
                         &__time
                             width: get-vw(82px)
                             height: get-vw(27px)
@@ -356,20 +414,34 @@
                             align-items: center
                             font-size: get-vw(15px)
                             color: $titleText
+                            @include mobile
+                                width: get-vw-mobile(82px)
+                                height: get-vw-mobile(27px)
+                                font-size: get-vw-mobile(15px)
                     .price
                         font-size: get-vw(16px)
                         font-weight: 600
                         color: $titleText
                         margin-left: auto
                         margin-top: get-vw(20px)
+                        @include mobile
+                            font-size: get-vw-mobile(16px)
+                            margin-top: get-vw-mobile(20px)
                         span
                             font-size: get-vw(26px)
                             font-weight: 700
+                            @include mobile
+                                font-size: get-vw-mobile(26px)
         .form-stepWrap
             display: flex
             flex-direction: row
             margin-left: auto
             margin-top: get-vw(20px)
+            @include mobile
+                margin-left: initial
+                flex-direction: column
+                margin-top: get-vw-mobile(30px)
+                margin-bottom: get-vw-mobile(30px)
             &__btn
                 margin-left: get-vw(20px)
                 padding-left: get-vw(32px)
@@ -382,27 +454,57 @@
                 align-items: center
                 border-radius: get-vw(40px)
                 cursor: pointer
+                color: $blackHeadline
+                @include mobile
+                    width: 100%
+                    padding: 0
+                    height: get-vw-mobile(50px)
+                    border-radius: get-vw-mobile(40px)
+                    margin: 0
+                    font-size: get-vw-mobile(16px)
+                    border: 1px solid $lightTextTwo
+                    color: $lightTextTwo
                 &.popUpBtnPrev
                     padding-left: get-vw(22px)
+                    @include mobile
+                        margin-bottom: get-vw-mobile(10px)
+                        padding: 0
                 &.popUpBtnNext
                     padding-right: get-vw(22px)
+                    @include mobile
+                        padding: 0
                     svg
                         path
-                            fill: #0D1018
+                            fill: $blackHeadline
+                            @include mobile
+                                fill: $lightTextTwo
                 &:last-child
                     svg
                         transform: rotate(180deg)
                 svg
                     width: get-vw(17px)
                     margin: 0 get-vw(10px)
+                    @include mobile
+                        width: get-vw-mobile(17px)
+                        margin: 0 get-vw-mobile(10px)
+                    path
+                        @include mobile
+                            fill: $lightTextTwo
                 &:hover
-                    background: #0D1018
+                    background: $blackHeadline
                     color: $lightTextTwo
+                    @include mobile
+                        background: $lightTextTwo
+                        color: $blackHeadline
                     svg
                         path
                             fill: $lightTextTwo
+                            @include mobile
+                                fill: $blackHeadline
         .confirmTemplate
             margin-bottom: get-vw(16px)
+            @include mobile
+                margin-bottom: get-vw-mobile(20px)
         .congratulations
             .modal__body
                 padding-top: get-vw(66px)
@@ -410,15 +512,23 @@
                 display: flex
                 flex-direction: column
                 align-items: center
+                @include mobile
+                    padding: 0 get-vw-mobile(20px)
                 &>div
                     width: initial
+                    @include mobile
+                        width: 100%
                 .congratulations__infoWrapp
                     margin: 0 auto
+                    @include mobile
+                        width: 100%
                     &_line
                         display: flex
                         flex-direction: row
                         align-items: center
                         margin-bottom: get-vw(10px)
+                        @include mobile
+                            margin-bottom: get-vw-mobile(10px)
                         p:first-of-type
                             color: $lightTextThree
                             width: get-vw(98px)
@@ -426,10 +536,20 @@
                             font-size: get-vw(16px)
                             font-weight: 400
                             margin-right: get-vw(30px)
+                            @include mobile
+                                font-size: get-vw-mobile(16px)
+                                color: $lightTextTwo
+                                width: get-vw-mobile(98px)
+                                line-height: get-vw-mobile(21px)
+                                margin-right: get-vw-mobile(30px)
                         p:last-of-type
                             color: $titleText
                             font-size: get-vw(20px)
                             font-weight: 600
+                            @include mobile
+                                font-size: get-vw-mobile(20px)
+                                line-height: get-vw-mobile(26px)
+                                color: $white
                 .discountBtn
                     padding: get-vw(10px) get-vw(34px)
                     background: $accentColor
@@ -438,18 +558,37 @@
                     border-radius: get-vw(40px)
                     cursor: pointer
                     margin-top: get-vw(50px)
+                    @include mobile
+                        height: get-vw-mobile(62px)
+                        padding: 0 get-vw-mobile(45px)
+                        background: $yellow
+                        border-radius: get-vw-mobile(40px)
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        color: $titleText
+                        font-size: get-vw-mobile(16px)
+                        line-height: get-vw-mobile(21px)
+                        text-align: center
                 .form-stepWrap
                     margin-right: auto
                     margin-top: get-vw(53px)
+                    @include mobile
+                        margin-top: get-vw-mobile(40px)
                     .popUpBtnNext
                         svg
                             transform: none
                             width: get-vw(14px)
+                            @include mobile
+                                width: get-vw-mobile(16px)
 body.openCart
     overflow: hidden
     .cartButtons
         display: flex
         flex-direction: row
+        @include mobile
+            flex-direction: column
+            width: 100%
         &__btn
             margin-left: get-vw(20px)
             padding-left: get-vw(32px)
@@ -462,16 +601,31 @@ body.openCart
             align-items: center
             border-radius: get-vw(40px)
             cursor: pointer
+            @include mobile
+                margin: 0 get-vw-mobile(20px)
+                height: get-vw-mobile(52px)
+                border-radius: get-vw-mobile(40px)
+                font-size: get-vw-mobile(16px)
+                font-weight: 600
+                padding: 0
             svg
                 width: get-vw(17px)
                 margin: 0 get-vw(10px)
+                @include mobile
+                    margin: 0 get-vw-mobile(10px)
             &.cartBtnPrev
                 padding-left: get-vw(22px)
                 svg
                     width: get-vw(16px)
+                    @include mobile
+                        width: get-vw-mobile(14px)
             &.cartBtnNext
                 padding-right: get-vw(22px)
+                @include mobile
+                    margin-top: get-vw-mobile(10px)
                 svg
+                    @include mobile
+                        width: get-vw-mobile(17px)
                     path
                         fill: #0D1018
             &:last-child
@@ -502,6 +656,23 @@ body.openCart
         height: 100%
         overflow-y: scroll
         box-sizing: border-box
+        @include mobile
+            z-index: 200
+            padding-top: 0
+        &__titleMobile
+            display: none
+            @include mobile
+                display: flex
+                justify-content: center
+                align-items: center
+                color: $lightTextTwo
+                font-size: get-vw-mobile(22px)
+                font-weight: 600
+                height: get-vw-mobile(110px)
+                min-height: get-vw-mobile(110px)
+                background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+                width: 100%
         >*
             box-sizing: border-box
         &__steps
@@ -509,6 +680,15 @@ body.openCart
             display: flex
             flex-direction: row
             justify-content: space-between
+            @include mobile
+                width: 100%
+                padding: get-vw-mobile(20px) 0
+                align-items: center
+                border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                padding-right: get-vw-mobile(20px)
+                justify-content: flex-end
+            @include mobileLandscape
+                padding-right: 0
             .stepIcon
                 width: get-vw(44px)
                 height: get-vw(44px)
@@ -519,6 +699,10 @@ body.openCart
                 border-radius: 50%
                 position: relative
                 background: $white
+                @include mobile
+                    width: get-vw-mobile(26px)
+                    height: get-vw-mobile(26px)
+                    margin-bottom: get-vw-mobile(8px)
                 svg
                     height: auto
             &_step
@@ -529,20 +713,23 @@ body.openCart
                     font-size: get-vw(16px)
                     font-weight: 600
                     color: $titleText
+                    @include mobile
+                        font-size: get-vw-mobile(12px)
+                        font-weight: 600
                 &.active
                     .stepIcon
                         border: 1px solid $accentColor
                         svg
                             path
                                 fill: $accentColor
-                    &.complite
-                        .stepIcon
+                &.complite
+                    .stepIcon
+                        background: $accentColor
+                        &::after
                             background: $accentColor
-                            &::after
-                                background: $accentColor
-                            svg
-                                path
-                                    fill: $white
+                        svg
+                            path
+                                fill: $white
                 &:not(:last-of-type)
                     .stepIcon
                         &::after
@@ -553,26 +740,47 @@ body.openCart
                             position: absolute
                             right: 0
                             transform: translateX(100%)
+                            @include mobile
+                                width: get-vw-mobile(100px)
             &_step1
+                @include mobile
+                    margin-right: get-vw-mobile(71px)
+                @include mobileLandscape
+                    margin-left: auto
                 .stepIcon
                     svg
                         width: get-vw(16px)
+                        @include mobile
+                            width: get-vw-mobile(10px)
             &_step2
+                @include mobile
+                    margin-right: get-vw-mobile(51px)
                 .stepIcon
                     svg
                         width: get-vw(22px)
+                        @include mobile
+                            width: get-vw-mobile(14px)
             &_step3
                 .stepIcon
                     svg
                         width: get-vw(18px)
+                        @include mobile
+                            width: get-vw-mobile(13px)
+                @include mobileLandscape
+                    margin-right: auto
         &__cart
             width: get-vw(1110px)
             margin-top: get-vw(22px)
             margin-bottom: get-vw(138px)
+            @include mobile
+                margin-top: get-vw-mobile(40px)
+                width: 100%
             &_table
                 width: 100%
                 border: 1px solid rgba(219, 224, 225, 0.5)
                 border-radius: get-vw(2px)
+                @include mobile
+                    border: none
                 .cartTable__title
                     height: get-vw(52px)
                     font-size: get-vw(16px)
@@ -581,6 +789,8 @@ body.openCart
                     display: flex
                     flex-direction: row
                     align-items: center
+                    @include mobile
+                        display: none
                     &_product
                         margin-left: get-vw(165px)
                         width: get-vw(460px)
@@ -596,12 +806,21 @@ body.openCart
                     display: flex
                     flex-direction: row
                     align-items: center
+                    @include mobile
+                        border-top: none
+                        border-bottom: 1px solid rgba(219, 224, 225, 0.5)
+                        padding: get-vw-mobile(20px)
+                    &:first-of-type
+                        @include mobile
+                            padding-top: get-vw-mobile(10px)
                     >*
                         box-sizing: border-box
                     &_remove
                         padding-left: get-vw(44px)
                         cursor: pointer
                         width: get-vw(165px)
+                        @include mobile
+                            display: none
                         svg
                             width: get-vw(12px)
                             height: auto
@@ -609,12 +828,25 @@ body.openCart
                         display: flex
                         flex-direction: row
                         width: get-vw(460px)
+                        @include mobile
+                            width: initial
+                        .productWrap
+                            width: get-vw(118px)
+                            margin-right: get-vw(35px)
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            @include mobile
+                                width: get-vw-mobile(72px)
+                                margin-right: get-vw-mobile(20px)
                         img
                             max-height: get-vw(129px)
                             height: auto
                             max-width: get-vw(118px)
                             width: auto
-                            margin-right: get-vw(35px)
+                            @include mobile
+                                max-width: get-vw-mobile(72px)
+                                max-height: get-vw-mobile(76px)
                         .cartText
                             display: flex
                             flex-direction: column
@@ -623,18 +855,29 @@ body.openCart
                                 font-weight: 800
                                 color: $titleText
                                 margin-bottom: get-vw(2px)
+                                @include mobile
+                                    font-weight: 700
+                                    font-size: get-vw-mobile(16px)
+                                    margin-bottom: 0
                             &__position
                                 font-size: get-vw(16px)
                                 font-weight: 400
                                 color: $descriptionText
                                 margin-bottom: get-vw(49px)
+                                @include mobile
+                                    font-size: get-vw-mobile(14px)
+                                    margin-bottom: get-vw-mobile(16px)
                             &__change
                                 color: #8AC44B
                                 font-weight: 600
                                 font-size: get-vw(17px)
                                 text-decoration: underline
                                 cursor: pointer
+                                @include mobile
+                                    font-size: get-vw-mobile(15px)
                     &_count
+                        @include mobile
+                            display: none
                         input
                             width: get-vw(65px)
                             height: get-vw(42px)
@@ -651,19 +894,31 @@ body.openCart
                         font-size: get-vw(17px)
                         font-weight: 400
                         color: $titleText
+                        @include mobile
+                            font-size: get-vw-mobile(16px)
+                            font-weight: 700
                     &_price
                         width: get-vw(163px)
                         margin-right: get-vw(29px)
+                        @include mobile
+                            display: none
                     &_totalPrice
                         margin-right: get-vw(29px)
+                        @include mobile
+                            margin-right: 0
+                            margin-left: auto
         &__cart_sum
             width: get-vw(1110px)
             display: flex
             flex-direction: row
             justify-content: space-between
+            @include mobile
+                flex-direction: column
+                width: 100%
+                align-items: center
             .cartSum__left
                 display: flex
-                flex-direction: column
+                flex-direction: column-reverse
                 padding-top: get-vw(21px)
                 align-items: flex-start
                 label
@@ -672,6 +927,8 @@ body.openCart
                     color: $titleText
                     margin-bottom: get-vw(10px)
                     margin-top: get-vw(7px)
+                    @include mobile
+                        display: none
                 textarea
                     border: 1px solid rgba(219, 224, 225, 0.5)
                     width: get-vw(350px)
@@ -679,6 +936,12 @@ body.openCart
                     outline: none
                     padding-left: get-vw(15px)
                     padding-top: get-vw(11px)
+                    @include mobile
+                        width: get-vw-mobile(290px)
+                        margin: 0 auto
+                        height: get-vw-mobile(94px)
+                        padding: get-vw-mobile(11px) get-vw-mobile(15px)
+                        margin-top: get-vw-mobile(15px)
                 input
                     width: get-vw(212px)
                     height: get-vw(42px)
@@ -688,10 +951,17 @@ body.openCart
                     border: 1px solid #EEEEEE
                     border-right: none
                     padding-left: get-vw(15px)
+                    @include mobile
+                        width: get-vw-mobile(277px)
+                        height: get-vw-mobile(42px)
+                        padding: 0 get-vw-mobile(11px)
                 .promoCodeWrap
                     display: flex
                     flex-direction: row
                     height: get-vw(42px)
+                    @include mobile
+                        margin: 0 auto
+                        height: get-vw-mobile(42px)
                     span
                         display: flex
                         justify-content: center
@@ -699,20 +969,29 @@ body.openCart
                         width: get-vw(43px)
                         height: 100%
                         background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+                        @include mobile
+                            width: get-vw-mobile(43px)
                         svg
                             width: get-vw(7px)
                             height: get-vw(12px)
+                            @include mobile
+                                width: get-vw-mobile(7px)
+                                height: get-vw-mobile(12px)
             .cartSum__right
                 padding-top: get-vw(10px)
                 display: flex
                 flex-direction: column
                 align-items: flex-end
+                @include mobile
+                    width: 100%
                 &_discount
                     color: #D62D30
                     font-style: italic
                     border-bottom: 1px solid rgba(219, 224, 225, 0.5)
                     padding-bottom: get-vw(10px)
                     width: get-vw(253px)
+                    @include mobile
+                        display: none
                     span:first-of-type
                         font-size: get-vw(17px)
                     span:last-of-type
@@ -721,34 +1000,62 @@ body.openCart
                     width: get-vw(253px)
                     padding-top: get-vw(10px)
                     margin-bottom: get-vw(118px)
+                    @include mobile
+                        width: get-vw-mobile(320px)
+                        padding-bottom: get-vw-mobile(20px)
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                        margin: 0 auto
+                        margin-top: get-vw-mobile(20px)
+                        display: flex
+                        justify-content: space-between
+                        margin-bottom: get-vw-mobile(30px)
                     span:first-of-type
                         font-size: get-vw(18px)
                         font-weight: 800
+                        @include mobile
+                            font-size: get-vw-mobile(16px)
+                            font-weight: 700
                     span:last-of-type
                         font-size: get-vw(17px)
                         font-weight: 700
+                        @include mobile
+                            font-size: get-vw-mobile(16px)
+                            font-weight: 400
         &__delivery
             margin-top: get-vw(93px)
             margin-bottom: get-vw(138px)
+            @include mobile
+                margin-top: get-vw-mobile(40px)
             .cartButtons
                 max-width: get-vw(304px)
                 margin-left: auto
+                @include mobile
+                    max-width: initial
+                    margin-top: get-vw-mobile(20px)
             &_inputs
                 width: get-vw(730px)
                 display: flex
                 flex-wrap: wrap
                 justify-content: space-between
+                @include mobile
+                    width: 100%
                 .deliverElement
                     width: get-vw(350px)
                     display: flex
                     flex-direction: column
                     margin-bottom: get-vw(22px)
                     font-size: get-vw(16px)
+                    @include mobile
+                        width: get-vw-mobile(320px)
+                        margin: 0 auto
+                        margin-bottom: get-vw-mobile(10px)
                     label
                         margin-bottom: get-vw(5px)
                         font-size: get-vw(14px)
                         color: $descriptionText
                         font-weight: 400
+                        @include mobile
+                            display: none
                     input
                         outline: none
                         border: none
@@ -756,31 +1063,87 @@ body.openCart
                         height: get-vw(42px)
                         box-sizing: border-box
                         padding: get-vw(10px) 0 get-vw(11px) get-vw(15px)
+                        &::placeholder
+                            color: transparent
+                            @include mobile
+                                color: $lightTextThree
+                                font-size: get-vw-mobile(14px)
+                        @include mobile
+                            height: get-vw-mobile(42px)
+                            padding: 0 get-vw-mobile(15px)
+                            font-size: get-vw-mobile(14px)
                         &:focus
                             border: 1px solid $lightTextThree
+                    .custom-option, .custom-select-trigger
+                        @include mobile
+                            font-size: get-vw-mobile(14px)
+                    .custom-select-wrapper
+                        @include mobile
+                            margin-bottom: 0
         &__confirm
             flex-direction: row
             justify-content: space-between
             width: get-vw(1110px)
             padding-top: get-vw(70px)
             margin-bottom: get-vw(138px)
+            @include mobile
+                width: 100%
+                flex-direction: column
+            .confirmBlock__left
+                @include mobile
+                    display: flex
+                    flex-flow: wrap
+                    flex-direction: column
             &_itemTitle
                 font-weight: 700
                 font-size: get-vw(16px)
                 border-bottom: 1px solid rgba(204, 204, 204, 0.3)
                 padding-bottom: get-vw(10px)
                 color: $descriptionText
+                @include mobile
+                    font-size: get-vw-mobile(16px)
             .confirmBlock__left
                 .shoppingCartWrapper__confirm_itemTitle
                     width: get-vw(245px)
+                    @include mobile
+                        order: 2
+                        margin-top: get-vw-mobile(20px)
+                        margin-bottom: get-vw-mobile(6px)
+                        font-size: get-vw-mobile(16px)
+                        color: $lightTextThree
+                        margin-left: get-vw-mobile(20px)
+                        border: none
+                        font-weight: 400
                 .deliveryMethod__wrap
                     font-size: get-vw(16px)
                     font-weight: 400
                     margin-right: get-vw(15px)
                     margin-top: get-vw(10px)
+                    @include mobile
+                        font-size: get-vw-mobile(16px)
+                        order: 2
+                        margin-top: 0
+                        margin-right: 0
+                        padding-left: get-vw-mobile(20px)
+                        padding-right: get-vw-mobile(20px)
+                        padding-bottom: get-vw-mobile(20px)
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                    span
+                        @include mobile
+                            font-weight: 400
+                    b
+                        font-weight: 400
+                        @include mobile
+                            display: none
                 span
                     font-weight: 800
                     font-size: get-vw(16px)
+                    @include mobile
+                        font-size: get-vw-mobile(16px)
+                        line-height: get-vw-mobile(20px)
                 .adress
                     font-weight: 400
                     font-size: get-vw(16px)
@@ -788,13 +1151,36 @@ body.openCart
                     line-height: get-vw(20px)
                     margin-top: get-vw(10px)
                     margin-bottom: get-vw(134px)
+                    @include mobile
+                        order: 1
+                        font-size: get-vw-mobile(16px)
+                        line-height: get-vw-mobile(20px)
+                        max-width: initial
+                        display: flex
+                        flex-direction: column
+                        margin-top: get-vw-mobile(10px)
+                        margin-bottom: 0
+                        padding-bottom: get-vw-mobile(20px)
+                        padding-left: get-vw-mobile(20px)
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
                 .payMethod
                     display: flex
                     flex-direction: column
+                    @include mobile
+                        order: 3
+                        padding-bottom: get-vw-mobile(30px)
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.3)
                     &__title
                         font-size: get-vw(16px)
                         font-weight: 700
                         color: $descriptionText
+                        @include mobile
+                            font-size: get-vw-mobile(16px)
+                            font-weight: 400
+                            color: $lightTextThree
+                            padding-left: get-vw-mobile(20px)
+                            margin-top: get-vw-mobile(20px)
+                            margin-bottom: get-vw-mobile(10px)
                     &__item
                         height: get-vw(52px)
                         width: get-vw(350px)
@@ -804,58 +1190,102 @@ body.openCart
                         border: 1px solid $descriptionText
                         align-items: center
                         margin-top: get-vw(10px)
+                        @include mobile
+                            height: get-vw-mobile(42px)
+                            border: none
+                            background: $lightTextTwo
+                            width: get-vw-mobile(290px)
+                            padding: 0 get-vw-mobile(15px)
+                            margin: 0 auto
                         svg
                             width: get-vw(47px)
                             height: auto
                             margin-right: get-vw(10px)
+                            @include mobile
+                                width: get-vw-mobile(47px)
                         p
                             font-size: get-vw(16px)
                             font-weight: 400
                             color: $descriptionText
+                            @include mobile
+                                font-size: get-vw-mobile(14px)
             .confirmBlock__right
                 .shoppingCartWrapper__confirm_itemTitle
                     width: get-vw(539px)
                 .confirmItems__wrap
                     display: flex
                     flex-direction: column
+                    @include mobile
+                        margin-top: get-vw-mobile(20px)
                     &_item
                         display: flex
                         flex-direction: row
                         align-items: center
                         padding: get-vw(20px) 0
                         border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+                        @include mobile
+                            padding: get-vw-mobile(20px)
+                            align-items: flex-start
+                        .songPictureWrap
+                            width: get-vw(118px)
+                            margin-right: get-vw(35px)
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            @include mobile
+                                width: get-vw-mobile(72px)
+                                margin-right: get-vw-mobile(20px)
+                        .songText, .songPrice
+                            @include mobile
+                                margin-top: get-vw-mobile(10px)
                         img
                             max-height: get-vw(129px)
                             height: auto
                             max-width: get-vw(118px)
                             width: auto
-                            margin-right: get-vw(35px)
+                            @include mobile
+                                max-width: get-vw-mobile(72px)
+                                max-height: get-vw-mobile(76px)
                         .songText
                             &_title
                                 font-size: get-vw(18px)
                                 font-weight: 800
                                 color: $titleText
                                 margin-top: get-vw(2px)
+                                @include mobile
+                                    font-size: get-vw-mobile(16px)
+                                    font-weight: 700
                             &_description
                                 font-size: get-vw(16px)
                                 font-weight: 400
                                 color: $descriptionText
                                 margin-bottom: get-vw(49px)
+                                @include mobile
+                                    font-size: get-vw-mobile(14px)
+                                    font-weight: 400
                             &_button
                                 color: #8AC44B
                                 text-decoration: underline
                                 font-size: get-vw(17px)
                                 font-weight: 600
                                 cursor: pointer
+                                @include mobile
+                                    display: none
                         .songPrice
                             margin-left: auto
                             font-size: get-vw(17px)
                             font-weight: 400
                             color: $titleText
+                            @include mobile
+                                font-size: get-vw-mobile(16px)
+                                font-weight: 700
                 .confirmSum__wrap
                     margin-top: get-vw(10px)
                     width: get-vw(254px)
                     margin-left: auto
+                    @include mobile
+                        margin: 0 auto
+                        width: initial
                     &_summary, &_delivery
                         font-size: get-vw(17px)
                         color: $descriptionText
@@ -868,11 +1298,18 @@ body.openCart
                         padding-bottom: get-vw(10px)
                         border-bottom: 1px solid rgba(204, 204, 204, 0.3)
                         padding-right: get-vw(2px)
+                        @include mobile
+                            font-style: normal
+                            font-size: get-vw-mobile(16px)
+                            color: $descriptionText
+                            padding: get-vw-mobile(20px)
                     &_delivery
                         padding-top: get-vw(10px)
                         padding-bottom: get-vw(14px)
                         border-bottom: 1px solid rgba(204, 204, 204, 0.3)
                         padding-right: get-vw(6px)
+                        @include mobile
+                            display: none
                     &_all
                         font-size: get-vw(18px)
                         font-weight: 800
@@ -881,8 +1318,15 @@ body.openCart
                         flex-direction: row
                         justify-content: space-between
                         padding-right: get-vw(9px)
+                        @include mobile
+                            font-size: get-vw-mobile(16px)
+                            padding: get-vw-mobile(20px)
+                            border-bottom: 1px solid  rgba(204, 204, 204, 0.3)
+                            margin-bottom: get-vw-mobile(30px)
                         span
                             font-size: get-vw(17px)
+                            @include mobile
+                                font-size: get-vw-mobile(16px)
                 .rulesCheckbox
                     display: flex
                     flex-direction: row
@@ -893,6 +1337,8 @@ body.openCart
                     font-size: get-vw(14px)
                     font-weight: 400
                     margin-bottom: get-vw(22px)
+                    @include mobile
+                        display: none
                     label
                         margin-right: get-vw(10px)
                     input
@@ -933,13 +1379,41 @@ body.openCart
             margin-bottom: get-vw(138px)
             flex-direction: column
             align-items: center
+            @include mobile
+                padding-top: 0
+            &_btn
+                display: none
+                @include mobile
+                    display: flex
+                    margin-top: auto
+                    background: $lightTextThree
+                    height: get-vw-mobile(52px)
+                    width: get-vw-mobile(320px)
+                    font-size: get-vw-mobile(16px)
+                    font-weight: 400
+                    color: $accentColor
+                    justify-content: center
+                    align-items: center
+                    border-radius: get-vw-mobile(40px)
+                    order: 3
             p
                 font-size: get-vw(28px)
                 line-height: get-vw(39px)
                 text-align: center
+                @include mobile
+                    order: 2
+                    font-size: get-vw-mobile(20px)
+                    font-weight: 700
+                    line-height: get-vw-mobile(26px)
+                    padding: 0 get-vw-mobile(20px)
             svg
                 margin-top: get-vw(40px)
                 width: get-vw(72px)
+                @include mobile
+                    margin-top: get-vw-mobile(40px)
+                    width: get-vw-mobile(54px)
+                    order: 1
+                    margin-bottom: get-vw-mobile(20px)
 
 .shoppingCartWrapper
     display: none
@@ -960,3 +1434,12 @@ body.openCart
         &[data-cartstate="4"]
             .shoppingCartWrapper__success
                 display: flex
+                flex-grow: 1
+    .cartTable__mobileTitle
+        display: none
+        color: $lightTextThree
+        font-size: get-vw-mobile(16px)
+        margin-left: get-vw-mobile(20px)
+        font-weight: 400
+        @include mobile
+            display: block

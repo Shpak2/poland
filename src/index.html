@@ -1134,16 +1134,16 @@
                 <input type="text" name="executor" id="executor" placeholder="Wykonawca">
                 <input type="text" name="author" id="author" placeholder="Utwór">
                 <select name="okładka" id="okładka" class="custom-select okładka" data-customPlaceholder="Okładka1">
-                  <option value="okładka1">Okładka1</option>
-                  <option value="okładka2">Okładka2</option>
-                  <option value="okładka3">Okładka3</option>
+                  <option class="okładka__okładka1" value="okładka1">Okładka1</option>
+                  <option class="okładka__okładka2" value="okładka2">Okładka2</option>
+                  <option class="okładka__okładka3" value="okładka3">Okładka3</option>
                 </select>
                 <select name="rozmiar" id="rozmiar" class="custom-select rozmiar" data-customPlaceholder="Rozmiar1">
-                  <option value="rozmiar1">Rozmiar1</option>
-                  <option value="rozmiar2">Rozmiar2</option>
-                  <option value="rozmiar3">Rozmiar3</option>
+                  <option class="rozmiar__rozmiar1" value="rozmiar1">Rozmiar1</option>
+                  <option class="rozmiar__rozmiar2" value="rozmiar2">Rozmiar2</option>
+                  <option class="rozmiar__rozmiar3" value="rozmiar3">Rozmiar3</option>
                 </select>
-                <p class="titleChoice">Uzupełnij:</p>
+                <p class="titleChoice additionally">Uzupełnij:</p>
                 <div class="mode checkboxWrapp">
                   <p class="checkboxWrapp__text">Tryb</p>
                   <div class="checkboxWrapp__choice">
@@ -1222,13 +1222,13 @@
                   </div>
                 </div>
                 <select name="conntactChoice" id="conntactChoice" class="custom-select conntactChoice" data-customPlaceholder="Wybierz jak się skontaktować">
-                  <option value="First">First</option>
-                  <option value="Second">Second</option>
-                  <option value="Third">Third</option>
+                  <option class="conntactChoice__first" value="First">First</option>
+                  <option class="conntactChoice__second" value="Second">Second</option>
+                  <option class="conntactChoice__third" value="Third">Third</option>
                 </select>
                 <input type="text" name="facebookName" id="facebookName" placeholder="Wpisz swoje imie na Facebook’u">
-                <p class="titleChoice"><label for="comment">Dodaj komentarz</label></p>
-                <textarea id="comment" name="comment"></textarea>
+                <p class="titleChoice comment"><label for="comment">Dodaj komentarz</label></p>
+                <textarea id="comment" name="comment" placeholder="Wpisz swój komentarz do zamówienia"></textarea>
                 <p class="price">Cena <span>29.90zl</span></p>
                 <div class="form-stepWrap">
                   <div class="form-stepWrap__btn popUpBtnPrev">
@@ -1308,6 +1308,9 @@
       </div>
     </div>
     <div class="shoppingCartWrapper" data-cartstate="1">
+      <div class="shoppingCartWrapper__titleMobile">
+        <p>Koszyk</p>
+      </div>
       <div class="shoppingCartWrapper__steps">
         <div class="shoppingCartWrapper__steps_step1 shoppingCartWrapper__steps_step active">
           <div class="stepIcon">
@@ -1319,15 +1322,15 @@
         </div>
         <div class="shoppingCartWrapper__steps_step2 shoppingCartWrapper__steps_step">
           <div class="stepIcon">
-            <svg width="22" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.94 7.649l-1.706-3.558a.651.651 0 00-.589-.363h-5.364V.627A.638.638 0 0013.632 0H.65C.291 0 0 .28 0 .627v10.546c0 .347.29.627.65.627h1.27c-.108.23-.19.474-.242.728H.65c-.358 0-.649.28-.649.627 0 .346.29.626.65.626h1.028c.304 1.506 1.68 2.646 3.327 2.646 1.646 0 3.022-1.14 3.325-2.646h5.418c.303 1.506 1.679 2.646 3.326 2.646 1.646 0 3.022-1.14 3.325-2.646h.952c.358 0 .649-.28.649-.626V7.912a.61.61 0 00-.06-.263zm-8.193 4.879H8.33a3.166 3.166 0 00-.242-.728h5.544a.659.659 0 00.444-.17c-.152.278-.264.58-.329.898zM1.298 1.253h11.685v9.294H7.048a3.45 3.45 0 00-2.044-.665 3.45 3.45 0 00-2.044.665H1.298V1.253zm3.706 13.92c-1.153 0-2.09-.905-2.09-2.018 0-1.114.937-2.02 2.09-2.02 1.153 0 2.091.906 2.091 2.02 0 1.113-.938 2.018-2.09 2.018zm12.07 0c-1.154 0-2.092-.905-2.092-2.018 0-1.114.939-2.02 2.091-2.02 1.153 0 2.091.906 2.091 2.02 0 1.113-.938 2.018-2.09 2.018zm3.628-2.645h-.303c-.304-1.506-1.679-2.646-3.326-2.646a3.422 3.422 0 00-2.814 1.452.61.61 0 00.022-.16V4.98h4.95l1.47 3.07v4.477z" fill="#DBE0E1"/></svg>
+            <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.94 7.649l-1.706-3.558a.651.651 0 00-.589-.363h-5.364V.627A.638.638 0 0013.632 0H.65C.291 0 0 .28 0 .627v10.546c0 .347.29.627.65.627h1.27c-.108.23-.19.474-.242.728H.65c-.358 0-.649.28-.649.627 0 .346.29.626.65.626h1.028c.304 1.506 1.68 2.646 3.327 2.646 1.646 0 3.022-1.14 3.325-2.646h5.418c.303 1.506 1.679 2.646 3.326 2.646 1.646 0 3.022-1.14 3.325-2.646h.952c.358 0 .649-.28.649-.626V7.912a.61.61 0 00-.06-.263zm-8.193 4.879H8.33a3.166 3.166 0 00-.242-.728h5.544a.659.659 0 00.444-.17c-.152.278-.264.58-.329.898zM1.298 1.253h11.685v9.294H7.048a3.45 3.45 0 00-2.044-.665 3.45 3.45 0 00-2.044.665H1.298V1.253zm3.706 13.92c-1.153 0-2.09-.905-2.09-2.018 0-1.114.937-2.02 2.09-2.02 1.153 0 2.091.906 2.091 2.02 0 1.113-.938 2.018-2.09 2.018zm12.07 0c-1.154 0-2.092-.905-2.092-2.018 0-1.114.939-2.02 2.091-2.02 1.153 0 2.091.906 2.091 2.02 0 1.113-.938 2.018-2.09 2.018zm3.628-2.645h-.303c-.304-1.506-1.679-2.646-3.326-2.646a3.422 3.422 0 00-2.814 1.452.61.61 0 00.022-.16V4.98h4.95l1.47 3.07v4.477z" fill="#DBE0E1"/></svg>
           </div>
-          Dostawa
+          <p>Dostawa</p>
         </div>
         <div class="shoppingCartWrapper__steps_step3 shoppingCartWrapper__steps_step">
           <div class="stepIcon">
-            <svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.78.22a.75.75 0 00-1.06 0l-9.97 9.97-5.47-5.47A.75.75 0 00.22 5.78l6 6.001a.754.754 0 001.06 0L17.78 1.28a.75.75 0 000-1.06z" fill="#DBE0E1"/></svg>
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.78.22a.75.75 0 00-1.06 0l-9.97 9.97-5.47-5.47A.75.75 0 00.22 5.78l6 6.001a.754.754 0 001.06 0L17.78 1.28a.75.75 0 000-1.06z" fill="#DBE0E1"/></svg>
           </div>
-          Potwierdzenie
+          <p>Potwierdzenie</p>
         </div>
       </div>
       <div class="shoppingCartWrapper-step shoppingCartWrapper__cart">
@@ -1338,12 +1341,15 @@
             <p class="cartTable__title_price">Cena</p>
             <p class="cartTable__title_totalPrice">Razem</p>
           </div>
+          <p class="cartTable__mobileTitle">Koszyk</p>
           <div class="cartTable__item">
             <div class="cartTable__item_remove">
               <img class="img-svg" src="./img/sys/remove.svg" alt="remove">
             </div>
             <div class="cartTable__item_picture">
-              <img src="./img/image2.png" alt="product">
+              <div class="productWrap">
+                <img src="./img/image2.png" alt="product">
+              </div>
               <div class="cartText">
                 <p class="cartText__artistName">Spotify Artist</p>
                 <p class="cartText__position">Układ poziomy</p>
@@ -1365,7 +1371,9 @@
               <img class="img-svg" src="./img/sys/remove.svg" alt="remove">
             </div>
             <div class="cartTable__item_picture">
-              <img src="./img/image1.png" alt="product">
+              <div class="productWrap">
+                <img src="./img/image1.png" alt="product">
+              </div>
               <div class="cartText">
                 <p class="cartText__artistName">Spotify Artist</p>
                 <p class="cartText__position">Układ poziomy</p>
@@ -1386,10 +1394,10 @@
         <div class="shoppingCartWrapper__cart_sum">
           <div class="cartSum__left">
             <label for="cartComment">Dodaj komentarz do zamówienia</label>
-            <textarea name="cartComment" id="cartComment"></textarea>
+            <textarea name="cartComment" id="cartComment" placeholder="Dodaj komentarz do zamówienia"></textarea>
             <label for="promoCode">Kod promocyjny</label>
             <div class="promoCodeWrap">
-              <input id="promoCode" type="text">
+              <input id="promoCode" type="text" placeholder="Kod promocyjny">
               <span class="promoCode__confirm">
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11l5-5-5-5" stroke="#fff" stroke-linecap="square"/></svg>
               </span>
@@ -1417,47 +1425,47 @@
         <div class="shoppingCartWrapper__delivery_inputs">
           <div class="deliverElement">
             <label for="personName">Imię i Nazwisko</label>
-            <input type="text" id="personName">
+            <input type="text" placeholder="Imię i Nazwisko" id="personName">
           </div>
           <div class="deliverElement">
             <label for="personSurname">Nazwisko</label>
-            <input type="text" id="personSurname">
+            <input type="text" placeholder="Nazwisko" id="personSurname">
           </div>
           <div class="deliverElement">
             <label for="telephone">Telefon kontaktowy</label>
-            <input type="text" id="telephone">
+            <input type="text" placeholder="Telefon kontaktowy" id="telephone">
           </div>
           <div class="deliverElement">
             <label for="email">Email</label>
-            <input type="text" id="email">
+            <input type="text" placeholder="Email" id="email">
           </div>
           <div class="deliverElement">
             <label for="country">Kraj</label>
-            <input type="text" id="country">
+            <input type="text" placeholder="Kraj" id="country">
           </div>
           <div class="deliverElement">
             <label for="city">Miejscowość</label>
-            <input type="text" id="city">
+            <input type="text" placeholder="Miejscowość" id="city">
           </div>
           <div class="deliverElement">
             <label for="address">Adres - Ulica</label>
-            <input type="text" id="address">
+            <input type="text" placeholder="Adres - Ulica" id="address">
           </div>
           <div class="deliverElement">
             <label for="zipCode">Kod pocztowy</label>
-            <input type="text" id="zipCode">
+            <input type="text" placeholder="Kod pocztowy" id="zipCode">
           </div>
           <div class="deliverElement">
             <label for="deliveryMethod">Wybierz sposób dostawy</label>
-            <select name="okładka" id="deliveryMethod" class="custom-select okładka" data-customPlaceholder="Okładka1">
-              <option value="okładka1">Okładka1</option>
-              <option value="okładka2">Okładka2</option>
-              <option value="okładka3">Okładka3</option>
+            <select name="deliveryMethod" id="deliveryMethod" class="custom-select okładka" data-customPlaceholder="Okładka1">
+              <option class="deliveryMethod__okładka1" value="okładka1">Okładka1</option>
+              <option class="deliveryMethod__okładka2" value="okładka2">Okładka2</option>
+              <option class="deliveryMethod__okładka3" value="okładka3">Okładka3</option>
             </select>
           </div>
           <div class="deliverElement">
             <label for="lockerCode">Kod Paczkomatu</label>
-            <input type="text" id="lockerCode">
+            <input type="text" placeholder="Kod Paczkomatu" id="lockerCode">
           </div>
         </div>
         <div class="cartButtons">
@@ -1481,12 +1489,13 @@
             Dostawa
           </p>
           <p class="deliveryMethod__wrap">
-            Inpost kurier - <span>15Zl</span>
+            Inpost kurier <b>-</b> <span>15Zl</span>
           </p>
+          <p class="cartTable__mobileTitle">Adress</p>
           <p class="adress">
-            Robert Lewandowski
-            Trakt brzeski 1\26, Warszawa
-            05-071
+            <span>Robert Lewandowski</span>
+            <span>Trakt brzeski 1\26, Warszawa</span>
+            <span>05-071</span>
           </p>
           <div class="payMethod">
             <p class="payMethod__title">Sposób zapłaty</p>
@@ -1497,12 +1506,12 @@
           </div>
         </div>
         <div class="confirmBlock__right">
-          <p class="shoppingCartWrapper__confirm_itemTitle">
-            Koszyk
-          </p>
           <div class="confirmItems__wrap">
+            <p class="cartTable__mobileTitle">Koszyk</p>
             <div class="confirmItems__wrap_item">
-              <img src="img/image5.png" alt="song">
+              <div class="songPictureWrap">
+                <img src="img/image5.png" alt="song">
+              </div>
               <div class="songText">
                 <p class="songText_title">Spotify Song</p>
                 <p class="songText_description">Układ pionowy</p>
@@ -1511,7 +1520,9 @@
               <p class="songPrice">146.90Zl</p>
             </div>
             <div class="confirmItems__wrap_item">
-              <img src="img/image1.png" alt="song">
+              <div class="songPictureWrap">
+                <img src="img/image1.png" alt="song">
+              </div>
               <div class="songText">
                 <p class="songText_title">Spotify Song</p>
                 <p class="songText_description">Układ pionowy</p>
@@ -1552,7 +1563,8 @@
           Otrymaliśmy Twoje zamowienie. <br>
           Zaczynamy tworzyć Twoje Szkiełko!
         </p>
-        <svg width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="36" cy="36" r="36" fill="#82BB58"/><path d="M50.31 27.008a1.265 1.265 0 00-1.73 0L32.335 42.517l-8.915-8.508a1.265 1.265 0 00-1.728 0 1.13 1.13 0 000 1.65l9.778 9.334c.24.226.552.34.865.34.313 0 .626-.114.863-.34L50.31 28.658a1.13 1.13 0 000-1.65z" fill="#F4F5F4"/></svg>
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="36" cy="36" r="36" fill="#82BB58"/><path d="M50.31 27.008a1.265 1.265 0 00-1.73 0L32.335 42.517l-8.915-8.508a1.265 1.265 0 00-1.728 0 1.13 1.13 0 000 1.65l9.778 9.334c.24.226.552.34.865.34.313 0 .626-.114.863-.34L50.31 28.658a1.13 1.13 0 000-1.65z" fill="#F4F5F4"/></svg>
+        <a href="/" class="shoppingCartWrapper__success_btn">Strona główna</a>
       </div>
     </div>
     <!-- POPUP WRAPPER END -->
