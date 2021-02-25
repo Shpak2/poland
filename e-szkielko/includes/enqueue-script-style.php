@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'e_szkielko_scripts' );
 
 function e_szkielko_scripts() {
     // scripts version
-    $script_ver = '1.0.0';
+    $script_ver = '1.0.1';
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
     wp_enqueue_script( 'jquery' );
