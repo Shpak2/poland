@@ -168,7 +168,7 @@ $('.img-svg').each(function(){
     }
   }
   addNewImg();
-    setTimeout(() => $('.banner-wrapper').addClass('animated'), 1000);
+    setTimeout(() => $('.mainCall-wrapper').addClass('animated'), 1000);
 // end animation
 
 // slider & product container
