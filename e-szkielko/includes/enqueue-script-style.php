@@ -7,7 +7,7 @@ add_action( 'wp_enqueue_scripts', 'e_szkielko_style' );
 
 function e_szkielko_style() {
     // style version
-    $style_ver = '1.0.0';
+    $style_ver = '1.0.1';
     wp_enqueue_style( 'e-szkielko-swiper-style', get_swiper_stylesheet_uri(), array(), $style_ver);
     wp_enqueue_style( 'e-szkielko-custom-style', get_custom_stylesheet_uri(), array(), $style_ver);
 }
