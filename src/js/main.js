@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
   let btnToTop = $('#scroll'),
       header = $('#header-js'),
-      feedbackBlock = $('#feedback-js'),
+      feedbackBlock = $('#feedback'),
       btnMobMenu = $('.mobile-btn'),
       btnQuestion = $('.help-cont__question-item');
 
@@ -95,16 +95,32 @@ $( document ).ready(function() {
 // end gradient
 
 // anchor
-  let btnAnchor = $('.primary-menu li a'),
-      fixedHeader = $('#header-js').innerHeight();
+  // let btnAnchor = $('.primary-menu li a');
+  let fixedHeader = $('#header-js').innerHeight();
 
-  $('.primary-menu li a,.footer-nav li a').on('click', function(e){
-    e.preventDefault();
-    let anchorBlock = $('div[data-anchor='+$(this).attr('data-anchor')+']');
-    $('html, body').animate({
-      scrollTop: anchorBlock.offset().top - fixedHeader
+  // $('.primary-menu li a,.footer-nav li a').on('click', function(e){
+  //   e.preventDefault();
+  //   let anchorBlock = $('div[data-anchor='+$(this).attr('data-anchor')+']');
+  //   $('html, body').animate({
+  //     scrollTop: anchorBlock.offset().top - fixedHeader
+  //   }, 1000);
+  // })
+
+  $('a[href^="#"]').bind("click", function(e){
+    var anchor = $(this);
+    $('html, body').stop().animate({
+    scrollTop: $(anchor.attr('href')).offset().top - fixedHeader
     }, 1000);
-  })
+    e.preventDefault();
+    });
+
+  // $('li a[href^="#"]').click(function(){
+  //   console.log('hjh')
+  //   var el = $(this).attr('href');
+  //   $('body').animate({
+  //     scrollTop: $(el).offset().top}, 2000);
+  //     return false;
+  // });
 // end anchor
 
 //scroll to bottom & function scroll to top
