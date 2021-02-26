@@ -48,6 +48,60 @@ function crb_attach_theme_options() {
                     Field::make( 'text', 'question', 'Введите вопрос' ),
                     Field::make( 'rich_text', 'answer', 'Введите ответ' ),
                 )),
+            Field::make( 'text', 'faq_crb_text1', 'Текст над кнопкой первая строка' ),
+            Field::make( 'text', 'faq_crb_text2', 'Текст над кнопкой вторая строка' ),
+            Field::make( 'text', 'faq_crb_link_1_name', 'Имя кнопки' ),
+        ) )
+        ->add_tab('Size cost container', array(
+            Field::make( 'image', 'sc_image', 'Картинка' )->set_width(50),
+            Field::make( 'text', 'sc_image_name', 'Имя картинки' )->set_width(50),
+            Field::make( 'text', 'sc_image_width_first', 'Ширина первой картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_height_first', 'Высота первой картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_text_name_first', 'Название размера первой картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_description_first', 'Описани размера первой картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_old_price_first', 'Цена старая первой картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_new_price_first', 'Цена новая первой картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_width_second', 'Ширина второй картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_height_second', 'Высота второй картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_text_name_second', 'Название размера второй картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_description_second', 'Описани размера второй картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_old_price_second', 'Цена старая второй картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_new_price_second', 'Цена новая второй картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_width_third', 'Ширина третьей картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_height_third', 'Высота третьей картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_text_name_third', 'Название размера третьей картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_description_third', 'Описани размера третьей картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_old_price_third', 'Цена старая третьей картинки' )->set_width(16.6),
+            Field::make( 'text', 'sc_image_new_price_third', 'Цена новая третьей картинки' )->set_width(16.6),
+        ) )
+        ->add_tab('Take more container', array(
+            Field::make( 'text', 'take_more_title', 'Заголовок блока' ),
+            Field::make( 'text', 'take_more_under_title', 'Текст под заголовком' ),
+            Field::make( 'rich_text', 'take_more_first_text', 'Первый абзац' )->help_text('Белый текст просто выделить любым цветом'),
+            Field::make( 'rich_text', 'take_more_second_text', 'Второй абзац' )->help_text('Белый текст просто выделить любым цветом'),
+            Field::make( 'image', 'take_more_image_one', 'Картинка мини' )->set_width(50),
+            Field::make( 'text', 'take_more_image_one_name', 'Имя картинки мини' )->set_width(50),
+            Field::make( 'image', 'take_more_image_two', 'Картинка классик' )->set_width(50),
+            Field::make( 'text', 'take_more_image_two_name', 'Имя картинки классик' )->set_width(50),
+            Field::make( 'image', 'take_more_image_three', 'Картинка макси' )->set_width(50),
+            Field::make( 'text', 'take_more_image_three_name', 'Имя картинки макси' )->set_width(50),
+        ) )
+        ->add_tab('Create your container', array(
+            Field::make( 'text', 'create_your_title', 'Заголовок блока' ),
+            Field::make( 'rich_text', 'create_your_description', 'Описание блока' ),
+            Field::make( 'complex', 'create_your_pluses', 'Преимущества' )
+                ->add_fields( array(
+                    Field::make( 'text', 'advantages', 'Текст преимущества' ),
+                )),
+            Field::make( 'text', 'create_your_button', 'Текст кнопки' ),
+        ) )
+        ->add_tab('How record container', array(
+            Field::make( 'text', 'how_record_title', 'Заголовок блока' ),
+            Field::make( 'text', 'how_record_description', 'Описание блока' ),
+            Field::make( 'complex', 'how_record_steps', 'Как воспроизвести шаги' )
+                ->add_fields( array(
+                    Field::make( 'text', 'step', 'Текст шага' ),
+                )),
         ) );
 }
 

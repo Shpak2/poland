@@ -32,12 +32,12 @@
         </div>
         <div class="help-cont__footer">
             <div class="help-cont__footer-text">
-                <span>Masz więcej pytań?</span>
-                <p>Chętnie udzielimy odpowiedzi na każde Twoje pytanie!</p>
+                <span><?php echo carbon_get_theme_option('faq_crb_text1')?></span>
+                <p><?php echo carbon_get_theme_option('faq_crb_text2')?></p>
             </div>
             <div class="help-cont__footer-btn">
                 <div class="product-create">
-                    <span>Zadaj pytanie</span>
+                    <span><?php echo carbon_get_theme_option('faq_crb_link_1_name')?></span>
                 </div>
             </div>
         </div>

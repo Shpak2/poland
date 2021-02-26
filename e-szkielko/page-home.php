@@ -327,135 +327,10 @@ get_header();
         </div>
         <?php
             require get_template_directory() . '/templates/blocks/about-us.php';
+            require get_template_directory() . '/templates/blocks/size-cost.php';
+            require get_template_directory() . '/templates/blocks/take-more.php';
+            require get_template_directory() . '/templates/blocks/create-your.php';
         ?>
-        <div class="cont-price swiper-container">
-            <div class="cont-price__list swiper-wrapper">
-                <div class="cont-price__item swiper-slide">
-                    <div class="cont-price__preview size-a3">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/temp/slide1.jpg" alt="slide name">
-                        <div class="size-hor"><p>300 mm</p></div>
-                        <div class="size-ver"><p>420 mm</p></div>
-                    </div>
-                    <div class="cont-price__body">
-                        <div class="cont-price__title">
-                            <h3>Maxi A3</h3>
-                            <p>To specjalny format
-                                - polecamy do designów
-                                z tekstem/albumem</p>
-                        </div>
-                        <div class="cont-price__cena">
-                            <span>99zl</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="cont-price__item swiper-slide">
-                    <div class="cont-price__preview size-a4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/temp/slide1.jpg" alt="slide name">
-                        <div class="size-hor"><p>210 mm</p></div>
-                        <div class="size-ver"><p>300 mm</p></div>
-                    </div>
-                    <div class="cont-price__body">
-                        <div class="cont-price__title">
-                            <h3>Classic A4</h3>
-                            <p>To klasyczny format
-                                - Must-Have
-                                dla każdego </p>
-                        </div>
-                        <div class="cont-price__cena">
-                            <span>89zl</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="cont-price__item swiper-slide">
-                    <div class="cont-price__preview size-a5">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/temp/slide1.jpg" alt="slide name">
-                        <div class="size-hor"><p>150 mm</p></div>
-                        <div class="size-ver"><p>210 mm</p></div>
-                    </div>
-                    <div class="cont-price__body">
-                        <div class="cont-price__title">
-                            <h3>Mini A5</h3>
-                            <p>To Najmniejszy format
-                                - łatwo dopasujesz
-                                go do wnętrza </p>
-                        </div>
-                        <div class="cont-price__cena">
-                            <span>79zl</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-green" id="shares">
-            <div class="shares container">
-                <div class="shares-item">
-                    <div class="shares-info">
-                        <h2>Zyskuj więcej!</h2>
-                        <p>Pamiętaj, że działają u nas promocje, dzięki którym zyskujesz więcej korzyści:</p>
-                        <ul class="shares-info__list">
-                            <li class="shares-info__list-item">
-                                <p><span>Zamawiając dwa Szkiełka <br>dostaniesz </span>Darmową dostawę</p>
-                            </li>
-                            <li class="shares-info__list-item">
-                                <p><span>Dodaj jeszcze jedno taniej -<br> Za trzecie Szkiełko zapłacisz nawet o </span>15% mniej</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="shares-item">
-                    <div class="shares-preview">
-                        <div class="shares-preview img-mini">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom/mini.png" alt="mini">
-                        </div>
-                        <div class="shares-preview img-classic">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom/classic.png" alt="classic">
-                        </div>
-                        <div class="shares-preview img-maxi">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom/maxi.png" alt="maxi">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="intro container intro-second">
-            <div class="intro-wrapper">
-                <div class="intro-preview">
-                    <div class="intro-preview__img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/images.png" alt="intro name">
-                    </div>
-                </div>
-                <div class="intro-info">
-                    <div class="intro-info__body">
-                        <div class="intro-info__title">
-                            <h2>Utwórz własne Szkiełko - to bardzo proste!</h2>
-                        </div>
-                        <div class="intro-info__text">
-                            <p>Wystarczy tylko wybrać design, a my stworzymy Twój unikalny nowoczesny plakat muzyczny i pomożemy Ci zrobić tak, aby</p>
-                            <p>Twoja piosenka trwała wiecznie.</p>
-                        </div>
-                        <ul class="intro-info__list">
-                            <li class="intro-info__list-item">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/checkmark.svg" alt="present">
-                                <span>Wybierz ulubioną piosenkę</span>
-                            </li>
-                            <li class="intro-info__list-item">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/checkmark.svg" alt="relax">
-                                <span>Piosenkę, która łączy Was razem</span>
-                            </li>
-                            <li class="intro-info__list-item">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/checkmark.svg" alt="puzzle">
-                                <span>Piosenkę, z którą masz tak dużo wspomnień</span>
-                            </li>
-                        </ul>
-                        <div class="intro-info__button">
-                            <div class="product-create">
-                                <span>Utwórz Szkiełko</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="gallery parallax">
             <div class="gallery-bg"></div>
             <div class="gallery-container">
@@ -495,43 +370,8 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="cont-spot container" id="spot">
-            <div class="cont-spot__item">
-                <div class="cont-spot__review">
-                    <div class="cont-spot__review-img">
-              <span class="cont-spot__review-decor">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/decoration2.svg" class="img-svg" alt="decor">
-              </span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom/spotn.jpg" alt="spotify">
-                    </div>
-                </div>
-            </div>
-            <div class="cont-spot__item">
-                <div class="cont-spot__body">
-                    <div class="cont-spot__body-header">
-                        <h2>Jak nasze "płyty" mogą odtworzyć dźwięk</h2>
-                        <p>Wyróżnikiem naszego Szkiełka jest to, że każdy może je
-                            usłyszeć! Jedyne, czego potrzebujesz to Twój telefon i jego camera:
-                        </p>
-                    </div>
-                    <ul class="cont-spot__body-list">
-                        <li class="cont-spot__body-item">
-                            <span>1</span><p>Wejdź na Spotify</p>
-                        </li>
-                        <li class="cont-spot__body-item">
-                            <span>2</span><p>Kliknij szukać i wciśnij na ikonę kamerki</p>
-                        </li>
-                        <li class="cont-spot__body-item">
-                            <span>3</span><p>Skieruj kamerę telefonu na kod umieszczony na plakacie</p>
-                        </li>
-                        <li class="cont-spot__body-item">
-                            <span>4</span><p>Super! Teraz usłyszysz Swoją piosenkę</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <?php
+            require get_template_directory() . '/templates/blocks/how-record.php';
             require get_template_directory() . '/templates/blocks/review-block.php';
             require get_template_directory() . '/templates/blocks/faq-block.php';
         ?>

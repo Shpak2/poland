@@ -5481,6 +5481,38 @@ body.openCart .shoppingCartWrapper__success svg {
   }
 }
 
+.cont-price__cena span.cont-price__cena_old {
+  color: #c3cbcd;
+  position: relative;
+  margin-right: .48611vw
+}
+
+@media (max-width: 500px),(max-height: 500px) and (orientation: landscape) {
+  .cont-price__cena span.cont-price__cena_old {
+    margin-right: 1.94444vmin
+  }
+}
+
+.cont-price__cena span.cont-price__cena_old::after {
+  content: '';
+  position: absolute;
+  height: .13889vw;
+  width: 3.47222vw;
+  -webkit-transform: translateY(-50%) rotate(-15deg);
+  -ms-transform: translateY(-50%) rotate(-15deg);
+  transform: translateY(-50%) rotate(-15deg);
+  background: #d62d30;
+  left: 0;
+  top: 50%
+}
+
+@media (max-width: 500px),(max-height: 500px) and (orientation: landscape) {
+  .cont-price__cena span.cont-price__cena_old::after {
+    height: .55556vmin;
+    width: 13.88889vmin
+  }
+}
+
 .size-ver {
   position: absolute;
   top: 50%;
@@ -5674,7 +5706,7 @@ body.openCart .shoppingCartWrapper__success svg {
 }
 
 .shares-info__list-item p span {
-  color: #fff;
+  color: #fff !important;
   font-weight: 600
 }
 

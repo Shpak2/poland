@@ -97,6 +97,25 @@
       line-height: 1.3
       @include mobile
         font-size: get-vw-mobile(20px)
+    span.cont-price__cena_old
+      color: $lightTextThree
+      position: relative
+      margin-right: get-vw(7px)
+      @include mobile
+        margin-right: get-vw-mobile(7px)
+      &::after
+        content: ''
+        position: absolute
+        height: get-vw(2px)
+        width: get-vw(50px)
+        transform: translateY(-50%) rotate(-15deg)
+        background: #D62D30
+        left: 0
+        top: 50%
+        @include mobile
+          height: get-vw-mobile(2px)
+          width: get-vw-mobile(50px)
+
 
 .size
   &-ver
