@@ -376,7 +376,7 @@ get_header();
             require get_template_directory() . '/templates/blocks/faq-block.php';
         ?>
 
-        <div class="feedback" data-anchor="feedback" id="feedback-js">
+        <div class="feedback" id="feedback">
             <div class="feedback-header">
                 <h2>Kontakt</h2>
             </div>

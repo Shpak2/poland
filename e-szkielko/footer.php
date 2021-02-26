@@ -15,17 +15,17 @@
             <div class="footer-nav">
                 <ul class="footer-nav__wrapper">
                     <li class="footer-nav__item">
-                        <a href="#" data-anchor="onas">
+                        <a href="#onas">
                             <span>O nas</span>
                         </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="#" data-anchor="help">
+                        <a href="#help">
                             <span>FAQ</span>
                         </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="#" data-anchor="feedback">
+                        <a href="#feedback">
                             <span>Kontakt</span>
                         </a>
                     </li>

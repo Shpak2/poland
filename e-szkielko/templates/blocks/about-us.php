@@ -1,7 +1,7 @@
 <?php
 ?>
 <div class="bg-grey intro-wrap">
-    <div class="intro container" data-anchor="onas">
+    <div class="intro container" id="onas">
         <div class="intro-wrapper">
             <div class="intro-preview">
                 <div class="intro-preview__img">

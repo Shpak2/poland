@@ -2,7 +2,7 @@
 ?>
 
 <div class="bg-grey helper">
-    <div class="help-cont container" data-anchor="help">
+    <div class="help-cont container" id="help">
         <div class="help-cont__header">
             <h2>Pozostały Ci pytania?</h2>
         </div>

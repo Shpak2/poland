@@ -34,13 +34,13 @@
                     <nav class="primary-menu-wrapper">
                         <ul class="primary-menu">
                             <li class="menu-item">
-                                <a href="#" data-anchor="onas">O nas</a>
+                                <a href="#onas">O nas</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#" data-anchor="help">FAQ</a>
+                                <a href="#help">FAQ</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#" data-anchor="feedback">Kontakt</a>
+                                <a href="#feedback">Kontakt</a>
                             </li>
                         </ul>
                     </nav>
