@@ -47,6 +47,7 @@ gulp.task('sass-compile', function() {
     .pipe(csso())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('e-szkielko/assets/css'))
     .pipe(browserSync.reload({
       stream:true
     }));
@@ -86,6 +87,7 @@ gulp.task('mainScript', function() {
   .pipe(removeComments())
   .pipe(uglify())
   .pipe(gulp.dest('build/js'))
+  .pipe(gulp.dest('e-szkielko/assets/js'))
   .pipe(browserSync.reload({
     stream:true
   }));
