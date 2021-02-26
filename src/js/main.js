@@ -128,6 +128,7 @@ $( document ).ready(function() {
     if($(window).scrollTop()  > 300) {
       header.addClass('sticky');
       btnToTop.fadeIn(100);
+      if($('#shares').length!== 0){
       if($(window).scrollTop() > $('#shares').offset().top - $(window).innerHeight()){
         $('#shares').addClass('active')
         if($(window).scrollTop() > $('#spot').offset().top - $(window).innerHeight()){
@@ -138,7 +139,7 @@ $( document ).ready(function() {
             feedbackBlock.removeClass('active');
           }
         }
-      }
+      }}
     }else{
       header.removeClass('sticky');
       btnToTop.fadeOut(100);
