@@ -20,6 +20,7 @@ get_header();
         <script>
             $('.add-ajax').click(function(e){
                 e.preventDefault();
+                console.log($(this).attr('data-ajax'))
             })
         </script>
         <?php

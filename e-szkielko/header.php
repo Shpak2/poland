@@ -23,6 +23,15 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<div class="mask-preloader">
+    <div id='preloader' class="circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <span></span>
+    </div>
+</div>
+
         <header class="header" id="header-js">
             <div class="header-inner container">
                 <a href="<?php echo home_url() ?>" class="header-logo">

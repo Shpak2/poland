@@ -92,3 +92,22 @@ add_action('woocommerce_before_single_product_summary','woocommerce_show_product
 function woocommerce_show_product_custom_images(){
     require get_template_directory() . '/woocomerce/custom-template/es_product-image.php' ;
 };
+
+add_action('wp_footer','es_popup');
+
+function es_popup(){
+    ?>
+    <div class="popupWrapper" data-step="1" id="modal-product">
+        <div class="modal">
+            <div class="chooseSong">
+                <div class="modal__title">
+                    <p class="modal__title_text">Krok 1. Wybierz piosenkę i kształt</p>
+                    <div class="modal__title_button"></div>
+                </div>
+                <div class="modal__body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+};

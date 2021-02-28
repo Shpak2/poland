@@ -4,8 +4,7 @@ use Carbon_Fields\Field;
 
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
-    Container::make( 'theme_options', ( 'Настройки блоков' ) )
-        ->set_icon('dashicons-text')
+    Container::make( 'theme_options', ( 'Настройки блоков' ) )->set_icon('dashicons-text')
         ->add_tab('Banner main', array(
             Field::make( 'text', 'banner_crb_title', 'Заголовок блока' ),
             Field::make( 'text', 'banner_crb_text', 'Инфо текст блока' ),
@@ -102,14 +101,8 @@ function crb_attach_theme_options() {
                 ->add_fields( array(
                     Field::make( 'text', 'step', 'Текст шага' ),
                 )),
-        ) );
-}
-add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options2' );
-function crb_attach_theme_options2(){
-    Container::make('theme_options', ('Вывод категорий'))
-        ->set_icon('dashicons-images-alt
-')
-        ->add_fields(array(
+        ) )
+        ->add_tab('Вывод категорий', array(
             Field::make( 'complex', 'es_crb_category', 'Какие категории выводить на главной' )
                 ->add_fields( array(
                     Field::make( 'text', 'name_cat', 'Название категории' )->set_width(50),

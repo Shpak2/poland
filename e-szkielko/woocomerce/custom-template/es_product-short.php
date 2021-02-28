@@ -51,7 +51,7 @@ global $product;
             </div>
 		<div class="product-slider__card-info flip-card-back">
 			<div class="card-info__text"><?php echo $product->get_description(); ?></div>
-			<div class="btn-product__add add-ajax" data-ajax="<?php echo get_permalink( $loop->post->ID ) ?>">
+			<div class="btn-product__add add-ajax" data-ajax="<?php echo $product->get_id(); ?>">
                 Wybrac
 <!--				--><?php //woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
 			</div>
@@ -61,4 +61,46 @@ global $product;
 
 	<?php endwhile; ?>
 	<?php wp_reset_query();
+};
+
+add_action('wp_ajax_ajax_view_product', 'es_view_product_calback');
+add_action('wp_ajax_nopriv_ajax_view_product', 'es_view_product_calback');
+
+function es_view_product_calback(){
+    if( ! wp_verify_nonce( $_POST['nonce'], 'view-nonce')){
+        wp_die('FUCK, ERROR');
+    }
+    $product = wc_get_product($_POST['id']);
+//    get_pr($product,false);
+    ob_start();
+    ?>
+
+        <div class="modal__body_left">
+            <div class="imageWrapper">
+                <?php
+                $attachment_id = get_post_thumbnail_id($product->get_id());
+                $product_thumb = wp_get_attachment_image_url($attachment_id,'shop_single');
+                ?>
+                <img src="<?php echo $product_thumb; ?>" alt="song">
+            </div>
+            <p class="song__text_title"><?php echo $product->get_name(); ?></p>
+            <p class="song__text_description"><span>*</span>przykładowy wzór makietu</p>
+        </div>
+        <div class="modal__body_right">
+            <?php echo apply_filters(
+                'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
+                sprintf(
+                    '<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                    esc_url( $product->add_to_cart_url() ),
+                    esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                    'form-stepWrap__btn popUpBtnNext',
+                    'data-product_id="' . $product->get_id() . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . $product->get_description() . '"',
+                    esc_html( $product->add_to_cart_text() )
+                )
+            ); ?>
+        </div>
+    <?php
+    $data['product'] = ob_get_clean();
+    wp_send_json($data);
+    wp_die();
 };

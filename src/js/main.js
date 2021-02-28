@@ -2,6 +2,8 @@
 
 $( document ).ready(function() {
 
+  setTimeout(()=>{$('.mask-preloader').fadeOut()},500)
+
   let btnToTop = $('#scroll'),
       header = $('#header-js'),
       feedbackBlock = $('#feedback'),

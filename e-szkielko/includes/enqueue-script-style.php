@@ -33,6 +33,10 @@ function e_szkielko_scripts() {
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'e-szkielko-swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), $script_ver, true );
-    wp_enqueue_script( 'e-szkielko-main', get_template_directory_uri() . '/assets/js/main.js', array(), $script_ver, true );
-
+    wp_enqueue_script( 'e-szkielko-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $script_ver, true );
+    wp_enqueue_script( 'ajax-view', get_template_directory_uri() . '/assets/js/ajax-view.js', array('jquery'), $script_ver, true );
+    wp_localize_script('ajax-view','ajax_view', array(
+        'url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('view-nonce')
+    ));
 }
