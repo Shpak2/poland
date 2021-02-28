@@ -19,8 +19,15 @@ body
 header
   width: 100%
 
+.header-on
+  margin-top: get-vw(96px)
+  @include mobile
+    margin-top: get-vw-mobile(110px)
+
 .container
   width: 80%
+  margin-right: auto
+  margin-left: auto
   @include mobile
     width: 88%
 

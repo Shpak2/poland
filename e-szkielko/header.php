@@ -23,10 +23,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-	<header id="masthead" class="site-header">
         <header class="header" id="header-js">
             <div class="header-inner container">
-                <a href="/" class="header-logo">
+                <a href="<?php echo home_url() ?>" class="header-logo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/logo.svg" alt="home">
                     <span>SzkiełkoMusic</span>
                 </a>
@@ -34,13 +33,13 @@
                     <nav class="primary-menu-wrapper">
                         <ul class="primary-menu">
                             <li class="menu-item">
-                                <a href="#onas">O nas</a>
+                                <a href="<?php if( !is_home() ){echo home_url();} ?>#onas">O nas</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#help">FAQ</a>
+                                <a href="<?php if( !is_home() ){echo home_url();} ?>#help">FAQ</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#feedback">Kontakt</a>
+                                <a href="<?php if( !is_home() ){echo home_url();} ?>#feedback">Kontakt</a>
                             </li>
                         </ul>
                     </nav>
@@ -48,12 +47,7 @@
                         <div class="product-create">
                             <span>Utwórz Szkiełko</span>
                         </div>
-                        <div class="product-cart">
-                            <button class="cart-btn">
-                                <img class="img-svg" src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/cart.svg" alt="cart">
-                            </button>
-                            <span class="cart-num">2</span>
-                        </div>
+                        <?php e_szkielko_woocommerce_cart_link(); ?>
                     </div>
                 </div>
                 <div class="mobile-btn">
@@ -64,4 +58,3 @@
             </div>
         </header>
 
-	</header><!-- #masthead -->

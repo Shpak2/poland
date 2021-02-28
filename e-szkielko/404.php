@@ -10,48 +10,16 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main class="main-page">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'e-szkielko' ); ?></h1>
+		<section class="bg-grey">
+			<header class="error-404 container">
+				<h1 class="textheader"><?php esc_html_e( 'Ups! Strona nie została znaleziona!', 'e-szkielko' ); ?></h1>
+                <p>Twój internet działa jak należy, jednak najprawdopodobniej ta strona została przeniesiona pod inny adres.
+                    Dla pewności możesz sprawdzić czy adres internetowy nie zawiera literówki. <br>
+                    PS <a href="<?php echo home_url() ?>">Zapraszamy na stronę główną </a> - zadziała na pewno :)</p>
 			</header><!-- .page-header -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'e-szkielko' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'e-szkielko' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$e_szkielko_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'e-szkielko' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$e_szkielko_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->

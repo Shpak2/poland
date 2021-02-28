@@ -5,7 +5,7 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
     Container::make( 'theme_options', ( 'Настройки блоков' ) )
-        ->set_icon('dashicons-admin-settings')
+        ->set_icon('dashicons-text')
         ->add_tab('Banner main', array(
             Field::make( 'text', 'banner_crb_title', 'Заголовок блока' ),
             Field::make( 'text', 'banner_crb_text', 'Инфо текст блока' ),
@@ -104,7 +104,21 @@ function crb_attach_theme_options() {
                 )),
         ) );
 }
-
+add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options2' );
+function crb_attach_theme_options2(){
+    Container::make('theme_options', ('Вывод категорий'))
+        ->set_icon('dashicons-images-alt
+')
+        ->add_fields(array(
+            Field::make( 'complex', 'es_crb_category', 'Какие категории выводить на главной' )
+                ->add_fields( array(
+                    Field::make( 'text', 'name_cat', 'Название категории' )->set_width(50),
+                    Field::make( 'text', 'slug_cat', 'Slug категории' )
+                        ->set_width(50)
+                        ->help_text('Slug - это латинской название категории(ярлык)'),
+                )),
+        ));
+}
 add_action( 'after_setup_theme', 'crb_load' );
 function crb_load() {
     require_once( get_template_directory() . '/includes/carbon-fields/vendor/autoload.php' );

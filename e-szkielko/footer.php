@@ -4,7 +4,7 @@
  */
 ?>
 
-<footer class="footer">
+<footer class="<?php if( !is_home() ){echo 'footer';}else{echo 'footer-page';} ?>">
     <div class="footer-wrapper">
         <div class="footer-container container">
             <div class="footer-logo">
@@ -56,8 +56,12 @@
         </div>
     </div>
 </footer>
-
-<?php wp_footer(); ?>
+<div id="scroll" class="scroll-top">
+      <span class="scroll-top__btn">
+        <img class="img-svg" src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/arrow.svg" alt="arrow">
+      </span>
+</div>
+<?php wp_footer();?>
 
 </body>
 </html>

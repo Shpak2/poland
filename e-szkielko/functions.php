@@ -41,6 +41,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/includes/woocommerce.php';
     require get_template_directory() . '/woocomerce/includes/wc-functions-remove.php';
     require get_template_directory() . '/woocomerce/includes/wc-functions.php';
+    require get_template_directory() . '/woocomerce/includes/wc_function_cart.php';
+    require get_template_directory() . '/woocomerce/includes/wc-functions-archive.php';
+    require get_template_directory() . '/woocomerce/includes/wc-functions-remove.php';
+    require get_template_directory() . '/woocomerce/custom-template/es_product-short.php';
 }
 
 
