@@ -51,7 +51,7 @@ global $product;
             </div>
 		<div class="product-slider__card-info flip-card-back">
 			<div class="card-info__text"><?php echo $product->get_description(); ?></div>
-			<div class="btn-product__add add-ajax" data-ajax="<?php echo $product->get_id(); ?>">
+			<div class="btn-product__add add-ajax" data-ajax="<?php echo get_permalink($product->get_id()); ?>">
                 Wybrac
 <!--				--><?php //woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
 			</div>

@@ -2,9 +2,11 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
-    Container::make( 'theme_options', ( 'Настройки блоков' ) )->set_icon('dashicons-text')
+    Container::make( 'theme_options', ( 'Настройки блоков' ) )
+        ->set_icon('dashicons-text')
         ->add_tab('Banner main', array(
             Field::make( 'text', 'banner_crb_title', 'Заголовок блока' ),
             Field::make( 'text', 'banner_crb_text', 'Инфо текст блока' ),
@@ -73,18 +75,6 @@ function crb_attach_theme_options() {
             Field::make( 'text', 'sc_image_old_price_third', 'Цена старая третьей картинки' )->set_width(16.6),
             Field::make( 'text', 'sc_image_new_price_third', 'Цена новая третьей картинки' )->set_width(16.6),
         ) )
-        ->add_tab('Take more container', array(
-            Field::make( 'text', 'take_more_title', 'Заголовок блока' ),
-            Field::make( 'text', 'take_more_under_title', 'Текст под заголовком' ),
-            Field::make( 'rich_text', 'take_more_first_text', 'Первый абзац' )->help_text('Белый текст просто выделить любым цветом'),
-            Field::make( 'rich_text', 'take_more_second_text', 'Второй абзац' )->help_text('Белый текст просто выделить любым цветом'),
-            Field::make( 'image', 'take_more_image_one', 'Картинка мини' )->set_width(50),
-            Field::make( 'text', 'take_more_image_one_name', 'Имя картинки мини' )->set_width(50),
-            Field::make( 'image', 'take_more_image_two', 'Картинка классик' )->set_width(50),
-            Field::make( 'text', 'take_more_image_two_name', 'Имя картинки классик' )->set_width(50),
-            Field::make( 'image', 'take_more_image_three', 'Картинка макси' )->set_width(50),
-            Field::make( 'text', 'take_more_image_three_name', 'Имя картинки макси' )->set_width(50),
-        ) )
         ->add_tab('Create your container', array(
             Field::make( 'text', 'create_your_title', 'Заголовок блока' ),
             Field::make( 'rich_text', 'create_your_description', 'Описание блока' ),
@@ -110,6 +100,20 @@ function crb_attach_theme_options() {
                         ->set_width(50)
                         ->help_text('Slug - это латинской название категории(ярлык)'),
                 )),
+        ));
+    Container::make('theme_options', ('Настройки темы'))
+        ->set_icon('dashicons-images-alt')
+        ->add_tab('Take more container', array(
+            Field::make( 'text', 'take_more_title', 'Заголовок блока' ),
+            Field::make( 'text', 'take_more_under_title', 'Текст под заголовком' ),
+            Field::make( 'rich_text', 'take_more_first_text', 'Первый абзац' )->help_text('Белый текст просто выделить любым цветом'),
+            Field::make( 'rich_text', 'take_more_second_text', 'Второй абзац' )->help_text('Белый текст просто выделить любым цветом'),
+            Field::make( 'image', 'take_more_image_one', 'Картинка мини' )->set_width(50),
+            Field::make( 'text', 'take_more_image_one_name', 'Имя картинки мини' )->set_width(50),
+            Field::make( 'image', 'take_more_image_two', 'Картинка классик' )->set_width(50),
+            Field::make( 'text', 'take_more_image_two_name', 'Имя картинки классик' )->set_width(50),
+            Field::make( 'image', 'take_more_image_three', 'Картинка макси' )->set_width(50),
+            Field::make( 'text', 'take_more_image_three_name', 'Имя картинки макси' )->set_width(50),
         ));
 }
 add_action( 'after_setup_theme', 'crb_load' );

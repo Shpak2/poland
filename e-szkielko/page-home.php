@@ -12,18 +12,7 @@ get_header();
         <?php
             require get_template_directory() . '/templates/blocks/main-banner.php';
             require get_template_directory() . '/templates/blocks/decor-block.php';
-        require get_template_directory() . '/templates/blocks/main-cat.php';
-        ?>
-
-
-
-        <script>
-            $('.add-ajax').click(function(e){
-                e.preventDefault();
-                console.log($(this).attr('data-ajax'))
-            })
-        </script>
-        <?php
+            require get_template_directory() . '/templates/blocks/main-cat.php';
             require get_template_directory() . '/templates/blocks/about-us.php';
             require get_template_directory() . '/templates/blocks/size-cost.php';
             require get_template_directory() . '/templates/blocks/take-more.php';
@@ -81,7 +70,7 @@ get_header();
             <div class="feedback-wrapper">
                 <div class="feedback-item">
                     <div class="feedback-form">
-                        <?php echo do_shortcode( '[contact-form-7 id="31" title="Контактная форма 1"]' ); ?>
+                        <?php echo do_shortcode( '[contact-form-7 id="16" title="main feedback"]' ); ?>
 <!--                        <form method="get" action="g.php">-->
 <!--                            <h3>Napisz do nas</h3>-->
 <!--                            <label for="fname">Imię i Nazwisko</label>-->

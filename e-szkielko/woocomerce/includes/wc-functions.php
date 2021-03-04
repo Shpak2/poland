@@ -9,7 +9,7 @@ function e_szkielko_wrapper_product_start(){
 ?>
     <div class="popupWrapper product-page" data-step="1">
       <div class="modal">
-        <div class="chooseSong">
+        <div class="chooseSong" id="ajax-data">
           <div class="modal__title">
             <p class="modal__title_text">Krok 1. Wybierz piosenkę i kształt</p>
           </div>
@@ -105,6 +105,16 @@ function es_popup(){
                     <div class="modal__title_button"></div>
                 </div>
                 <div class="modal__body">
+                    <div class="modal__body_left">
+                        <div class="imageWrapper">
+                            <img src="" alt="song">
+                        </div>
+                        <p class="song__text_title"></p>
+                        <p class="song__text_description"><span>*</span>przykładowy wzór makietu</p>
+                    </div>
+                    <div class="modal__body_right">
+                        
+                    </div>
                 </div>
             </div>
         </div>
