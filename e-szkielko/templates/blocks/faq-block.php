@@ -36,9 +36,9 @@
                 <p><?php echo carbon_get_theme_option('faq_crb_text2')?></p>
             </div>
             <div class="help-cont__footer-btn">
-                <div class="product-create">
+                <a class="askQuestionBtn" href="http://localhost:8888/wordpress#feedback">
                     <span><?php echo carbon_get_theme_option('faq_crb_link_1_name')?></span>
-                </div>
+                </a>
             </div>
         </div>
     </div>

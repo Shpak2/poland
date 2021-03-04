@@ -110,7 +110,19 @@ function crb_attach_theme_options() {
                         ->set_width(50)
                         ->help_text('Slug - это латинской название категории(ярлык)'),
                 )),
-        ));
+        ))
+        ->add_tab('Contact container', array(
+            Field::make( 'text', 'contact_title', 'Заголовок блока' ),
+            Field::make( 'text', 'contact_insta_name', 'Инста имя' )->set_width(33),
+            Field::make( 'text', 'contact_insta_name_adress', 'Инста имя адрес' )->set_width(33),
+            Field::make( 'text', 'contact_insta_name_link', 'Инста имя ссылка' )->set_width(33),
+            Field::make( 'text', 'contact_facebook_name', 'Фейсбук имя' )->set_width(33),
+            Field::make( 'text', 'contact_facebook_name_adress', 'Фейсбук имя адрес' )->set_width(33),
+            Field::make( 'text', 'contact_facebook_name_link', 'Фейсбук имя ссылка' )->set_width(33),
+            Field::make( 'text', 'contact_email_name', 'Почта имя' )->set_width(33),
+            Field::make( 'text', 'contact_email_name_adress', 'Почта имя адрес' )->set_width(33),
+            Field::make( 'text', 'contact_email_name_link', 'Почта имя ссылка' )->set_width(33),
+        ) );
 }
 add_action( 'after_setup_theme', 'crb_load' );
 function crb_load() {
