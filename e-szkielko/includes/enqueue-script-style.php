@@ -7,7 +7,7 @@ add_action( 'wp_enqueue_scripts', 'e_szkielko_style' );
 
 function e_szkielko_style() {
     // style version
-    $style_ver = '1.0.2';
+    $style_ver = '1.0.5';
     wp_enqueue_style( 'e-szkielko-swiper-style', get_swiper_stylesheet_uri(), array(), $style_ver);
     wp_enqueue_style( 'e-szkielko-custom-style', get_custom_stylesheet_uri(), array(), $style_ver);
 }
@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'e_szkielko_scripts' );
 
 function e_szkielko_scripts() {
     // scripts version
-    $script_ver = '1.0.1';
+    $script_ver = '1.0.3';
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
     wp_enqueue_script( 'jquery' );

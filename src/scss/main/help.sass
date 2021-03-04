@@ -55,20 +55,37 @@
         @include mobile
           font-size: get-vw-mobile(20px)
     &-btn
-      & .product-create
+      & .askQuestionBtn
         margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
         background-color: $accentColor
-        @include mobile
-          width: 100%
-          border-radius: get-vw-mobile(40px)
-          height: get-vw-mobile(50px)
-          background-color: $blackHeadline
+        width: get-vw(191px)
+        height: get-vw(41px)
+        border-radius: get-vw(40px)
+        cursor: pointer
+        position: relative
+        transition: .3s ease-in-out
         & span
-          @include mobile
-            font-size: get-vw-mobile(16px)
+          z-index: 1
+          color: $lightTextTwo
+          font-size: get-vw(16px)
+          transition: .3s ease-in-out
         &:hover
-          @media(hover:hover)
+          @media (hover: hover)
             background-color: $blackHeadline
+          & span
+            @media (hover: hover)
+              color: $accentColor
+            @include mobile
+              width: 100%
+              border-radius: get-vw-mobile(40px)
+              height: get-vw-mobile(50px)
+              background-color: $blackHeadline
+            & span
+              @include mobile
+                font-size: get-vw-mobile(16px)
   &__header
     margin-bottom: get-vw(30px)
     @include mobile
