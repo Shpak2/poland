@@ -4,31 +4,33 @@ $(document).ready(function(){
         preload = $('.mask-preloader'),
         openPopup = $('.add-ajax');
 
-    openPopup.on('click',function(){
-        preload.fadeIn();
-        let productLink = $(this).attr('data-ajax');
-        let popup = $('.popupWrapper');
-        $.get(productLink, function (results) {
-            var data={
-                "title": $(results).find('#ajax-data .song__text_title'),
-                "img": $(results).find('#ajax-data .woocommerce-product-gallery__wrapper a').attr('href'),
-                "customize": $(results).find('#ajax-data .customizeProduct'),
-                "title2": $(results).find('#ajax-data'),
-            };
-            // $('.products-heading').append(data.title)
-           console.log(results)
-            // console.log($(data).find('.song__text_title'))
-            // console.log(results)
-            $(popup).find('.chooseSong').html(results)
-            // $(popup).find('.song__text_title').html(data.title)
-            // $(popup).find('.imageWrapper img').attr('src',data.img)
-            // $(popup).find('.modal__body_right').html(data.customize)
-        }).done(function (){
-            setTimeout(()=>{preload.fadeOut()},300)
+    // openPopup.on('click',function(){
+    //     preload.fadeIn();
+    //     let productLink = $(this).attr('data-ajax');
+    //     let popup = $('.popupWrapper');
+    //     $.get(productLink, function (results) {
+    //         var data={
+    //             "title": $(results).find('#ajax-data .song__text_title'),
+    //             "img": $(results).find('#ajax-data .woocommerce-product-gallery__wrapper a').attr('href'),
+    //             "customize": $(results).find('#ajax-data .customizeProduct'),
+    //             "title2": $(results).find('#primary'),
+    //         };
+    //         // $('.products-heading').append(data.title)
+    //        console.log(results)
+    //         // console.log($(data).find('.song__text_title'))
+    //         // console.log(results)
+    //         // $(popup).find('.chooseSong').html(results)
+    //         $(popup).find('.song__text_title').html(data.title)
+    //         $(popup).find('.imageWrapper img').attr('src',data.img)
+    //         $(popup).find('.modal__body_right').html(data.customize)
+    //     }).done(function (){
+    //         setTimeout(()=>{preload.fadeOut()},300)
+    //
+    //         popup.fadeIn();
+    //     })
+    // });
 
-            popup.fadeIn();
-        })
-    });
+
 
 
 

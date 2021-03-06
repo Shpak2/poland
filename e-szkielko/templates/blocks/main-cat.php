@@ -2,7 +2,7 @@
 ?>
     <div class="products container">
         <div class="products-heading">
-            <h2>Nasze producty</h2>
+            <h2>Kolekcja Szkiełek</h2>
         </div>
         <div class="product-cat">
             <ul class="product-cat__list">
@@ -32,9 +32,11 @@
                     <div class="swiper-wrapper">
                         <?php es_show_short_product($tr['slug_cat']); ?>
                     </div>
+                    <?php if($tr['slug_cat'] === 'music'){?>
                     <div class="load-more" data-cat="<?php echo $tr['slug_cat'] ?>">
                         <span>Więcej</span>
                     </div>
+                    <?php };?>
                 </div>
             <?php endforeach;
             endif; ?>
