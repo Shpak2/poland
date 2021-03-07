@@ -32,9 +32,9 @@ function es_show_short_product($categoryName){
 //		)
 	),
 	// Параметры отображения выведенных товаров
-	'posts_per_page' => 4, // количество выводимых товаров
+	'posts_per_page' => 40, // количество выводимых товаров
 	'post_type' => 'product', // тип товара
-	'orderby' => 'title', // сортировка
+	'orderby' => 'date', // сортировка
 );
 
 $loop = new WP_Query( $args );
@@ -51,10 +51,10 @@ global $product;
             </div>
 		<div class="product-slider__card-info flip-card-back">
 			<div class="card-info__text"><?php echo $product->get_description(); ?></div>
-			<div class="btn-product__add add-ajax" data-ajax="<?php echo get_permalink($product->get_id()); ?>">
+            <div class="button quick-view-button btn button btn-default theme-button theme-btn btn-product__add"
+                 data-product-id="<?php echo $product->get_id(); ?>" rel="nofollow">
                 Wybrac
-<!--				--><?php //woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
-			</div>
+            </div>
         </div>
         </div>
 	</div>

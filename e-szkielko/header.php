@@ -60,7 +60,7 @@
                 <div class="product-create">
                     <span>Utwórz Szkiełko</span>
                 </div>
-                <?php /* e_szkielko_woocommerce_cart_link(); */ ?>
+                <?php e_szkielko_woocommerce_cart_link(); ?>
             </div>
         </div>
         <div class="mobile-btn">
