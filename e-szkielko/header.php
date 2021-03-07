@@ -13,11 +13,11 @@
 <!doctype html>
 <html lang="pl">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -32,38 +32,42 @@
     </div>
 </div>
 
-        <header class="header" id="header-js">
-            <div class="header-inner container">
-                <a href="<?php echo home_url() ?>" class="header-logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/logo.svg" alt="home">
-                    <span>SzkiełkoMusic</span>
-                </a>
-                <div class="header-nav">
-                    <nav class="primary-menu-wrapper">
-                        <ul class="primary-menu">
-                            <li class="menu-item">
-                                <a href="<?php if( !is_home() ){echo home_url();} ?>#onas">O nas</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="<?php if( !is_home() ){echo home_url();} ?>#help">FAQ</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="<?php if( !is_home() ){echo home_url();} ?>#feedback">Kontakt</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="header-button">
-                        <div class="product-create">
-                            <span>Utwórz Szkiełko</span>
-                        </div>
-                        <?php /* e_szkielko_woocommerce_cart_link(); */ ?>
-                    </div>
+<header class="header" id="header-js">
+    <div class="header-inner container">
+        <a href="<?php echo home_url() ?>" class="header-logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/logo.svg" alt="home">
+            <span>SzkiełkoMusic</span>
+        </a>
+        <div class="header-nav">
+            <nav class="primary-menu-wrapper">
+                <?php
+                if( $menu_items = wp_get_nav_menu_items('menu_header') ) {
+                    $menu_list = '';
+                    foreach ( (array) $menu_items as $key => $menu_item ) {
+                        $title = $menu_item->title;
+                        $url = $menu_item->url;
+                        if( !is_front_page() ){
+                            $menu_list .= '<li class="menu-item"><a href="' .home_url(). $url . '">' . $title . '</a></li>';
+                        }else{
+                            $menu_list .= '<li class="menu-item"><a href="' . $url . '">' . $title . '</a></li>';
+                        }
+                    }
+                    echo '<ul class="primary-menu">'.$menu_list.'</ul>';
+                }
+                ?>
+            </nav>
+            <div class="header-button">
+                <div class="product-create">
+                    <span>Utwórz Szkiełko</span>
                 </div>
-                <div class="mobile-btn">
-                    <div class="mobile-btn__wrapper">
-                        <span></span>
-                    </div>
-                </div>
+                <?php /* e_szkielko_woocommerce_cart_link(); */ ?>
             </div>
-        </header>
+        </div>
+        <div class="mobile-btn">
+            <div class="mobile-btn__wrapper">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
 
