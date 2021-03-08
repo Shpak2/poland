@@ -134,7 +134,7 @@ textarea
                         color: #D62D30
 
             &_right
-                max-height: get-vw(624px)
+                max-height: 80vh
                 overflow: hidden
                 background: #FBFBFB
                 overflow-y: scroll
@@ -228,6 +228,7 @@ textarea
                         border: none
                         background: $lightTextTwo
                         color: $titleText
+                        box-sizing: border-box
                         @include mobile
                             height: get-vw-mobile(43px)
                             font-size: get-vw-mobile(16px)
@@ -240,7 +241,7 @@ textarea
                             font-size: get-vw(16px)
                             @include mobile
                                 font-size: get-vw-mobile(16px)
-                    .titleChoice
+                    .titleChoice, .input-subtitle span
                         font-size: get-vw(18px)
                         font-weight: 600
                         color: $titleText

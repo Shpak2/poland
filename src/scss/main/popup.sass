@@ -1,0 +1,235 @@
+body
+  & .quickviewmodal
+    max-width: fit-content
+  & .quickviewmodal a.close-quickviewmodal
+    z-index: 100
+  & .wapf-wrapper .dz-preview
+    position: absolute
+    left: 15px
+    color: #0D1018
+    width: 50%
+    top: 50%
+    transform: translateY(-75%)
+  & .js-sizes
+    background-color: #f4f5f4
+    margin-bottom: get-vw(20px)
+    & *
+      box-sizing: border-box
+  & .modal__body .variations
+    opacity: 0
+    position: absolute
+    pointer-events: none
+
+.size-info
+  margin: 0 auto 0 get-vw(12px)
+  font-size: get-vw(14px)
+  color: #737B7D
+  line-height: 1.6
+  transition: .4s ease-in-out
+
+.size-price
+  margin-right: get-vw(25px)
+  font-style: normal
+  font-weight: 700
+  color: #737B7D
+  font-size: get-vw(16px)
+
+.custom-select.change-size
+  padding: 0
+  & .custom-select-trigger
+    padding-left: get-vw(15px)
+
+.popupWrapper
+  & .has-description
+    position: relative
+    & .wapf-field-label
+      display: flex
+      justify-content: space-between
+      width: 100%
+      max-width: get-vw(210px)
+  & .info-btn
+    position: relative
+    & span
+      position: absolute
+      top: -100%
+      left: 150%
+      width: get-vw(240px)
+      pointer-events: none
+      // overflow: hidden
+      display: block
+      transition: .4s ease-in-out
+      background-color: #FFFFFF
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+      z-index: 200
+      font-size: get-vw(13px)
+      line-height: get-vw(20px)
+      letter-spacing: get-vw(0.25px)
+      color: #373F41
+      opacity: 0
+      padding: get-vw(10px) get-vw(15px)
+      &::after
+        content: ''
+        position: absolute
+        top: 10%
+        left: 0
+        width: get-vw(16px)
+        height: get-vw(16px)
+        background: #fff
+        transform: translate(-50%,50%) rotate(45deg)
+    & i
+      color: #373F41
+      font-family: Mulish
+      font-weight: 600
+      font-style: normal
+      font-size: get-vw(14px)
+      background-color: rgba(195, 203, 205,.2)
+      display: flex
+      align-items: center
+      justify-content: center
+      width: get-vw(18px)
+      height: get-vw(18px)
+      border-radius: 50%
+      cursor: pointer
+    &:hover
+      & span
+        pointer-events: all
+        opacity: 1
+  & .wapf-field-description
+    display: none
+  & .modal__body_right
+    & .input-second
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: get-vw(14px)
+      & .wapf-field-label
+        font-size: get-vw(16px)
+        color: rgba(115, 123, 125,.6)
+      & .wapf-field-input input
+        margin: 0
+        height: get-vw(27px)
+        max-width: get-vw(145px)
+  & .modal__body_left .woocommerce-product-gallery
+    opacity: 1 !important
+    pointer-events: none
+  & .wapf-field-container
+    padding: 0
+  & .input-upload
+    position: relative
+    & .wapf-field-label
+      display: none
+    & .wapf-field-input
+      display: none
+      margin-bottom: get-vw(20px)
+    &.show
+      & .wapf-field-input
+        display: block
+  & .wapf-wrapper .dzone
+    border: none
+    background-color: #0D1018
+    color: $white
+    padding: 0
+    max-width: get-vw(165px)
+    height: get-vw(40px)
+    margin-left: auto
+    border-radius: get-vw(30px)
+    transition: .4s ease-in-out
+    font-size: get-vw(16px)
+    align-items: center
+    justify-content: center
+    &:hover
+      @media (hover: hover)
+        background-color: #fff
+        color: #82bb58;
+        text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+        box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.15)
+    & .dz-message
+      padding: 0
+  & .input-radio
+    display: flex
+    justify-content: space-between
+    margin: get-vw(14px) 0
+    & *
+      box-sizing: border-box
+    & .wapf-field-label
+      color: rgba(115, 123, 125,.6)
+      font-size: get-vw(16px)
+      line-height: 1.3
+    & .wapf-radios
+      display: flex
+      color: #C3CBCD
+      & .wapf-input-label
+        cursor: pointer
+        position: relative
+        display: flex
+        align-items: center
+    & input
+      color: #C3CBCD
+      border-color: #C3CBCD
+      &[type='radio']
+        display: none
+    & .wapf-label-text
+      font-size: get-vw(15px)
+      transition: .4s ease-in-out
+      padding: 0
+    & .wapf-custom
+      width: 16px
+      height: 16px
+      border-radius: 50%
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translate(-125%,-50%)
+      border: 1.6px solid #C3CBCD
+      transition: .4s ease-in-out
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 70%
+        height: 70%
+        border-radius: 50%
+        background-color: #373F41
+        opacity: 0
+        transition: .4s ease-in-out
+    & .wapf-checkable
+      &:not(:last-child) .wapf-label-text
+        margin-right: get-vw(30px)
+      &.wapf-checked
+        & .wapf-custom
+          border-color: #373F41
+          &::after
+            opacity: 1
+        & .wapf-label-text
+          color: #373F41
+
+
+.modal__body_right
+  & .product_title.entry-title
+    display: none
+  & .wapf-field-group
+    & .input-text
+      position: relative
+      & .wapf-field-label
+        display: none
+      & .wapf-field-input input
+        width: 100%
+
+.custom-select
+  transition: .4s ease-in-out
+  &.opened
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,.25)
+    & .custom-options
+      display: block
+      opacity: 1
+      transform: translateY(0)
+      visibility: unset
+      pointer-events: all
+
+.custom-select-trigger
+  z-index: 21
+  background: #f4f5f4
+
+

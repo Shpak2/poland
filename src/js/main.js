@@ -317,4 +317,137 @@ CheckMobile.then(new Promise(function() {
   }
 }))
 // end slider
+
+// popup
+    function checkUpload(block){
+      if(block.find('.wapf-field-label span').text() == 'Okładka'){
+        return 'upload-check';
+      }
+    }
+
+const searchSelect = new Promise(function(){
+  $('.input-select').each(function(){
+    
+    var template =  '<div class="custom-select '+checkUpload($(this))+'" data-id='+$(this).attr("for")+'>';
+        template += '<span class="custom-select-trigger">' + $(this).find('.wapf-field-label span').html() + '</span>';
+        template += '<div class="custom-options">';
+        $(this).find("option").each(function() {
+          if(!$(this).attr("value") == ''){
+            template += '<span class="custom-option" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+          }
+        });
+        template += '</div></div>';
+        $(this).wrap('<div class="custom-select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+  });
+
+      $('.custom-select-trigger').on('click', function(e){
+          let dataDiv = $(this).parent().attr('data-id');
+          let parentContainer = $(this).parent();
+          if(!$(parentContainer).hasClass('opened')){
+            $(parentContainer).addClass('opened')
+            $(parentContainer).find('.custom-options')
+            $(document).mouseup(function (e){ 
+	            	let div = $(parentContainer);
+	            	if (!div.is(e.target)
+	            	    && div.has(e.target).length === 0) {
+                    $(parentContainer).removeClass('opened')
+	            	}
+	            });
+          }else{
+            $(parentContainer).removeClass('opened')
+          }
+          
+          $(parentContainer).find('.custom-option').on('click',function(){
+            let dataSelect = $(this).attr('data-value');
+            $(parentContainer).removeClass('opened')
+            $(this).closest('.custom-select').find('.custom-select-trigger').html($(this).text())
+              $('.input-select').attr('for',dataDiv).find('option').each(function(){
+                  if($(this).attr('value')===dataSelect){
+                    $('option[value='+dataSelect+']').prop('selected', true);
+                    $('option[value='+dataSelect+']').change()
+                  }
+                })
+          })
+             
+        })
+
+       
+});
+
+$('.input-upload').each(function(){
+  $(this).find('.dzone .dz-message').html('Dodaj zdjęcie')
+})
+$('.upload-check .custom-option').on('click', function(){
+  if($(this).text() == 'Własna' || $(this).text() == 'Własna '){
+    $('.input-upload .wapf-field-input').show();
+  }else{$('.input-upload .wapf-field-input').hide()}
+})
+
+sizeSelect($('#pa_size'))
+
+function checkSizeSelect(objDiv){
+  if($(objDiv).attr('value') == 'classic'){
+    return '<span class="size-info">300 mm x 210 mm</span><i class="size-price">79 zł</i>'
+  }else if($(objDiv).attr('value') == 'maxi'){
+    return '<span class="size-info">420 mm x 300 mm</span><i class="size-price">89 zł</i>'
+  }else if($(objDiv).attr('value') == 'mini'){
+    return '<span class="size-info">210 mm x 150 mm</span><i class="size-price">69 zł</i>'
+  }
+}
+
+function sizeSelect(divSelect){
+  let blockAppend = $('.js-sizes');
+  // $('.js-sizes').html('')
+  blockAppend.html('<div class="custom-select change-size"><span class="custom-select-trigger">Rozmiar</span>\
+                    <div class="custom-options"></div></div>')
+  $(divSelect).find('option').each(function(){
+    if($(this).attr("value") !== ''){
+      $('.change-size .custom-options').append('<span class="custom-option" data-value="' + $(this).attr("value") + '"><span class="size-name">' + $(this).text()+ '</span>' + checkSizeSelect($(this)) + '</span>')
+    }
+    // console.log(this)
+  })
+  $('.custom-select.change-size .custom-select-trigger').on('click', function(){
+    let parentContainer = $(this).parent();
+          if(!$(parentContainer).hasClass('opened')){
+            $(parentContainer).addClass('opened')
+            $(parentContainer).find('.custom-options')
+            $(document).mouseup(function (e){
+	            	let div = $(parentContainer);
+	            	if (!div.is(e.target)
+	            	    && div.has(e.target).length === 0) {
+                    $(parentContainer).removeClass('opened')
+	            	}
+	            });
+          }else{
+            $(parentContainer).removeClass('opened')
+          }
+  })
+
+  $('.custom-select.change-size .custom-option').on('click',function(){
+    let parentB = $(this).closest('.custom-select.change-size');
+    let dataSelect = $(this).attr('data-value');
+    parentB.removeClass('opened')
+    parentB.find('.custom-select-trigger').html($(this).find('.size-name').text())
+    $('option[value='+dataSelect+']').prop('selected', true);
+    $('option[value='+dataSelect+']').change()
+  })
+}
+
+  $('.popupWrapper .input-radio .wapf-checkable').on('click',function(e){
+    $(this).parent('.wapf-radios').find('.wapf-checkable').removeClass('wapf-checked')
+    $(this).addClass('wapf-checked')
+  })
+
+  $('.popupWrapper .wapf-field-description').each(function(){
+    $(this).parent().addClass('has-description')
+    $(this).parent().find('.wapf-field-label').append('<div class="info-btn"><i>?</i><span>'+ $(this).text() +'</span></div>')
+  })
+
+    // searchSelect.then(function(e){
+    //   $('.custom-select').on('click', function(e){
+    //       console.log($(this).attr('data-id'))
+    //     })
+    // })
 });
