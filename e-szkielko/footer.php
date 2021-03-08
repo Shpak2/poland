@@ -13,23 +13,21 @@
                 </a>
             </div>
             <div class="footer-nav">
-                <ul class="footer-nav__wrapper">
-                    <li class="footer-nav__item">
-                        <a href="#onas">
-                            <span>O nas</span>
-                        </a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="#help">
-                            <span>FAQ</span>
-                        </a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="#feedback">
-                            <span>Kontakt</span>
-                        </a>
-                    </li>
-                </ul>
+                <?php
+                if( $menu_items = wp_get_nav_menu_items('menu_header') ) {
+                    $menu_list = '';
+                    foreach ( (array) $menu_items as $key => $menu_item ) {
+                        $title = $menu_item->title;
+                        $url = $menu_item->url;
+                        if( !is_front_page() ){
+                            $menu_list .= '<li class="footer-nav__item"><a href="' .home_url(). $url . '">' . $title . '</a></li>';
+                        }else{
+                            $menu_list .= '<li class="footer-nav__item"><a href="' . $url . '">' . $title . '</a></li>';
+                        }
+                    }
+                    echo '<ul class="footer-nav__wrapper">'.$menu_list.'</ul>';
+                }
+                ?>
             </div>
             <div class="footer-social">
                 <ul class="footer-social__wrapper">
