@@ -67,11 +67,23 @@
         cursor: pointer
         position: relative
         transition: .3s ease-in-out
+        @include mobile
+          margin: 0 get-vw-mobile(20px)
+          height: get-vw-mobile(52px)
+          border-radius: get-vw-mobile(40px)
+          font-size: get-vw-mobile(16px)
+          font-weight: 600
+          padding: 0
         & span
           z-index: 1
           color: $lightTextTwo
           font-size: get-vw(16px)
           transition: .3s ease-in-out
+          display: flex
+          justify-content: center
+          align-items: center
+          @include mobile
+            font-size: get-vw-mobile(16px)
         &:hover
           @media (hover: hover)
             background-color: $blackHeadline

@@ -1,5 +1,5 @@
 "use strict";
-$(document).ready(function(){
+$(document).ready(function($){
     var popUp = $('.popupWrapper'),
         preload = $('.mask-preloader'),
         openPopup = $('.add-ajax');

@@ -4,7 +4,7 @@
  */
 ?>
 
-<footer class="<?php if( !is_home() ){echo 'footer';}else{echo 'footer-page';} ?>">
+<footer class="<?php if( is_home() ){echo 'footer';}else{echo 'footer-page';} ?>">
     <div class="footer-wrapper">
         <div class="footer-container container">
             <div class="footer-logo">
@@ -22,7 +22,7 @@
                         if( !is_front_page() ){
                             $menu_list .= '<li class="footer-nav__item"><a href="' .home_url(). $url . '">' . $title . '</a></li>';
                         }else{
-                            $menu_list .= '<li class="footer-nav__item"><a href="' . $url . '">' . $title . '</a></li>';
+                            $menu_list .= '<li class="footer-nav__item"><a href="' . $url . '"><span>' . $title . '</span></a></li>';
                         }
                     }
                     echo '<ul class="footer-nav__wrapper">'.$menu_list.'</ul>';
