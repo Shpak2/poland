@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HTML Template</title>
+
+    <link rel="canonical" href="https://moderntemplate.site/" />
+    <link rel="amphtml" href="https://moderntemplate.site/amp/index.html" />
+    <link rel="icon" type="image/png" href="./img/icons/64x64.png" />
+    <!-- <link rel="manifest" href="./manifest.json" /> -->
+
+    <!-- <link rel="preload" href="./src/css/preload.css" as="style" /> -->
+    <link rel="stylesheet" href="https://szkielkomusic.pl/wp-content/plugins/woocommerce-quick-view/public/css/woocommerce-quick-view-public.css?ver=1.2.1" />
+    <link rel="stylesheet" href="https://szkielkomusic.pl/wp-content/plugins/advanced-product-fields-for-woocommerce-pro/assets/css/dropzone.min.css?ver=1.6.0" />
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link href="./fonts/fontello.css"/> -->
+    <!-- <link rel="preload" href="./js/preload.js" as="script" /> -->
+
+  </head>
+
+  <body>
+    <div class="mask-preloader">
+      <div id='preloader' class="circles">
+      <div></div>
+      <div></div>
+      <div></div>
+      <span></span>
+    </div>
+    </div>
+
+    <!-- HEADER START -->
+
+    <header class="header" id="header-js">
+      <div class="header-inner container">
+        <!-- <div class="header-logo"> -->
+          <a href="/" class="header-logo">
+            <img src="./img/sys/logo.svg" alt="home">
+            <span>SzkiełkoMusic</span>
+            <!-- <p>.pl</p> -->
+          </a>
+        <!-- </div> -->
+        <div class="header-nav">
+          <nav class="primary-menu-wrapper">
+            <ul class="primary-menu">
+              <!-- <li class="menu-item">
+                <a href="#">Strona główna</a>
+              </li> -->
+              <li class="menu-item">
+                <a href="/#onas">O nas</a>
+              </li>
+              <li class="menu-item">
+                <a href="/#help">FAQ</a>
+              </li>
+              <li class="menu-item">
+                <a href="/#feedback">Kontakt</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-button">
+            <div class="product-create">
+              <span>Utwórz Szkiełko</span>
+            </div>
+            <div class="product-cart">
+              <button class="cart-btn">
+                <img class="img-svg" src="./img/sys/cart.svg" alt="cart">
+              </button>
+              <span class="cart-num">2</span>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-btn">
+          <div class="mobile-btn__wrapper">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HEADER END -->
+
+    <!-- MAIN START -->
+    <div class="shoppingCartWrapper">
+      <div class="shoppingCartWrapper__steps">
+          <div class="shoppingCartWrapper__steps_step1 shoppingCartWrapper__steps_step active">
+              <div class="stepIcon">
+                  <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.9918 15.3318L12.9625 4.4891C12.9345 4.193 12.6721 3.96619 12.3578 3.96619H10.2353V3.06065C10.2353 1.37301 8.78382 0 6.99976 0C5.21578 0 3.7645 1.37301 3.7645 3.06065V3.96619H1.64045C1.32621 3.96619 1.06385 4.193 1.03576 4.4891L0.0024276 15.3744C-0.012791 15.5351 0.0440359 15.6942 0.159066 15.8132C0.274096 15.9322 0.436725 16 0.607125 16H13.3913C13.3917 16 13.3924 16 13.3929 16C13.7283 16 14 15.7429 14 15.4257C13.9999 15.3938 13.9972 15.3623 13.9918 15.3318ZM4.97876 3.06065C4.97876 2.00634 5.8854 1.14858 6.99984 1.14858C8.11436 1.14858 9.02108 2.00634 9.02108 3.06065V3.96619H4.97876V3.06065ZM1.27124 14.8515L2.19553 5.11477H3.7645V6.14175C3.7645 6.45891 4.03625 6.71604 4.37163 6.71604C4.70701 6.71604 4.97876 6.45891 4.97876 6.14175V5.11477H9.02108V6.14175C9.02108 6.45891 9.29283 6.71604 9.62821 6.71604C9.96358 6.71604 10.2353 6.45891 10.2353 6.14175V5.11477H11.8029L12.7271 14.8515H1.27124Z" fill="#F4F5F4"></path>
+                  </svg>
+              </div>
+              <p>Koszyk</p>
+          </div>
+          <div class="shoppingCartWrapper__steps_step2 shoppingCartWrapper__steps_step">
+              <div class="stepIcon">
+                  <svg width="22" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.94 7.649l-1.706-3.558a.651.651 0 00-.589-.363h-5.364V.627A.638.638 0 0013.632 0H.65C.291 0 0 .28 0 .627v10.546c0 .347.29.627.65.627h1.27c-.108.23-.19.474-.242.728H.65c-.358 0-.649.28-.649.627 0 .346.29.626.65.626h1.028c.304 1.506 1.68 2.646 3.327 2.646 1.646 0 3.022-1.14 3.325-2.646h5.418c.303 1.506 1.679 2.646 3.326 2.646 1.646 0 3.022-1.14 3.325-2.646h.952c.358 0 .649-.28.649-.626V7.912a.61.61 0 00-.06-.263zm-8.193 4.879H8.33a3.166 3.166 0 00-.242-.728h5.544a.659.659 0 00.444-.17c-.152.278-.264.58-.329.898zM1.298 1.253h11.685v9.294H7.048a3.45 3.45 0 00-2.044-.665 3.45 3.45 0 00-2.044.665H1.298V1.253zm3.706 13.92c-1.153 0-2.09-.905-2.09-2.018 0-1.114.937-2.02 2.09-2.02 1.153 0 2.091.906 2.091 2.02 0 1.113-.938 2.018-2.09 2.018zm12.07 0c-1.154 0-2.092-.905-2.092-2.018 0-1.114.939-2.02 2.091-2.02 1.153 0 2.091.906 2.091 2.02 0 1.113-.938 2.018-2.09 2.018zm3.628-2.645h-.303c-.304-1.506-1.679-2.646-3.326-2.646a3.422 3.422 0 00-2.814 1.452.61.61 0 00.022-.16V4.98h4.95l1.47 3.07v4.477z" fill="#DBE0E1"></path></svg>
+              </div>
+              Dostawa
+          </div>
+          <div class="shoppingCartWrapper__steps_step3 shoppingCartWrapper__steps_step">
+              <div class="stepIcon">
+                  <svg width="18" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.78.22a.75.75 0 00-1.06 0l-9.97 9.97-5.47-5.47A.75.75 0 00.22 5.78l6 6.001a.754.754 0 001.06 0L17.78 1.28a.75.75 0 000-1.06z" fill="#DBE0E1"></path></svg>
+              </div>
+              Potwierdzenie
+          </div>
+      </div>
+      <div class="shoppingCartWrapper-step shoppingCartWrapper__cart">
+              <main id="main" class="site-main">
+
+                                          <article id="post-7" class="post-7 page type-page status-publish hentry">
+                          
+
+                          <div class="entry-content">
+                              <div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
+<form class="woocommerce-cart-form" action="http://szkielko/cart/" method="post">
+
+<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+  <thead>
+    <tr>
+      <th class="product-remove">&nbsp;</th>
+      <th class="product-thumbnail">&nbsp;</th>
+      <th class="product-name">Товар</th>
+      <th class="product-price">Цена</th>
+      <th class="product-quantity">Количество</th>
+      <th class="product-subtotal">Подытог</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+              <tr class="woocommerce-cart-form__cart-item cart_item">
+
+          <td class="product-remove">
+            <a href="http://szkielko/cart/?remove_item=e6b22ac88e199e07ed040cafe5808e67&amp;_wpnonce=02ba1368b5" class="remove" aria-label="Удалить эту позицию" data-product_id="66" data-product_sku="">×</a>						</td>
+
+          <td class="product-thumbnail">
+          <a href="http://szkielko/product/apple-music-album-wall/?attribute_pa_size=mini"><img width="300" height="300" src="http://szkielko/wp-content/uploads/2021/02/intro2-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="http://szkielko/wp-content/uploads/2021/02/intro2-300x300.jpg 300w, http://szkielko/wp-content/uploads/2021/02/intro2-150x150.jpg 150w, http://szkielko/wp-content/uploads/2021/02/intro2-100x100.jpg 100w" sizes="(max-width: 300px) 100vw, 300px"></a>						</td>
+
+          <td class="product-name" data-title="Товар">
+          <a href="http://szkielko/product/apple-music-album-wall/?attribute_pa_size=mini">Apple Music Album Wall - Mini A5</a>						</td>
+
+          <td class="product-price" data-title="Цена">
+            <span class="woocommerce-Price-amount amount"><bdi>89,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+
+          <td class="product-quantity" data-title="Количество">
+            <div class="quantity">
+      <label class="screen-reader-text" for="quantity_604667931d2eb">Количество Apple Music Album Wall - Mini A5</label>
+  <input type="number" id="quantity_604667931d2eb" class="input-text qty text" step="1" min="0" max="" name="cart[e6b22ac88e199e07ed040cafe5808e67][qty]" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric">
+    </div>
+            </td>
+
+          <td class="product-subtotal" data-title="Подытог">
+            <span class="woocommerce-Price-amount amount"><bdi>89,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+        </tr>
+                  <tr class="woocommerce-cart-form__cart-item cart_item">
+
+          <td class="product-remove">
+            <a href="http://szkielko/cart/?remove_item=0085cb4856fb48a0e247fa5f62462488&amp;_wpnonce=02ba1368b5" class="remove" aria-label="Удалить эту позицию" data-product_id="60" data-product_sku="">×</a>						</td>
+
+          <td class="product-thumbnail">
+          <a href="http://szkielko/product/sound-cloud-song/?attribute_pa_size=maxi"><img width="300" height="300" src="http://szkielko/wp-content/uploads/2021/02/image5-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="http://szkielko/wp-content/uploads/2021/02/image5-300x300.png 300w, http://szkielko/wp-content/uploads/2021/02/image5-150x150.png 150w, http://szkielko/wp-content/uploads/2021/02/image5-100x100.png 100w" sizes="(max-width: 300px) 100vw, 300px"></a>						</td>
+
+          <td class="product-name" data-title="Товар">
+          <a href="http://szkielko/product/sound-cloud-song/?attribute_pa_size=maxi">Sound Cloud Song - Maxi A3</a>						</td>
+
+          <td class="product-price" data-title="Цена">
+            <span class="woocommerce-Price-amount amount"><bdi>89,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+
+          <td class="product-quantity" data-title="Количество">
+            <div class="quantity">
+      <label class="screen-reader-text" for="quantity_604667931f2e0">Количество Sound Cloud Song - Maxi A3</label>
+  <input type="number" id="quantity_604667931f2e0" class="input-text qty text" step="1" min="0" max="" name="cart[0085cb4856fb48a0e247fa5f62462488][qty]" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric">
+    </div>
+            </td>
+
+          <td class="product-subtotal" data-title="Подытог">
+            <span class="woocommerce-Price-amount amount"><bdi>89,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+        </tr>
+                  <tr class="woocommerce-cart-form__cart-item cart_item">
+
+          <td class="product-remove">
+            <a href="http://szkielko/cart/?remove_item=3295c76acbf4caaed33c36b1b5fc2cb1&amp;_wpnonce=02ba1368b5" class="remove" aria-label="Удалить эту позицию" data-product_id="66" data-product_sku="">×</a>						</td>
+
+          <td class="product-thumbnail">
+          <a href="http://szkielko/product/apple-music-album-wall/"><img width="300" height="300" src="http://szkielko/wp-content/uploads/2021/02/intro2-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="http://szkielko/wp-content/uploads/2021/02/intro2-300x300.jpg 300w, http://szkielko/wp-content/uploads/2021/02/intro2-150x150.jpg 150w, http://szkielko/wp-content/uploads/2021/02/intro2-100x100.jpg 100w" sizes="(max-width: 300px) 100vw, 300px"></a>						</td>
+
+          <td class="product-name" data-title="Товар">
+          <a href="http://szkielko/product/apple-music-album-wall/">Apple Music Album Wall</a>						</td>
+
+          <td class="product-price" data-title="Цена">
+            <span class="woocommerce-Price-amount amount"><bdi>69,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+
+          <td class="product-quantity" data-title="Количество">
+            <div class="quantity">
+      <label class="screen-reader-text" for="quantity_604667931fe6c">Количество Apple Music Album Wall</label>
+  <input type="number" id="quantity_604667931fe6c" class="input-text qty text" step="1" min="0" max="" name="cart[3295c76acbf4caaed33c36b1b5fc2cb1][qty]" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric">
+    </div>
+            </td>
+
+          <td class="product-subtotal" data-title="Подытог">
+            <span class="woocommerce-Price-amount amount"><bdi>69,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+        </tr>
+                  <tr class="woocommerce-cart-form__cart-item cart_item">
+
+          <td class="product-remove">
+            <a href="http://szkielko/cart/?remove_item=6838dafed7c296fbc3c45037e668f4fa&amp;_wpnonce=02ba1368b5" class="remove" aria-label="Удалить эту позицию" data-product_id="66" data-product_sku="">×</a>						</td>
+
+          <td class="product-thumbnail">
+          <a href="http://szkielko/product/apple-music-album-wall/?attribute_pa_size=classic"><img width="300" height="300" src="http://szkielko/wp-content/uploads/2021/02/intro2-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="http://szkielko/wp-content/uploads/2021/02/intro2-300x300.jpg 300w, http://szkielko/wp-content/uploads/2021/02/intro2-150x150.jpg 150w, http://szkielko/wp-content/uploads/2021/02/intro2-100x100.jpg 100w" sizes="(max-width: 300px) 100vw, 300px"></a>						</td>
+
+          <td class="product-name" data-title="Товар">
+          <a href="http://szkielko/product/apple-music-album-wall/?attribute_pa_size=classic">Apple Music Album Wall - Classic A4</a>						</td>
+
+          <td class="product-price" data-title="Цена">
+            <span class="woocommerce-Price-amount amount"><bdi>79,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+
+          <td class="product-quantity" data-title="Количество">
+            <div class="quantity">
+      <label class="screen-reader-text" for="quantity_6046679320c63">Количество Apple Music Album Wall - Classic A4</label>
+  <input type="number" id="quantity_6046679320c63" class="input-text qty text" step="1" min="0" max="" name="cart[6838dafed7c296fbc3c45037e668f4fa][qty]" value="2" title="Кол-во" size="4" placeholder="" inputmode="numeric">
+    </div>
+            </td>
+
+          <td class="product-subtotal" data-title="Подытог">
+            <span class="woocommerce-Price-amount amount"><bdi>158,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span>						</td>
+        </tr>
+        
+    
+    <tr>
+      <td colspan="6" class="actions">
+
+                    <div class="coupon">
+            <label for="coupon_code">Купон:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Код купона"> <button type="submit" class="button" name="apply_coupon" value="Применить купон">Применить купон</button>
+                        </div>
+        
+        <button type="submit" class="button" name="update_cart" value="Обновить корзину" disabled="" aria-disabled="true">Обновить корзину</button>
+
+        
+        <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="02ba1368b5"><input type="hidden" name="_wp_http_referer" value="/cart/">				</td>
+    </tr>
+
+        </tbody>
+</table>
+</form>
+
+
+<div class="cart-collaterals">
+<div class="cart_totals ">
+
+
+<h2>Сумма заказов</h2>
+
+<table cellspacing="0" class="shop_table shop_table_responsive">
+
+  <tbody><tr class="cart-subtotal">
+    <th>Подытог</th>
+    <td data-title="Подытог"><span class="woocommerce-Price-amount amount"><bdi>405,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span></td>
+  </tr>
+
+  
+  
+  
+  
+  
+  <tr class="order-total">
+    <th>Итого</th>
+    <td data-title="Итого"><strong><span class="woocommerce-Price-amount amount"><bdi>405,00&nbsp;<span class="woocommerce-Price-currencySymbol">zł</span></bdi></span></strong> </td>
+  </tr>
+
+  
+</tbody></table>
+
+<div class="wc-proceed-to-checkout">
+  
+<a href="http://szkielko/checkout/" class="checkout-button button alt wc-forward">
+Оформить заказ</a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+                          </div><!-- .entry-content -->
+
+                      </article><!-- #post-7 -->
+                  
+              </main><!-- #main -->
+      </div>
+  </div>
+
+   
+    <!-- MAIN END -->
+    <footer class="footer-page">
+      <div class="footer-wrapper">
+        <div class="footer-container container">
+          <div class="footer-logo">
+            <a href="/">
+              <img src="./img/sys/logo-footer.svg" alt="home">
+            </a>
+          </div>
+          <div class="footer-nav">
+            <ul class="footer-nav__wrapper">
+              <li class="footer-nav__item">
+                <a href="#onas">
+                  <span>O nas</span>
+                </a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="#help">
+                  <span>FAQ</span>
+                </a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="#feedback">
+                  <span>Kontakt</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <ul class="footer-social__wrapper">
+              <li class="footer-social__item">
+                <a href="#">
+                  <img class="img-svg icon-mail" src="./img/sys/icon-mail.svg" alt="title link">
+                </a>
+              </li>
+              <li class="footer-social__item">
+                <a href="#">
+                  <img class="img-svg icon-inst" src="./img/sys/icon-inst.svg" alt="title link">
+                </a>
+              </li>
+              <li class="footer-social__item">
+                <a href="#">
+                  <img class="img-svg icon-face" src="./img/sys/icon-face.svg" alt="title link">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-mobile">
+          <p>SzkiełkoMusic | Copyright 2020 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/libs.min.js" type="module"></script>
+    <script src="./js/swiper.min.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
+    <div id="scroll" class="scroll-top">
+      <span class="scroll-top__btn">
+        <img class="img-svg" src="./img/sys/arrow.svg" alt="arrow">
+      </span>
+    </div>
+
+
+  </body>
+</html>

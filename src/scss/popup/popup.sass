@@ -585,8 +585,8 @@ textarea
                             width: get-vw(14px)
                             @include mobile
                                 width: get-vw-mobile(16px)
-body.openCart
-    overflow: hidden
+body
+    // overflow: hidden
     .cartButtons
         display: flex
         flex-direction: row
@@ -648,17 +648,17 @@ body.openCart
         background: $white
         z-index: 110
     .shoppingCartWrapper
-        position: fixed
-        z-index: 100
-        top: 0
+        // position: fixed
+        // z-index: 100
+        // top: 0
         padding-top: get-vw(116px)
         display: flex
         flex-direction: column
         width: 100%
         align-items: center
         background: $white
-        height: 100%
-        overflow-y: scroll
+        // height: 100%
+        // overflow-y: scroll
         box-sizing: border-box
         @include mobile
             z-index: 200
@@ -1419,26 +1419,26 @@ body.openCart
                     order: 1
                     margin-bottom: get-vw-mobile(20px)
 
-.shoppingCartWrapper
-    display: none
-.shoppingCartWrapper-step
-    display: none
+// .shoppingCartWrapper
+//     display: none
+// .shoppingCartWrapper-step
+//     display: none
 .openCart
-    .shoppingCartWrapper
-        &[data-cartstate="1"]
-            .shoppingCartWrapper__cart
-                display: block
-        &[data-cartstate="2"]
-            .shoppingCartWrapper__steps
-            .shoppingCartWrapper__delivery
-                display: block
-        &[data-cartstate="3"]
-            .shoppingCartWrapper__confirm
-                display: flex
-        &[data-cartstate="4"]
-            .shoppingCartWrapper__success
-                display: flex
-                flex-grow: 1
+    // .shoppingCartWrapper
+    //     &[data-cartstate="1"]
+    //         .shoppingCartWrapper__cart
+    //             display: block
+    //     &[data-cartstate="2"]
+    //         .shoppingCartWrapper__steps
+    //         .shoppingCartWrapper__delivery
+    //             display: block
+    //     &[data-cartstate="3"]
+    //         .shoppingCartWrapper__confirm
+    //             display: flex
+    //     &[data-cartstate="4"]
+    //         .shoppingCartWrapper__success
+    //             display: flex
+    //             flex-grow: 1
     .cartTable__mobileTitle
         display: none
         color: $lightTextThree

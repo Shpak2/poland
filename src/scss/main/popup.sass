@@ -2,7 +2,7 @@ body
   & .quickviewmodal
     max-width: fit-content
   & .quickviewmodal a.close-quickviewmodal
-    z-index: 100
+    z-index: 300
   & .wapf-wrapper .dz-preview
     position: absolute
     left: 15px
@@ -40,6 +40,234 @@ body
     padding-left: get-vw(15px)
 
 .popupWrapper
+  & .final-wrap
+    display: none
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background-color: #fff
+    z-index: 200
+    height: 100%
+    & .final-body
+      max-height: 62vh
+      overflow: hidden
+      background: #fbfbfb
+      overflow-y: scroll
+      padding: get-vw(70px) 0
+      & .final-btn
+        // display: flex
+        // flex-wrap: wrap
+        & .js-gratis
+          width: fit-content
+          margin: get-vw(50px) auto
+          font-weight: 400
+          font-size: get-vw(24px)
+          line-height: 1.3
+          letter-spacing: get-vw(0.3px)
+          color: #F4F5F4
+          background-color: #82BB58
+          border-radius: get-vw(40px)
+          height: get-vw(50px)
+          display: flex
+          align-items: center
+          padding: 0 get-vw(34px)
+          cursor: pointer
+        & .final-btn-wrap
+          display: flex
+          justify-content: center
+          & .js-final-add
+            border: 1px solid transparent
+            border-radius: get-vw(40px)
+            display: flex
+            justify-content: center
+            align-items: center
+            width: get-vw(204px)
+            height: get-vw(44px)
+            cursor: pointer
+            transition: .4s ease-in-out
+            background-color: #0D1018
+            & svg
+              width: get-vw(14px)
+              margin-left: get-vw(10px)
+              & path
+                transition: .4s ease-in-out
+            & i
+              font-style: normal
+              font-size: get-vw(16px)
+              letter-spacing: get-vw(0.3px)
+              color: #F4F5F4
+              transition: .4s ease-in-out
+            &:hover
+              @media (hover: hover)
+                box-shadow: 2px 4px 5px rgba(0,0,0,.15)
+                background-color: #fff
+                border-color: transparent
+                & i
+                  color: #82bb58
+                  text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+                & svg path
+                  fill: #82bb58
+          & .js-prev-final
+            border: 1px solid #0D1018
+            border-radius: get-vw(40px)
+            display: flex
+            justify-content: center
+            align-items: center
+            width: get-vw(140px)
+            height: get-vw(44px)
+            cursor: pointer
+            transition: .4s ease-in-out
+            margin-right: get-vw(20px)
+            & svg
+              width: get-vw(17px)
+              margin-right: get-vw(10px)
+              & path
+                transition: .4s ease-in-out
+            & i
+              font-style: normal
+              font-size: get-vw(16px)
+              letter-spacing: get-vw(0.3px)
+              color: #0D1018
+              transition: .4s ease-in-out
+            &:hover
+              @media (hover: hover)
+                box-shadow: 2px 4px 5px rgba(0,0,0,.15)
+                background-color: #fff
+                border-color: transparent
+                & i
+                  color: #82bb58
+                  text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+                & svg path
+                  fill: #82bb58
+    & .custom-final
+      display: flex
+      align-items: center
+      justify-content: center
+      // & .list-final
+      //   width: 100%
+      & *
+        box-sizing: border-box
+      & .final-item
+        display: flex
+        margin-bottom: get-vw(15px)
+        // margin-left: get-vw(200px)
+        & span
+          width: 50%
+        & .final-title
+          max-width: get-vw(150px)
+          margin-right: get-vw(50px)
+          font-weight: 400
+          font-size: get-vw(16px)
+          line-height: 1.3
+          color: #C3CBCD
+        & .final-value
+          max-width: get-vw(450px)
+          font-weight: 600
+          font-size: get-vw(20px)
+          line-height: 1.3
+          color: #373F41
+  & .js-custom-btn
+    & .popup-btn
+      display: flex
+      justify-content: flex-end
+      & .popup-btn
+        &__prev,&__next
+          width: get-vw(132px)
+          height: get-vw(44px)
+          display: flex
+          justify-content: center
+          align-items: center
+          cursor: pointer
+          transition: .4s ease-in-out
+          border-radius: get-vw(40px)
+          border: 1px solid #0D1018
+          & i
+            font-style: normal
+            letter-spacing: get-vw(0.3px)
+            font-size: get-vw(16px)
+            font-weight: 400
+            transition: .4s ease-in-out
+          & svg
+            width: get-vw(18px)
+            & path
+              transition: .4s ease-in-out
+          &:hover
+            @media (hover: hover)
+              box-shadow: 2px 4px 5px rgba(0,0,0,.15)
+              background-color: #fff
+              border-color: transparent
+              & i
+                color: #82bb58
+                text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+              & svg path
+                fill: #82bb58
+        &__prev
+          margin-right: get-vw(20px)
+          & i
+            color: #0D1018
+            margin-left: get-vw(10px)
+        &__next
+          background-color: #0D1018
+          & i
+            color: #F4F5F4
+            margin-right: get-vw(10px)
+    & .wapf-field-label
+      display: none
+  & .js-custom-price
+    display: flex
+    justify-content: flex-end
+    margin: get-vw(20px) 0
+    & .wapf-field-label
+      font-weight: 600
+      font-size: get-vw(18px)
+      line-height: 1.6
+      color: #373F41
+      margin-right: get-vw(10px)
+      display: flex
+      align-items: flex-end
+    & .wapf-field-input
+      font-weight: 700
+      font-size: get-vw(26px)
+      line-height: 1.3
+      color: #373F41
+  & .input-subtitle
+    & .wapf-field-label.wapf--above
+      margin-bottom: get-vw(16px)
+  & .woocommerce-variation
+    position: absolute
+    pointer-events: none
+    opacity: 0
+  & .wapf-product-totals, & .quantity, & .product_meta, & button[type='submit']
+    position: absolute
+    pointer-events: none
+    opacity: 0
+  & .input-textarea
+    width: 100%
+    & textarea
+      width: 100%
+    & .wapf-field-label.wapf--above
+      margin-bottom: 0
+    & *
+      box-sizing: border-box
+    & .wapf-field-label
+      font-weight: 600
+      font-size: get-vw(18px)
+      line-height: 1.3
+      color: #373F41
+  & .js-pack-is
+    display: inline-block
+    width: fit-content !important
+    margin-right: get-vw(20px)
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
+    border: 2px solid transparent
+    margin-bottom: get-vw(14px)
+    &.active
+      border: 2px solid #82BB58
+    & .wapf-field-label
+      display: none
+    & .wapf-field-input
+      width: get-vw(125px)
   & .has-description
     position: relative
     & .wapf-field-label
@@ -148,7 +376,7 @@ body
   & .input-radio
     display: flex
     justify-content: space-between
-    margin: get-vw(14px) 0
+    margin: 0 0 get-vw(14px) 0
     & *
       box-sizing: border-box
     & .wapf-field-label
