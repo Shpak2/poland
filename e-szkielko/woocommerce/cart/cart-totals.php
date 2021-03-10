@@ -22,9 +22,15 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
+<<<<<<< HEAD
 <!--	<h2>--><?php //esc_html_e( 'Cart totals', 'woocommerce' ); ?><!--</h2>-->
 
 	<table cellspacing="0" class="shop_table shop_table_responsive custom-cart__total">
+=======
+	<h2><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h2>
+
+	<table cellspacing="0" class="shop_table shop_table_responsive">
+>>>>>>> 5751b6d0b82ca59d241d0ed20f5dcb57d75a2451
 
 		<tr class="cart-subtotal">
 			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
