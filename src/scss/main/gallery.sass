@@ -81,14 +81,35 @@
           letter-spacing: get-vw-mobile(0.3px)
     &__btn a
       margin: 0 auto
-      &.product-create
+      &.subscribe
+        justify-content: center
+        background-color: #0d1018
+        width: 13.26389vw
+        height: 2.84722vw
+        border-radius: 2.77778vw
+        cursor: pointer
+        margin-right: 2.56944vw
+        position: relative
+        display: flex
+        align-items: center
+        transition: .3s ease-in-out;
         @include mobile
           width: 88%
           height: get-vw-mobile(50px)
           border-radius: get-vw-mobile(40px)
         & span
+          z-index: 1
+          color: #f4f5f4
+          font-size: 1.11111vw
           @include mobile
             font-size: get-vw-mobile(16px)
+        &:hover
+          background-color: #fff
+          border-color: #0d1018
+          box-shadow: 2px 4px 5px rgba(0,0,0,.15)
+          span
+            color: #82bb58
+            text-shadow: 0 0 1px #82bb58,0 0 1px #82bb58
   &-slider
     margin: get-vw-mobile(70px) auto
     display: none

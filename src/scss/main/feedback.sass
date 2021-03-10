@@ -137,6 +137,8 @@
       padding: unset
       box-shadow: unset
       margin: 0 auto
+    .screen-reader-response
+      display: none
     &::before
       content: ''
       width: get-vw(119px)
@@ -156,6 +158,8 @@
       width: 100%
       display: flex
       flex-wrap: wrap
+      .screen-reader-response, .wpcf7-response-output
+        display: none
       & label
         width: 100%
         margin-bottom: get-vw(5px)
@@ -169,6 +173,40 @@
           line-height: get-vw-mobile(20px)
           letter-spacing: get-vw-mobile(.25px)
           margin-bottom: get-vw-mobile(5px)
+        span
+          position: relative
+          &.wpcf7-not-valid-tip
+            position: absolute
+            right: 0
+            font-size: get-vw(12px)
+            color: $white
+            background: #D62D30
+            display: inline-block
+            padding: 0 get-vw(8px)
+            height: get-vw(22px)
+            border-radius: get-vw(3px)
+            margin: 0
+            transform: translateY(calc(-100% - 0.556vw))
+            @include mobile
+              font-size: get-vw-mobile(12px)
+              padding: 0 get-vw-mobile(8px)
+              height: get-vw-mobile(22px)
+              border-radius: get-vw-mobile(3px)
+              transform: translateY(calc(-100% - 2.222vmin))
+            &::after
+              position: absolute
+              content: ''
+              width: 0
+              height: 0
+              border-style: solid
+              border-width: get-vw(11px) get-vw(5.5px) 0 get-vw(5.5px)
+              border-color: #d62d30 transparent transparent
+              bottom: 0
+              transform: translateY(100%)
+              right: get-vw(17px)
+              @include mobile
+                border-width: get-vw-mobile(11px) get-vw-mobile(5.5px) 0 get-vw-mobile(5.5px)
+                right: get-vw-mobile(17px)
       & input
         outline-color: $accentColor
         border: none
@@ -184,6 +222,8 @@
           font-size: get-vw-mobile(16px)
           margin-bottom: get-vw-mobile(5px)
           padding: get-vw-mobile(10px) get-vw-mobile(15px)
+        &.wpcf7-not-valid
+          border: 1px solid #D62D30
         &:focus
           &::-webkit-input-placeholder
             opacity: 0
