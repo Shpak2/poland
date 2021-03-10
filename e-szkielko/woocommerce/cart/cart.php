@@ -135,7 +135,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-<<<<<<< HEAD
 			<tr class="coupon-wrap">
 				<td colspan="4" class="actions">
 
@@ -155,28 +154,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php } ?>
                 </td>
                 <td colspan="2" class="update-cart">
-=======
-			<tr>
-				<td colspan="6" class="actions">
-
-					<?php if ( wc_coupons_enabled() ) { ?>
-						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
-							<?php do_action( 'woocommerce_cart_coupon' ); ?>
-						</div>
-					<?php } ?>
-
->>>>>>> 5751b6d0b82ca59d241d0ed20f5dcb57d75a2451
 					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-<<<<<<< HEAD
                 </td>
-=======
-				</td>
->>>>>>> 5751b6d0b82ca59d241d0ed20f5dcb57d75a2451
 			</tr>
 
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
@@ -184,10 +167,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</table>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
-<<<<<<< HEAD
  <?php echo woocommerce_output_all_notices();?>
-=======
->>>>>>> 5751b6d0b82ca59d241d0ed20f5dcb57d75a2451
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 

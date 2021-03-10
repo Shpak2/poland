@@ -123,16 +123,6 @@ function crb_attach_theme_options() {
             Field::make( 'text', 'contact_email_name', 'Почта имя' )->set_width(33),
             Field::make( 'text', 'contact_email_name_adress', 'Почта имя адрес' )->set_width(33),
             Field::make( 'text', 'contact_email_name_link', 'Почта имя ссылка' )->set_width(33),
-        ) )
-        ->add_tab('Insta container', array(
-            Field::make( 'text', 'insta_text', 'Текст блока' ),
-            Field::make( 'text', 'insta_follow_btn_text', 'Текст кнопки' )->set_width(33),
-            Field::make( 'text', 'insta_follow_btn_link', 'Ссылка кнопки' )->set_width(33),
-            Field::make( 'image', 'insta_image', 'Картинка для десктопа' )->set_width(33)->help_text('Картинка общая с еффектом parallax'),
-            Field::make( 'complex', 'insta_images', 'Картинки в слайдере' )->help_text('Картинки для слайдера на мобильном')
-                ->add_fields( array(
-                    Field::make( 'image', 'insta_images_picture', 'Картинка' ),
-                )),
         ) );
     Container::make('theme_options', ('Настройки темы'))
         ->set_icon('dashicons-images-alt')
