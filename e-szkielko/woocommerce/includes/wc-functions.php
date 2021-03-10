@@ -101,7 +101,7 @@ function es_popup(){
         <div class="modal">
             <div class="chooseSong">
                 <div class="modal__title">
-                    <p class="modal__title_text">Krok 1. Wybierz piosenkę i kształt</p>
+                    <p class="modal__title_text">Krok 2. Wybierz piosenkę i kształt</p>
                     <div class="modal__title_button"></div>
                 </div>
                 <div class="modal__body">

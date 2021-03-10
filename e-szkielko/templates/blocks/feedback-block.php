@@ -7,7 +7,7 @@
     <div class="feedback-wrapper">
         <div class="feedback-item">
             <div class="feedback-form">
-                <?php echo do_shortcode( '[contact-form-7 id="31" title="Контактная форма 1"]' ); ?>
+                <?php echo do_shortcode( '[contact-form-7 id="16" title="main feedback"]' ); ?>
             </div>
         </div>
         <div class="feedback-item">

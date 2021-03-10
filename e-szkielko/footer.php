@@ -4,7 +4,7 @@
  */
 ?>
 
-<footer class="<?php if( !is_home() ){echo 'footer';}else{echo 'footer-page';} ?>">
+<footer class="<?php if( is_home() ){echo 'footer';}else{echo 'footer-page';} ?>">
     <div class="footer-wrapper">
         <div class="footer-container container">
             <div class="footer-logo">

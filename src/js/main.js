@@ -36,6 +36,20 @@ jQuery( document ).ready(function($) {
             '</svg>',
     }
 
+
+    // popup.js
+    let openPopup = $('.product-create');
+    let closePopup = $('.popupWrapper .modal__title_button');
+    let popUp = $('.popupWrapper');
+    $(openPopup).on('click', ()=>{
+        $(popUp).css('display', 'flex');
+        $('body').css('overflow', 'hidden');
+    })
+    $(closePopup).on('click', ()=>{
+        $(popUp).hide();
+        $('body').css('overflow', '');
+    })
+
     // detect mobile
     var mobileWidth;
     // checkMobileWidth()

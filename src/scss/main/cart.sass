@@ -4,14 +4,14 @@
   & table
     border-collapse: collapse
     & .product-subtotal
-      width: get-vw(160px)
+      width: get-vw(200px)
       text-align: center
       padding: 0 get-vw(20px)
       font-size: get-vw(17px)
       letter-spacing: get-vw(0.75px)
       color: #373F41
     & .product-quantity
-      width: get-vw(140px)
+      width: get-vw(160px)
       text-align: center
       padding: 0 get-vw(20px)
       font-size: get-vw(17px)
@@ -28,14 +28,14 @@
         &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
           opacity: 1
     & .product-price
-      width: get-vw(140px)
+      width: get-vw(200px)
       text-align: center
       padding: 0 get-vw(20px)
       font-size: get-vw(17px)
       letter-spacing: get-vw(0.75px)
       color: #373F41
     & .product-name
-      width: get-vw(260px)
+      width: get-vw(300px)
       text-align: start
       & a
         font-weight: 800
@@ -56,18 +56,308 @@
       text-align: center
       pointer-events: none
       & img
-        width: 85% !important
-        height: get-vw(110px) !important
+        width: 75% !important
+        height: unset !important
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.21)
     & tr
       padding: get-vw(20px) 0
-      height: get-vw(140px)
-  & .shop_table
-    margin: get-vw(22px) auto
+      height: get-vw(200px)
+      &.coupon-wrap
+        height: get-vw(100px)
+        & .remove-cart
+          text-align: right
+  & .cart
+    margin: get-vw(22px) 0
+    & .coupon
+      & label
+        display: block
+        margin-bottom: get-vw(10px)
+        font-size: get-vw(15px)
+        letter-spacing: get-vw(0.25px)
+        color: #443E3E
+      & .coupon-input
+        width: get-vw(255px)
+        position: relative
+        & .input-text
+          border: 1px solid #EEEEEE
+          height: get-vw(42px)
+          width: 100%
+          outline: none
+          padding: 0 get-vw(10px)
+        & button
+          position: absolute
+          top: 50%
+          right: 0
+          transform: translateY(-50%)
+          height: get-vw(42px)
+          width: get-vw(42px)
+          background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+          outline: none
+          border: 0
+          cursor: pointer
+          transition: .4s ease-in-out
+          & svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+            width: 20%
+            & path
+              transition: .4s ease-in-out
+          &:hover
+            @media (hover: hover)
+              background: #fff
+              text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+              box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.15)
+              & svg path
+                stroke: #82bb58
     & thead
       border: 1px solid rgba(219, 224, 225, 0.5)
       & tr
         height: get-vw(52px)
     & tbody
       & tr:not(:last-child)
-        
         border: 1px solid rgba(219, 224, 225, 0.5)
+  & .shop_table.custom-cart__total
+    margin-left: auto
+    margin-top: 0
+    & tr.coupon-wrap
+      height: get-vw(120px)
+    & tr
+      height: unset
+      &.cart-subtotal,&.order-total,&.cart-discount
+        height: get-vw(60px)
+      &.woocommerce-shipping-totals
+        height: get-vw(160px)
+        & td
+          & .woocommerce-shipping-methods
+            margin-bottom: get-vw(20px)
+            & li
+              & label
+                cursor: pointer
+              & .woocommerce-Price-amount
+                margin-left: auto
+              &:not(:last-child)
+                margin-bottom: get-vw(5px)
+      &.order-total
+        border-top: 1px solid rgba(219, 224, 225, 0.5)
+      &.cart-discount
+        & td
+          color: #D62D30
+          & .woocommerce-remove-coupon
+            font-size: 0
+            position: relative
+            &::before
+              content: 'x'
+              color: #373F41
+              font-size: get-vw(20px)
+              position: relative
+              top: -1px
+              font-weight: 700
+              transition: .4s ease-in-out
+              margin-left: get-vw(10px)
+            &:hover
+              @media(hover:hover)
+                &::before
+                  color: red
+    & th
+      width: get-vw(180px)
+      text-align: left
+    & td
+      width: get-vw(300px)
+      text-align: right
+  & .woocommerce-notices-wrapper
+    margin-left: auto
+    margin-bottom: get-vw(20px)
+    width: fit-content
+    font-weight: 600
+    font-size: get-vw(24px)
+    line-height: 1.4
+    letter-spacing: get-vw(0.25px)
+    color: #373F41
+  & .wc-proceed-to-checkout
+    width: fit-content
+    margin-left: auto
+  & .update-cart
+    padding-top: get-vw(27px)
+    & button
+      width: get-vw(235px)
+      display: flex
+      align-items: center
+      justify-content: center
+      height: get-vw(44px)
+      border: 1px solid #0D1018
+      border-radius: get-vw(40px)
+      font-size: get-vw(16px)
+      color: #0D1018
+      cursor: pointer
+      background: #fff
+      pointer-events: all
+      margin-left: auto
+      transition: .4s ease-in-out
+      letter-spacing: get-vw(0.3px)
+      &:hover
+        @media (hover: hover)
+          color: #82bb58
+          text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+          box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.15)
+          border-color: transparent
+      &[aria-disabled="true"]
+        border-color: rgba(13, 16, 24,.4)
+        pointer-events: none
+        color: rgba(13, 16, 24,.4)
+  & .woocommerce-shipping-methods
+    & input
+      opacity: 0
+      &:checked ~ label::after
+        transform: translate(get-vw(-17px), -50%) scale(.8)
+        background-color: #0D1018
+      &:checked ~ label::before
+        border-color: rgba(13, 16, 24,1)
+    & label
+      position: relative
+      &::after
+        content: ''
+        width: get-vw(12px)
+        height: get-vw(12px)
+        border-radius: 50%
+        background-color: #0D1018
+        position: absolute
+        display: block
+        top: 50%
+        left: 0
+        transition: .4s ease-in-out
+        transform: translate(get-vw(-17px), -50%) scale(0)
+      &::before
+        content: ''
+        transition: .4s ease-in-out
+        width: get-vw(16px)
+        height: get-vw(16px)
+        border-radius: 50%
+        border: 1px solid rgba(13, 16, 24,.4)
+        position: absolute
+        display: block
+        top: 50%
+        left: 0
+        transform: translate(get-vw(-20px), -50%)
+      &:hover
+        @media (hover: hover)
+          &::after
+            transform: translate(get-vw(-17px), -50%) scale(.6)
+            background-color: rgba(13, 16, 24,.8)
+          &::before
+            border: 1px solid rgba(13, 16, 24,.8)
+  & .shipping-calculator-button
+    margin-top: get-vw(10px)
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-left: auto
+    position: relative
+    width: 100%
+    height: get-vw(44px)
+    font-size: get-vw(16px)
+    color: #0D1018
+    transition: .2s ease-in-out
+    &::after
+      content: ''
+      position: relative
+      display: block
+      border-top: 1px solid #0D1018
+      border-left: 1px solid #0D1018
+      margin-left: get-vw(10px)
+      width: get-vw(6px)
+      height: get-vw(6px)
+      transform: rotate(-135deg)
+      top: get-vw(-2px)
+      transition: .2s ease-in-out
+    &:hover
+        @media (hover: hover)
+          color: #82bb58
+          &::after
+            border-color: #82bb58
+  & .woocommerce-shipping-calculator
+    text-align: left
+    & .shipping-calculator-form
+      margin-bottom: get-vw(20px)
+    & .select2-container--default .select2-selection--single
+      position: relative
+    & .form-row
+      margin-bottom: get-vw(10px)
+      font-size: get-vw(16px)
+      color: #0D1018
+      & *
+        outline: none !important
+      & .select2-container--default .select2-selection--single
+        border: 1px solid #EEEEEE
+        border-radius: 0
+      & .select2-container .select2-selection--single .select2-selection__rendered
+        padding: 0 get-vw(10px)
+      
+      & input
+        outline: none
+        font-size: get-vw(16px)
+        color: #0D1018
+        padding: 0 get-vw(10px)
+        line-height: 1.6
+        width: 100%
+        border: 1px solid #EEEEEE
+  & p .button
+    width: get-vw(155px)
+    display: flex
+    align-items: center
+    justify-content: center
+    height: get-vw(34px)
+    border: 1px solid #0D1018
+    font-size: get-vw(16px)
+    color: #0D1018
+    cursor: pointer
+    background: #fff
+    margin-left: auto
+    transition: .4s ease-in-out
+    letter-spacing: get-vw(0.3px)
+    &:hover
+      @media (hover: hover)
+        color: #82bb58
+        text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+        box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.15)
+        border-color: transparent
+  & .checkout-button
+    width: get-vw(235px)
+    display: flex
+    align-items: center
+    justify-content: center
+    height: get-vw(44px)
+    border: 1px solid #0D1018
+    border-radius: get-vw(40px)
+    font-size: get-vw(16px)
+    color: #fff
+    cursor: pointer
+    background: #0D1018
+    margin-left: auto
+    transition: .4s ease-in-out
+    letter-spacing: get-vw(0.3px)
+    & svg
+      position: relative
+      top: 1px
+      width: get-vw(17px)
+      margin-left: get-vw(10px)
+      & path
+        transition: .4s ease-in-out
+    &:hover
+      @media (hover: hover)
+        color: #82bb58
+        text-shadow: 0 0 1px #82bb58, 0 0 1px #82bb58
+        box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.15)
+        border-color: transparent
+        background: #fff
+        & svg path
+          fill: #82bb58
+
+html
+  & .select2-container--open .select2-dropdown--below
+    border-color: #EEEEEE
+    border-radius: 0
+  & .select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[data-selected]
+    background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+    outline: none
