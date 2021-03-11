@@ -10,13 +10,13 @@
             <div class="help-cont__item">
                 <ul class="help-cont__question-list">
                     <?php $data = carbon_get_theme_option( 'faq_crb' );
-                        $i = 0;
-                        if ( ! empty( $data ) ): foreach ( $data as $tr ): ?>
+                    $i = 0;
+                    if ( ! empty( $data ) ): foreach ( $data as $tr ): ?>
                         <li class="help-cont__question-item
                             <?php if ($i == 0){
-                                echo 'active';
-                                $i++;
-                            }?>">
+                            echo 'active';
+                            $i++;
+                        }?>">
                             <h3><?php echo $tr['question'] ?></h3>
                             <ul class="help-cont__answer">
                                 <li>

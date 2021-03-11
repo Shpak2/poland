@@ -1,6 +1,6 @@
 <?php
-    $pictureSize = carbon_get_theme_option('insta_image');
-    $pictureSize_url = wp_get_attachment_image_url($pictureSize, 'full');
+$pictureSize = carbon_get_theme_option('insta_image');
+$pictureSize_url = wp_get_attachment_image_url($pictureSize, 'full');
 ?>
 <div class="gallery parallax">
     <div class="gallery-bg" style="background: url(<?php echo $pictureSize_url; ?>) 50% 50%/100% 100% no-repeat"></div>
