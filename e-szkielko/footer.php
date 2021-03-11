@@ -20,7 +20,7 @@
                         $title = $menu_item->title;
                         $url = $menu_item->url;
                         if( !is_front_page() ){
-                            $menu_list .= '<li class="footer-nav__item"><a href="' .home_url(). $url . '">' . $title . '</a></li>';
+                            $menu_list .= '<li class="footer-nav__item"><a href="' .home_url(). $url . '"><span>' . $title . '</span></li>';
                         }else{
                             $menu_list .= '<li class="footer-nav__item"><a href="' . $url . '"><span>' . $title . '</span></a></li>';
                         }
