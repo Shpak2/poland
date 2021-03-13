@@ -39,7 +39,7 @@
                         </li>
                     </ul>
                     <div class="intro-info__button">
-                        <div class="product-create">
+                        <div class="product-create js-product-all">
                             <span>Utwórz Szkiełko</span>
                         </div>
                     </div>

@@ -48,7 +48,8 @@ gulp.task('sass-compile', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(gulp.dest('e-szkielko/assets/css'))
-    .pipe(gulp.dest('/Applications/MAMP/htdocs/e-szkielko/wp-content/themes/e-szkielko/assets/css'))
+    // .pipe(gulp.dest('/Applications/MAMP/htdocs/e-szkielko/wp-content/themes/e-szkielko/assets/css'))
+    .pipe(gulp.dest('c:/openserver/OpenServer/domains/double/wp-content/themes/e-szkielko/assets/css'))
     .pipe(browserSync.reload({
       stream:true
     }));
@@ -89,7 +90,8 @@ gulp.task('mainScript', function() {
   .pipe(uglify())
   .pipe(gulp.dest('build/js'))
   .pipe(gulp.dest('e-szkielko/assets/js'))
-  .pipe(gulp.dest('/Applications/MAMP/htdocs/e-szkielko/wp-content/themes/e-szkielko/assets/js'))
+  // .pipe(gulp.dest('/Applications/MAMP/htdocs/e-szkielko/wp-content/themes/e-szkielko/assets/js'))
+  .pipe(gulp.dest('c:/openserver/OpenServer/domains/double/wp-content/themes/e-szkielko/assets/js'))
   .pipe(browserSync.reload({
     stream:true
   }));

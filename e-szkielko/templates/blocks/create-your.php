@@ -31,7 +31,7 @@
                     endif; ?>
                 </ul>
                 <div class="intro-info__button">
-                    <div class="product-create">
+                    <div class="product-create js-product-all">
                         <span><?php echo carbon_get_theme_option('create_your_button')?></span>
                     </div>
                 </div>

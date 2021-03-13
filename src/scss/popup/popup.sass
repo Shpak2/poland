@@ -73,24 +73,29 @@ textarea
                     margin-bottom: get-vw-mobile(20px)
             &_button
                 position: absolute
-                width: get-vw(12px)
-                height: get-vw(12px)
+                width: get-vw(24px)
+                height: get-vw(24px)
                 display: flex
                 flex-direction: row
                 justify-content: center
                 align-items: center
-                right: get-vw(28px)
+                right: 0
+                top: 0
                 cursor: pointer
+                transform: translate(50%,-50%)
+                border-radius: 50%
+                background: #000
                 @include mobile
                     display: none
                 &::after, &::before
                     content: ''
                     display: inline-block
-                    width: get-vw(15px)
+                    width: get-vw(12px)
                     height: get-vw(2px)
-                    background: $titleText
+                    background: $white
                     position: absolute
                     transform: rotate(45deg)
+                    border-radius: get-vw(10px)
                 &::before
                     transform: rotate(-45deg)
         &__body
@@ -641,9 +646,9 @@ body
                 svg
                     path
                         fill: $lightTextTwo
-    .footer
-        z-index: 110
-        padding-top: 0
+    // .footer
+    //     z-index: 110
+    //     padding-top: 0
     header
         background: $white
         z-index: 110
