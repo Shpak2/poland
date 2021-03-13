@@ -343,6 +343,7 @@ body
     width: 50%
   & .wapf-field-container
     padding: 0
+    position: relative
   & .input-upload
     position: relative
     & .wapf-field-label
@@ -464,3 +465,25 @@ body
 
 .jquery-quickviewmodal
   overflow: hidden
+
+.error-popup
+  position: absolute
+  z-index: 200
+  background: #D62D30
+  border-radius: get-vw(3px)
+  color: #fff
+  padding: get-vw(4px) get-vw(6px)
+  left: get-vw(10px)
+  font-size: get-vw(14px)
+  display: none
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 15px
+    width: 6px
+    height: 6px
+    transform: translate(0,-50%) rotate(45deg)
+    background: #d62d30
+  .with-error &
+    display: block
