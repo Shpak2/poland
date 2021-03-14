@@ -47,6 +47,8 @@ body
     @include mobile()
       padding-left: get-vw-mobile(15px)
 .popupWrapper
+  & .modal img
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07)
   & .final-wrap
     display: none
     width: 100%
@@ -475,8 +477,10 @@ body
   & .modal__body_left .woocommerce-product-gallery
     opacity: 1 !important
     pointer-events: none
+    width: 50%
   & .wapf-field-container
     padding: 0
+    position: relative
   & .input-upload
     position: relative
     & .wapf-field-label
@@ -641,3 +645,29 @@ body
     @include mobile
       padding: 0
       padding-top: get-vw-mobile(81px)
+
+
+.jquery-quickviewmodal
+  overflow: hidden
+
+.error-popup
+  position: absolute
+  z-index: 200
+  background: #D62D30
+  border-radius: get-vw(3px)
+  color: #fff
+  padding: get-vw(4px) get-vw(6px)
+  left: get-vw(10px)
+  font-size: get-vw(14px)
+  display: none
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 15px
+    width: 6px
+    height: 6px
+    transform: translate(0,-50%) rotate(45deg)
+    background: #d62d30
+  .with-error &
+    display: block

@@ -57,7 +57,7 @@
                 ?>
             </nav>
             <div class="header-button">
-                <div class="product-create">
+                <div class="product-create js-product-all">
                     <span>Utwórz Szkiełko</span>
                 </div>
                 <?php e_szkielko_woocommerce_cart_link(); ?>

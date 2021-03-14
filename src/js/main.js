@@ -36,19 +36,66 @@ jQuery( document ).ready(function($) {
             '</svg>',
     }
 
-
+// $('#open-geowidget').each
     // popup.js
-    let openPopup = $('.product-create');
-    let closePopup = $('.popupWrapper .modal__title_button');
-    let popUp = $('.popupWrapper');
-    $(openPopup).on('click', ()=>{
-        $(popUp).css('display', 'flex');
-        $('body').css('overflow', 'hidden');
+    let openPopup = $('.js-product-all');
+    // let closePopup = $('.popupWrapper .modal__title_button');
+    // let popUp = $('.popupWrapper');
+    function checkClick (){
+      $('#modal-product-all .modal-product__item').mouseenter(function(){
+        $('#modal-product-all .modal-product__item').removeClass('active')
+        $(this).addClass('active')
+        $('#modal-product-all .modal__body_left .imageWrapper').html('<img src="'+$(this).find('.modal-product__img img').attr('src')+'">')
+        $('#modal-product-all .modal__body_left .imageWrapper img').fadeIn()
+        $('#modal-product-all .modal__body_left .song__text_title').html($(this).find('.modal-product__title').text())
+        $('#modal-product-all .modal__body_left .song__text_description').fadeIn()
+        $('#modal-product-all .modal__body_left .song__text_title').fadeIn()
+        
+      })
+      $('#modal-product-all .modal-product__action').click(function(){
+        let attrModal = $(this).attr('data-modal');
+        $('.quick-view-button').each(function(){
+          $('#modal-product-all').fadeOut()
+          if (attrModal == $(this).attr('data-product-id')){
+            $(this).click()
+          }
+        })
+      })
+    }
+    $(openPopup).each(function(){
+      $(this).click(function(e){
+        e.preventDefault();
+        $('.mask-preloader').fadeIn();
+        $('body').css('overflow','hidden')
+        $('#modal-product-all').css('display','flex')
+        $('#modal-product-all .chooseSong').fadeIn()
+        $('#modal-product-all .modal__body_right').html('');
+        $('.product-slider__wrapper').each(function(){
+          if($(this).attr('data-cat') !== 'accessories'){
+            $(this).find('.product-slider__item').each(function(){
+              $('#modal-product-all .modal__body_right').append('<div class="modal-product__item"><div class="modal-product__img">\
+              <img src="'+$(this).find('.flip-card-front img').attr('src')+'" alt="'+$(this).find('.es_product-title').text()+'"></div>\
+              <div class="modal-product__body"><div class="modal-product__info"><div class="modal-product__title">'+$(this).find('.es_product-title').text()+'</div>\
+              <div class="modal-product__descript">'+$(this).find('.card-info__text').text()+'</div></div>\
+              <div class="modal-product__action" data-modal="'+$(this).find('.quick-view-button').attr('data-product-id')+'"></div>\
+              </div></div>');
+            })
+          }
+        })
+        checkClick();
+        $('#modal-product-all .modal__title_button').click(function(){
+          $('#modal-product-all .chooseSong').fadeOut()
+          $('#modal-product-all').css('display','none')
+          $('body').css('overflow','')
+        })
+        setTimeout(()=>{$('.mask-preloader').fadeOut()},500)
+        
+      })
     })
-    $(closePopup).on('click', ()=>{
-        $(popUp).hide();
-        $('body').css('overflow', '');
-    })
+    // $(closePopup).on('click', ()=>{
+    //     $(popUp).hide();
+    //     $('body').css('overflow', '');
+    // })
 
     // detect mobile
     var mobileWidth;
@@ -331,6 +378,7 @@ CheckMobile.then(new Promise(function() {
         .slideDown(150);
     });
   }
+
 }))
 // end slider
 

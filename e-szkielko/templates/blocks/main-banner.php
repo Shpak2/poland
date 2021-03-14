@@ -14,7 +14,7 @@
                             <?php echo carbon_get_theme_option('banner_crb_text')?>
                         </p>
                         <div class="mainCall-action">
-                            <a href="<?php echo carbon_get_theme_option('banner_crb_link_2')?>" class="mainCall-action__btn">
+                            <a href="<?php echo carbon_get_theme_option('banner_crb_link_2')?>" class="mainCall-action__btn js-product-all">
                                 <?php echo carbon_get_theme_option('banner_crb_link_1_name')?>
                             </a>
                             <a href="<?php echo carbon_get_theme_option('banner_crb_link_2')?>" class="mainCall-action__link">

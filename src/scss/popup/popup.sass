@@ -74,24 +74,29 @@ textarea
                     margin-bottom: get-vw-mobile(20px)
             &_button
                 position: absolute
-                width: get-vw(12px)
-                height: get-vw(12px)
+                width: get-vw(24px)
+                height: get-vw(24px)
                 display: flex
                 flex-direction: row
                 justify-content: center
                 align-items: center
-                right: get-vw(28px)
+                right: 0
+                top: 0
                 cursor: pointer
+                transform: translate(50%,-50%)
+                border-radius: 50%
+                background: #000
                 @include mobile
                     display: none
                 &::after, &::before
                     content: ''
                     display: inline-block
-                    width: get-vw(15px)
+                    width: get-vw(12px)
                     height: get-vw(2px)
-                    background: $titleText
+                    background: $white
                     position: absolute
                     transform: rotate(45deg)
+                    border-radius: get-vw(10px)
                 &::before
                     transform: rotate(-45deg)
         &__body
@@ -645,9 +650,9 @@ body
                 svg
                     path
                         fill: $lightTextTwo
-    .footer
-        z-index: 110
-        padding-top: 0
+    // .footer
+    //     z-index: 110
+    //     padding-top: 0
     header
         background: $white
         z-index: 110
@@ -700,12 +705,12 @@ body
             .stepIcon
                 width: get-vw(44px)
                 height: get-vw(44px)
-                border: 1px solid #DBE0E1
+                border: get-vw(1px) solid #DBE0E1
                 display: flex
                 justify-content: center
                 align-items: center
                 border-radius: 50%
-                position: relative
+                // position: relative
                 background: $white
                 @include mobile
                     width: get-vw-mobile(26px)
@@ -717,6 +722,9 @@ body
                 display: flex
                 align-items: center
                 flex-direction: column
+                width: calc(100%/3)
+                position: relative
+                z-index: 1
                 p
                     font-size: get-vw(16px)
                     font-weight: 600
@@ -730,6 +738,19 @@ body
                         svg
                             path
                                 fill: $accentColor
+                &:not(:last-of-type)
+                    .stepIcon
+                        &::after
+                            content: ''
+                            height: get-vw(1px)
+                            width: 100%
+                            background: #DBE0E1
+                            position: absolute
+                            left: 100%
+                            transform: translateX(-50%)
+                            z-index: -1
+                            // @include mobile
+                            //     width: get-vw-mobile(100px)
                 &.complite
                     .stepIcon
                         background: $accentColor
@@ -738,18 +759,6 @@ body
                         svg
                             path
                                 fill: $white
-                &:not(:last-of-type)
-                    .stepIcon
-                        &::after
-                            content: ''
-                            height: 1px
-                            width: get-vw(340px)
-                            background: #DBE0E1
-                            position: absolute
-                            right: 0
-                            transform: translateX(100%)
-                            @include mobile
-                                width: get-vw-mobile(100px)
             &_step1
                 @include mobile
                     margin-right: get-vw-mobile(71px)
