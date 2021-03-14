@@ -68,6 +68,9 @@
           text-align: right
   & .cart
     margin: get-vw(22px) 0
+    thead
+      @include mobile()
+        display: none
     & .coupon
       & label
         display: block
@@ -118,6 +121,10 @@
     & tbody
       & tr:not(:last-child)
         border: 1px solid rgba(219, 224, 225, 0.5)
+        @include mobile()
+          border-top: 0
+          border-right: 0
+          border-left: 0
   & .shop_table.custom-cart__total
     margin-left: auto
     margin-top: 0
