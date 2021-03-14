@@ -38,7 +38,7 @@ jQuery( document ).ready(function($) {
 
     // popup.js
     let openPopup = $('.js-product-all');
-    // let closePopup = $('.popupWrapper .modal__title_button');
+    // let closePopup = $('.popupWrapper .modal__title_button')
     // let popUp = $('.popupWrapper');
     function checkClick (){
       $('#modal-product-all .modal-product__item').mouseenter(function(){
