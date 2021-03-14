@@ -133,8 +133,8 @@
           & .woocommerce-shipping-methods
             margin-bottom: get-vw(20px)
             & li
-              & label
-                cursor: pointer
+              // & label
+              //   cursor: pointer
               & .woocommerce-Price-amount
                 margin-left: auto
               &:not(:last-child)
@@ -216,37 +216,37 @@
         border-color: rgba(13, 16, 24,1)
     & label
       position: relative
-      &::after
-        content: ''
-        width: get-vw(12px)
-        height: get-vw(12px)
-        border-radius: 50%
-        background-color: #0D1018
-        position: absolute
-        display: block
-        top: 50%
-        left: 0
-        transition: .4s ease-in-out
-        transform: translate(get-vw(-17px), -50%) scale(0)
-      &::before
-        content: ''
-        transition: .4s ease-in-out
-        width: get-vw(16px)
-        height: get-vw(16px)
-        border-radius: 50%
-        border: 1px solid rgba(13, 16, 24,.4)
-        position: absolute
-        display: block
-        top: 50%
-        left: 0
-        transform: translate(get-vw(-20px), -50%)
-      &:hover
-        @media (hover: hover)
-          &::after
-            transform: translate(get-vw(-17px), -50%) scale(.6)
-            background-color: rgba(13, 16, 24,.8)
-          &::before
-            border: 1px solid rgba(13, 16, 24,.8)
+      // &::after
+      //   content: ''
+      //   width: get-vw(12px)
+      //   height: get-vw(12px)
+      //   border-radius: 50%
+      //   background-color: #0D1018
+      //   position: absolute
+      //   display: block
+      //   top: 50%
+      //   left: 0
+      //   transition: .4s ease-in-out
+      //   transform: translate(get-vw(-17px), -50%) scale(0)
+      // &::before
+      //   content: ''
+      //   transition: .4s ease-in-out
+      //   width: get-vw(16px)
+      //   height: get-vw(16px)
+      //   border-radius: 50%
+      //   border: 1px solid rgba(13, 16, 24,.4)
+      //   position: absolute
+      //   display: block
+      //   top: 50%
+      //   left: 0
+      //   transform: translate(get-vw(-20px), -50%)
+      // &:hover
+      //   @media (hover: hover)
+      //     &::after
+      //       transform: translate(get-vw(-17px), -50%) scale(.6)
+      //       background-color: rgba(13, 16, 24,.8)
+      //     &::before
+      //       border: 1px solid rgba(13, 16, 24,.8)
   & .shipping-calculator-button
     margin-top: get-vw(10px)
     display: flex

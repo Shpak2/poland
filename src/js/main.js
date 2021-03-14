@@ -36,7 +36,7 @@ jQuery( document ).ready(function($) {
             '</svg>',
     }
 
-
+// $('#open-geowidget').each
     // popup.js
     let openPopup = $('.js-product-all');
     // let closePopup = $('.popupWrapper .modal__title_button');
