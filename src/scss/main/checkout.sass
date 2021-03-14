@@ -106,7 +106,7 @@
           width: 60%
       & .product-total
         text-align: right
-      &.cart-subtotal td
+      &.cart-subtotal td,&.order-total td
         text-align: right
       &.paczkomaty-shipping
         & label
@@ -138,5 +138,63 @@
           width: 100%!important
         & .select2-container--default .select2-selection--single .select2-selection__arrow
           height: 96%
+        & td[colspan="2"] div:last-child
+          height: fit-content
+          margin-top: get-vw(20px)
+          width: 100%
         & #open-geowidget
-          
+          display: block
+          width: fit-content
+          margin-left: auto
+          padding: get-vw(10px) get-vw(20px)
+          background: #F9C722
+          color: #373F41
+          font-size: get-vw(16px)
+          font-weight: 700
+          &:hover
+            @media(hover:hover)
+              color: $white
+              background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
+  & .woocommerce-checkout-payment
+    display: flex
+    flex-wrap: wrap
+    width: 65%
+    margin: 0 auto get-vw(40px)
+    & .wc_payment_methods
+      width: 40%
+      color: #373F41
+      font-size: get-vw(12px)
+      line-height: get-vw(20px)
+      letter-spacing: get-vw(0.25px)
+    & .form-row
+      width: 55%
+      margin-left: auto
+      & .woocommerce-privacy-policy-text
+        color: #373F41
+        font-size: get-vw(12px)
+        line-height: get-vw(20px)
+        letter-spacing: get-vw(0.25px)
+        & a
+          color: #2686B8
+          text-decoration: underline
+          &:hover
+            text-decoration: none
+      & button[type="submit"]
+        margin: get-vw(10px) 0 0 auto
+        background: #0D1018
+        border-radius: get-vw(40px)
+        letter-spacing: get-vw(0.3px)
+        color: #F4F5F4
+        border: none
+        outline: none
+        padding: get-vw(13px) get-vw(32px)
+        font-size: get-vw(16px)
+        display: block
+        cursor: pointer
+        transition: .4s ease-in-out
+        &:hover
+          @media (hover: hover)
+            box-shadow: $btnShadow
+            color: $accentColor
+            text-shadow: 0 0 1px $accentColor, 0 0 1px $accentColor
+            background: $white
