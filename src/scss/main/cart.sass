@@ -1,4 +1,6 @@
 .shoppingCartWrapper
+  @include mobile()
+    min-height: calc(100vh - 8.889vmin)
   & *
     box-sizing: border-box
   & table
@@ -10,6 +12,9 @@
       font-size: get-vw(17px)
       letter-spacing: get-vw(0.75px)
       color: #373F41
+      @include mobile()
+        width: initial
+        font-size: get-vw-mobile(12px)
     & .product-quantity
       width: get-vw(160px)
       text-align: center
@@ -17,6 +22,10 @@
       font-size: get-vw(17px)
       letter-spacing: get-vw(0.75px)
       color: #373F41
+      @include mobile()
+        font-size: get-vw-mobile(12px)
+        width: initial
+        padding: 0
       & .screen-reader-text
         display: none
       & input
@@ -34,38 +43,72 @@
       font-size: get-vw(17px)
       letter-spacing: get-vw(0.75px)
       color: #373F41
+      @include mobile()
+        width: initial
+        font-size: get-vw-mobile(12px)
     & .product-name
       width: get-vw(300px)
       text-align: start
+      @include mobile()
+        width: initial
+        padding: 0 get-vw-mobile(10px)
       & a
         font-weight: 800
         font-size: get-vw(18px)
         line-height: 1.3
         color: #373F41
         pointer-events: none
+        @include mobile()
+          font-size: get-vw-mobile(13px)
     & .product-remove
       width: get-vw(90px)
       text-align: center
+      @include mobile()
+        width: get-vw-mobile(40px)
       & a
         font-weight: 900
         font-size: get-vw(24px)
-        &:hover
-          color: red
+        @include mobile()
+          font-weight: 500
+          font-size: get-vw-mobile(20px)
+        @media (hover: hover)
+          &:hover
+            color: red
     & .product-thumbnail
       width: get-vw(160px)
       text-align: center
       pointer-events: none
+      @include mobile()
+        width: initial
+        padding: get-vw-mobile(20px) 0
       & img
         width: 75% !important
         height: unset !important
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.21)
+        @include mobile()
+          width: auto !important
+          height: auto !important
+          max-width: get-vw-mobile(112px)
+          max-height: get-vw-mobile(112px)
     & tr
       padding: get-vw(20px) 0
       height: get-vw(200px)
+      @include mobile()
+        padding: get-vw-mobile(20px) 0
       &.coupon-wrap
         height: get-vw(100px)
+        @include mobile()
+          height: initial
+          padding: 0
+          margin-top: get-vw-mobile(15px)
         & .remove-cart
           text-align: right
+        & .actions
+          @include mobile()
+            padding: 0 get-vw-mobile(20px)
+            padding-top: get-vw-mobile(20px)
+      th
+        text-align: left
   & .cart
     margin: get-vw(22px) 0
     thead
@@ -78,15 +121,22 @@
         font-size: get-vw(15px)
         letter-spacing: get-vw(0.25px)
         color: #443E3E
+        @include mobile()
+          display: none
       & .coupon-input
         width: get-vw(255px)
         position: relative
+        @include mobile()
+          width: 100%
         & .input-text
           border: 1px solid #EEEEEE
           height: get-vw(42px)
           width: 100%
           outline: none
           padding: 0 get-vw(10px)
+          @include mobile()
+            height: get-vw-mobile(42px)
+            padding-left: get-vw-mobile(15px)
         & button
           position: absolute
           top: 50%
@@ -99,6 +149,9 @@
           border: 0
           cursor: pointer
           transition: .4s ease-in-out
+          @include mobile()
+            height: get-vw-mobile(42px)
+            width: get-vw-mobile(42px)
           & svg
             position: absolute
             top: 50%
@@ -128,14 +181,21 @@
   & .shop_table.custom-cart__total
     margin-left: auto
     margin-top: 0
+    @include mobile()
+      width: 100%
     & tr.coupon-wrap
       height: get-vw(120px)
     & tr
       height: unset
       &.cart-subtotal,&.order-total,&.cart-discount
         height: get-vw(60px)
+        @include mobile()
+          height: initial
+          min-height: get-vw-mobile(40px)
       &.woocommerce-shipping-totals
         height: get-vw(160px)
+        @include mobile()
+          border-top: 1px solid rgba(219,224,225,.5);
         & td
           & .woocommerce-shipping-methods
             margin-bottom: get-vw(20px)
@@ -167,12 +227,21 @@
               @media(hover:hover)
                 &::before
                   color: red
+    tr
+      padding: 0
+      height: get-vw-mobile(40px)
     & th
       width: get-vw(180px)
       text-align: left
+      @include mobile()
+        padding-left: get-vw-mobile(20px)
     & td
       width: get-vw(300px)
       text-align: right
+      @include mobile()
+        padding-right: get-vw-mobile(20px)
+        padding-top: get-vw-mobile(20px)
+        padding-bottom: get-vw-mobile(20px)
   & .woocommerce-notices-wrapper
     margin-left: auto
     margin-bottom: get-vw(20px)
@@ -185,8 +254,13 @@
   & .wc-proceed-to-checkout
     width: fit-content
     margin-left: auto
+    @include mobile()
+      margin-right: auto
   & .update-cart
     padding-top: get-vw(27px)
+    @include mobile()
+      padding-top: get-vw-mobile(20px)
+      padding-right: get-vw-mobile(5px)
     & button
       width: get-vw(235px)
       display: flex
@@ -203,6 +277,11 @@
       margin-left: auto
       transition: .4s ease-in-out
       letter-spacing: get-vw(0.3px)
+      @include mobile()
+        width: 100%
+        height: get-vw-mobile(30px)
+        border-radius: get-vw-mobile(40px)
+        font-size: get-vw-mobile(10px)
       &:hover
         @media (hover: hover)
           color: #82bb58
@@ -344,6 +423,12 @@
     margin-left: auto
     transition: .4s ease-in-out
     letter-spacing: get-vw(0.3px)
+    @include mobile()
+      width: 100%
+      min-width: get-vw-mobile(320px)
+      height: get-vw-mobile(52px)
+      border-radius: get-vw-mobile(40px)
+      font-size: get-vw-mobile(16px)
     & svg
       position: relative
       top: 1px

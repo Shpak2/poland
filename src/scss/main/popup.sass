@@ -3,6 +3,8 @@ body
     max-width: fit-content
   & .quickviewmodal a.close-quickviewmodal
     z-index: 300
+    top: get-vw-mobile(20px)
+    right: get-vw-mobile(20px)
   & .wapf-wrapper .dz-preview
     position: absolute
     left: 15px
@@ -456,6 +458,7 @@ body
   & .wapf-field-description
     display: none
   & .modal__body_right
+    @include mobile()
     & .input-second
       display: flex
       justify-content: space-between
@@ -649,7 +652,9 @@ body
 
 .jquery-quickviewmodal
   overflow: hidden
-
+  @include mobile()
+    overflow-x: hidden
+    overflow-y: scroll
 .error-popup
   position: absolute
   z-index: 200
@@ -660,6 +665,11 @@ body
   left: get-vw(10px)
   font-size: get-vw(14px)
   display: none
+  @include mobile()
+    border-radius: get-vw-mobile(3px)
+    padding: get-vw-mobile(4px) get-vw-mobile(6px)
+    left: get-vw-mobile(10px)
+    font-size: get-vw-mobile(14px)
   &::before
     content: ''
     position: absolute
