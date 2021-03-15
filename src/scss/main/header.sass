@@ -321,11 +321,13 @@
   width: 88%
   // height: 300px
   z-index: 200
-  top: get-vw-mobile(20px)
+  top: get-vw-mobile(120px)
   left: 50%
   opacity: 0
   transform: translate(-100%,0)
   animation: showMenu .6s ease-in-out forwards
+  .home &
+    top: get-vw-mobile(20px)
   & .header-nav
     display: flex
     flex-direction: column

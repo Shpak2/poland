@@ -242,6 +242,10 @@ body
       display: flex
       align-items: center
       justify-content: center
+      width: 50%
+      margin: 0 auto
+      @include mobile()
+        width: 90%
       // & .list-final
       //   width: 100%
       & *
@@ -254,7 +258,7 @@ body
         & span
           width: 50%
         & .final-title
-          max-width: get-vw(150px)
+          max-width: 45%
           margin-right: get-vw(50px)
           font-weight: 400
           font-size: get-vw(16px)
@@ -267,7 +271,7 @@ body
             font-weight: 400
             margin-right: get-vw-mobile(30px)
         & .final-value
-          max-width: get-vw(450px)
+          max-width: 50%
           font-weight: 600
           font-size: get-vw(20px)
           line-height: 1.3
