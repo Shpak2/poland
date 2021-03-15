@@ -96,8 +96,8 @@ jQuery( document ).ready(function($) {
             $(this).addClass('swiper-slide')
           })
           let slideProduct = new Swiper("#modal-product-all .modal__body", {
-            slidesPerView: 1,
-            spaceBetween: 40,
+            slidesPerView: 'auto',
+            centeredSlides: true
             // loop: true,
             // initialSlide: 1,
             // effect: 'flip',
