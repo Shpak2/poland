@@ -68,12 +68,13 @@
         position: relative
         transition: .3s ease-in-out
         @include mobile
-          margin: 0 get-vw-mobile(20px)
+          margin: get-vw-mobile(20px) 0
           height: get-vw-mobile(52px)
           border-radius: get-vw-mobile(40px)
           font-size: get-vw-mobile(16px)
           font-weight: 600
           padding: 0
+          width: 100%
         & span
           z-index: 1
           color: $lightTextTwo

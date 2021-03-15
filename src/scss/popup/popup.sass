@@ -28,6 +28,7 @@ textarea
     &.product-page
         display: flex
         position: unset
+        overflow: hidden
     .chooseSong,.congratulations
         display: none
     &[data-step="1"]
@@ -75,34 +76,44 @@ textarea
                     margin-bottom: get-vw-mobile(20px)
             &_button
                 position: absolute
+                position: absolute
                 width: get-vw(24px)
                 height: get-vw(24px)
                 display: flex
                 flex-direction: row
                 justify-content: center
                 align-items: center
-                right: 0
-                top: 0
+                right: get-vw(24px)
+                top: get-vw(24px)
                 cursor: pointer
-                transform: translate(50%,-50%)
-                border-radius: 50%
-                background: #000
+                background: transparent
+                font-size: 0
                 @include mobile
-                    display: none
+                    width: get-vw-mobile(24px)
+                    height: get-vw-mobile(24px)
+                    background: transparent
+                    right: 6%
+                    top: 20%
+                    // display: none
                 &::after, &::before
                     content: ''
                     display: inline-block
-                    width: get-vw(12px)
+                    width: get-vw(18px)
                     height: get-vw(2px)
-                    background: $white
+                    background: #373F41
                     position: absolute
                     transform: rotate(45deg)
                     border-radius: get-vw(10px)
+                    @include mobile
+                        width: get-vw-mobile(12px)
+                        height: get-vw-mobile(2px)
                 &::before
                     transform: rotate(-45deg)
         &__body
             display: flex
             flex-direction: row
+            @include mobile
+                flex-direction: column
             &>div
                 width: 50%
                 @include mobile
@@ -118,7 +129,9 @@ textarea
                 display: flex
                 flex-direction: column
                 @include mobile
-                    display: none
+                    box-shadow: none
+                    background: transparent !important
+                    margin-bottom: get-vw(10px)
                 .imageWrapper
                     filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.07))
                     background: radial-gradient(144.33% 131.39% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)
@@ -133,12 +146,23 @@ textarea
                     font-weight: 700
                     margin-bottom: get-vw(8px)
                     margin-top: get-vw(21px)
+                    @include mobile()
+                        font-size: get-vw-mobile(18px)
+                        color: $white
+                        margin-bottom: get-vw-mobile(8px)
+                        margin-top: get-vw-mobile(8px)
                 .song__text_description
                     font-size: get-vw(18px)
                     font-weight: 400
+                    @include mobile()
+                        font-size: get-vw-mobile(12px)
+                        color: $white
+                        margin-bottom: get-vw-mobile(15px)
                     span
                         font-size: get-vw(18px)
                         color: #D62D30
+                        @include mobile()
+                            font-size: get-vw-mobile(12px)
 
             &_right
                 max-height: 80vh

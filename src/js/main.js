@@ -62,13 +62,14 @@ jQuery( document ).ready(function($) {
       })
     }
     $(openPopup).each(function(){
-      $(this).click(function(e){
-        e.preventDefault();
+      $(this).click(function(){
+        // e.preventDefault();
         $('.mask-preloader').fadeIn();
         $('body').css('overflow','hidden')
         $('#modal-product-all').css('display','flex')
         $('#modal-product-all .chooseSong').fadeIn()
         $('#modal-product-all .modal__body_right').html('');
+        
         $('.product-slider__wrapper').each(function(){
           if($(this).attr('data-cat') !== 'accessories'){
             $(this).find('.product-slider__item').each(function(){
@@ -76,7 +77,7 @@ jQuery( document ).ready(function($) {
               <img src="'+$(this).find('.flip-card-front img').attr('src')+'" alt="'+$(this).find('.es_product-title').text()+'"></div>\
               <div class="modal-product__body"><div class="modal-product__info"><div class="modal-product__title">'+$(this).find('.es_product-title').text()+'</div>\
               <div class="modal-product__descript">'+$(this).find('.card-info__text').text()+'</div></div>\
-              <div class="modal-product__action" data-modal="'+$(this).find('.quick-view-button').attr('data-product-id')+'"></div>\
+              <div class="modal-product__action" data-modal="'+$(this).find('.quick-view-button').attr('data-product-id')+'"><span>Następny krok</span></div>\
               </div></div>');
             })
           }
@@ -87,6 +88,30 @@ jQuery( document ).ready(function($) {
           $('#modal-product-all').css('display','none')
           $('body').css('overflow','')
         })
+        if(mobileWidth){
+          $('#modal-product-all .modal__body').addClass('swiper-container')
+          $('#modal-product-all .modal__body_right').addClass('swiper-wrapper')
+          $('#modal-product-all .modal__title_button').append('<span>Strona główna</span>')
+          $('#modal-product-all .modal-product__item').each(function(){
+            $(this).addClass('swiper-slide')
+          })
+          let slideProduct = new Swiper("#modal-product-all .modal__body", {
+            slidesPerView: 1,
+            spaceBetween: 40,
+            // loop: true,
+            // initialSlide: 1,
+            // effect: 'flip',
+            // grabCursor: true,
+            // centeredSlides: true,
+            // autoplay: {
+            //   delay: 3000,
+            //   disableOnInteraction: false,
+            // }
+          });
+          slideProduct.on('slideChange', function () {
+            $('#modal-product-all .modal-product__item').removeClass('showing').eq(this.activeIndex).addClass('showing')
+            });
+        }
         setTimeout(()=>{$('.mask-preloader').fadeOut()},500)
         
       })
