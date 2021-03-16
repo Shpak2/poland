@@ -53,7 +53,7 @@ global $product;
 			<div class="card-info__text"><?php echo $product->get_description(); ?></div>
             <div class="button quick-view-button btn button btn-default theme-button theme-btn btn-product__add"
                  data-product-id="<?php echo $product->get_id(); ?>" rel="nofollow">
-                Wybrac
+                Wybierz
             </div>
         </div>
         </div>

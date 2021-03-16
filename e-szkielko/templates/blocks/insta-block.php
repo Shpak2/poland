@@ -3,7 +3,7 @@ $pictureSize = carbon_get_theme_option('insta_image');
 $pictureSize_url = wp_get_attachment_image_url($pictureSize, 'full');
 ?>
 <div class="gallery parallax">
-    <div class="gallery-bg" style="background: url(<?php echo $pictureSize_url; ?>) 50% 50%/100% 100% no-repeat"></div>
+    <div class="gallery-bg" style="background: url(<?php echo $pictureSize_url; ?>) 50% 50%/100% 100% no-repeat;background-attachment: fixed"></div>
     <div class="gallery-container">
         <div class="gallery-container__icon icon-inst">
             <img class="img-svg" src="<?php echo get_template_directory_uri(); ?>/assets/img/sys/icon-inst.svg" alt="instagram">

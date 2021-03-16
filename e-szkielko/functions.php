@@ -47,4 +47,36 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/woocommerce/custom-template/es_product-short.php';
 }
 
+add_action('woocommerce_cart_calculate_fees' , 'discount_based_on_customer_orders', 10, 1);
+function discount_based_on_customer_orders( $cart_object ){
 
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) )
+        return;
+
+    // Getting "completed" customer orders
+    $customer_orders = get_posts( array(
+        'numberposts' => -1,
+        'meta_key'    => '_customer_user',
+        'meta_value'  => get_current_user_id(),
+        'post_type'   => 'shop_order', // WC orders post type
+        'post_status' => 'wc-completed' // Only orders with status "completed"
+    ) );
+
+    // Orders count
+    $customer_orders_count = count($customer_orders);
+
+    // The cart total
+    $cart_total = WC()->cart->get_cart_contents_count(); // or WC()->cart->get_total_ex_tax()
+
+    // First customer order
+    if( $cart_total >= 3 ){
+        $discount_text = __('Rabat "Kup trzy, płać mniej"', 'woocommerce');
+        $discount = -20;
+    }
+
+    // Apply discount
+    if( ! empty( $discount ) ){
+        // Note: Last argument is related to applying the tax (false by default)
+        $cart_object->add_fee( $discount_text, $discount, false);
+    }
+}

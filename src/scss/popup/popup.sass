@@ -720,11 +720,13 @@ body
             justify-content: space-between
             @include mobile
                 width: 100%
-                padding: get-vw-mobile(20px) 0
                 align-items: center
                 border-bottom: 1px solid rgba(204, 204, 204, 0.3)
-                padding-right: get-vw-mobile(20px)
-                justify-content: flex-end
+                justify-content: center
+                margin-top: get-vw-mobile(140px)
+                margin-right: auto
+                margin-left: auto
+                padding-bottom: get-vw-mobile(25px)
             @include mobileLandscape
                 padding-right: 0
             .stepIcon
@@ -743,6 +745,8 @@ body
                     margin-bottom: get-vw-mobile(8px)
                 svg
                     height: auto
+                    @include mobile
+                        width: get-vw-mobile(26px)
             &_step
                 display: flex
                 align-items: center
@@ -750,6 +754,8 @@ body
                 width: calc(100%/3)
                 position: relative
                 z-index: 1
+                @include mobile
+                    width: calc(90%/3)
                 p
                     font-size: get-vw(16px)
                     font-weight: 600
@@ -785,18 +791,18 @@ body
                             path
                                 fill: $white
             &_step1
-                @include mobile
-                    margin-right: get-vw-mobile(71px)
-                @include mobileLandscape
-                    margin-left: auto
+                // @include mobile
+                //     margin-right: get-vw-mobile(71px)
+                // @include mobileLandscape
+                //     margin-left: auto
                 .stepIcon
                     svg
                         width: get-vw(16px)
                         @include mobile
                             width: get-vw-mobile(10px)
             &_step2
-                @include mobile
-                    margin-right: get-vw-mobile(51px)
+                // @include mobile
+                //     margin-right: get-vw-mobile(51px)
                 .stepIcon
                     svg
                         width: get-vw(22px)
@@ -808,8 +814,8 @@ body
                         width: get-vw(18px)
                         @include mobile
                             width: get-vw-mobile(13px)
-                @include mobileLandscape
-                    margin-right: auto
+                // @include mobileLandscape
+                //     margin-right: auto
         &__cart
             width: get-vw(1110px)
             margin-top: get-vw(22px)

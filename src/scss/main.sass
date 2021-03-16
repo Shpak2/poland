@@ -20,3 +20,36 @@
 @import 'main/cart'
 @import 'main/popup-all'
 @import 'main/checkout'
+
+.content-custom
+  padding-top: get-vw(120px)
+  color: #373F41
+  font-size: get-vw(17px)
+  line-height: 1.4
+  letter-spacing: get-vw(0.5px)
+  @include mobile
+    padding-top: get-vw-mobile(120px)
+    font-size: get-vw-mobile(14px)
+    letter-spacing: get-vw-mobile(0.5px)
+  & h1
+    text-align: center
+    font-size: get-vw(28px)
+    @include mobile
+      font-size: get-vw-mobile(24px)
+  & h3
+    text-align: center
+    font-size: get-vw(22px)
+    margin-top: get-vw(40px)
+    margin-bottom: get-vw(20px)
+    @include mobile
+      font-size: get-vw-mobile(18px)
+      margin-top: get-vw-mobile(40px)
+      margin-bottom: get-vw-mobile(20px)
+  & ul,ol
+    padding-inline-start: get-vw(20px)
+    @include mobile
+      padding-inline-start: get-vw-mobile(20px)
+  & ol[type="a"]
+    padding-inline-start: get-vw(40px)
+    @include mobile
+      padding-inline-start: get-vw-mobile(40px)

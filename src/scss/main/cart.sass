@@ -97,6 +97,12 @@
       &.paczkomaty-shipping
         @include mobile()
         margin-bottom: get-vw-mobile(20px)
+      &.fee
+        & td
+          text-align: right
+          & span
+            font-weight: 700
+            color: #D62D30
       &.coupon-wrap
         height: get-vw(100px)
         @include mobile()
@@ -125,7 +131,7 @@
     margin: get-vw(22px) 0
     @include mobile()
       width: 90%
-      margin: get-vw-mobile(22px) auto get-vw-mobile(120px)
+      margin: 0 auto get-vw-mobile(120px)
     thead
       @include mobile()
         display: none

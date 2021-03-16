@@ -13,21 +13,15 @@
                 </a>
             </div>
             <div class="footer-nav">
-                <?php
-                if( $menu_items = wp_get_nav_menu_items('menu_header') ) {
-                    $menu_list = '';
-                    foreach ( (array) $menu_items as $key => $menu_item ) {
-                        $title = $menu_item->title;
-                        $url = $menu_item->url;
-//                        if( !is_front_page() ){
-//                            $menu_list .= '<li class="footer-nav__item"><a href="' .home_url(). $url . '">' . $title . '</a></li>';
-//                        }else{
-                            $menu_list .= '<li class="footer-nav__item"><a href="' . $url . '"><span>' . $title . '</span></a></li>';
-//                        }
-                    }
-                    echo '<ul class="footer-nav__wrapper">'.$menu_list.'</ul>';
-                }
-                ?>
+                <?php wp_nav_menu( [
+	'theme_location'  => 'footer_menu',
+	'container'       => false,
+	'echo'            => true,
+	'link_before'     => '<span>',
+	'link_after'      => '</span>',
+	'items_wrap'      => '<ul class="footer-nav__wrapper">%3$s</ul>',
+	'depth'           => 0,
+]  ); ?>
             </div>
             <div class="footer-social">
                 <ul class="footer-social__wrapper">
@@ -50,7 +44,7 @@
             </div>
         </div>
         <div class="footer-mobile">
-            <p>SzkiełkoMusic | Copyright 2020 All Rights Reserved</p>
+            <p>SzkiełkoMusic | Copyright <?php echo date("Y"); ?> All Rights Reserved</p>
         </div>
     </div>
 </footer>

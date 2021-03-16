@@ -5,6 +5,11 @@
     display: none
   & .modal__title
     position: initial
+    @include mobile()
+      position: unset
+  & .chooseSong
+    @include mobile()
+      position: relative
   & .modal-product__item
     display: flex
     flex-wrap: wrap
@@ -77,15 +82,12 @@
             text-align: center
             margin-top: get-vw-mobile(19px)
         & .modal-product__descript
-          color: rgba(245, 245, 244, 0.8)
+          color: #737B7D
           letter-spacing: get-vw(0.44px)
           font-size: get-vw(14px)
           line-height: 1.4
           @include mobile()
-            letter-spacing: get-vw-mobile(0.44px)
-            font-size: get-vw-mobile(14px)
-            color: $lightTextTwo
-            text-align: center
+            display: none
       & .modal-product__action
         width: get-vw(31px)
         height: get-vw(31px)
@@ -139,6 +141,7 @@
               color: #F4F5F4
     &.swiper-slide-active
       opacity: 1
+      padding-top: get-vw-mobile(62px)
       & .modal-product__action
         opacity: 1
 
@@ -151,9 +154,14 @@
       border-radius: get-vw-mobile(40px)
       border: 1px solid $lightTextOne
       height: get-vw-mobile(50px)
-      top: calc(113vh - (110px + 15px + 52px + 30px))
+      top: 100%
+      transform: translateY(-75%)
+      z-index: 20
       &::after, &::before
         display: none
+  & .chooseSong .modal__title_button
+    @include mobile
+      display: none
 
 
 //calc(100vh - (110px + 15px + 52px + 30px))

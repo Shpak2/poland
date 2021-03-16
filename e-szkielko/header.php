@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html lang="pl">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,27 +40,30 @@
         </a>
         <div class="header-nav">
             <nav class="primary-menu-wrapper">
-                <?php
-                if( $menu_items = wp_get_nav_menu_items('menu_header') ) {
-                    $menu_list = '';
-                    foreach ( (array) $menu_items as $key => $menu_item ) {
-                        $title = $menu_item->title;
-                        $url = $menu_item->url;
-                        if( !is_front_page() ){
-                            $menu_list .= '<li class="menu-item"><a href="' .home_url(). $url . '">' . $title . '</a></li>';
-                        }else{
-                            $menu_list .= '<li class="menu-item"><a href="' . $url . '">' . $title . '</a></li>';
-                        }
-                    }
-                    echo '<ul class="primary-menu">'.$menu_list.'</ul>';
-                }
-                ?>
+                <?php wp_nav_menu( [
+                    'theme_location'  => 'header_menu',
+                    'container'       => false,
+                    'echo'            => true,
+                    'link_before'     => '<span>',
+                    'link_after'      => '</span>',
+                    'items_wrap'      => '<ul class="primary-menu">%3$s</ul>',
+                    'depth'           => 0,
+                ]  ); ?>
             </nav>
             <div class="header-button">
-                <div class="product-create js-product-all">
-                    <span>Utwórz Szkiełko</span>
-                </div>
-                <?php e_szkielko_woocommerce_cart_link(); ?>
+                <?php
+                if( !is_front_page() ){
+                    ?>
+                    <a href="<?php echo home_url() ?>" class="product-create">
+                        <span>Utwórz Szkiełko</span>
+                    </a>
+
+                <?php }else{ ?>
+                    <div class="product-create js-product-all">
+                        <span>Utwórz Szkiełko</span>
+                    </div>
+                <?php }
+                e_szkielko_woocommerce_cart_link(); ?>
             </div>
         </div>
         <div class="mobile-btn">

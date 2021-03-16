@@ -41,3 +41,12 @@ function remove_admin_login_header() {
 }
 add_filter( 'wpcf7_load_css', '__return_false' );
 add_action('get_header', 'remove_admin_login_header');
+
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+function theme_register_nav_menu() {
+    register_nav_menu( 'footer_menu', 'Footer Menu' );
+}
+add_action( 'after_setup_theme', 'theme_register_nav_menu2' );
+function theme_register_nav_menu2() {
+    register_nav_menu( 'header_menu', 'Header Menu' );
+}
