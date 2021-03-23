@@ -16,6 +16,8 @@
     background: linear-gradient(130.16deg, #82BB58 2.89%, #53A580 97.29%)
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
   &-social
+    @include mobile
+      display: none
     &__item
       & a
         display: block
@@ -61,6 +63,8 @@
       justify-content: center
   &-nav
     &__wrapper .menu-item
+      @include mobile
+        margin-bottom: get-vw-mobile(15px)
       & a
         position: relative
         width: fit-content
@@ -71,6 +75,10 @@
           letter-spacing: get-vw(.75px)
           color: $lightTextTwo
           transition: .4s ease-in-out
+          @include mobile
+            font-size: get-vw-mobile(14px)
+            line-height: get-vw-mobile(16px)
+            letter-spacing: get-vw-mobile(.5px)
         &::after
           content: ''
           position: absolute
@@ -92,10 +100,20 @@
               transform: translate(-50%,100%)
       &:not(:last-child)
         margin-right: get-vw(56px)
+        @include mobile
+          margin-right: unset
+      &:first-child
+        @include mobile
+          margin-top: get-vw-mobile(15px)
     &__wrapper
       display: flex
       justify-content: center
+      @include mobile
+        flex-direction: column
+        align-items: center
   &-logo
+    @include mobile
+      display: none
     & a
       position: relative
       & img
@@ -108,7 +126,7 @@
     align-items: center
     padding: get-vw(7px) 0
     @include mobile
-      display: none
+      justify-content: center
   &-wrapper
     border-top: 2px solid rgba(244, 245, 244,.3)
 
@@ -118,6 +136,7 @@
   padding: get-vw-mobile(7px) 0
   @include mobile
     display: block
+    border-top: 2px solid rgba(244,245,244,.3)
   & p
     font-weight: normal
     font-size: get-vw-mobile(14px)
